@@ -4,8 +4,8 @@ body {
 }
 
 @keyframes maindivLoad {
-  from {opacity: 0; left: -120%; top: 20%;}
-  to {opacity: 1; left: 0; top: 50px;}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 #maindiv {
