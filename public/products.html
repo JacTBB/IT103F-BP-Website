@@ -18,6 +18,7 @@
     <meta name="author" content="JacTBB">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- JS -->
     <noscript>Please enable Javascript.</noscript>
     <script>
       function LoadContent() {
@@ -25,9 +26,6 @@
         document.getElementById('maindiv').style.display = "block"
       }
     </script>
-
-    <!-- Shoppy Script -->
-    <script src="https://shoppy.gg/api/embed.js"></script>
   </head>
 
   <body onload="LoadContent()">
@@ -88,83 +86,32 @@
 
     <div class="content" id="maindiv" style="display: none;">
       <section>
-        <article>
-          <center>
-            <img src="https://media.discordapp.net/attachments/597414519203037187/942937815384199228/cANVA.png?width=1440&height=360" alt="BP Banner" width="90%" height="30%">
-          </center>
-          
-          <br>
-          
-          <h1 style="text-align: center;">Overview</h1>
-          <p style="text-align: center;">
-Blueprint Studios Products
-          </p>
+        <!--Edit Starting Here-->
+        <!-- V0.1 -->
+
+        <article style="padding: 0">
+          <img src="https://media.discordapp.net/attachments/597414519203037187/942937815384199228/cANVA.png?width=1440&height=360" alt="BP Banner" width="100%">
         </article>
         
         <article>
           <h1 style="text-align: center;">Our Products</h1>
-          <center>
-            <div class="row">
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Overhead V1</h4>
-                <p style="margin: 0;">A popular style of overhead in the modern military community! Keep up with some of the latest trends with this overhead today!</p>
-              </div>
-
-              <div class="column">
-                <img src="https://media.discordapp.net/attachments/913619592067293206/959037469217665044/Overhead_V2_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Overhead V2</h4>
-                <p style="margin: 0;">A popular style of overhead in the modern military community! Keep up with some of the latest trends with this overhead today!</p>
-              </div>
-
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469410611270/Overhead_V3_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Overhead V3</h4>
-                <p style="margin: 0;">A popular style of overhead in the modern military community! Keep up with some of the latest trends with this overhead today!</p>
-              </div>
+          <div id="products">
+            <div class="productcard" id="productcardplaceholder" style="display: none;">
+              <!-- Placeholder For Dev -->
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png" alt="Image" width="100%">
+              <h4>Overhead V1</h4>
+              <p>A popular style of overhead in the modern military community! Keep up with some of the latest trends with this overhead today!</p>
+              <p class="price">
+                $6.00
+                <button class="productbutton" type="button">Add To Cart</button>
+              </p>
             </div>
-
-            <div class="row">
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/909420635598516224/959306702367391774/Ark_Systems_Main_Menu_V1_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Ark Systems Main Menu V1</h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/909420635598516224/959306702681931856/Ark_Systems_Main_Menu_V2_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Ark Systems Main Menu V2</h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/909420635598516224/959306702040223774/Nametag_System_V1_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Nametag System V1</h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="column" style="opacity: 0;">
-                <img src="" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;"></h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-
-              <div class="column">
-                <img src="https://cdn.discordapp.com/attachments/909420635598516224/959311825508384789/Gamepass_Board_V1_300x200.png" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;">Gamepass Board V1</h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-
-              <div class="column" style="opacity: 0;">
-                <img src="" alt="BP Banner" width="90%" height="20%">
-                <h4 style="margin-bottom: 3%;"></h4>
-                <p style="margin: 0;">WIP</p>
-              </div>
-            </div>
-          </center>
+          </div>
         </article>
+
+        <!-- JS -->
+        <script src="scripts/products.js"></script>
+        <!--Edit Ending Here-->
       </section>
       
       <footer>

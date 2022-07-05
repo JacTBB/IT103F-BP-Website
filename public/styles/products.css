@@ -1,6 +1,11 @@
 section {
   background-color: rgb(250,250,255);
 }
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 article {
   background-color: rgb(250,250,255);
@@ -8,32 +13,72 @@ article {
   width: auto;
 }
 
-.row {
-  margin-bottom: 30px;
+#products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.column {
-  float: left;
-  width: 30%;
-  margin: 1.65%;
+.productcard {
+  display: block;
+  margin: 10px;
+  flex: 30%;
+  max-width: min(calc(30% - 20px), 300px);
 }
 
-.column_doubleend {
-  float: left;
-  width: 30%;
-  margin: 1.65%;
-  margin-left: 10%;
-  margin-right: 10%;
+.productcard img {
+  width: 100%;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.productcard h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-section::after {
-  content: "";
-  display: table;
-  clear: both;
+.productcard p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.productcard .price {
+  text-align: right;
+  font-weight: bold;
+}
+
+.productbutton {
+  background-color: rgb(180,200,255);
+  border: solid black 1px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px black;
+  font-weight: normal;
+}
+
+.productbutton:hover {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) and (min-width: 400px) {
+  #products {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productcard {
+    flex: 49%;
+    max-width: min(calc(49% - 20px), 250px);
+  }
+}
+
+@media (max-width: 400px) {
+  #products {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productcard {
+    flex: 100%;
+    max-width: 250px;
+  }
 }
