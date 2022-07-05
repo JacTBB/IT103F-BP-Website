@@ -8,26 +8,7 @@
     <link href="styles/loading.css" rel="stylesheet" type="text/css">
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="styles/index.css" rel="stylesheet" type="text/css">
-    <style> 
-      * { box-sizing: border-box;}
-      
-      table.ShopCart {
-          border: 1px solid;
-          border-collapse: collapse;
-          background-color: #24829e;
-          width: 52%;
-          height: auto;
-      }
-
-      table.checkout {
-          border: 1px solid;
-          border-collapse: collapse;
-          background-color: #4cc855;
-          width: 52%;
-          height: auto;
-      }
-    </style>
+    <link href="styles/checkout.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -104,11 +85,11 @@
     <div class="content" id="maindiv" style="display: none;">
       <section>
         <!--Edit Starting Here-->
-        <!-- V0.1 -->
+        <!-- V0.3 -->
         <!-- Below Code are for Cart & Checkout Section -->
       <br/>
         <center>
-        <form name="PaymentReciept" action="payment_successful.html" method="post">
+        <form name="PayReciept" action="checkout_success.html" method="post">
   
           <!-- Shopping Cart Section -->
           <table class="ShopCart" cellpadding="10" cellspacing="0">
@@ -148,24 +129,26 @@
               <td colspan="2"> &nbsp; </td>
             </tr>
   
-            <tr class="hidden">
+            <tr>
               <td> <label for="CreditName"> Name: </label> </td>
-              <td><input type="text" name="customername" id="CreditName" placeholder="Eg. John Smith " required="required"> </td>
+              <td> <input type="text" name="customername" id="CreditName" placeholder="Eg. John Smith " required="required"> </td>
               
-                <td> <label for="CreditEXP"> Credit Card Expiry Date:</label> </td>
-                <td> <input type="text" name="creditexpiry_date" id="CreditEXP" placeholder="12/22" required="required" maxlength="5"> </td>
+              <td> <label for="CreditEXP"> CC Expiry Date: </label> </td>
+              <td> <input type="text" name="creditexpiry_date" id="CreditEXP" placeholder="12/22" required="required" maxlength="5"> </td>
             </tr>
   
             <tr>
-              <td> <label for="CreditNo."> Credit Card Number: </label> </td>  
-              <td> <input type="text" name="creditnumber" id="CreditNo." placeholder="5234 0193 4029 1920" required="required" maxlength="19"> </td> 
+              <td> <label for="CreditNo."> Credit Card No. </label> </td>  
+              <td> <input type="password" name="creditnumber" id="CreditNo." placeholder="5234-0193-4029-1920" required="required" maxlength="19"> </td> 
 
               <td> <label for="CreditSecCode"> CVV: </label> </td>
-               <td> <input type="text" name="CVV" id="CreditSecCode" placeholder="123" required="required" maxlength="3"> </td> 
+               <td> <input type="password" name="CVV" id="CreditSecCode" placeholder="123" required="required" maxlength="3"> </td> 
            </tr>
   
             <tr>
-              <td colspan="4"> <input type="submit" value="Purchase For $WIP.SumFunction"/> </td>
+              <td colspan="4"> 
+                <input type="submit" class="PurchaseButton" value="Purchase For"/> 
+              </td>
             </tr>
           </table>
         </form>
