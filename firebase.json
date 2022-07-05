@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "target": "it103f-bp-website",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
+}

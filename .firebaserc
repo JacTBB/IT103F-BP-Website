@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "blueprint-whitelist-system"
+  },
+  "targets": {
+    "blueprint-whitelist-system": {
+      "hosting": {
+        "it103f-bp-website": [
+          "it103f-bp-website"
+        ]
+      }
+    }
+  }
+}
