@@ -1,0 +1,15 @@
+section {
+  background-color: rgb(250,250,255);
+}
+
+article {
+  background-color: rgb(250,250,255);
+  padding: 30px;
+  width: auto;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
