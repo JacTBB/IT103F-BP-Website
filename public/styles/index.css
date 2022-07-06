@@ -12,9 +12,8 @@
 
 .banner {
   width: 100%;
-  height: 400px;
-  background-image: url("public/images/Blueprint Coming Soon.png");
-   background-size: 100%;
+  height: 350px;
+   background-size:200%;
 }
 
 
@@ -49,4 +48,19 @@ section::after {
   content: "";
   display: table;
   clear: both;
+}
+
+
+.mainboxes
+{
+  text-align: center;
+  width: 90%;
+}
+
+.boxes {
+  display: inline-block;
+  width: 200px;
+  height: 350px; 
+  vertical-align: top;
+  position: relative;
 }
