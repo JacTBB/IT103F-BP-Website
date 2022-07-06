@@ -6,7 +6,16 @@
 .Bluefont {
   color:rgb(60, 180, 250);
 }
+.black {
+  color: black;
+}
 
+.banner {
+  width: 100%;
+  height: 400px;
+  background-image: url("public/images/Blueprint Coming Soon.png");
+   background-size: 100%;
+}
 
 
 section {
