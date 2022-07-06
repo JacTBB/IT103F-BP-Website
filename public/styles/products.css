@@ -1,5 +1,5 @@
 section {
-  background-color: rgb(250,250,255);
+  background-color: rgb(240,240,240);
 }
 section::after {
   content: "";
@@ -8,7 +8,7 @@ section::after {
 }
 
 article {
-  background-color: rgb(250,250,255);
+  background-color: rgb(240,240,240);
   padding: 30px;
   width: auto;
 }
