@@ -3,6 +3,9 @@
     height: 250px;
   }
 }
+.Bluefont {
+  color:blue;
+}
 
 section {
   background-color: rgb(240,240,240);
