@@ -5,8 +5,8 @@ td {
 
 
 table {
-     border: 1px solid;
-     border-collapse: collapse;
+     border: 1px solid black;
+     border-radius: 10px;
     background-color: #ff8b07b0;
     width: auto;
     height: 40%;
