@@ -23,21 +23,25 @@ article {
 .productcard {
   display: block;
   margin: 10px;
-  flex: 30%;
-  max-width: min(calc(30% - 20px), 300px);
+  flex: 32%;
+  max-width: min(calc(32% - 20px), 300px);
+  border-radius: 20px;
+  background-color: rgb(255,255,255);
 }
 
 .productcard img {
   width: 100%;
+  border-radius: 20px 20px 0 0;
 }
 
 .productcard h4 {
+  margin: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .productcard p {
-  margin: 0;
+  margin: 10px;
   margin-bottom: 10px;
 }
 
