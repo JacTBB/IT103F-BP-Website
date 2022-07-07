@@ -25,6 +25,11 @@ section::after {
   color: black;
 }
 
+.styleimg {
+  border: 2px solid rgb(60, 180, 250);
+  border-radius: 10px;
+}
+
 .reasonscontainer {
   display: flex;
   justify-content: center;
