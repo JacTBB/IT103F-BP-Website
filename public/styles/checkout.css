@@ -12,31 +12,31 @@ table.ShopCart {
     background-color: #ffc7c7;
     width: 30%;
     height: 52%;
-    }
+}
 
-    .cardicon1 {
-        position: relative;
-        width: 8%;
-    }
+.cardicon1 {
+    position: relative;
+    width: 8%;
+}
 
-    .InputButton {
-        width: 95%;
-    }
-    
-    #required {
-        color: rgb(255, 43, 43);
-    }
-    
-    table.checkout {
+.InputButton {
+    width: 95%;
+}
+
+#required {
+    color: rgb(255, 43, 43);
+}
+
+table.checkout {
     border: 1px solid black;
     border-radius: 10px;
     background-color: #d8d8d8;
     width: 30%;
     height: 52%;
-    }
+}
 
 
-    .PurchaseButton {
+.PurchaseButton {
     background-color: white;
     border: 1px solid #009726;
     color: black;
@@ -49,14 +49,14 @@ table.ShopCart {
     transition-duration: 0.4s;
     box-shadow: 0 3px #999;
     position: relative;
-    }
+}
 
-        .PurchaseButton:hover {
-        background-color: #009726;
-        color: white;
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-        }
+.PurchaseButton:hover {
+    background-color: #009726;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
-            .PurchaseButton:active {
-            transform: translateY(4px);
-            }
+.PurchaseButton:active {
+    transform: translateY(4px);
+}
