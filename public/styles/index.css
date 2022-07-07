@@ -63,3 +63,25 @@ section::after {
   vertical-align: top;
   position: relative;
 }
+
+
+.column {
+  float: right;
+  width: 10%;
+  padding: 5px;
+}
+
+
+.row {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row2{
+  display: flex;
+}
+.flex {
+  flex: 33.33%;
+  padding: 5px;
+}
