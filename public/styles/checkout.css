@@ -9,11 +9,16 @@ th {
 table.ShopCart {
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #ff7979;
+    background-color: #ffc7c7;
     width: 30%;
     height: 52%;
     }
-    
+
+    .cardicon1 {
+        position: relative;
+        width: 8%;
+    }
+
     .InputButton {
         width: 95%;
     }
@@ -25,7 +30,7 @@ table.ShopCart {
     table.checkout {
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #cccaca;
+    background-color: #d8d8d8;
     width: 30%;
     height: 52%;
     }
