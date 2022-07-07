@@ -29,44 +29,50 @@ function reloadcart() {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
             console.log(key, localStorage.getItem(key))
+            if (isNaN(value)) {
+                setTimeout(() => {
+                    localStorage.removeItem(key)
+                }, 1000)
+            }
+            else {
+                productdata = allproductdata.find((y) => y['name'] == key)
 
-            productdata = allproductdata.find((y) => y['name'] == key)
+                const div = document.createElement('div')
+                const productname = document.createElement('p')
+                const price = document.createElement('p')
+                const quantity = document.createElement('p')
+                const addbutton = document.createElement('button')
+                const removebutton = document.createElement('button')
 
-            const div = document.createElement('div')
-            const productname = document.createElement('p')
-            const price = document.createElement('p')
-            const quantity = document.createElement('p')
-            const addbutton = document.createElement('button')
-            const removebutton = document.createElement('button')
-
-            price.style.display = 'inline'
-            quantity.style.display = 'inline'
-            addbutton.style.display = 'inline'
-            removebutton.style.display = 'inline'
-        
-            div.classList = 'productcard'
-            productname.innerHTML = `${productdata['name']} | `
-            price.classList = 'price'
-            price.innerHTML = `${productdata['price']} | `
-            quantity.innerHTML = `Quantity: ${value} | `
-            addbutton.classList = 'productbutton'
-            addbutton.innerHTML = 'Add Item'
-            addbutton.id = productdata['name']
-            addbutton.type = 'button'
-            addbutton.addEventListener('click', additemtocartfunction)
-            removebutton.classList = 'productbutton'
-            removebutton.innerHTML = 'Remove Item\n'
-            removebutton.id = productdata['name']
-            removebutton.type = 'button'
-            removebutton.addEventListener('click', removeitemtocartfunction)
-        
-            div.appendChild(productname)
-            productname.appendChild(price)
-            price.appendChild(quantity)
-            price.appendChild(addbutton)
-            price.appendChild(removebutton)
-        
-            products.appendChild(div)
+                price.style.display = 'inline'
+                quantity.style.display = 'inline'
+                addbutton.style.display = 'inline'
+                removebutton.style.display = 'inline'
+            
+                div.classList = 'productcard'
+                productname.innerHTML = `${productdata['name']} | `
+                price.classList = 'price'
+                price.innerHTML = `${productdata['price']} | `
+                quantity.innerHTML = `Quantity: ${value} | `
+                addbutton.classList = 'productbutton'
+                addbutton.innerHTML = 'Add Item'
+                addbutton.id = productdata['name']
+                addbutton.type = 'button'
+                addbutton.addEventListener('click', additemtocartfunction)
+                removebutton.classList = 'productbutton'
+                removebutton.innerHTML = 'Remove Item\n'
+                removebutton.id = productdata['name']
+                removebutton.type = 'button'
+                removebutton.addEventListener('click', removeitemtocartfunction)
+            
+                div.appendChild(productname)
+                productname.appendChild(price)
+                price.appendChild(quantity)
+                price.appendChild(addbutton)
+                price.appendChild(removebutton)
+            
+                products.appendChild(div)
+            }
         }
 
         return
