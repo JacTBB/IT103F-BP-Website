@@ -18,7 +18,7 @@ fetch('scripts/productdata.json')
         img.src = productdata['image']
         desc.innerHTML = productdata['desc']
         price.classList = 'price'
-        price.innerHTML = `${productdata['price']} `
+        price.innerHTML = `$${productdata['price']} `
         button.classList = 'productbutton'
         button.innerHTML = 'Add To Cart'
         button.id = productdata['name']

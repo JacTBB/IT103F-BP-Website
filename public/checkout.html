@@ -88,36 +88,9 @@
         <center>
         <form name="PayReciept" action="checkout-success.html" method="get">
           <!-- Shopping Cart Section -->
-          <table class="ShopCart" cellpadding="10" cellspacing="0">
-            <tr> 
-              <th colspan="3"> Your Shopping Cart </th> 
-            </tr>
-            
-            <tr> 
-              <td> Product Name </td> 
-              <td> Quantity </td> 
-              <td> Price </td> 
-            </tr>
-
-            <tr>
-              <td> Product Name </td> 
-              <td> Quantity </td> 
-              <td> Price </td>
-            </tr>
-
-            <tr>
-              <td> Product Name </td> 
-              <td> Quantity </td> 
-              <td> Price </td>
-            </tr>
-
-            <tr>
-              <td colspan="3"> &nbsp; </td>
-            </tr>
-  
-            <tr>
-              <td colspan="3"> Total amount: $x.xx </td>
-            </tr>
+          <script src="scripts/checkout.js"></script>
+          <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
+            <!-- From Javascript -->
           </table>
 
           <br>

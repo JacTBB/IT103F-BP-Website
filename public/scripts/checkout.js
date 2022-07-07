@@ -19,12 +19,22 @@ function reloadcart() {
     .then(response => response.json())
     .then(data => {
         allproductdata = data['data']
+        var total = 0
 
         const products = document.getElementById('products')
         while (products.hasChildNodes()) {
             products.removeChild(products.firstChild);
         }
 
+        //Header
+        const trheader = document.createElement('tr')
+        const thheader = document.createElement('th')
+        thheader.innerHTML = 'Your Shopping Cart'
+        thheader.colSpan = 6
+        trheader.appendChild(thheader)
+        products.appendChild(trheader)
+
+        //ProductInfo
         for (var i=0; i < localStorage.length; i++) {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
@@ -37,49 +47,64 @@ function reloadcart() {
             else {
                 productdata = allproductdata.find((y) => y['name'] == key)
 
-                const div = document.createElement('div')
-                const productname = document.createElement('p')
-                const price = document.createElement('p')
-                const quantity = document.createElement('p')
+                //Product
+                const tr = document.createElement('tr')
+                const productname = document.createElement('td')
+                const price = document.createElement('td')
+                const quantity = document.createElement('td')
+                const tdaddbutton = document.createElement('td')
+                const tdremovebutton = document.createElement('td')
+                const tddeletebutton = document.createElement('td')
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
                 const deletebutton = document.createElement('button')
-
-                price.style.display = 'inline'
-                quantity.style.display = 'inline'
-                addbutton.style.display = 'inline'
-                removebutton.style.display = 'inline'
-                deletebutton.style.display = 'inline'
             
-                div.classList = 'productcard'
-                productname.innerHTML = `${productdata['name']} | `
+                tr.classList = 'productcard'
+                productname.innerHTML = `${productdata['name']}`
                 price.classList = 'price'
-                price.innerHTML = `${productdata['price']} | `
-                quantity.innerHTML = `Quantity: ${value} | `
+                price.innerHTML = `$${productdata['price']}`
+                quantity.innerHTML = `Quantity: ${value}`
                 addbutton.classList = 'productbutton'
                 addbutton.innerHTML = 'Add Item'
                 addbutton.id = productdata['name']
                 addbutton.type = 'button'
                 addbutton.addEventListener('click', additemtocartfunction)
                 removebutton.classList = 'productbutton'
-                removebutton.innerHTML = 'Remove Item\n'
+                removebutton.innerHTML = 'Remove Item'
                 removebutton.id = productdata['name']
                 removebutton.type = 'button'
                 removebutton.addEventListener('click', removeitemfromcartfunction)
                 deletebutton.classList = 'productbutton'
-                deletebutton.innerHTML = 'Delete Item\n'
+                deletebutton.innerHTML = 'Delete Item'
                 deletebutton.id = productdata['name']
                 deletebutton.type = 'button'
                 deletebutton.addEventListener('click', deleteitemfromcartfunction)
-            
-                div.appendChild(productname)
-                productname.appendChild(price)
-                price.appendChild(quantity)
-                price.appendChild(addbutton)
-                price.appendChild(removebutton)
-                price.appendChild(deletebutton)
-            
-                products.appendChild(div)
+                
+                tr.appendChild(productname)
+                tr.appendChild(price)
+                tr.appendChild(tdremovebutton)
+                tdremovebutton.appendChild(removebutton)
+                tr.appendChild(quantity)
+                tr.appendChild(tdaddbutton)
+                tdaddbutton.appendChild(addbutton)
+                tr.appendChild(tddeletebutton)
+                tddeletebutton.appendChild(deletebutton)
+                
+                products.appendChild(tr)
+
+                total += productdata['price'] * value
+
+                if (i == localStorage.length-1) {
+                    //Total
+                    const trtotal = document.createElement('tr')
+                    const tdtotal = document.createElement('td')
+                    tdtotal.innerHTML = `Total Amount: $${total}`
+                    tdtotal.colSpan = 6
+                    tdtotal.style.textAlign = 'right'
+                    tdtotal.style.fontWeight = 'bold'
+                    trtotal.appendChild(tdtotal)
+                    products.appendChild(trtotal)
+                }
             }
         }
 
