@@ -26,7 +26,9 @@
 
         const section = document.getElementById('section')
         const footer = document.getElementById('footer')
-        const calculated = window.innerHeight-section.offsetHeight-190-50
+        var footerheight = 190
+        if (window.innerWidth < 850) footerheight = 350
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-50
         if (calculated > 0) {
           footer.style.marginTop = `${calculated}px`
         }
