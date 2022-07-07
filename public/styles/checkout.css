@@ -37,25 +37,52 @@ table.checkout {
 
 
 .PurchaseButton {
-    background-color: white;
+    display: inline-block;
+    position: relative;
     border: 1px solid #009726;
+    background-color: white;
+    box-shadow: 0 3px #999;
     color: black;
-    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block; 
     font-size: 14px;
+    width: 30%;
+    min-width: 100px;
+    padding: 2%;
+    transition: all 0.5s;
     cursor: pointer;
-    transition-duration: 0.4s;
-    box-shadow: 0 3px #999;
-    position: relative;
 }
+
+.PurchaseButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .PurchaseButton span:after {
+    content: " "url(../images/cart.png)" ";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10%;
+    transition: 0.5s;
+  }
 
 .PurchaseButton:hover {
     background-color: #009726;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.PurchaseButton:hover span {
+    padding-right: 25%;
+  }
+  
+.PurchaseButton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 .PurchaseButton:active {
     transform: translateY(4px);
