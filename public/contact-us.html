@@ -123,22 +123,29 @@
               <table align="center" border="1" cellpadding="6" cellspacing="0">
                 <caption><b>Feedback Form</b></caption>
                 <tr>
-                  <td>Customer Name: <input type="text" placeholder="Name"></td>
-                  <td>Customer E-Mail: <input type="email" placeholder="E-Mail"></td>
+                  <td><b>Customer Name:</b> <input type="text" placeholder="Name" required></td>
+                  <td><b>Customer E-Mail:</b> <input type="email" placeholder="E-Mail" required></td>
                 </tr>
                 <tr>
-                  <td colspan="2">Products/Services Bought: <input type="text" placeholder="Please list products/services bought here"></td>
+                  <td colspan="2"><b>Products/Services Bought:</b> <input type="text" required placeholder="Please list products/services bought here"></td>
                 </tr>
                 <tr>
-                  <td colspan="2">Overall Rating Slider: <input type="range" min="1" style="width:300px;" max="10" class="slider" id="range"></td>
+                  <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="1" required style="width:300px;" max="10" class="slider" id="range"></td>
                 </tr>
                 <tr>
-                  <td valign="center">Comments:</td>
-                  <td><textarea rows="15" cols="50"></textarea></td>
+                  <td valign="center"><b>Comments:</b></td>
+                  <td><textarea rows="15" cols="50" required></textarea></td>
                 </tr>
                 <tr>
-                  <td align="center"><input type="submit" style="width:250px;" id="submit"></td>
-                  <td align="center"><input type="reset" style="width:250px;" id="reset"></td>
+                  <td align="center"><button type="submit" style="width:250px" onclick="myFunction()">Submit</button>
+
+                    <script>
+                    function myFunction() {
+                      alert("You have submitted your form.");
+                    }
+                    </script>
+                    </td>
+                  <td align="center"><button type="reset" style="width:250px;">Reset</button></td>
                 </tr>
 
 
