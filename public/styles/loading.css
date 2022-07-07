@@ -3,9 +3,14 @@ body {
   margin: 0;
 }
 
-@keyframes maindivLoad {
+@keyframes fadeInAnim {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+#navbar {
+  animation-name: fadeInAnim;
+  animation-duration: 1s;
 }
 
 #maindiv {
@@ -15,7 +20,7 @@ body {
   height: calc(100%-50px);
   left: 0;
   top: 50px;
-  animation-name: maindivLoad;
+  animation-name: fadeInAnim;
   animation-duration: 2s;
 }
 

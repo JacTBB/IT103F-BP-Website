@@ -1,21 +1,3 @@
-@media (max-width: 600px) {
-  #video {
-    height: 250px;
-  }
-}
-.Bluefont {
-  color:rgb(60, 180, 250);
-}
-.black {
-  color: black;
-}
-
-.banner {
-  width: 100%;
-  background-size:200%;
-}
-
-
 section {
   background-color: rgb(240,240,240);
 }
@@ -26,62 +8,76 @@ article {
   width: auto;
 }
 
-.column {
-  float: left;
-  width: 30%;
-  margin: 1.65%;
-}
-
-.twocolumn {
-  float: left;
-  width: 50%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 section::after {
   content: "";
   display: table;
   clear: both;
 }
 
-
-.mainboxes
-{
-  text-align: center;
-  width: 90%;
+.banner {
+  width: 100%;
 }
 
-.boxes {
-  display: inline-block;
-  width: 200px;
-  height: 350px; 
-  vertical-align: top;
-  position: relative;
+#headerbluecolor {
+  color:rgb(60, 180, 250);
+}
+#headerblackcolor {
+  color: black;
 }
 
-
-.column {
-  float: right;
-  width: 10%;
-  padding: 5px;
-}
-
-
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.row2{
+.reasonscontainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.flex {
-  flex: 33.33%;
-  padding: 5px;
+
+.reasonsbox {
+  display: block;
+  padding: 1px;
+  margin: 10px;
+  flex: 45%;
+  min-width: 200px;
+  max-width: calc(45% - 20px);
+  text-align: center;
+}
+
+.reasonsbox img {
+  height: 100px;
+  margin: 10px;
+}
+.reasonsbox h2 {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 20px;
+}
+.reasonsbox p {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 15px;
+}
+
+@media (max-width: 750px) {
+  .reasonscontainer {
+    width: 95%;
+  }
+}
+
+@media (max-width: 550px) {
+  .reasonscontainer {
+    flex-direction: column;
+  }
+
+  .reasonsbox {
+    flex: 100%;
+    max-width: 350px;
+  }
 }
