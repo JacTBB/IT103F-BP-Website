@@ -25,27 +25,30 @@
       function LoadContent() {
         document.getElementById('navbar').style.display = "block"
         document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 850) footerheight = 350
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-50
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
       }
     </script>
   </head>
 
-  <body body onload="LoadContent()">
+  <body onload="LoadContent()">
     <nav id="navbar" style="display: none;">
       <center>
         <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
         <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
         
-        <a class="navbutton" style="margin-right: 30px" href="comingsoon.html"><h5 style="margin: 0;">Support</h5></a>
-        <a class="navbutton" href="comingsoon.html"><h5 style="margin: 0;">Developers</h5></a>
-        <div class="navdropdown">
-          <button class="navdropdownbutton">
-            <h5 style="margin: 0;">Products</h5>
-          </button>
-          <div class="dropdowncontent">
-            <a href="products.html">Ark</a>
-            <a href="products.html">Ares</a>
-          </div>
-        </div>
+        <a class="navbutton" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
 
         <div class="navtoggle" onclick="menu(this)">
           <div id="navbar1"></div>
@@ -71,21 +74,15 @@
       </center>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" style="margin-right: 30px" href="comingsoon.html"><h5 style="margin: 0;">Support</h5></a>
-      <a class="navdisplaybutton" href="comingsoon.html"><h5 style="margin: 0;">Developers</h5></a>
-      <div class="navdropdown" style="display: block;">
-        <button class="navdropdownbutton">
-          <h5 style="margin: 0;">Products</h5>
-        </button>
-        <div class="dropdowncontent">
-          <a href="products.html">Ark</a>
-          <a href="products.html">Ares</a>
-        </div>
-      </div>
+      <a class="navdisplaybutton" id="cartbutton"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
     </div>
 
     <div class="content" id="maindiv" style="display: none;">
-      <section>
+      <section id="section">
         <!--Edit Starting Here-->
         <article style="padding: 0">
           <img src="https://media.discordapp.net/attachments/597414519203037187/942937815384199228/cANVA.png?width=1440&height=360" alt="BP Banner" width="100%">
@@ -104,12 +101,12 @@
                 
               </tr>
               <tr>
-                <td align="center">Telephone: 9247 2856</td>
+                <td align="center"><b>Telephone: 9247 2856</b></td>
                 
                 
               </tr>
               <tr>
-                <td align="center">Address: 180 Ang Mo Kio Ave 8, Singapore 569830</td>
+                <td align="center"><b>Address: 180 Ang Mo Kio Ave 8, Singapore 569830</b></td>
                 
               </tr>
 
@@ -126,22 +123,29 @@
               <table align="center" border="1" cellpadding="6" cellspacing="0">
                 <caption><b>Feedback Form</b></caption>
                 <tr>
-                  <td>Customer Name: <input type="text" placeholder="Name"></td>
-                  <td>Customer E-Mail: <input type="email" placeholder="E-Mail"></td>
+                  <td><b>Customer Name:</b> <input type="text" placeholder="Name" required></td>
+                  <td><b>Customer E-Mail:</b> <input type="email" placeholder="E-Mail" required></td>
                 </tr>
                 <tr>
-                  <td colspan="2">Products/Services Bought: <input type="text" placeholder="Please list products/services bought here"></td>
+                  <td colspan="2"><b>Products/Services Bought:</b> <input type="text" required placeholder="Please list products/services bought here"></td>
                 </tr>
                 <tr>
-                  <td colspan="2">Overall Rating Slider: <input type="range" min="1" style="width:300px;" max="10" class="slider" id="range"></td>
+                  <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="1" required style="width:300px;" max="10" class="slider" id="range"></td>
                 </tr>
                 <tr>
-                  <td valign="center">Comments:</td>
-                  <td><textarea rows="15" cols="50"></textarea></td>
+                  <td valign="center"><b>Comments:</b></td>
+                  <td><textarea rows="15" cols="50" required></textarea></td>
                 </tr>
                 <tr>
-                  <td align="center"><input type="submit" style="width:250px;" id="submit"></td>
-                  <td align="center"><input type="reset" style="width:250px;" id="reset"></td>
+                  <td align="center"><button type="submit" style="width:250px" onclick="myFunction()">Submit</button>
+
+                    <script>
+                    function myFunction() {
+                      alert("You have submitted your form.");
+                    }
+                    </script>
+                    </td>
+                  <td align="center"><button type="reset" style="width:250px;">Reset</button></td>
                 </tr>
 
 
@@ -156,7 +160,7 @@
         <!--Edit Ending Here-->
       </section>
       
-      <footer>
+      <footer id="footer">
         <div class="footerinfo">
           <div class="footerinfoinner">
             <img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px">

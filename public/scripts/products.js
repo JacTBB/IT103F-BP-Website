@@ -1,8 +1,9 @@
 //Initialise
+var allproductdata = null
 fetch('scripts/productdata.json')
 .then(response => response.json())
 .then(data => {
-    var allproductdata = data['data']
+    allproductdata = data['data']
     
     for (productdata of allproductdata) {
         const div = document.createElement('div')
@@ -45,7 +46,7 @@ fetch('scripts/productdata.json')
 //Functions
 function addtocartfunction(x) {
     if (!x.target) return
-    const productdata = data.find((y) => y['name'] == x.target.id)
+    const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
     var quantity = parseFloat(localStorage.getItem(productdata['name']))
     if (!quantity) quantity = 0
