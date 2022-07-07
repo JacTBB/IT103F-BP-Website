@@ -19,7 +19,7 @@ body {
   width: 100%;
   height: calc(100%-50px);
   left: 0;
-  top: 50px;
+  top: 60px;
   animation-name: fadeInAnim;
   animation-duration: 2s;
 }
