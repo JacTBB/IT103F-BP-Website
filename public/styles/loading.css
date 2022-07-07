@@ -10,7 +10,7 @@ body {
 
 #navbar {
   animation-name: fadeInAnim;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 
 #maindiv {
@@ -21,7 +21,7 @@ body {
   left: 0;
   top: 60px;
   animation-name: fadeInAnim;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 .content {
