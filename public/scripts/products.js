@@ -1,3 +1,4 @@
+//Configuration
 const data = [
     {
         'name': 'Product 1',
@@ -31,6 +32,7 @@ const data = [
     }
 ]
 
+//Initialise
 for (productdata of data) {
     const div = document.createElement('div')
     const img = document.createElement('img')
@@ -47,6 +49,9 @@ for (productdata of data) {
     price.innerHTML = `${productdata['price']}\n`
     button.classList = 'productbutton'
     button.innerHTML = 'Add To Cart'
+    button.id = productdata['name']
+    button.type = 'button'
+    button.addEventListener('click', addtocartfunction)
 
     div.appendChild(img)
     div.appendChild(productname)
@@ -58,3 +63,27 @@ for (productdata of data) {
 }
 
 document.getElementById('productcardplaceholder').remove()
+
+//Temp
+//localStorage.clear()
+
+//Functions
+function addtocartfunction(x) {
+    if (!x.target) return
+    const productdata = data.find((y) => y['name'] == x.target.id)
+
+    var quantity = parseFloat(localStorage.getItem(productdata['name']))
+    if (!quantity) quantity = 0
+    quantity += 1
+    localStorage.setItem(productdata['name'], quantity)
+
+    console.log(productdata['name'], "/", quantity)
+}
+
+//Print localStorage
+console.log('localStorage:')
+for (var i=0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    console.log(key, localStorage.getItem(key))
+}
+console.log('\n')
