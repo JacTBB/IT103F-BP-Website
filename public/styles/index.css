@@ -25,11 +25,6 @@ section::after {
   color: black;
 }
 
-.styleimg {
-  border: 2px solid rgb(60, 180, 250);
-  border-radius: 10px;
-}
-
 .reasonscontainer {
   display: flex;
   justify-content: center;
@@ -46,6 +41,7 @@ section::after {
   padding: 1px;
   margin: 10px;
   flex: 45%;
+  min-height: 250px;
   min-width: 200px;
   max-width: calc(45% - 20px);
   text-align: center;
@@ -54,6 +50,8 @@ section::after {
 .reasonsbox img {
   height: 100px;
   margin: 10px;
+  border: 2px solid rgb(60, 180, 250);
+  border-radius: 10px;
 }
 .reasonsbox h2 {
   margin: 10px;
