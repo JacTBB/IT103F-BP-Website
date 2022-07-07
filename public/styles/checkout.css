@@ -1,9 +1,19 @@
+@font-face {
+    font-family: CheckoutFont;
+    src: url(../fonts/Alata-Regular.ttf);
+}
+
 label {
     font-weight: bold;
 }
 
 th {
     text-decoration: underline;
+    font-family: CheckoutFont;
+}
+
+td {
+    font-family: CheckoutFont;
 }
 
 table.ShopCart {
@@ -58,16 +68,16 @@ table.checkout {
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
+}
   
-  .PurchaseButton span:after {
+.PurchaseButton span:after {
     content: " "url(../images/cart.png)" ";
     position: absolute;
     opacity: 0;
     top: 0;
     right: -10%;
     transition: 0.5s;
-  }
+}
 
 .PurchaseButton:hover {
     background-color: #009726;
@@ -82,7 +92,7 @@ table.checkout {
 .PurchaseButton:hover span:after {
     opacity: 1;
     right: 0;
-  }
+ }
 
 .PurchaseButton:active {
     transform: translateY(4px);
