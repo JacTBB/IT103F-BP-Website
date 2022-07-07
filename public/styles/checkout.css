@@ -17,6 +17,11 @@ table.ShopCart {
     .InputButton {
         width: 95%;
     }
+    
+    #required {
+        color: rgb(255, 43, 43);
+    }
+    
     table.checkout {
     border: 1px solid black;
     border-radius: 10px;

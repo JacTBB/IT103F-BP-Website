@@ -6,7 +6,14 @@
 .Bluefont {
   color:rgb(60, 180, 250);
 }
+.black {
+  color: black;
+}
 
+.banner {
+  width: 100%;
+  background-size:200%;
+}
 
 
 section {
@@ -40,4 +47,19 @@ section::after {
   content: "";
   display: table;
   clear: both;
+}
+
+
+.mainboxes
+{
+  text-align: center;
+  width: 90%;
+}
+
+.boxes {
+  display: inline-block;
+  width: 200px;
+  height: 350px; 
+  vertical-align: top;
+  position: relative;
 }
