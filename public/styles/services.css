@@ -15,8 +15,39 @@ section::after {
   clear: both;
 }
 
+.packages {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.package {
+  display: inline-flex;
+  width: 25%;
+  margin: 10px;
+  margin-top: 10px;
+  padding: 15px;
+  flex-wrap: wrap;
+  text-align: left;
+  min-height: 100px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.packagetitle {
+  width: 100%;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .package {
+    display: flex;
+    width: 100%;
+  }
+}
+
+/* Form */
 form {
-  max-width: 600px;
+  max-width: 700px;
   padding: 20px;
   margin: 20px;
   margin-left: auto;
