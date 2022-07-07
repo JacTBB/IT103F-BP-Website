@@ -1,15 +1,103 @@
 section {
-    background-color: rgb(240,240,240);
+  background-color: rgb(240,240,240);
+}
+
+article {
+  background-color: rgb(240,240,240);
+  padding: 10px 30px 10px 30px;
+  width: auto;
+  text-align: center;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+form {
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+form .title {
+  display: block;
+  width: 200px;
+  padding-bottom: 5px;
+  margin: 0;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: 3px;
+  border-color: rgb(120,150,200);
+}
+
+form .title h1 {
+  margin: 0;
+}
+
+form div {
+  display: inline-flex;
+  width: 49%;
+  margin: 0px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  form div {
+      display: flex;
   }
-  
-  article {
-    background-color: rgb(240,240,240);
-    padding: 30px;
-    width: auto;
-  }
-  
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+}
+
+form div span{
+  display: flex;
+  width: 100%;
+  margin-bottom: 3px;
+  flex-wrap: wrap;
+}
+
+p {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.textarea {
+  width: 100%;
+}
+
+.file {
+  width: 100%;
+}
+
+.submit {
+  width: 100%;
+}
+
+.submit span {
+  width: 60px;
+  display: flex;
+  margin-right: 10px;
+}
+
+.submit span input {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgb(180,220,255);
+  border-radius: 10px;
+  border-color: rgb(140,180,200);
+}
+
+input, select, textarea {
+  border-style: solid;
+  border-color: rgb(150,150,150);
+  border-width: 2px;
+}

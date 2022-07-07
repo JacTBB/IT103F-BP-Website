@@ -8,7 +8,7 @@
     <link href="styles/loading.css" rel="stylesheet" type="text/css">
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="styles/services.css" rel="stylesheet" type="text/css">
+    <link href="styles/checkout-success.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -82,76 +82,24 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <article style="padding: 0">
-          <img src="https://media.discordapp.net/attachments/597414519203037187/942937815384199228/cANVA.png?width=1440&height=360" alt="BP Banner" width="100%">
-        </article>
-        
-        <article>
-          <h1>Our Services</h1>
-          <p>
-            Our company offers 3D Computer-Aided-Design (CAD) models that are made to customers’ specifications and references.<br>
-            Custom models provided by our services will come in different packages.<br>
-            E.g. 1 model package, or a bundle of numerous models.<br>
-            These 3D models will mainly be catered to game development studios that need new and unique models for their games.<br>
-            For example, a car model or a building model that the game company can use in their game.
-          </p>
-        </article>
-        
-        <article id="formarticle">
-          <form name="services" action="services-success.html" method="GET">
-            <div class="title">
-                <h1>Request Our Services</h1>
-            </div>
-            
-            <div class="textbox">
-                <span><p>Name:</p></span><br>
-                <span><input type="text" name="name" required placeholder="E.g. John Nolan"></span><br>
-            </div>
+       <!-- V0.12 -->
+       <!-- Below code are for payment successful section. -->
+        <br>
+          <center>
+            <table class="paysuccess" cellpadding="10" cellspacing="0">
+              <tr>
+                <td>Your service request has been successful!</td>
+              </tr>
 
-            <div class="textbox">
-                <span><p>Company:</p></span><br>
-                <span><input type="text" name="company" placeholder="E.g. Blueprint Studios"></span><br>
-            </div>
-
-            <div class="textbox">
-                <span><p>Email:</p></span><br>
-                <span><input type="email" name="email" required placeholder="E.g. John@gmail.com"></span><br>
-            </div>
-
-            <div class="dropdown">
-                <span><p>Service Package:</p></span><br>
-                <span>
-                    <select name="package">
-                        <option>Basic</option>
-                        <option>Premium</option>
-                        <option>Enterprise</option>
-                    </select>
-                </span><br>
-            </div>
-
-            <div class="textarea">
-                <span><p>Specifications:</p></span><br>
-                <span><textarea name="specifications" rows="10" cols="60"></textarea></span><br>
-                <style>
-                    textarea {
-                        overflow-y: scroll;
-                        height: 60px;
-                        resize: none;
-                    }
-                </style>
-            </div>
-
-            <div class="file">
-              <span><p>Image References:</p></span><br>
-              <span><input type="file" name="references" multiple></span><br>
-          </div>
-
-            <div class="submit">
-                <span><input type="submit" name="submit"></span><br>
-                <span><input type="reset" name="reset"></span><br>
-            </div>
-          </form>
-        </article>
+              <tr>
+                <td>Thank you for choosing Blueprint Studios. </td>
+              </tr>
+            </table>
+            <br>
+            <a href="services.html" class="refproductbutton"> Return to Services</a>
+          </center>
+        <br>
+        <br>
         <!--Edit Ending Here-->
       </section>
       
