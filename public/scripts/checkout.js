@@ -43,11 +43,13 @@ function reloadcart() {
                 const quantity = document.createElement('p')
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
+                const deletebutton = document.createElement('button')
 
                 price.style.display = 'inline'
                 quantity.style.display = 'inline'
                 addbutton.style.display = 'inline'
                 removebutton.style.display = 'inline'
+                deletebutton.style.display = 'inline'
             
                 div.classList = 'productcard'
                 productname.innerHTML = `${productdata['name']} | `
@@ -63,13 +65,19 @@ function reloadcart() {
                 removebutton.innerHTML = 'Remove Item\n'
                 removebutton.id = productdata['name']
                 removebutton.type = 'button'
-                removebutton.addEventListener('click', removeitemtocartfunction)
+                removebutton.addEventListener('click', removeitemfromcartfunction)
+                deletebutton.classList = 'productbutton'
+                deletebutton.innerHTML = 'Delete Item\n'
+                deletebutton.id = productdata['name']
+                deletebutton.type = 'button'
+                deletebutton.addEventListener('click', deleteitemfromcartfunction)
             
                 div.appendChild(productname)
                 productname.appendChild(price)
                 price.appendChild(quantity)
                 price.appendChild(addbutton)
                 price.appendChild(removebutton)
+                price.appendChild(deletebutton)
             
                 products.appendChild(div)
             }
@@ -93,7 +101,7 @@ function additemtocartfunction(x) {
     reloadcart()
 }
 
-function removeitemtocartfunction(x) {
+function removeitemfromcartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
@@ -105,5 +113,15 @@ function removeitemtocartfunction(x) {
     }
 
     console.log(productdata['name'], "/", quantity)
+    reloadcart()
+}
+
+function deleteitemfromcartfunction(x) {
+    if (!x.target) return
+    const productdata = allproductdata.find((y) => y['name'] == x.target.id)
+
+    localStorage.removeItem(productdata['name'])
+
+    console.log(productdata['name'], "/", '0')
     reloadcart()
 }
