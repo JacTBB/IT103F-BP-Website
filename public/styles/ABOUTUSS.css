@@ -49,6 +49,7 @@
     border-radius: 10px;
   }
   .caption{
+    padding-top: 10px;
     text-align: center;
     transform: translateY(-80px);
     opacity: 0;
