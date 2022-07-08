@@ -9,6 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/contact-us.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -110,7 +111,7 @@
         </article>
         
         <article>
-          <form>
+          <form name="FeedbackForm" method="get" id="FeedbackForm">
             <table align="center" border="1" cellpadding="6" cellspacing="0">
               <caption><b>Feedback Form</b></caption>
 
@@ -120,7 +121,13 @@
               </tr>
 
               <tr>
-                <td colspan="2"><b>Products/Services Bought:</b> <input type="text" style="width:475px;text-align:center;" required placeholder="Please list products/services bought here"></td>
+                <td colspan="2">
+                  <b>Products/Services Bought:</b>
+                  <select name="products">
+                    <option>Product 1</option>
+                    <option>Product 2</option>
+                  </select>
+                </td>
               </tr>
 
               <tr>
