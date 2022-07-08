@@ -114,7 +114,6 @@
           <form name="FeedbackForm" method="get" id="FeedbackForm">
             <table align="center" border="1" cellpadding="6" cellspacing="0">
               <caption><b>Feedback Form</b></caption>
-
               <tr>
                 <td><b>Customer Name:</b> <input type="text" placeholder="Name" required></td>
                 <td><b>Customer E-Mail:</b> <input type="email" placeholder="E-Mail" required></td>
@@ -123,7 +122,7 @@
               <tr>
                 <td colspan="2">
                   <b>Products/Services Bought:</b>
-                  <select name="products">
+                  <select style="width:475px;border-radius: 25px;" name="products">
                     <option>Product 1</option>
                     <option>Product 2</option>
                   </select>
@@ -136,12 +135,12 @@
 
               <tr>
                 <td valign="center"><b>Comments:</b></td>
-                <td><textarea rows="15" cols="50" required></textarea></td>
+                <td><textarea rows="15" cols="50" placeholder="Please enter feedback here." required></textarea></td>
               </tr>
 
               <tr>
                 <td align="center">
-                  <button type="submit" style="width:250px" onclick="myFunction()">Submit</button>
+                  <button type="submit" style="width:250px;background-color: rgb(60, 180, 250);border-radius: 50px;height: 50px;" onclick="myFunction()"><b>Submit</b></button>
                   <script>
                   function myFunction() {
                     alert("You have submitted your form.");
@@ -149,7 +148,7 @@
                   </script>
                 </td>
                 <td align="center">
-                  <button type="reset" style="width:250px;">Reset</button>
+                  <button type="reset" style="width:250px;background-color: rgb(60, 180, 250);border-radius: 50px;height: 50px;"><b>Reset</b></button>
                 </td>
               </tr>
             </table>
