@@ -101,7 +101,7 @@ p {
 }
 
 .textbox {
-  width: 49.5%;
+  width: 100%;
 }
 
 #email {
@@ -118,6 +118,9 @@ p {
 
 .file {
   width: 100%;
+}
+#fileinput {
+  padding: 5px;
 }
 
 input, select, textarea, .packageradio {

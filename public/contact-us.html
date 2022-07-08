@@ -92,7 +92,13 @@
             <caption><b>Contact Us Details</b></caption>
 
             <tr>
-              <td align="center"><b>E-Mail: support@blueprint-studios.net</b></td>
+              <style>
+                #maillink {
+                  color: black;
+                  text-decoration: none;
+                }
+              </style>
+              <td align="center"><b><a id="maillink" href="mailto:support@blueprint-studios.net">E-Mail: support@blueprint-studios.net</a></b></td>
               <td rowspan="4" align="center"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.669492271967!2d103.8548992!3d1.376256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16eb64b0249d%3A0xe5f10ff680eed942!2sNanyang%20Polytechnic!5e0!3m2!1sen!2ssg!4v1657075050457!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
             </tr>
 
@@ -147,13 +153,14 @@
             <br>
             <div style="text-align: center;">
               <button class="button" type="submit"  onclick="myFunction()"><b>Submit</b></button>
-                  <script>
-                  function myFunction() {
-                    alert("You have submitted your form.");
-                  }
-                  </script>
-                  <button class="button" type="reset"><b>Reset</b></button>
-            <br><br>
+              <script>
+              function myFunction() {
+                alert("You have submitted your form.");
+              }
+              </script>
+              <button class="button" type="reset"><b>Reset</b></button>
+            <br>
+            <br>
             </div>
           </form>
           </div>
