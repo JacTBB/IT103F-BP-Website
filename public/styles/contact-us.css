@@ -1,8 +1,5 @@
-<!-- HTML !-->
-<button class="button-5" role="button">Button 5</button>
 
-/* CSS */
-.button-5 {
+.button {
   align-items: center;
   background-clip: padding-box;
   background-color: #fa6400;
@@ -31,17 +28,17 @@
   width: auto;
 }
 
-.button-5:hover,
+.button:hover,
 .button-5:focus {
   background-color: #fb8332;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.button-5:hover {
+.button:hover {
   transform: translateY(-1px);
 }
 
-.button-5:active {
+.button:active {
   background-color: #c85000;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
