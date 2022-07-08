@@ -111,49 +111,50 @@
         </article>
         
         <article>
+          <div style="background-color: lightblue;">
           <form name="FeedbackForm" method="get" id="FeedbackForm">
-            <table align="center" border="1" cellpadding="6" cellspacing="0">
-              <caption><b>Feedback Form</b></caption>
+            <table align="center" border="1" style="border-radius:25px;" cellpadding="6" cellspacing="14">
+              <caption><b><p>Feedback Form</p></b></caption>
+              
               <tr>
-                <td><b>Customer Name:</b> <input type="text" placeholder="Name" required></td>
-                <td><b>Customer E-Mail:</b> <input type="email" placeholder="E-Mail" required></td>
+                <td><b>Customer Name:</b> <input style="background-color: lightblue;" type="text" placeholder="Name" required></td>
+                <td><b>Customer E-Mail:</b> <input style="background-color: lightblue;" type="email" placeholder="E-Mail" required></td>
               </tr>
 
               <tr>
                 <td colspan="2">
                   <b>Products/Services Bought:</b>
-                  <select style="width:475px;border-radius: 25px;" name="products">
-                    <option>Product 1</option>
-                    <option>Product 2</option>
+                  <select style="width:450px;border-radius: 25px;background-color: lightblue;" name="products">
+                    <option style="background-color: lightblue;">Product 1</option>
+                    <option style="background-color: lightblue;">Product 2</option>
                   </select>
                 </td>
               </tr>
 
               <tr>
-                <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:525px;" max="10" class="slider" id="range"></td>
+                <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:475px;" max="10" class="slider" id="range"></td>
               </tr>
 
               <tr>
                 <td valign="center"><b>Comments:</b></td>
-                <td><textarea rows="15" cols="50" placeholder="Please enter feedback here." required></textarea></td>
+                <td><textarea rows="15" cols="40" placeholder="Please enter feedback here." required></textarea></td>
               </tr>
-
-              <tr>
-                <td align="center">
-                  <button type="submit" style="width:250px;background-color: rgb(60, 180, 250);border-radius: 50px;height: 50px;" onclick="myFunction()"><b>Submit</b></button>
+            </table>
+            <br>
+            <div style="text-align: center;">
+              <button class="button" type="submit"  onclick="myFunction()"><b>Submit</b></button>
                   <script>
                   function myFunction() {
                     alert("You have submitted your form.");
                   }
                   </script>
-                </td>
-                <td align="center">
-                  <button type="reset" style="width:250px;background-color: rgb(60, 180, 250);border-radius: 50px;height: 50px;"><b>Reset</b></button>
-                </td>
-              </tr>
-            </table>
+                  <button class="button" type="reset"><b>Reset</b></button>
+            </div>
           </form>
+          </div>
         </article>
+      </section>
+        
         <!--Edit Ending Here-->
       </section>
       
