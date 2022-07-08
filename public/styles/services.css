@@ -100,6 +100,14 @@ p {
   margin-right: 10px;
 }
 
+#email {
+  width: 100%;
+}
+
+.radio {
+  width: 100%;
+}
+
 .textarea {
   width: 100%;
 }
@@ -108,10 +116,28 @@ p {
   width: 100%;
 }
 
-input, select, textarea {
+input, select, textarea, .packageradio {
   border-style: solid;
   border-color: rgb(150,150,150);
   border-width: 2px;
+}
+
+.packageradio {
+  width: 28%;
+  min-width: 200px;
+  margin: 0px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: left;
+  border-radius: 15px;
+}
+.packageradio input {
+  width: 15px;
+  margin-right: 8px;
+}
+.packageradio label span {
+  border-bottom: solid black 1px;
 }
 
 .submit {
