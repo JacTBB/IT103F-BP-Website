@@ -89,36 +89,15 @@
         <article>
           <h1>Our Services</h1>
           <p>
-            Our company offers 3D Computer-Aided-Design (CAD) models that are made to customers’ specifications and references.<br>
-            Custom models provided by our services will come in different packages.<br>
-            E.g. 1 model package, or a bundle of numerous models.<br>
-            These 3D models will mainly be catered to game development studios that need new and unique models for their games.<br>
-            For example, a car model or a building model that the game company can use in their game.
+            Blueprint Studios offers services where you can get a 3D CAD Model of your specifications to be made.<br>
+            We can build models of all types, from realistic vehicles to detailed buildings.<br>
+            <br>
+            Upon submitting a request for our services, we will contact you via email for futher discussion.
+            After confirming the service request, we will send you an invoice and begin work on the models.
           </p>
 
           <br>
           <hr>
-
-          <div class="packages">
-            <div class="package">
-              <span class="packagetitle">Basic:</span>
-              1x 3D CAD Model<br>
-              1x Revisions<br>
-              Low Quality Model
-            </div>
-            <div class="package">
-              <span class="packagetitle">Premium:</span>
-              1x 3D CAD Model<br>
-              2x Revisions<br>
-              High Quality Model
-            </div>
-            <div class="package">
-              <span class="packagetitle">Enterprise:</span>
-              1-10 3D CAD Model<br>
-              3x Revisions<br>
-              High Quality Model
-            </div>
-          </div>
         </article>
         
         <article id="formarticle">
@@ -137,20 +116,44 @@
                 <span><input type="text" name="company" placeholder="E.g. Blueprint Studios"></span><br>
             </div>
 
-            <div class="textbox">
+            <div class="textbox" id="email">
                 <span><p>Email:</p></span><br>
                 <span><input type="email" name="email" required placeholder="E.g. John@gmail.com"></span><br>
             </div>
 
-            <div class="dropdown">
-                <span><p>Service Package:</p></span><br>
-                <span>
-                    <select name="package">
-                        <option>Basic</option>
-                        <option>Premium</option>
-                        <option>Enterprise</option>
-                    </select>
-                </span><br>
+            <div class="radio">
+              <span><p>Service Package:</p></span>
+              <span>
+                <div class="packageradio">
+                  <input type="radio" name="package" value="basic" id="basic" required>
+                  <label for="basic">
+                    <span>Basic:</span>
+                    1x 3D CAD Model<br>
+                    1x Revisions<br>
+                    Low Quality Model
+                  </label>
+                </div>
+                  
+                <div class="packageradio">
+                  <input type="radio" name="package" value="premium" id="premium" required>
+                  <label for="premium">
+                    <span>Premium:</span>
+                    1x 3D CAD Model<br>
+                    2x Revisions<br>
+                    High Quality Model
+                  </label>
+                </div>
+
+                <div class="packageradio">
+                  <input type="radio" name="package" value="enterprise" id="enterprise" required>
+                  <label for="enterprise">
+                    <span>Enterprise:</span>
+                    1-10 3D CAD Model<br>
+                    3x Revisions<br>
+                    High Quality Model
+                  </label>
+                </div>
+              </span><br>
             </div>
 
             <div class="textarea">
@@ -171,8 +174,8 @@
           </div>
 
             <div class="submit">
-                <span><input type="submit" name="submit"></span><br>
-                <span><input type="reset" name="reset"></span><br>
+                <span><button type="submit" name="submit"><p> Submit </p></button></span><br>
+                <span><button type="reset" name="reset"><p> Reset </p></button></span><br>
             </div>
           </form>
         </article>
