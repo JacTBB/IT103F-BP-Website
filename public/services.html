@@ -107,7 +107,7 @@
             </div>
             
             <div class="textbox">
-                <span><p>Name:</p></span><br>
+                <span><p>Name*:</p></span><br>
                 <span><input type="text" name="name" required placeholder="E.g. John Nolan"></span><br>
             </div>
 
@@ -117,12 +117,12 @@
             </div>
 
             <div class="textbox" id="email">
-                <span><p>Email:</p></span><br>
+                <span><p>Email*:</p></span><br>
                 <span><input type="email" name="email" required placeholder="E.g. John@gmail.com"></span><br>
             </div>
 
             <div class="radio">
-              <span><p>Service Package:</p></span>
+              <span><p>Service Package*:</p></span>
               <span>
                 <div class="packageradio">
                   <input type="radio" name="package" value="basic" id="basic" required>
@@ -157,8 +157,8 @@
             </div>
 
             <div class="textarea">
-                <span><p>Specifications:</p></span><br>
-                <span><textarea name="specifications" rows="10" cols="60"></textarea></span><br>
+                <span><p>Specifications*:</p></span><br>
+                <span><textarea required name="specifications" rows="10" cols="60" placeholder="Please be detailed with your specifications." style="font-family: Arial, Helvetica, sans-serif;"></textarea></span><br>
                 <style>
                     textarea {
                         overflow-y: scroll;
@@ -170,7 +170,7 @@
 
             <div class="file">
               <span><p>Image References:</p></span><br>
-              <span><input type="file" name="references" multiple></span><br>
+              <span><input type="file" id="fileinput" name="references" multiple></span><br>
           </div>
 
             <div class="submit">
