@@ -100,6 +100,10 @@ p {
   margin-right: 10px;
 }
 
+.textbox {
+  width: 49.5%;
+}
+
 #email {
   width: 100%;
 }
@@ -123,7 +127,7 @@ input, select, textarea, .packageradio {
 }
 
 .packageradio {
-  width: 28%;
+  width: 29%;
   min-width: 200px;
   margin: 0px;
   margin-bottom: 10px;
