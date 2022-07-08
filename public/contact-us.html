@@ -111,14 +111,14 @@
         </article>
         
         <article>
-          <div style="background-color: lightblue;">
+          <div style="background-color: lightblue;border-radius: 25px;">
           <form name="FeedbackForm" method="get" id="FeedbackForm">
             <table align="center" border="1" style="border-radius:25px;" cellpadding="6" cellspacing="14">
               <caption><b><p>Feedback Form</p></b></caption>
               
               <tr>
-                <td><b>Customer Name:</b> <input style="background-color: lightblue;" type="text" placeholder="Name" required></td>
-                <td><b>Customer E-Mail:</b> <input style="background-color: lightblue;" type="email" placeholder="E-Mail" required></td>
+                <td><b><label for="Customername">Customer Name:</label></b> <input id="Customername" style="background-color: lightblue;" type="text" placeholder="e.g. Jonathon" required></td>
+                <td><b><label for="Customeremail">Customer E-Mail:</label></b> <input id="Customeremail" style="background-color: lightblue;" type="email" placeholder="e.g. jon123@gmail.com" required></td>
               </tr>
 
               <tr>
@@ -136,8 +136,8 @@
               </tr>
 
               <tr>
-                <td valign="center"><b>Comments:</b></td>
-                <td><textarea rows="15" cols="40" placeholder="Please enter feedback here." required></textarea></td>
+                <td valign="center"><b><label for="CommentsArea">Comments:</label></b></td>
+                <td><textarea rows="15" id="CommentsArea" cols="40" style="background-color: lightblue;" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
               </tr>
             </table>
             <br>
@@ -149,6 +149,7 @@
                   }
                   </script>
                   <button class="button" type="reset"><b>Reset</b></button>
+            <br><br>
             </div>
           </form>
           </div>
