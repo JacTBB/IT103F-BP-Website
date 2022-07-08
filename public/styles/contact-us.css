@@ -1,63 +1,45 @@
 
-
-/* CSS */
 .button {
-  appearance: none;
-  backface-visibility: hidden;
+  align-items: center;
+  background-clip: padding-box;
   background-color:  rgb(60,180,250);
-  border-radius: 10px;
-  border-style: none;
-  box-shadow: none;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
-  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  height: 50px;
-  letter-spacing: normal;
-  line-height: 1.5;
-  outline: none;
-  overflow: hidden;
-  padding: 14px 30px;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
   position: relative;
-  text-align: center;
   text-decoration: none;
-  transform: translate3d(0, 0, 0);
-  transition: all .3s;
+  transition: all 250ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button:hover,
+.button-5:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .button:hover {
-  background-color: #1366d6;
-  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
-  opacity: 1;
-  transform: translateY(0);
-  transition-duration: .35s;
-}
-
-.button:hover:after {
-  opacity: .5;
+  transform: translateY(-1px);
 }
 
 .button:active {
-  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
-  transform: translateY(2px);
-  transition-duration: .35s;
-}
-
-.button:active:after {
-  opacity: 1;
-}
-
-@media (min-width: 768px) {
-  .button-65 {
-    padding: 14px 22px;
-    width: 176px;
-  }
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
 }
