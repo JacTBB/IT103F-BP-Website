@@ -79,69 +79,60 @@ section::after {
     flex-direction: column;
   }
 }
-  .reasonsbox {
-    flex: 100%;
-    max-width: 350px;
-  }
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-  }
+
+/* */
   
-    .famousproductscontainer {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    width: 40%;
-    }
-  
-    .popularbox {
-    display: block;
-    padding: 1px;
-    margin: 6px;
-    flex: 40%;
-    min-height: 125px;
-    min-width: 50px;
-    max-width: calc(50% - 20px);
-    text-align: center;
-    }
-  
-  .popularbox img {
-    height: 100px;
-    margin: 10px;
-    border: 2px solid rgb(60, 180, 250);
-    border-radius: 10px;
+.productscontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productsbox {
+  display: block;
+  padding: 1px;
+  margin: 6px;
+  flex: 40%;
+  min-height: 125px;
+  min-width: 160px;
+  max-width: calc(30% - 20px);
+  text-align: center;
+}
+
+.productsbox img {
+  width: 140px;
+  margin: 1px;
+  border: 2px solid rgb(60, 180, 250);
+  border-radius: 10px;
+}
+.productsbox h2 {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 20px;
+}
+.productsbox p {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 15px;
+}
+
+@media (max-width: 750px) {
+  .productscontainer {
+    width: 95%;
   }
-  .popularbox h2 {
-    margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    font-size: 20px;
+}
+
+@media (max-width: 400px) {
+  .productscontainer {
+    flex-direction: column;
   }
-  .popularbox p {
-    margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    font-size: 15px;
-  }
-  
-  @media (max-width: 750px) {
-    .famousproductscontainer {
-      width: 95%;
-    }
-  }
-  
-  @media (max-width: 300px) {
-    .famousproductscontainer {
-      flex-direction: row;
-    }
-  
-    .popularbox {
-      flex: 80%;
-      max-width: 200px;
-    }
-  } 
+}
