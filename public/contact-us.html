@@ -123,39 +123,10 @@
               <tr>
                 <td colspan="2">
                   <b>Products/Services Bought:</b>
-                  <div class="dropdown">
-                    <button onclick="MyFunction()" class="dropbtn">Products/Services</button>
-                    <div id="myDropdown" class="dropdown-content">
-                      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                      <a href="#about">Bugatti Chiron 2017 Sports Car</a>
-                      <a href="#base">Koenigsegg Agera</a>
-                      <a href="#blog">Audi R8 Spyder </a>
-                    </div>
-                  </div>
-                  
-                  <script>
-                  /* When the user clicks on the button,
-                  toggle between hiding and showing the dropdown content */
-                  function MyFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                  }
-                  
-                  function filterFunction() {
-                    var input, filter, ul, li, a, i;
-                    input = document.getElementById("myInput");
-                    filter = input.value.toUpperCase();
-                    div = document.getElementById("myDropdown");
-                    a = div.getElementsByTagName("a");
-                    for (i = 0; i < a.length; i++) {
-                      txtValue = a[i].textContent || a[i].innerText;
-                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        a[i].style.display = "";
-                      } else {
-                        a[i].style.display = "none";
-                      }
-                    }
-                  }
-                  </script>
+                  <select name="products">
+                    <option>Product 1</option>
+                    <option>Product 2</option>
+                  </select>
                 </td>
               </tr>
 
