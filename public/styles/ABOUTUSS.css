@@ -6,11 +6,11 @@
 
 .main{
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0c5db9;
+    background-color:lightblue;
   }
   .profile-card{
     position: relative;
@@ -68,12 +68,4 @@
     font-family: sans-serif;
     margin: 2px 0 9px 0;
   }
-  .caption .social-links a{
-    color: #333;
-    margin-right: 15px;
-    font-size: 21px;
-    transition: .6s;
-  }
-  .social-links a:hover{
-    color: #0c52a1;
-  }
+  
