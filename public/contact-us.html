@@ -107,7 +107,7 @@
             </tr>
 
             <tr>
-              <td align="center"><b>Telephone: 9247 2856</b></td> 
+              <td align="center"><b>Telephone: 99999999</b></td> 
             </tr>
 
             <tr>
@@ -138,16 +138,26 @@
               </tr>
 
               <tr>
-                <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:475px;" max="10" class="slider" id="range"></td>
+                <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:485px;" max="10" class="slider" id="range">
+                  <br>
+                  <p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p>
+                  <script>
+                  var slider = document.getElementById("range");
+                  var output = document.getElementById("demo");
+                  output.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output.innerHTML = this.value;
+                  }
+                  </script>
+                </td>
               </tr>
 
               <tr>
                 <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here:</label></b></td>
-                <td></td>
               </tr>
               <tr>
-                <td colspan="2"><textarea rows="15" id="CommentsArea" cols="40" style="background-color: lightblue;" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
-                <td></td>
+                <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" style="background-color: lightblue;" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
               </tr>
             </table>
             <br>
