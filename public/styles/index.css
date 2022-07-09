@@ -8,12 +8,6 @@ article {
   width: auto;
 }
 
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .banner {
   width: 100%;
 }

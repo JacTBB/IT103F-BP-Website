@@ -9,12 +9,6 @@ article {
   text-align: center;
 }
 
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .packages {
   flex-wrap: wrap;
   justify-content: space-between;

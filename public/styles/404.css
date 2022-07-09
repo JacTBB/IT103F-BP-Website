@@ -7,9 +7,3 @@ article {
   padding: 30px;
   width: auto;
 }
-
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}

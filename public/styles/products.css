@@ -1,11 +1,6 @@
 section {
   background-color: rgb(240,240,240);
 }
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 article {
   background-color: rgb(240,240,240);
