@@ -49,17 +49,27 @@ function addtocartfunction(x) {
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
     var quantity = parseFloat(localStorage.getItem(productdata['name']))
-    if (!quantity) quantity = 0
-    quantity += 1
+    var notifmessage = 'You have added an item to cart!'
+    if (!quantity) {
+        quantity = 1
+    }
+    else {
+        if (productdata['multi'] == true) {
+            quantity += 1
+        }
+        else {
+            notifmessage = 'You can only add 1 of this item!'
+        }
+    }
     localStorage.setItem(productdata['name'], quantity)
 
-    console.log(productdata['name'], "/", quantity)
+    console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
 
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
     notification.classList.add('notification')
     const p = document.createElement('p')
-    p.innerHTML = 'You have added an item to cart!'
+    p.innerHTML = notifmessage
     notification.appendChild(p)
     notificationbar.appendChild(notification)
 
