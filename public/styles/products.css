@@ -16,7 +16,9 @@ article {
 }
 
 .productcard {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
   margin: 10px;
   flex: 32%;
   max-width: min(calc(32% - 20px), 300px);
@@ -25,22 +27,26 @@ article {
 }
 
 .productcard img {
+  display: block;
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
 
 .productcard h4 {
+  width: 100%;
   margin: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .productcard p {
+  width: 100%;
   margin: 10px;
-  margin-bottom: 10px;
 }
 
 .productcard .price {
+  width: 100%;
+  align-self: flex-end;
   text-align: right;
   font-weight: bold;
 }
