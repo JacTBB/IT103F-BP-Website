@@ -89,8 +89,7 @@
         
         <article>
           <table border="1" width="100%" cellpadding="6" cellspacing="0">
-            <caption><b>Contact Us Details</b></caption>
-
+            <caption><p><b><h2>Contact Us Details</h2></p></b></caption>
             <tr>
               <style>
                 #maillink {
@@ -117,23 +116,31 @@
         </article>
         
         <article>
-          <div style="background-color: lightblue;border-radius: 25px;">
+          <div style="background-color: #87CEEB;border-radius: 25px;">
           <form name="FeedbackForm" method="get" id="FeedbackForm">
             <table align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
-              <caption><b><p>Feedback Form</p></b></caption>
+              <caption><b><p><h2>Feedback Form</h2></p></b></caption>
               
               <tr>
-                <td><b><label for="Customername">Customer Name:</label></b> <input id="Customername" style="background-color: lightblue;" type="text" placeholder="e.g. Jonathon" required></td>
-                <td><b><label for="Customeremail">Customer E-Mail:</label></b> <input id="Customeremail" style="background-color: lightblue;" type="email" placeholder="e.g. jon123@gmail.com" required></td>
+                <td><b><label for="Customername">Customer Name:</label></b></td>
+                <td><b><label for="Customeremail">Customer E-Mail:</label></b></td>
+              </tr>
+              <tr>
+                <td><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
+                <td><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
               </tr>
 
               <tr>
                 <td colspan="2">
                   <b>Products/Services Bought:</b>
-                  <select style="width:450px;border-radius: 25px;background-color: lightblue;" name="products">
-                    <option style="background-color: lightblue;">Product 1</option>
-                    <option style="background-color: lightblue;">Product 2</option>
-                  </select>
+                  <input type="text" name="products" list="products" autocomplete="off" />
+                  <datalist id="products">
+                    <option>Product 1</option>
+                    <option>Product 2</option>
+                    <option>Product 3</option>
+                    <option>Product 4</option>
+                    <option>Product 5</option>
+                  </datalist>
                 </td>
               </tr>
 
@@ -157,7 +164,7 @@
                 <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here:</label></b></td>
               </tr>
               <tr>
-                <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" style="background-color: lightblue;" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
+                <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
               </tr>
             </table>
             <br>

@@ -58,3 +58,16 @@
 .slider:hover {
   opacity: 1;
 }
+.input 
+{
+  padding:7px 1px;
+  font-size: 1rem;
+  border-width:calc(var(--border-width) * 1px);
+  border-style:solid;
+  border-color:var(--accent);
+  border-radius:calc(var(--border-radius) * 1px);
+  text-align:center;
+  outline: transparent;
+  width: 100%;
+  transition: border-color calc(var(--transition, 0.2) * 1s) ease;
+}
