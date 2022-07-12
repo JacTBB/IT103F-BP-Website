@@ -82,7 +82,7 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <!-- V0.4* -->
+        <!-- V0.41* -->
         <!-- Below code are for Cart & Checkout Section -->
         <br>
       <div class="overall-container">
@@ -108,7 +108,7 @@
 
               <div class="formcontrols">
                 
-                <div name="customer-contact-info-container" id="spacing-top">
+                <div name="customer-contact-info-container">
                   
                   <div name="contact-labels" class="split">
                     <label for="CardName"> Name <span id="required"> * </span> </label>
@@ -125,50 +125,48 @@
                 <div class="sub-form-heading">
                   <p> Pay with credit/debit card </p>
                 </div>
-                <div name="debit-card-container" id="spacing-top">
 
-                    <div class="card-numberbox">
-                      <label for="CardNo."> Card number <span id="required"> * </span> </label> 
+                <div class="card-numberbox">
+                  <label for="CardNo."> Card number <span id="required"> * </span> </label> 
 
-                      <div class="cc-numtext-input"> 
-                      <!-- Binds together with flex -->
-                          <input type="password" name="creditnumber" class="button-input2" id="CardNo." placeholder="1234-1234-1234-1234" required="required" minlength="19" maxlength="19">
+                  <div class="cc-numtext-input"> 
+                  <!-- Binds together with flex -->
+                      <input type="password" name="creditnumber" class="button-input2" id="CardNo." placeholder="1234-1234-1234-1234" required="required" minlength="19" maxlength="19">
                           
-                          <div class="card-icon-container"> 
-                            <img class="cardicon" src="images/icons/visa-icon.png">
-                            <img class="cardicon" src="images/icons/mastercard-icon.png">
-                            <img class="cardicon" src="images/icons/american-express-icon.png">
-                          </div>
+                      <div class="card-icon-container"> 
+                        <img class="cardicon" src="images/icons/visa-icon.png">
+                         <img class="cardicon" src="images/icons/mastercard-icon.png">
+                           <img class="cardicon" src="images/icons/american-express-icon.png">
                       </div>
-                    </div>
-
-                    <div name="card-date-&-cvc-details" id="spacing-top">
-
-                      <div name="date-cvc-labels" class="split">
-                        <label for="CardEXP"> Expiry Date <span id="required"> * </span> </label> 
-                          <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
-                      </div>
-                      
-                      <div name="date-&-cvc-inputs" class="split">
-                        <input type="text" name="expiry_date" class="button-input"  id="CardEXP" placeholder="MM/YY" required="required" minlength="5" maxlength="5">  
-                        
-                        <div class="card-icon-container2">
-                          <input type="password" name="CVC" class="button-input" id="CardSecCode" placeholder="123" required="required" minlength="3" maxlength="3"> 
-                            <img class="cardicon2" src="images/icons/back-cvc.png" style="margin-left: -40px;">
-                        </div>
-                      
-                      </div>
-
-                    </div>
-                  
+                  </div>
                 </div>
-              </div>
+
+                <div name="card-date-&-cvc-details">
+
+                   <div name="date-cvc-labels" class="split">
+                    <label for="CardEXP"> Expiry Date <span id="required"> * </span> </label> 
+                      <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
+                  </div>
+                      
+                  <div name="date-&-cvc-inputs" class="split">
+                    <input type="text" name="expiry_date" class="button-input"  id="CardEXP" placeholder="MM/YY" required="required" minlength="5" maxlength="5">  
+                        
+                    <div class="card-icon-container2">
+                      <input type="password" name="CVC" class="button-input" id="CardSecCode" placeholder="123" required="required" minlength="3" maxlength="3"> 
+                        <img class="cardicon2" src="images/icons/back-cvc.png" style="margin-left: -40px;">
+                    </div>
+                      
+                  </div>
+
+                </div>
+                  
+          </div>
               
-              <div class="form-buttons">
-                <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button>
-                  <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
-              </div>
-            </div>
+          <div name="form-buttons">
+            <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button>
+              <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
+          </div>
+        </div>
 
           <!-- Old Code Reference -->
             <!-- <label for="CardName"> Name <span id="required"> * </span> </label> </td> </tr>

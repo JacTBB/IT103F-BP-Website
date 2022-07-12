@@ -14,10 +14,6 @@ p, label {
     color: rgb(255, 43, 43);
 }
 
-#spacing-top {
-	margin-top: 30px;
-}
-
 input {
 	border: hsla(0,0%,71%,.05);
 }
@@ -35,7 +31,7 @@ input::placeholder {
 
 div.split {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 48% 48%;
 	column-gap: 10px;
 }
 
@@ -59,11 +55,11 @@ table.ShopCart {
 /* Checkout Form */
 div.checkout {
     display: grid;
-    grid-template-rows: 30% 30% 30%;
+    grid-template-rows: 30px 250px 50px;
     border: 2px solid rgb(0, 119, 255);
     border-radius: 20px;
     padding: 20px 20px 20px 20px;
-		transition: all 0.5s; 
+    transition: all 0.5s; 
 }
 
 div.checkout:hover {
@@ -72,8 +68,8 @@ div.checkout:hover {
 
 div.formcontrols {
         display: grid;
-        grid-template-rows: 30% 10% 20% 30%;
-        margin-top: 30px;
+        grid-template-rows: 70px 50px 70px 60px;
+        align-items: center;
 }
 
 .button-input {
@@ -82,18 +78,17 @@ div.formcontrols {
 }
 
 	div.sub-form-heading {
-			padding-top: 12px;
 			font-size: 18px;
 	}
 
 	div.card-numberbox {
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 1fr 1fr;
 	}        		    
 			
 		div.cc-numtext-input {
 			display: flex;
-			flex: 1;
+            flex: 1;
 			flex-direction: row;
 			align-items: center;
 		}
@@ -128,10 +123,6 @@ div.formcontrols {
 			width: 30px;
 			height: 22px;
 		}
-
-	div.form-buttons {
-		margin-top: 20px;
-	}
 
 
 
