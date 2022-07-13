@@ -17,24 +17,18 @@ footer {
   padding: 10px;
 }
 
-.footerinfoinner {
-  margin: auto;
-  padding: 1px;
-  height: fit-content;
-  max-width: 320px;
+.footerinfo img {
+  width: 36px;
+  height: 36px;
+  float: left;
+  padding: 12px;
+  padding-right: 5px;
 }
 
 .footerquicklinks {
   flex: 30%;
   float: left;
   padding: 10px;
-}
-
-.footerquicklinksinner {
-  margin: auto;
-  padding: 1px;
-  height: fit-content;
-  max-width: 180px;
 }
 
 .footertext {

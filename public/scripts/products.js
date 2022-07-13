@@ -14,6 +14,7 @@ fetch('scripts/productdata.json')
         const button = document.createElement('button')
     
         div.classList = 'productcard'
+        div.id = productdata['name']
         productname.innerHTML = productdata['name']
         img.src = productdata['image']
         desc.innerHTML = productdata['desc']
