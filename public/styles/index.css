@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  #video {
+    height: 250px;
+  }
+}
+
 section {
   background-color: rgb(240,240,240);
 }
@@ -8,138 +14,25 @@ article {
   width: auto;
 }
 
-section::after {
+.column {
+  float: left;
+  width: 30%;
+  margin: 1.65%;
+}
+
+.twocolumn {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.banner {
-  width: 100%;
+section::after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
-#headerbluecolor {
-  color:rgb(60, 180, 250);
-}
-#headerblackcolor {
-  color: black;
-}
-
-.reasonscontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reasonsbox {
-  display: block;
-  padding: 1px;
-  margin: 6px;
-  flex: 40%;
-  min-height: 125px;
-  min-width: 50px;
-  max-width: calc(50% - 20px);
-  text-align: center;
-}
-
-.reasonsbox img {
-  height: 100px;
-  margin: 10px;
-  border: 2px solid rgb(60, 180, 250);
-  border-radius: 10px;
-}
-.reasonsbox h2 {
-  margin: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 20px;
-}
-.reasonsbox p {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 15px;
-}
-
-@media (max-width: 750px) {
-  .reasonscontainer {
-    width: 95%;
-  }
-}
-
-@media (max-width: 550px) {
-  .reasonscontainer {
-    flex-direction: column;
-  }
-
-  .reasonsbox {
-    flex: 100%;
-    max-width: 350px;
-  }
-
-  .famousproductscontainer{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.popularbox{
- display: block;
-  padding: 1px;
-  margin: 8px;
-  flex: 40%;
-  min-height: 100px;
-  min-width: 50px;
-  max-width: calc(25% - 20px);
-  text-align: center;
-}
-
-.popularbox img {
-  height: 50px;
-  margin: 10px;
-  border: 2px solid rgb(60, 180, 250);
-  border-radius: 10px;
-}
-.popularbox h2 {
-  margin: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 20px;
-}
-.popularbox p {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 15px;
-}
-@media (max-width: 750px) {
-  .famousproductscontainer {
-    width: 95%;
-  }
-}
-
-@media (max-width: 550px) {
-  .famousproductscontainer {
-    flex-direction: column;
-  }
-  .popularbox {
-    flex: 100%;
-    max-width: 350px;
-  }
-    }
-
-
-}   

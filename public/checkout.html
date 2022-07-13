@@ -82,44 +82,112 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <!-- V0.36 -->
-        <!-- Below Code are for Cart & Checkout Section -->
+        <!-- V0.41* -->
+        <!-- Below code are for Cart & Checkout Section -->
         <br>
-        <center>
+      <div class="overall-container">
         <form name="PayReciept" action="checkout-success.html" method="get">
           <!-- Shopping Cart Section -->
           <script src="scripts/checkout.js"></script>
           <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
             <!-- From Javascript -->
           </table>
+          <div id="notificationbar">
+            <div class="notification">
+              <!-- Placeholder For Dev -->
+              <p>You have added an item to cart!</p>
+              <!-- End -->
+            </div>
+          </div>
 
           <br>
   
           <!-- Checkout Section-->
-          <table class="checkout" cellpadding="10" cellspacing="0">
-            <tr> <th colspan="4"> Checkout </th> </tr>
-            
-            <div class="FormControls">
-              <tr> <td> <label for="CardName"> Name <span id="required"> * </span> </label> </td> </tr>
-              <tr> <td> <input type="text" name="customername" class="InputButton" id="CardName" placeholder="Eg. John Smith " required="required"> </td> </tr>
+            <div class="checkout">
+              <p style="text-align: center;"> Checkout </p>
+
+              <div class="formcontrols">
+                
+                <div name="customer-contact-info-container">
+                  
+                  <div name="contact-labels" class="split">
+                    <label for="CardName"> Name <span id="required"> * </span> </label>
+                      <label for="PayEmail"> Email <span id="required"> * </span> </label>
+                  </div> 
+
+                  <div name="contacts-input" class="split">
+                    <input type="text" name="customername" class="button-input" id="CardName" placeholder="Eg. John Smith " required="required">
+                      <input type="email" name="customeremail" class="button-input" id="PayEmail" placeholder="Eg. JohnSmith1211@gmail.com" required="required"> 
+                  </div>
+
+                </div>
+
+                <div class="sub-form-heading">
+                  <p> Pay with credit/debit card </p>
+                </div>
+
+                <div class="card-numberbox">
+                  <label for="CardNo."> Card number <span id="required"> * </span> </label> 
+
+                  <div class="cc-numtext-input"> 
+                  <!-- Binds together with flex -->
+                      <input type="password" name="creditnumber" class="button-input2" id="CardNo." placeholder="1234-1234-1234-1234" required="required" minlength="19" maxlength="19">
+                          
+                      <div class="card-icon-container"> 
+                        <img class="cardicon" src="images/icons/visa-icon.png">
+                         <img class="cardicon" src="images/icons/mastercard-icon.png">
+                           <img class="cardicon" src="images/icons/american-express-icon.png">
+                      </div>
+                  </div>
+                </div>
+
+                <div name="card-date-&-cvc-details">
+
+                   <div name="date-cvc-labels" class="split">
+                    <label for="CardEXP"> Expiry Date <span id="required"> * </span> </label> 
+                      <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
+                  </div>
+                      
+                  <div name="date-&-cvc-inputs" class="split">
+                    <input type="text" name="expiry_date" class="button-input"  id="CardEXP" placeholder="MM/YY" required="required" minlength="5" maxlength="5">  
+                        
+                    <div class="card-icon-container2">
+                      <input type="password" name="CVC" class="button-input" id="CardSecCode" placeholder="123" required="required" minlength="3" maxlength="3"> 
+                        <img class="cardicon2" src="images/icons/back-cvc.png" style="margin-left: -40px;">
+                    </div>
+                      
+                  </div>
+
+                </div>
+                  
+          </div>
               
-              <tr> <td> <label for="PayEmail"> Email <span id="required"> * </span> </label> </td> </tr>
-              <tr> <td> <input type="email" name="EmailCustomer" class="InputButton" id="PayEmail" placeholder="Eg. JohnSmith1211@gmail.com" required="required"> </td> </tr>
+          <div name="form-buttons">
+            <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button>
+              <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
+          </div>
+        </div>
 
-              <tr> <td> <label for="CardNo."> Credit Card No. <span id="required"> * </span> </label> </td> </tr>
-              <tr> <td> <input type="password" name="creditnumber" class="InputButton" id="CardNo." placeholder="5234-0193-4029-1920" required="required" maxlength="19"> </td> </tr>
+          <!-- Old Code Reference -->
+            <!-- <label for="CardName"> Name <span id="required"> * </span> </label> </td> </tr>
+                  <input type="text" name="customername" class="InputButton" id="CardName" placeholder="Eg. John Smith " required="required"> </td> </tr>
+                
+                  <label for="PayEmail"> Email <span id="required"> * </span> </label> </td> </tr>
+                    <input type="email" name="EmailCustomer" class="InputButton" id="PayEmail" placeholder="Eg. JohnSmith1211@gmail.com" required="required"> </td>
+                
+                  <label for="CardNo."> Credit Card No. <span id="required"> * </span> </label> </td> </tr>
+                    <input type="password" name="creditnumber" class="InputButton" id="CardNo." placeholder="5234-0193-4029-1920" required="required" maxlength="19
+                
+                  <label for="CardEXP"> Card Expiry Date <span id="required"> * </span> </label> </td> </tr>
+                    <input type="text" name="creditexpiry_date" class="InputButton" id="CardEXP" placeholder="12/22" required="required" maxlength="5">  </td> </tr
+                
+                  <label for="CardSecCode"> Card Code (CVC) <span id="required"> * </span> </label> </td> </tr>
+                    <input type="password" name="CVV" class="InputButton" id="CardSecCode" placeholder="123" required="required" maxlength="3"> </td> </tr>
 
-              <tr> <td> <label for="CardEXP"> Card Expiry Date <span id="required"> * </span> </label> </td> </tr>
-              <tr> <td> <input type="text" name="creditexpiry_date" class="InputButton" id="CardEXP" placeholder="12/22" required="required" maxlength="5">  </td> </tr>
-              
-              <tr> <td> <label for="CardSecCode"> Card Code (CVC) <span id="required"> * </span> </label> </td> </tr>
-              <tr> <td> <input type="password" name="CVV" class="InputButton" id="CardSecCode" placeholder="123" required="required" maxlength="3"> </td> </tr>
-            </div>
-
-            <tr> <td> <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button> </td> </tr>
-          </table>
+              <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button> </td> </tr>
+            -->
         </form>
-        </center>
+      </div>
         <br>
         <!--Edit Ending Here-->
       </section>
