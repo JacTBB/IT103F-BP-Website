@@ -37,17 +37,17 @@ article {
   width: 180px;
   min-width: 180px;
   max-width: 180px;
-  height: 180px;
+  height: 200px;
   background: #fff;
   padding: 30px;
   border-radius: 50%;
   box-shadow: 0 0 22px #3336;
   transition: .6s;
-  margin: 50px 20px 20px 20px;
+  margin: 50px 20px 30px 20px;
 }
 .profile-card:hover {
   border-radius: 10px;
-  height: 260px;
+  height: 280px;
 }
 .profile-card .img {
   position: relative;
@@ -82,10 +82,19 @@ article {
 .caption h3 {
   font-size: 21px;
   font-family: sans-serif;
+  margin: 20px 0 8px 0;
 }
 .caption p {
   font-size: 15px;
   color: #0c52a1;
   font-family: sans-serif;
-  margin: 2px 0 9px 0;
+  margin: 1px 0 1px 0;
+}
+.caption a {
+  padding: 1px;
+}
+.caption a img {
+  margin-top: 10px;
+  width: 35px;
+  height: 35px;
 }
