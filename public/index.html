@@ -23,30 +23,27 @@
       function LoadContent() {
         document.getElementById('navbar').style.display = "block"
         document.getElementById('maindiv').style.display = "block"
-
-        const section = document.getElementById('section')
-        const footer = document.getElementById('footer')
-        var footerheight = 190
-        if (window.innerWidth < 850) footerheight = 350
-        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
-        if (calculated > 0) {
-          footer.style.marginTop = `${calculated}px`
-        }
       }
     </script>
   </head>
 
-  <body onload="LoadContent()">
+  <body body onload="LoadContent()">
     <nav id="navbar" style="display: none;">
       <center>
         <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
         <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
         
-        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
-        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
-        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
-        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
-        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+        <a class="navbutton" style="margin-right: 30px" href="comingsoon.html"><h5 style="margin: 0;">Support</h5></a>
+        <a class="navbutton" href="comingsoon.html"><h5 style="margin: 0;">Developers</h5></a>
+        <div class="navdropdown">
+          <button class="navdropdownbutton">
+            <h5 style="margin: 0;">Products</h5>
+          </button>
+          <div class="dropdowncontent">
+            <a href="products.html">Ark</a>
+            <a href="products.html">Ares</a>
+          </div>
+        </div>
 
         <div class="navtoggle" onclick="menu(this)">
           <div id="navbar1"></div>
@@ -72,115 +69,29 @@
       </center>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="checkout.html" id="cartbutton"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
-      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
-      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
-      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
-      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navdisplaybutton" style="margin-right: 30px" href="comingsoon.html"><h5 style="margin: 0;">Support</h5></a>
+      <a class="navdisplaybutton" href="comingsoon.html"><h5 style="margin: 0;">Developers</h5></a>
+      <div class="navdropdown" style="display: block;">
+        <button class="navdropdownbutton">
+          <h5 style="margin: 0;">Products</h5>
+        </button>
+        <div class="dropdowncontent">
+          <a href="products.html">Ark</a>
+          <a href="products.html">Ares</a>
+        </div>
+      </div>
     </div>
 
     <div class="content" id="maindiv" style="display: none;">
-      <section id="section">
+      <section>
         <!--Edit Starting Here-->
         <article>
-          <video style="aspect-ratio:900/506; width:100%; max-height:80vh;" autoplay muted disablePictureInPicture>
-            <source src="videos/BLUEPRINT STUDIOS INTRO.mp4" type="video/mp4">
-          </video>
+          <p>Article 1</p>
         </article>
         
-        <article>       
-          <div style="text-align: center;">
-            <h1 style="font-size: 30px;">                     
-              <span id="headerblackcolor">
-                Why should you choose
-              </span>
-              <span id="headerbluecolor">
-                Blueprint Studios?
-              </span>
-            </h1>
-          </div>
-
-          <div class="reasonscontainer">
-            <div class="reasonsbox">
-              <img src="images/MoneyHand.png">
-              <h2>Fair Pricing</h2>
-              <p>
-                We offer one of the lowest prices in<br>
-                the market for the products we make for you.
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/AroundClock.png">
-              <h2>Around the clock support</h2>
-              <p>
-                Problems with our products?<br>
-                Just reach out to us and we'll get<br>
-                in touch to work something out.
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/PeopleWave.jpg">
-              <h2>Made for everyone</h2>
-              <p>
-                Whether your company is big<br>
-                or small, our products will suit your every wants and needs. 
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/easy-icon-png-4.jpg">
-              <h2>Ease of use</h2>
-              <p>
-                Our products take minimal steps to<br>
-                implement in your projects. 
-              </p>
-            </div>
-          </div>
+        <article>
+          <p>Article 2</p>
         </article>
-
-        <hr>
-        <br>
-        <br>
-        <center>
-          <div class="productscontainer">
-            <div class="productsbox">
-              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
-              <p>
-                <a href="products.html">Click here to view</a>
-              </p>  
-            </div>
-          
-            <div class="productsbox">
-              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
-              <p>
-                <a href="products.html">Click here to view</a>
-              </p>  
-            </div>
-       
-            <div class="productsbox">
-              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
-              <p>
-                <a href="products.html">Click here to view</a>
-              </p>  
-            </div>
-
-            <div class="productsbox">
-              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
-              <p>
-                <a href="products.html">Click here to view</a>
-              </p>  
-            </div>
-
-            <div class="productsbox">
-              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
-              <p>
-                <a href="products.html">Click here to view</a>
-              </p>  
-            </div>
-          </div>
-        </center>
         
         <article>
           <p>Article 3</p>
@@ -188,7 +99,7 @@
         <!--Edit Ending Here-->
       </section>
       
-      <footer id="footer">
+      <footer>
         <div class="footerinfo">
           <div class="footerinfoinner">
             <img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px">
