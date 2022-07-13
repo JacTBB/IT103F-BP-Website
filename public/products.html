@@ -112,6 +112,14 @@
 
         <!-- JS -->
         <script src="scripts/products.js"></script>
+        <script>
+          setTimeout(() => {
+            var id = window.location.hash.substring(1)
+            id = decodeURI(id)
+            const element = document.getElementById(id)
+            element.scrollIntoView()
+          }, 50)
+        </script>
         <!--Edit Ending Here-->
       </section>
       
