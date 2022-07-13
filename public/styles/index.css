@@ -8,125 +8,35 @@ article {
   width: auto;
 }
 
-.banner {
-  width: 100%;
-}
-
-#headerbluecolor {
-  color:rgb(60, 180, 250);
-}
-#headerblackcolor {
-  color: black;
-}
-
-.reasonscontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reasonsbox {
-  display: block;
-  padding: 1px;
-  margin: 6px;
-  flex: 40%;
-  min-height: 125px;
-  min-width: 50px;
-  max-width: calc(50% - 20px);
-  text-align: center;
-}
-
-.reasonsbox img {
-  height: 100px;
-  margin: 10px;
-  border: 2px solid rgb(60, 180, 250);
-  border-radius: 10px;
-}
-.reasonsbox h2 {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 20px;
-}
-.reasonsbox p {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 15px;
-}
-
-@media (max-width: 750px) {
-  .reasonscontainer {
-    width: 95%;
+.column {
+  float: left;
+  width: 30%;
+  margin: 1.65%;
   }
-}
 
-@media (max-width: 550px) {
-  .reasonscontainer {
-    flex-direction: column;
-  }
-}
-
-/* */
-  
-.productscontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
+.twocolumn {
+  float: left;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.productsbox {
-  display: block;
-  padding: 1px;
-  margin: 6px;
-  flex: 40%;
-  min-height: 125px;
-  min-width: 160px;
-  max-width: calc(30% - 20px);
-  text-align: center;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.productsbox img {
-  width: 140px;
-  margin: 1px;
-  border: 2px solid rgb(60, 180, 250);
-  border-radius: 10px;
-}
-.productsbox h2 {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 20px;
-}
-.productsbox p {
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-  font-size: 15px;
-}
-
-@media (max-width: 750px) {
-  .productscontainer {
-    width: 95%;
+section::after {
+  content: "";
+  display: table;
+  clear: both;
   }
-}
-
-@media (max-width: 400px) {
-  .productscontainer {
-    flex-direction: column;
+  .popularbox {
+    flex: 100%;
+    max-width: 350px;
   }
-}
+    
+
+
+   

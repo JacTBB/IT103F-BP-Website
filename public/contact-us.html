@@ -8,7 +8,6 @@
     <link href="styles/loading.css" rel="stylesheet" type="text/css">
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="styles/index.css" rel="stylesheet" type="text/css">
     <link href="styles/contact-us.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
@@ -117,65 +116,65 @@
         
         <article>
           <div width="100%" style="background-color: #87CEEB;border-radius: 25px;">
-          <form name="FeedbackForm" method="get" id="FeedbackForm">
-            <table align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
-              <caption><b><p><h2>Feedback Form</h2></p></b></caption>
-              
-              <tr>
-                <td><b><label for="Customername">Customer Name:</label></b></td>
-                <td><b><label for="Customeremail">Customer E-Mail:</label></b></td>
-              </tr>
-              <tr>
-                <td><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
-                <td><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
-              </tr>
+            <form name="FeedbackForm" method="get" id="FeedbackForm">
+              <table id="formtable" align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
+                <caption><b><p><h2>Feedback Form</h2></p></b></caption>
+                
+                <tr>
+                  <td><b><label for="Customername">Customer Name:</label></b></td>
+                  <td><b><label for="Customeremail">Customer E-Mail:</label></b></td>
+                </tr>
+                <tr>
+                  <td><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
+                  <td><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
+                </tr>
 
-              <tr>
-                <td colspan="2">
-                  <b>Products/Services Bought:</b>
-                  <input type="text" name="products" list="products" autocomplete="off" />
-                  <datalist id="products">
-                    <!-- Added with contact-us.js -->
-                  </datalist>
-                </td>
-              </tr>
+                <tr>
+                  <td colspan="2">
+                    <b>Products/Services Bought:</b>
+                    <input type="text" name="products" list="products" autocomplete="off">
+                    <datalist id="products">
+                      <!-- Added with contact-us.js -->
+                    </datalist>
+                  </td>
+                </tr>
 
-              <tr>
-                <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:500px;" max="10" class="slider" id="range">
-                  <br>
-                  <p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p>
-                  <script>
-                  var slider = document.getElementById("range");
-                  var output = document.getElementById("demo");
-                  output.innerHTML = slider.value;
-                  
-                  slider.oninput = function() {
-                    output.innerHTML = this.value;
-                  }
-                  </script>
-                </td>
-              </tr>
+                <tr>
+                  <td colspan="2"><b>Overall Rating Slider:</b> <input type="range" min="0" required style="width:500px;" max="10" class="slider" id="range">
+                    <br>
+                    <p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p>
+                    <script>
+                    var slider = document.getElementById("range");
+                    var output = document.getElementById("demo");
+                    output.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                      output.innerHTML = this.value;
+                    }
+                    </script>
+                  </td>
+                </tr>
 
-              <tr>
-                <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here:</label></b></td>
-              </tr>
-              <tr>
-                <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" class="Commentsbox" placeholder="Please enter feedback here." required></textarea></td>
-              </tr>
-            </table>
-            <br>
-            <div style="text-align: center;">
-              <button class="button" type="submit"  onclick="myFunction()"><b>Submit</b></button>
-              <script>
-              function myFunction() {
-                alert("You have submitted your form.");
-              }
-              </script>
-              <button class="button" type="reset"><b>Reset</b></button>
-            <br>
-            <br>
-            </div>
-          </form>
+                <tr>
+                  <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here:</label></b></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" class="comments" placeholder="Please enter feedback here." required></textarea></td>
+                </tr>
+              </table>
+              <br>
+              <div style="text-align: center;">
+                <button class="button" type="submit"  onclick="myFunction()"><b>Submit</b></button>
+                <script>
+                function myFunction() {
+                  alert("You have submitted your form.");
+                }
+                </script>
+                <button class="button" type="reset"><b>Reset</b></button>
+              <br>
+              <br>
+              </div>
+            </form>
           </div>
         </article>
 

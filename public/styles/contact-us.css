@@ -1,3 +1,17 @@
+section {
+  background-color: rgb(240,240,240);
+}
+
+article {
+  background-color: rgb(240,240,240);
+  padding: 30px;
+  width: auto;
+}
+
+.banner {
+  width: 100%;
+}
+
 .button {
   align-items: center;
   background-clip: padding-box;
@@ -58,8 +72,8 @@
 .slider:hover {
   opacity: 1;
 }
-.input 
-{
+
+.input {
   padding:7px 1px;
   font-size: 1rem;
   border-width:calc(var(--border-width) * 1px);
@@ -70,4 +84,15 @@
   outline: transparent;
   width: 100%;
   transition: border-color calc(var(--transition, 0.2) * 1s) ease;
+}
+
+#formtable {
+  width: 100%;
+  max-width: 100%;
+  padding: 1px;
+  margin: 0;
+}
+
+.comments {
+  width: 100%;
 }
