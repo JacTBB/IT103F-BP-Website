@@ -63,10 +63,9 @@ article {
   font-weight: bold;
 }
 
-@media (max-width: 600px) and (min-width: 400px) {
+@media (max-width: 650px) and (min-width: 450px) {
   #products {
     justify-content: center;
-    align-items: center;
   }
 
   .productcard {
@@ -75,7 +74,7 @@ article {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   #products {
     flex-direction: column;
     justify-content: center;
