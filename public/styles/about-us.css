@@ -23,12 +23,6 @@ article {
     background-color:lightskyblue;
 }
 
-@media (max-width: 450px) {
-  #navdisplay {
-    height: 120px;
-  }
-}
-
 .profile-card {
   flex: 40%;
   display:block;
