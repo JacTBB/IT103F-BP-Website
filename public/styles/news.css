@@ -21,31 +21,46 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+#heading-txt {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 8px black;
+  width: 240px;
+  height: 50px;
+  font-size: 1.1em;
+}
+
 /* Main content */
 #newscard-flex-section {
   display: flex; 
-  flex-direction: row;
-  align-items: top;
+  flex-flow: row wrap;
   justify-content: space-evenly;
-  flex-wrap: 1;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
+  align-content: space-evenly;
+  overflow: scroll;
+  min-width: 300px;
+  padding: 20px 40px 20px 40px;
 }
 
 div.news-card {
   width: 300px;
   height: 300px;
-  background-image: url("https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg");
   border: 1px solid rgb(138, 138, 138);
   border-radius: 10px;
+  margin-bottom: 20px;
   transition: all 0.3s;
 }
 
+div.news-card:hover{
+  transform: scale(1.03, 1.03);
+}
+
 .redirect {
-  display: flex;
+  display: grid;
   position: relative;
-  flex-direction: column;
+  grid-template-rows: 150px 150px;
   text-decoration: none;
   color: black;
 }

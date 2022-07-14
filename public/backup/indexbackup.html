@@ -8,7 +8,7 @@
     <link href="styles/loading.css" rel="stylesheet" type="text/css">
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="styles/news.css" rel="stylesheet" type="text/css">
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
       <center>
         <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
         <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
-
+        
         <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
         <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
         <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
@@ -52,7 +52,7 @@
           <div id="navbar1"></div>
           <div id="navbar2"></div>
           <div id="navbar3"></div>
-                
+        
           <script>
             //Display menu
             var menuopen = false;
@@ -82,86 +82,112 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <!-- V0.2 [PROTOTYPE]-->
-        <!-- Below code for an individual product details-->
-        <article style="padding: 0;">
-          <img src="images/page-banners/IT103F Banner About Us.png" alt="BP-Banner" width="100%">
+        <article>
+          <video style="aspect-ratio:900/506; width:100%; max-height:80vh;" autoplay muted disablePictureInPicture>
+            <source src="videos/BLUEPRINT STUDIOS INTRO.mp4" type="video/mp4">
+          </video>
         </article>
+        
+        <article>       
+          <div style="text-align: center;">
+            <h1 style="font-size: 30px;">                     
+              <span id="headerblackcolor">
+                Why should you choose
+              </span>
+              <span id="headerbluecolor">
+                Blueprint Studios?
+              </span>
+            </h1>
+          </div>
+
+          <div class="reasonscontainer">
+            <div class="reasonsbox">
+              <img src="images/MoneyHand.png">
+              <h2>Fair Pricing</h2>
+              <p>
+                We offer one of the lowest prices in<br>
+                the market for the products we make for you.
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/AroundClock.png">
+              <h2>Around the clock support</h2>
+              <p>
+                Problems with our products?<br>
+                Just reach out to us and we'll get<br>
+                in touch to work something out.
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/PeopleWave.jpg">
+              <h2>Made for everyone</h2>
+              <p>
+                Whether your company is big<br>
+                or small, our products will suit your every wants and needs. 
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/easy-icon-png-4.jpg">
+              <h2>Ease of use</h2>
+              <p>
+                Our products take minimal steps to<br>
+                implement in your projects. 
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <hr>
         <br>
-        
-        <div id="newscard-flex-section">
+        <br>
+        <center>
+          <div class="productscontainer">
+            <div class="productsbox">
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
+              <p>
+                <a href="products.html">Click here to view</a>
+              </p>  
+            </div>
           
-          <div class="news-card" id="cardshadow" 
-            style="background-image: url(https://free3d.com/imgd/l86/6070fd2fd6c6c10dd13d3bb2/9836-koenigsegg-agera.jpg); background-position: center;">
-            <a class="redirect" href="news-post-pages/news-articles/July2022/july-promotions.html">
+            <div class="productsbox">
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
+              <p>
+                <a href="products.html">Click here to view</a>
+              </p>  
+            </div>
+       
+            <div class="productsbox">
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
+              <p>
+                <a href="products.html">Click here to view</a>
+              </p>  
+            </div>
+
+            <div class="productsbox">
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
+              <p>
+                <a href="products.html">Click here to view</a>
+              </p>  
+            </div>
+
+            <div class="productsbox">
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png">
+              <p>
+                <a href="products.html">Click here to view</a>
+              </p>  
+            </div>
+          </div>
+        </center>
         
-                <div name="date">
-                  <div class="bg-square">
-                    <p id="datetxt-deco"> 14 July </p>
-                  </div>
-                </div>
-                
-                <div name="sub-headingtext">
-                  <p id="heading-txt"> JULY 2022 NEW PRODUCTS </p>
-                </div>
-            </a>
-          </div>
-
-          <div class="news-card" id="cardshadow" 
-            style="background-image: url(https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg);">
-            <a class="redirect" href="July-2022-promotions.html">
-                  
-                  <div name="date">
-                    <div class="bg-square">
-                      <p id="datetxt-deco"> 1 July </p>
-                    </div>
-                  </div>
-
-                  <div name="sub-headingtext">
-                    <p id="heading-txt"> JULY 2022 PROMOTION OF THE MONTH </p>
-                  </div>
-
-            </a>
-          </div>
-
-          <div class="news-card" id="cardshadow"
-            style="background-image: url(); background-position: center;">
-            <a class="redirect" href="news-post-pages/news-articles/">
-                  
-                  <div name="date">
-                    <div class="bg-square">
-                      <p id="datetxt-deco"> DATE </p>
-                    </div>
-                  </div>
-                  
-                  <div name="sub-headingtext">
-                    <p id="heading-txt"> TEMPLATE </p>
-                  </div>
-
-            </a>
-          </div>
-
-          <div class="news-card" id="cardshadow"
-            style="background-image: url(); background-position: center;">
-            <a class="redirect" href="news-post-pages/news-articles/">
-        
-                  <div name="date">
-                    <div class="bg-square">
-                      <p id="datetxt-deco"> DATE </p>
-                    </div>
-                  </div>
-                  
-                  <div name="sub-headingtext">
-                    <p id="heading-txt"> TEMPLATE </p>
-                  </div>
-
-            </a>
-          </div>  
-
-        </div>
-        <!-- Edit Ending Here-->
+        <article>
+          <p>Article 3</p>
+        </article>
+        <!--Edit Ending Here-->
       </section>
-
+      
       <footer id="footer">
         <div class="footerinfo">
           <div class="footerinfoinner">

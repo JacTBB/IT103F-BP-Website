@@ -156,7 +156,7 @@ div.formcontrols {
 }
   
 .PurchaseButton span:after {
-    content: " "url(../images/cart.png)" ";
+    content: " "url(../images/checkout/cart.png)" ";
     position: absolute;
     opacity: 0;
     top: 0;

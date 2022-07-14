@@ -1,0 +1,83 @@
+/* general */
+@font-face {
+  font-family: CheckoutFont;
+  src: url(../../fonts/Alata-Regular.ttf);
+}
+
+p, label, th, td {
+  font-family: CheckoutFont;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.topic {
+  margin-bottom: 0.5em;
+}
+
+.title-article {
+  margin-bottom: 0.5em;
+}
+
+.byauthor {
+  margin-bottom: 0.5em;
+}
+
+.divider-top {
+  margin-bottom: 0.5em;
+}
+
+#borderassist {
+  border: 1px solid red;
+}
+/* Main Containers */
+div.blog-content-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: gray;
+  padding: 20px 20px 20px 20px;
+}
+
+div.top-row {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: space-between;
+  margin-bottom: 24px;
+  background-color: rgb(0, 102, 255);
+}
+
+div.bot-row-content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: space-between;
+  justify-content: space-between;
+  background-color: rgb(0, 180, 30);
+}
+
+div.end-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  background-color: aquamarine;
+}
+
+/* Content Details */
+div.bot-left-col-section {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 5px;
+  background-color: orange;
+}
+
+div.bot-right-col-section {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  margin-left: 5px;
+  margin-right: 20px;
+  background-color: orange;
+}
