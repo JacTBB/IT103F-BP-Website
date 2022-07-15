@@ -26,18 +26,9 @@ p, label, th, td {
 }
 
 .byauthor {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
   font-size: 12px;
   color: #334862;
   margin-bottom: 0.1em;
-}
-
-.profile-pic {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
 }
 
 .divider-top {
@@ -53,8 +44,7 @@ p, label, th, td {
   height: 3px;
   background-color: rgba(0,0,0,.1);
   width: 100%;
-  min-width: 160px;
-  max-width: 300px;
+  max-width: 500px;
   margin: 1em 0 1em;
 }
 
@@ -65,7 +55,6 @@ p, label, th, td {
 div.blog-content-wrapper {
   display: flex;
   flex-flow: column nowrap;
-  min-width: 380px;
   padding: 40px 40px 40px 40px;
 }
 
