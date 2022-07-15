@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="styles/404.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+    </script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <center>
+        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
+        <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
+        
+        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+
+        <div class="navtoggle" onclick="menu(this)">
+          <div id="navbar1"></div>
+          <div id="navbar2"></div>
+          <div id="navbar3"></div>
+        
+          <script>
+            //Display menu
+            var menuopen = false;
+            function menu(x) {
+              x.classList.toggle("change");
+              if (menuopen == false) {
+                menuopen = true;
+                document.getElementById('navdisplay').style.display = "block";
+              }
+              else {
+                menuopen = false;
+                document.getElementById('navdisplay').style.display = "none";
+              }
+            }
+          </script>
+        </div>
+      </center>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="checkout.html" id="cartbutton"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <style>
+          #article {
+            padding-top: 100px;
+            padding-bottom: 100px;
+          }
+
+          @media (max-width: 850px) {
+            #article {
+              padding-top: 50px;
+              padding-bottom: 50px;
+            }
+          }
+        </style>
+        <article id="article">
+          <form>
+            Email:
+            <input type="text" id="email" name="email" required value="Test1@gmail.com">
+            Password:
+            <input type="password" id="password" name="password" required value="123456">
+
+            <button type="button" onclick="signin()">Sign In</button>
+            <script>
+                function signin() {
+                    const email = document.getElementById('email').value
+                    const password = document.getElementById('password').value
+                    console.log("Signin attempt:", email, password)
+
+                    const Headers = {
+                        'Content-Type': 'application/json'
+                    }
+                    const Body = {
+                        'email': email,
+                        'password': password
+                    }
+                    fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data[0])
+                    })
+                    .catch(console.error)
+                }
+            </script>
+        </form>
+        </article>
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP">
+          <h2><a href="index.html" style="color: black;text-decoration-line: none;">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2020-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ">Youtube</a>
+            <a href="https://twitter.com/blueprintRBLX">Twitter</a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="index.html">Home</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="checkout.html">Checkout</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
