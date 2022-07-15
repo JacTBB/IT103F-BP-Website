@@ -20,7 +20,7 @@ article {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color:grey;
+    background-color:lightgrey;
 }
 
 .profile-card {
