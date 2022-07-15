@@ -1,5 +1,4 @@
 
-body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display:none}
 img {vertical-align: middle;}
 
@@ -14,12 +13,14 @@ img {vertical-align: middle;}
 /* caption text to put what i want say */
 .text{
 color:black;
-font-size:15px;
+font-size:20px;
 padding:50px 12px;
 position:absolute;
 bottom:8px;
 width:100%;
 text-align:center;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+background-color: white;
 }
 
 /* The number of slides i have */
@@ -67,7 +68,7 @@ top: 50%;
 width: auto;
 padding: 16px;
 margin-top: -22px;
-color: black;
+color: red;
 font-weight: bold;
 font-size: 18px;
 transition: 0.6s ease;
