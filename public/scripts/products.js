@@ -17,6 +17,8 @@ fetch('scripts/productdata.json')
         div.id = productdata['name']
         productname.innerHTML = productdata['name']
         img.src = productdata['image']
+        img.id = `URL${productdata['name']}`
+        img.addEventListener('click', productpagefunction)
         desc.innerHTML = productdata['desc']
         price.classList = 'price'
         price.innerHTML = `$${productdata['price']} `
@@ -41,10 +43,14 @@ fetch('scripts/productdata.json')
 })
 .catch(console.error)
 
-//Temp
-//localStorage.clear()
-
 //Functions
+function productpagefunction(x) {
+    if (!x.target) return
+    const productdata = allproductdata.find((y) => `URL${y['name']}` == x.target.id)
+
+    window.open(`/products/${productdata['name']}`, '_self')
+}
+
 function addtocartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
