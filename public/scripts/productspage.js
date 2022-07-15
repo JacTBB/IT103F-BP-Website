@@ -1,40 +1,44 @@
 //Initialise
 var allproductdata = null
-fetch('scripts/productdata.json')
+fetch('../scripts/productdata.json')
 .then(response => response.json())
 .then(data => {
     allproductdata = data['data']
     
     for (productdata of allproductdata) {
-        const div = document.createElement('div')
-        const img = document.createElement('img')
-        const productname = document.createElement('h4')
-        const desc = document.createElement('p')
-        const price = document.createElement('p')
-        const button = document.createElement('button')
-    
-        div.classList = 'productcard'
-        div.id = productdata['name']
-        productname.innerHTML = productdata['name']
-        img.src = productdata['image']
-        img.id = `URL${productdata['name']}`
-        img.addEventListener('click', productpagefunction)
-        desc.innerHTML = productdata['desc']
-        price.classList = 'price'
-        price.innerHTML = `$${productdata['price']} `
-        button.classList = 'productbutton'
-        button.innerHTML = 'Add To Cart'
-        button.id = productdata['name']
-        button.type = 'button'
-        button.addEventListener('click', addtocartfunction)
-    
-        div.appendChild(img)
-        div.appendChild(productname)
-        div.appendChild(desc)
-        div.appendChild(price)
-        price.appendChild(button)
-    
-        document.getElementById('products').appendChild(div)
+        console.log(window.location.pathname)
+        
+        const id = decodeURI(window.location.pathname.slice(17,-5))
+        console.log(id)
+        if (productdata['name'] == id) {
+            const div = document.createElement('div')
+            const img = document.createElement('img')
+            const productname = document.createElement('h4')
+            const desc = document.createElement('p')
+            const price = document.createElement('p')
+            const button = document.createElement('button')
+        
+            div.classList = 'productcard'
+            div.id = productdata['name']
+            productname.innerHTML = productdata['name']
+            img.src = productdata['image']
+            desc.innerHTML = productdata['desc']
+            price.classList = 'price'
+            price.innerHTML = `$${productdata['price']} `
+            button.classList = 'productbutton'
+            button.innerHTML = 'Add To Cart'
+            button.id = productdata['name']
+            button.type = 'button'
+            button.addEventListener('click', addtocartfunction)
+        
+            div.appendChild(img)
+            div.appendChild(productname)
+            div.appendChild(desc)
+            div.appendChild(price)
+            price.appendChild(button)
+        
+            document.getElementById('products').appendChild(div)
+        }
     }
     
     document.getElementById('productcardplaceholder').remove()
@@ -44,13 +48,6 @@ fetch('scripts/productdata.json')
 .catch(console.error)
 
 //Functions
-function productpagefunction(x) {
-    if (!x.target) return
-    const productdata = allproductdata.find((y) => `URL${y['name']}` == x.target.id)
-
-    window.open(`products/${productdata['name']}.html`, '_self')
-}
-
 function addtocartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
