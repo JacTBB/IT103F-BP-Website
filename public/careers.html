@@ -9,6 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/career.css" rel="stylesheet" type="text/css">
     
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -71,6 +72,32 @@
                 document.getElementById('navdisplay').style.display = "none";
               }
             }
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              }
           </script>
         </div>
       </center>
@@ -91,7 +118,56 @@
         </article>
 
         <article>
-        <h1 style="font-size:30px">Want to help game companies to build better product ?</h1>
+          <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">1 / 3</div>
+              <img src="images/careers/kevin.jfif" style="width:1455px; height:800px">
+              <div class="text">Hello everyone ! Im kevin and am working as a CAD designer at Blueprint Studios.
+                                One thing i like about the company is that everyone is quite chill and we get along
+                                easily.
+              </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">2 / 3</div>
+              <img src="images/careers/weeqi.jfif" style="width:1455px; height:800px">
+              <div class="text">Hello everyone ! Im weeqi and am working as a CAD designer at Blueprint Studios.
+                One thing i like about the company is that everyone is quite chill and we get along
+                easily.</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">3 / 3</div>
+              <img src="images/careers/senghong.jfif" style="width:1455px; height:800px">
+              <div class="text">Hello everyone ! Im senghong and am working as a CAD designer at Blueprint Studios.
+                One thing i like about the company is that everyone is quite chill and we get along
+                easily.</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        </article>
+
+        <article>
+          <div>
+            <u><p style="font-size:30px; font-weight:bold;">Benefits and Perks at Blueprint Studio</p></u>
+            <p style="font-size:19px;">We want to <strong>empower</strong> and <strong>inspire</strong> our team members to do their best work every
+            day - making sure they feel happy, healthy and fulfilled both inside and <br> outside of the workplace.</p>
+          </div>
+        
+        
+        
+        
         </article>
 
 
@@ -101,10 +177,6 @@
 
 
 
-
-
-
-        <article>AR2</article>
         <article>AR3</article>
         <!--Edit Ending Here-->
       </section>

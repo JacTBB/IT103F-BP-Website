@@ -8,7 +8,7 @@
     <link href="styles/loading.css" rel="stylesheet" type="text/css">
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/404.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -85,142 +85,50 @@
 
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
-        <!--Edit Starting Here-->
-        <article>
-          <video style="aspect-ratio:900/506; width:100%; max-height:80vh;" autoplay muted disablePictureInPicture>
-            <source src="videos/BLUEPRINT STUDIOS INTRO.mp4" type="video/mp4">
-          </video>
+        <style>
+          #article {
+            padding-top: 100px;
+            padding-bottom: 100px;
+          }
+
+          @media (max-width: 850px) {
+            #article {
+              padding-top: 50px;
+              padding-bottom: 50px;
+            }
+          }
+        </style>
+        <article id="article">
+          <form>
+            Email:
+            <input type="text" id="email" name="email" required value="Test1@gmail.com">
+            Password:
+            <input type="password" id="password" name="password" required value="123456">
+
+            <button type="button" onclick="signin()">Sign In</button>
+            <script>
+                function signin() {
+                    const email = document.getElementById('email').value
+                    const password = document.getElementById('password').value
+                    console.log("Signin attempt:", email, password)
+
+                    const Headers = {
+                        'Content-Type': 'application/json'
+                    }
+                    const Body = {
+                        'email': email,
+                        'password': password
+                    }
+                    fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data[0])
+                    })
+                    .catch(console.error)
+                }
+            </script>
+        </form>
         </article>
-        
-        <article>       
-          <div style="text-align: center;">
-            <h1 style="font-size: 30px;">                     
-              <span id="headerblackcolor">
-                Why should you choose
-              </span>
-              <span id="headerbluecolor">
-                Blueprint Studios?
-              </span>
-            </h1>
-          </div>
-
-          <div class="reasonscontainer">
-            <div class="reasonsbox">
-              <img src="images/index/MoneyHand.png">
-              <h2>Fair Pricing</h2>
-              <p>
-                We offer one of the lowest prices in<br>
-                the market for the products we make for you.
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/index/AroundClock.png">
-              <h2>Around the clock support</h2>
-              <p>
-                Problems with our products?<br>
-                Just reach out to us and we'll get<br>
-                in touch to work something out.
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/index/PeopleWave.jpg">
-              <h2>Made for everyone</h2>
-              <p>
-                Whether your company is big<br>
-                or small, our products will suit your every wants and needs. 
-              </p>
-            </div>
-
-            <div class="reasonsbox">
-              <img src="images/index/easy-icon-png-4.jpg">
-              <h2>Ease of use</h2>
-              <p>
-                Our products take minimal steps to<br>
-                implement in your projects. 
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <hr>
-        <br>
-        <br>
-        <center>
-          <div class="productscontainer">
-            <div class="productsbox">
-              <h2 style="color:red;" >BEST SELLERS !</h2>
-                <img src="https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg">
-                 <p>
-                    Bugatti Chiron<br>
-                 <a href="products.html#Bugatti Chiron 2017 Sports Car 3D Model">Click here to view</a> 
-                </p>  
-            </div>
-          
-            <div class="productsbox">
-              <h2 style="color:rgb(206, 73, 61);">NEW MODELS</h2>
-                <img src="https://free3d.com/imgd/l86/6070fd2fd6c6c10dd13d3bb2/9836-koenigsegg-agera.jpg">                 
-               <p>
-                  Koenigsegg Agera<br>
-                <a href="products.html#Koenigsegg Agera 3D Model">Click here to view</a>
-              </p>  
-            </div>
-       
-            <div class="productsbox">
-              <h2 style="color:rgb(206, 73, 61);">NEW MODELS</h2>
-                <img src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
-               <p>
-                  Audi R8 Spyder<br>
-                 <a href="products.html#Audi R8 Spyder 3D Model">Click here to view</a>
-               </p>  
-            </div>
-
-            <div class="productsbox">
-              <h2 style="color:red;">BEST SELLERS !</h2>
-                <img src="https://free3d.com/imgd/l59/5cb5c95126be8bf8518b4567/8020-4axle-box-truck.png">
-                <p>
-                    4 Axle Box Truck<br>
-                  <a href="products.html#4 Axle Box Truck 3D Model">Click here to view</a>
-                </p>  
-            </div>
-
-            <div class="productsbox">
-              <h2 style="color:rgb(206, 73, 61)">FEATURED ITEM</h2>
-                <img src="https://free3d.com/imgd/l90888-p250-94760.png">
-               <p>
-                  P250 pistol<br>
-                 <a href="products.html#P250 3D Model">Click here to view</a>
-              </p>  
-            </div>
-          </div>
-        </center>
-        
-      
-          <div style="text-align: center;">
-            <h1 style="font-size: 20px;">                     
-              <span id="headerblackcolor">
-                <h1>What others are 
-              </span>
-              <span id="headerbluecolor">
-                saying
-              </span>
-            </h1>
-          </div>
-            <link rel="shortcut icon" href="icons/person.jpg" />
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
-
-              <section id="testimonials"> 
-
-                <div class="testimonial-heading">
-                  <span>Comments</span>asd
-                    <h1>Client Says</h1>
-                </div>
-
-              </section>
-
-
-        <!--Edit Ending Here-->
       </section>
       
       <footer id="footer">
