@@ -5,28 +5,39 @@
 }
 
 p, label, th, td {
-  font-family: CheckoutFont;
+  font-family: "Lato", sans-serif;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .topic {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
   color: #334862;
   margin-bottom: 0.2em;
 }
 
 .title-article {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 550;
   color: #161616;
   margin-bottom: 0.2em;
 }
 
 .byauthor {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
   font-size: 12px;
   color: #334862;
   margin-bottom: 0.1em;
+}
+
+.profile-pic {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
 }
 
 .divider-top {
@@ -42,7 +53,8 @@ p, label, th, td {
   height: 3px;
   background-color: rgba(0,0,0,.1);
   width: 100%;
-  max-width: 500px;
+  min-width: 160px;
+  max-width: 300px;
   margin: 1em 0 1em;
 }
 
@@ -53,7 +65,8 @@ p, label, th, td {
 div.blog-content-wrapper {
   display: flex;
   flex-flow: column nowrap;
-  padding: 20px 20px 20px 20px;
+  min-width: 380px;
+  padding: 40px 40px 40px 40px;
 }
 
 div.top-row {
@@ -61,7 +74,7 @@ div.top-row {
   flex-flow: column nowrap;
   align-items: center;
   align-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 50px;
 }
 
 div.bot-row-content {
@@ -85,12 +98,14 @@ div.end-row {
 div.bot-left-col-section {
   display: flex;
   flex-flow: column nowrap;
+  flex-shrink: 0;
   background-color: orange;
 }
 
 div.bot-middle-col-section {
   display: flex;
   flex-grow: 1;
+  flex-shrink: 2;
   flex-flow: column nowrap;
   align-items: center;
   background-color: orange;
@@ -101,5 +116,6 @@ div.bot-middle-col-section {
 div.bot-right-col-section {
   display: flex;
   flex-flow: column nowrap;
+  flex-shrink: 0;
   background-color: orange;
 }
