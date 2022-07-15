@@ -1,0 +1,29 @@
+
+
+/* slide show container */
+.slideshow-container {
+ max-width:1000px;
+ position:relative;
+ margin:auto;
+}
+
+/* caption text to put what i want say */
+.text{
+color:black;
+font-size:15px;
+padding:8px 12px;
+position:absolute;
+bottom:8px;
+width:100%;
+text-align:center;
+}
+
+/* The number of slides i have */
+.whereiputmynumber {
+color:white;
+font-size:12px;
+padding:8px 12px;
+position:absolute;
+top: 0;
+}
+
