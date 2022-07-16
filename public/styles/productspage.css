@@ -21,7 +21,6 @@ section {
     min-height: 300px;
     margin: 10px;
     flex: 32%;
-    max-width: min(calc(32% - 20px), 300px);
     border-radius: 20px;
     background-color: rgb(255,255,255);
   }
@@ -30,10 +29,6 @@ section {
     display: block;
     width: 100%;
     border-radius: 20px 20px 0 0;
-  }
-  
-  .productcard img:hover {
-    cursor: pointer;
   }
   
   .productcard h4 {

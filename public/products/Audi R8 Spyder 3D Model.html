@@ -91,7 +91,6 @@
         </article>
         
         <article>
-          <h1 style="text-align: center;">Our Products</h1>
           <div id="products">
             <div class="productcard" id="productcardplaceholder" style="display: none;">
               <!-- Placeholder For Dev -->
@@ -116,17 +115,6 @@
 
         <!-- JS -->
         <script src="../scripts/productspage.js"></script>
-        <script>
-          setTimeout(() => {
-            var id = window.location.hash.substring(1)
-            id = decodeURI(id)
-            if (id) {
-              const element = document.getElementById(id)
-              element.scrollIntoView()
-              window.scrollBy(0, -70)
-            }
-          }, 100)
-        </script>
         <!--Edit Ending Here-->
       </section>
       
