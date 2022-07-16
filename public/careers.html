@@ -38,27 +38,7 @@
       }
 
       window.onresize = () => { LoadContent() }
-    </script>
-  </head>
 
-  <body onload="LoadContent()">
-    <nav id="navbar" style="display: none;">
-      <center>
-        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
-        <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
-        
-        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
-        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
-        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
-        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
-        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
-
-        <div class="navtoggle" onclick="menu(this)">
-          <div id="navbar1"></div>
-          <div id="navbar2"></div>
-          <div id="navbar3"></div>
-        
-          <script>
             //Display menu
             var menuopen = false;
             function menu(x) {
@@ -72,6 +52,8 @@
                 document.getElementById('navdisplay').style.display = "none";
               }
             }
+
+
             let slideIndex = 1;
             showSlides(slideIndex);
 
@@ -98,7 +80,25 @@
               slides[slideIndex-1].style.display = "block";  
               dots[slideIndex-1].className += " active";
               }
-          </script>
+    </script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <center>
+        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
+        <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
+        
+        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+
+        <div class="navtoggle" onclick="menu(this)">
+          <div id="navbar1"></div>
+          <div id="navbar2"></div>
+          <div id="navbar3"></div>
         </div>
       </center>
     </nav>
@@ -131,15 +131,15 @@
             
             <div class="mySlides fade">
               <div class="whereiputmynumber">2 / 3</div>
-              <img src="images/careers/weeqi.jfif" style="width:1455px; height:800px">
-              <div class="text">Hello everyone ! Im weeqi and am working as a CAD designer at Blueprint Studios.
+              <img src="images/careers/monkey.jfif" style="width:1455px; height:800px">
+              <div class="text">Hello everyone ! Im ameer and am working as a CAD designer at Blueprint Studios.
                 One thing i like about the company is that everyone is quite chill and we get along
                 easily.</div>
             </div>
             
             <div class="mySlides fade">
               <div class="whereiputmynumber">3 / 3</div>
-              <img src="images/careers/senghong.jfif" style="width:1455px; height:800px">
+              <img src="images/careers/senghong.jfif" style="width:200vh;">
               <div class="text">Hello everyone ! Im senghong and am working as a CAD designer at Blueprint Studios.
                 One thing i like about the company is that everyone is quite chill and we get along
                 easily.</div>
@@ -151,11 +151,11 @@
             </div>
             <br>
 
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span> 
-        </div>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
         </article>
 
         <article>
