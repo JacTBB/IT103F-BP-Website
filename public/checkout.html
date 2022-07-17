@@ -129,7 +129,7 @@
          <!-- Below code are for Cart & Checkout Section -->
         <br>
           <div class="overall-container">
-            <form name="PayReciept" action="checkout-success.html" method="get">
+            <form name="PayReciept" action="checkout-success.html" method="GET">
                 <!-- Shopping Cart Section -->
                 <script src="scripts/checkout.js"></script>
                 <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
@@ -206,11 +206,11 @@
                   </div>
 
                 <div name="form-buttons">
-                  <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button>
-                    <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
+                  <script src="scripts/purchase.js" defer></script>
+                  <button type="submit" class="PurchaseButton" onclick="purchase()"><span style="font-family: CheckoutFont;"> Purchase </span></button>
+                  <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
                 </div>
               </div>
-          
             </form>
           </div>
         <br>

@@ -1,6 +1,6 @@
 //Initialise
 var allproductdata = null
-reloadcart()
+reloadcheckoutcart()
 
 //Temp
 //localStorage.clear()
@@ -14,7 +14,7 @@ for (var i=0; i < localStorage.length; i++) {
 console.log('\n')
 
 //Functions
-function reloadcart() {
+function reloadcheckoutcart() {
     fetch('scripts/productdata.json')
     .then(response => response.json())
     .then(data => {
@@ -133,6 +133,8 @@ function additemtocartfunction(x) {
 
     console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
     
+    reloadcheckoutcart()
+
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
     notification.classList.add('notification')
@@ -154,8 +156,6 @@ function additemtocartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
-
-    reloadcart()
 }
 
 function removeitemfromcartfunction(x) {
@@ -170,6 +170,8 @@ function removeitemfromcartfunction(x) {
     }
 
     console.log(productdata['name'], "/", quantity)
+
+    reloadcheckoutcart()
 
     var notifmessage = 'You have removed an item from cart!'
     const notificationbar = document.getElementById('notificationbar')
@@ -193,8 +195,6 @@ function removeitemfromcartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
-
-    reloadcart()
 }
 
 function deleteitemfromcartfunction(x) {
@@ -204,6 +204,8 @@ function deleteitemfromcartfunction(x) {
     localStorage.removeItem(productdata['name'])
 
     console.log(productdata['name'], "/", '0')
+
+    reloadcheckoutcart()
 
     var notifmessage = 'You have deleted an item from cart!'
     const notificationbar = document.getElementById('notificationbar')
@@ -227,6 +229,4 @@ function deleteitemfromcartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
-
-    reloadcart()
 }

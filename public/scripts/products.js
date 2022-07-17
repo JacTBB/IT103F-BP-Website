@@ -93,6 +93,8 @@ function addtocartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
+
+    reloadcart()
 }
 
 //Print localStorage
