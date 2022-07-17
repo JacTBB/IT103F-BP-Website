@@ -24,17 +24,17 @@ nav {
   border-bottom-style: solid;
   border-bottom-color: rgb(20,20,60);
 }
-#cartbutton {
+.cartbutton {
   height: 40px;
   padding: 0px;
   padding-bottom: 5px;
-  margin: 10px;
+  margin: 10px !important;
   margin-bottom: 5px;
 }
-#cartbutton img {
+.cartbutton img {
   border-radius: 15px;
 }
-#cartbutton:hover img {
+.cartbutton:hover img {
   box-shadow: 1px 1px 5px rgb(20,60,100);
 }
 
@@ -71,7 +71,7 @@ nav {
   margin-top: 60px;
   padding: 0;
   width: 100%;
-  height: 120px;
+  height: 60px;
   text-align: right;
   z-index: 2;
 }
@@ -113,5 +113,76 @@ nav {
 @media (max-width: 450px) {
   #navdisplay {
     height: 120px;
+  }
+}
+
+#cartdisplay {
+  display: block;
+  background-color: rgb(250,250,250);
+  position: fixed;
+  margin-top: 65px;
+  right: 10px;
+  padding: 5px 20px;
+  width: 30%;
+  min-height: 60px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 1px 1px 10px grey;
+  border-radius: 10px;
+}
+#cartdisplay h3 {
+  margin: 0;
+  padding: 5px;
+  border-bottom: solid 1px grey;
+}
+.cartitem {
+  margin: 10px 0;
+  padding-bottom: 5px;
+  height: 40px;
+  text-align: left;
+  border-bottom: solid 1px grey;
+}
+.cartitem .cartitemimg {
+  float: left;
+  margin-right: 5px;
+  max-width: 22%;
+  max-height: 100%;
+}
+.cartitem .cartitemname {
+  float: left;
+  vertical-align: top;
+  width: 76%;
+  margin: 0;
+  font-size: 15px;
+}
+.cartitem .cartitemprice {
+  float: left;
+  position: absolute;
+  right: 20px;
+  margin: 0;
+  padding-top: 25px;
+  height: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.carttotal {
+  margin: 10px 0;
+  text-align: right;
+}
+.carttotal #cartitemtotal {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+  #cartdisplay {
+    margin-top: 125px;
+  }
+}
+
+@media (max-width: 450px) {
+  #cartdisplay {
+    margin-top: 185px;
   }
 }
