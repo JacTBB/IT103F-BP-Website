@@ -38,6 +38,7 @@
 
       window.onresize = () => { LoadContent() }
     </script>
+    <script src="scripts/cart.js" defer></script>
   </head>
 
   <body onload="LoadContent()">
@@ -46,7 +47,7 @@
         <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
         <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
         
-        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton cartbutton" id="cartbutton1" onclick="cart(this)" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
         <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
         <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
         <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
@@ -76,16 +77,52 @@
       </center>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="checkout.html" id="cartbutton"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navdisplaybutton cartbutton" id="cartbutton2"  onclick="cart(this)"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
       <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
       <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
     </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart(x) {
+          x.classList.toggle("change");
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+      </script>
+    </div>
 
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
-         <!--Edit Starting Here-->
+        <!--Edit Starting Here-->
          <!-- V0.41* -->
          <!-- Below code are for Cart & Checkout Section -->
         <br>

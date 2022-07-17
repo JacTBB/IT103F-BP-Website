@@ -17,7 +17,7 @@
     <meta name="description" content="Blueprint Studios' Website">
     <meta name="author" content="NYP, IT103F, Group 1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- JS -->
     <noscript>Please enable Javascript.</noscript>
     <script>
@@ -39,28 +39,11 @@
 
       window.onresize = () => { LoadContent() }
     </script>
-  </head>
+    <script src="scripts/cart.js" defer></script>
 
-  <body onload="LoadContent()">
-    <nav id="navbar" style="display: none;">
-      <center>
-        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
-        <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
-        
-        <a class="navbutton" href="checkout.html" id="cartbutton" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
-        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
-        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
-        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
-        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
-
-        <div class="navtoggle" onclick="menu(this)">
-          <div id="navbar1"></div>
-          <div id="navbar2"></div>
-          <div id="navbar3"></div>
-        
-          <script>
-            //Display menu
-            var menuopen = false;
+    <script>
+      //Display menu
+      var menuopen = false;
             function menu(x) {
               x.classList.toggle("change");
               if (menuopen == false) {
@@ -72,6 +55,8 @@
                 document.getElementById('navdisplay').style.display = "none";
               }
             }
+
+
             let slideIndex = 1;
             showSlides(slideIndex);
 
@@ -98,16 +83,86 @@
               slides[slideIndex-1].style.display = "block";  
               dots[slideIndex-1].className += " active";
               }
+    </script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <center>
+        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
+        <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
+        
+        <a class="navbutton cartbutton" id="cartbutton1" onclick="cart(this)" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+        <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+        <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+        <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+
+        <div class="navtoggle" onclick="menu(this)">
+          <div id="navbar1"></div>
+          <div id="navbar2"></div>
+          <div id="navbar3"></div>
+        
+          <script>
+            //Display menu
+            var menuopen = false;
+            function menu(x) {
+              x.classList.toggle("change");
+              if (menuopen == false) {
+                menuopen = true;
+                document.getElementById('navdisplay').style.display = "block";
+              }
+              else {
+                menuopen = false;
+                document.getElementById('navdisplay').style.display = "none";
+              }
+            }
           </script>
         </div>
       </center>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="checkout.html" id="cartbutton"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navdisplaybutton cartbutton" id="cartbutton2"  onclick="cart(this)"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
       <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
       <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart(x) {
+          x.classList.toggle("change");
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+      </script>
     </div>
 
     <div class="content" id="maindiv" style="display: none;">
@@ -122,7 +177,7 @@
 
             <div class="mySlides fade">
               <div class="whereiputmynumber">1 / 3</div>
-              <img src="images/careers/kevin.jfif" style="width:1455px; height:800px">
+              <img src="images/careers/kevin.jfif" style="width:96vw;">
               <div class="text">Hello everyone ! Im kevin and am working as a CAD designer at Blueprint Studios.
                                 One thing i like about the company is that everyone is quite chill and we get along
                                 easily.
@@ -131,18 +186,22 @@
             
             <div class="mySlides fade">
               <div class="whereiputmynumber">2 / 3</div>
-              <img src="images/careers/weeqi.jfif" style="width:1455px; height:800px">
-              <div class="text">Hello everyone ! Im weeqi and am working as a CAD designer at Blueprint Studios.
+              <img src="images/careers/monkey.jfif" style="width:96vw;">
+              <div class="text">Hello everyone ! Im ameer and am working as a CAD designer at Blueprint Studios.
                 One thing i like about the company is that everyone is quite chill and we get along
                 easily.</div>
             </div>
             
             <div class="mySlides fade">
               <div class="whereiputmynumber">3 / 3</div>
-              <img src="images/careers/senghong.jfif" style="width:1455px; height:800px">
-              <div class="text">Hello everyone ! Im senghong and am working as a CAD designer at Blueprint Studios.
-                One thing i like about the company is that everyone is quite chill and we get along
-                easily.</div>
+              <img src="images/careers/senghong.jfif" style="width:97vw;">
+              <div class="text">My name is Senghong, working as a Full Stack Developer at Blueprint studio. My job is to develop both a client
+                and server software for the company. Things i do in my job includes programming a brower &#40;using Javascript, JQuery, Angular,
+                or Vue&#41;. Programming a server &#40;using PHP, ASP, Python, or Node&#41;. Programming a database &#40;using SQL, SQLite, or
+                MongoDB&#41;. I totally love my job !!!
+
+
+                </div>
             </div>
             
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -151,24 +210,63 @@
             </div>
             <br>
 
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span> 
-        </div>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div><hr>
         </article>
 
         <article>
           <div>
-            <u><p style="font-size:30px; font-weight:bold;">Benefits and Perks at Blueprint Studio</p></u>
-            <p style="font-size:19px;">We want to <strong>empower</strong> and <strong>inspire</strong> our team members to do their best work every
+            <u><p style="font-size:20px; font-weight:bold;">Benefits and Perks at Blueprint Studio</p></u>
+            <p style="font-size:16px;">We want to <strong>empower</strong> and <strong>inspire</strong> our team members to do their best work every
             day - making sure they feel happy, healthy and fulfilled both inside and <br> outside of the workplace.</p>
-          </div>
+          </div><br>
+       
+          <div>
+          <table border="0" style="padding:20px; width:100%;">
+            <tr class="perks">
+              <td>Competitive Pay</td><td>Take-what-you-need paid vacation policy</td><td>Employee Benefits</td>
+            </tr>
+            <tr>
+              <td>We offer a competitive total rewards package, where every employee is an owner of our stock.</td>
+              <td>We encourage employees to find a comfortable work-life balance by taking as many days off as they
+                  need while still being able to perform their jobs satisfactorily.
+                   (We really mean it!)</td>
+              <td>We offer a comprehensive benefits package including healthcare, life insurance, short- and
+                  long-term disability, pension plans in accordance with the market practice in our locations.
+                  A complimentary global program that aims to provide family forming and mental wellbeing support
+                   to our employees across our offices.</td>
+            </tr>
+            <tr class="perks">
+              <td>Paid maternity and paternity leave</td><td>Commuter program</td>
+            </tr>
+            <tr>
+              <td>Our global parental leave policy allows up to sixteen paid weeks of bonding leave time for all 
+                qualifying new parents.</td>
+              <td>We are flexible about where we work and value connecting at the office. Our commuter benefits program
+                  is in place to support team members' commute to work via public transportation without the extra cost burden.</td>
+            </tr>
+
+          </table>
+        </div><br><hr>
         
-        
-        
-        
+          <div>
+          <h1 style="font-size:30px">Our Hiring Process</h1>
+          <img src="images/careers/interview.png" height="180px" width="750px" align="right">
+          <p>At Blueprint Studio, we are committed to hiring the best people to join our teams. We designed <br> our interview process* 
+             to help us understand how you think, what you are passionate about,<br> and which skills and creative problem-solving 
+             abilities you bring to the table. And we want you<br> to get to know us, too.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          <p> Curious about our culture? Connect with your recruiter to visit one of our All-Hands meetings,<br> where we share what we
+              are working on each week.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          <p>*The hiring process outlined above may differ by department and role.</p>
+        </div><hr>
         </article>
+        <article>
+        <h1 style="font-size:30px; text-align:center;">Positions Available</h1>
 
 
 
@@ -177,7 +275,10 @@
 
 
 
-        <article>AR3</article>
+
+
+
+        </article>
         <!--Edit Ending Here-->
       </section>
       

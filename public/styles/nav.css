@@ -24,82 +24,19 @@ nav {
   border-bottom-style: solid;
   border-bottom-color: rgb(20,20,60);
 }
-#cartbutton {
+.cartbutton {
   height: 40px;
   padding: 0px;
   padding-bottom: 5px;
-  margin: 10px;
+  margin: 10px !important;
   margin-bottom: 5px;
 }
-#cartbutton img {
+.cartbutton img {
   border-radius: 15px;
 }
-#cartbutton:hover img {
+.cartbutton:hover img {
   box-shadow: 1px 1px 5px rgb(20,60,100);
 }
-
-/*
-.navdropdown {
-  float: right;
-  margin: 10px;
-  margin-top: 20px;
-  margin-bottom: 0;
-  padding: 1px;
-  padding-bottom: 90px;
-  height: 19.2px;
-}
-.navdropdown:hover .navdropdownbutton {
-  color: rgb(20,20,60);
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(20,20,60);
-}
-.navdropdown:hover .dropdowncontent {
-  display: block;
-}
-.navdropdownbutton {
-  float: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  color: white;
-  background-color: inherit;
-  font-size: 20px;
-}
-.dropdowncontent {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  margin-top: 15px;
-  width: 71.95px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(60,60,60);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdowncontent:hover {
-  display: block;
-}
-.dropdowncontent a {
-  display: block;
-  float: none;
-  margin: 10px;
-  margin-left: 15px;
-  margin-right: 15px;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: 15px;
-}
-.dropdowncontent a:hover {
-  color: rgb(20,20,60);
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(20,20,60);
-}
-*/
 
 .navtoggle {
   display: none;
@@ -134,7 +71,7 @@ nav {
   margin-top: 60px;
   padding: 0;
   width: 100%;
-  height: 120px;
+  height: 60px;
   text-align: right;
   z-index: 2;
 }
@@ -155,7 +92,7 @@ nav {
   border-bottom-color: rgb(20,20,60);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 760px) {
   .navbutton {
     display: none;
   }
@@ -176,5 +113,105 @@ nav {
 @media (max-width: 450px) {
   #navdisplay {
     height: 120px;
+  }
+}
+
+#cartdisplay {
+  display: none;
+  background-color: rgb(250,250,250);
+  position: fixed;
+  margin-top: 65px;
+  right: 10px;
+  padding: 5px 20px;
+  width: 30%;
+  min-height: 60px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 1px 1px 10px grey;
+  border-radius: 10px;
+}
+#cartdisplay h3 {
+  margin: 0;
+  padding: 5px;
+  border-bottom: solid 1px grey;
+}
+.cartitem {
+  margin: 10px 0;
+  padding-bottom: 5px;
+  height: 40px;
+  text-align: left;
+  border-bottom: solid 1px grey;
+}
+.cartitem .cartitemimg {
+  float: left;
+  margin-right: 5px;
+  max-width: 22%;
+  max-height: 100%;
+}
+.cartitem .cartitemname {
+  float: left;
+  vertical-align: top;
+  width: 75%;
+  margin: 0;
+  font-size: 15px;
+}
+.cartitem .cartitemprice {
+  float: left;
+  position: absolute;
+  right: 20px;
+  margin: 0;
+  padding-top: 25px;
+  height: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.carttotal {
+  margin: 10px 0;
+  text-align: right;
+}
+.carttotal #cartitemtotal {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+  #cartdisplay {
+    margin-top: 125px;
+  }
+
+  .cartitem {
+    height: 50px;
+  }
+  .cartitem .cartitemprice {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cartitem {
+    height: 70px;
+  }
+  .cartitem .cartitemname {
+    width: 70%;
+  }
+  .cartitem .cartitemprice {
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 450px) {
+  #cartdisplay {
+    margin-top: 185px;
+    width: calc(100% - 60px);
+  }
+  .cartitem {
+    height: 40px;
+  }
+  .cartitem .cartitemname {
+    width: 75%;
+  }
+  .cartitem .cartitemprice {
+    padding-top: 25px;
   }
 }

@@ -14,7 +14,7 @@ img {vertical-align: middle;}
 .text{
 color:black;
 font-size:20px;
-padding:12px 12px;
+padding:12px 14px;
 position:absolute;
 bottom:8px;
 width:100%;
@@ -85,4 +85,18 @@ border-radius: 3px 0 0 3px;
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
 background-color: rgba(0,0,0,0.8);
+}
+
+.perks
+{
+font-size:20px;
+font-weight:bold;
+text-align:center;   
+}
+
+hr {
+height:3px;
+border:none;
+color:#333;
+background-color:#333;
 }
