@@ -45,7 +45,6 @@
       //Display menu
       var menuopen = false;
             function menu(x) {
-              x.classList.toggle("change");
               if (menuopen == false) {
                 menuopen = true;
                 document.getElementById('navdisplay').style.display = "block";
@@ -53,6 +52,9 @@
               else {
                 menuopen = false;
                 document.getElementById('navdisplay').style.display = "none";
+                if (cartopen == true) {
+                  cart()
+                }
               }
             }
 
@@ -107,7 +109,6 @@
             //Display menu
             var menuopen = false;
             function menu(x) {
-              x.classList.toggle("change");
               if (menuopen == false) {
                 menuopen = true;
                 document.getElementById('navdisplay').style.display = "block";
@@ -115,6 +116,9 @@
               else {
                 menuopen = false;
                 document.getElementById('navdisplay').style.display = "none";
+                if (cartopen == true) {
+                  cart()
+                }
               }
             }
           </script>
@@ -148,11 +152,11 @@
       <div class="carttotal">
         <p id="cartitemtotal"></p>
       </div>
+      <button id="cartcheckout">Checkout</button>
       <script>
         //Cart Toggle
         var cartopen = false;
         function cart(x) {
-          x.classList.toggle("change");
           if (cartopen == false) {
             cartopen = true;
             document.getElementById('cartdisplay').style.display = "block";
