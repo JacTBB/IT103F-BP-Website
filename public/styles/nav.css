@@ -191,6 +191,12 @@ nav {
   background-color: rgb(40,140,220);
   box-shadow: 1px 1px 5px rgb(150,150,150);
 }
+#cartcheckout a {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 @media (max-width: 760px) {
   #cartdisplay {
