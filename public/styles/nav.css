@@ -167,12 +167,35 @@ nav {
 }
 .carttotal {
   margin: 10px 0;
-  text-align: right;
+  text-align: center;
 }
 .carttotal #cartitemtotal {
   margin: 0;
+  padding-bottom: 5px;
+  border-bottom: solid 1px grey;
   font-size: 16px;
   font-weight: bold;
+}
+#cartcheckout {
+  margin-bottom: 10px;
+  height: 30px;
+  width: 60%;
+  background-color: rgb(60,180,250);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+#cartcheckout:hover {
+  background-color: rgb(40,140,220);
+  box-shadow: 1px 1px 5px rgb(150,150,150);
+}
+#cartcheckout a {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 @media (max-width: 760px) {

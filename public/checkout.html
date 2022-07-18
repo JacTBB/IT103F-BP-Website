@@ -47,7 +47,7 @@
         <a href="index.html"><img src="https://cdn.discordapp.com/attachments/913619592067293206/959047650043392070/Blueprint_Logo.png" alt="BP" width="36px" height="36px" style="float: left; padding: 12px; padding-right: 5px"></a>
         <h2 style="float: left; margin: 0; padding: 18px; padding-left: 5px; height: 24px; font-size: 24px;"><a href="index.html" style="color: white;text-decoration-line: none;">Blueprint Studios</a></h2>
         
-        <a class="navbutton cartbutton" id="cartbutton1" onclick="cart(this)" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+        <a class="navbutton cartbutton" id="cartbutton1" onclick="cartopenfunction(this)" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
         <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
         <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
         <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
@@ -62,7 +62,6 @@
             //Display menu
             var menuopen = false;
             function menu(x) {
-              x.classList.toggle("change");
               if (menuopen == false) {
                 menuopen = true;
                 document.getElementById('navdisplay').style.display = "block";
@@ -70,6 +69,9 @@
               else {
                 menuopen = false;
                 document.getElementById('navdisplay').style.display = "none";
+                if (cartopen == true) {
+                  cartopenfunction()
+                }
               }
             }
           </script>
@@ -77,7 +79,7 @@
       </center>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton cartbutton" id="cartbutton2"  onclick="cart(this)"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navdisplaybutton cartbutton" id="cartbutton2"  onclick="cartopenfunction(this)"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
       <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
@@ -103,11 +105,11 @@
       <div class="carttotal">
         <p id="cartitemtotal"></p>
       </div>
+      <button id="cartcheckout"><a href="checkout.html">Checkout</a></button>
       <script>
         //Cart Toggle
         var cartopen = false;
-        function cart(x) {
-          x.classList.toggle("change");
+        function cartopenfunction(x) {
           if (cartopen == false) {
             cartopen = true;
             document.getElementById('cartdisplay').style.display = "block";
@@ -127,7 +129,7 @@
          <!-- Below code are for Cart & Checkout Section -->
         <br>
           <div class="overall-container">
-            <form name="PayReciept" action="checkout-success.html" method="get">
+            <form name="PayReciept" action="checkout-success.html" method="GET">
                 <!-- Shopping Cart Section -->
                 <script src="scripts/checkout.js"></script>
                 <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
@@ -204,11 +206,11 @@
                   </div>
 
                 <div name="form-buttons">
-                  <button type="submit" class="PurchaseButton"> <span style="font-family: CheckoutFont;"> Purchase </span> </button>
-                    <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
+                  <script src="scripts/purchase.js" defer></script>
+                  <button type="submit" class="PurchaseButton" onclick="purchase()"><span style="font-family: CheckoutFont;"> Purchase </span></button>
+                  <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
                 </div>
               </div>
-          
             </form>
           </div>
         <br>

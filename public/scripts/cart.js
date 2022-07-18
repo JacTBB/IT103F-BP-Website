@@ -44,6 +44,7 @@ function reloadcart() {
                 const productname = document.createElement('p')
                 const price = document.createElement('p')
 
+                /*
                 const quantity = document.createElement('td')
                 const tdaddbutton = document.createElement('td')
                 const tdremovebutton = document.createElement('td')
@@ -51,7 +52,8 @@ function reloadcart() {
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
                 const deletebutton = document.createElement('button')
-            
+                */
+
                 div.classList = 'cartitem'
                 img.classList = 'cartitemimg'
                 img.src = productdata['image']
@@ -116,6 +118,7 @@ function reloadcart() {
     .catch(console.error)
 }
 
+/*
 function additemtocartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
@@ -234,3 +237,4 @@ function deleteitemfromcartfunction(x) {
 
     reloadcart()
 }
+*/
