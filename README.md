@@ -19,14 +19,13 @@ ___
 | ------- | ------- |
 | careers.html | Zhe Ming |
 | news.html | Gui Cheng |
-| FAQPage.html | Ameer |
+| faq.html | Ameer |
 | signin.html | Jackie |
 
 ## Webserver Only Webpages
 | Webpage | Creator |
 | ------- | ------- |
 | 404.html | Jackie |
-| comingsoon.html | Jackie |
 
 ## Subsidiary Webpage Folders
 | Webpage Folder | Creator |
