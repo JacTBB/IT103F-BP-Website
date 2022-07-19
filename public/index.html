@@ -107,7 +107,7 @@
       <div class="carttotal">
         <p id="cartitemtotal"></p>
       </div>
-      <button id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
       <script>
         //Cart Toggle
         var cartopen = false;
@@ -120,6 +120,10 @@
             cartopen = false;
             document.getElementById('cartdisplay').style.display = "none";
           }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
         }
       </script>
     </div>
