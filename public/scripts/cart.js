@@ -38,77 +38,79 @@ function reloadcart() {
             else {
                 productdata = allproductdata.find((y) => y['name'] == key)
 
-                //Product
-                const div = document.createElement('div')
-                const img = document.createElement('img')
-                const productname = document.createElement('p')
-                const price = document.createElement('p')
+                if (productdata) {
+                    //Product
+                    const div = document.createElement('div')
+                    const img = document.createElement('img')
+                    const productname = document.createElement('p')
+                    const price = document.createElement('p')
 
-                /*
-                const quantity = document.createElement('td')
-                const tdaddbutton = document.createElement('td')
-                const tdremovebutton = document.createElement('td')
-                const tddeletebutton = document.createElement('td')
-                const addbutton = document.createElement('button')
-                const removebutton = document.createElement('button')
-                const deletebutton = document.createElement('button')
-                */
+                    /*
+                    const quantity = document.createElement('td')
+                    const tdaddbutton = document.createElement('td')
+                    const tdremovebutton = document.createElement('td')
+                    const tddeletebutton = document.createElement('td')
+                    const addbutton = document.createElement('button')
+                    const removebutton = document.createElement('button')
+                    const deletebutton = document.createElement('button')
+                    */
 
-                div.classList = 'cartitem'
-                img.classList = 'cartitemimg'
-                img.src = productdata['image']
-                productname.classList = 'cartitemname'
-                productname.innerHTML = `${productdata['name']}`
-                price.classList = 'cartitemprice'
-                price.innerHTML = `${value} x $${productdata['price']}`
+                    div.classList = 'cartitem'
+                    img.classList = 'cartitemimg'
+                    img.src = productdata['image']
+                    productname.classList = 'cartitemname'
+                    productname.innerHTML = `${productdata['name']}`
+                    price.classList = 'cartitemprice'
+                    price.innerHTML = `${value} x $${productdata['price']}`
 
-                /*
-                quantity.innerHTML = `Quantity: ${value}`
-                addbutton.classList = 'productbutton'
-                addbutton.innerHTML = 'Add Item'
-                addbutton.id = productdata['name']
-                addbutton.type = 'button'
-                addbutton.addEventListener('click', additemtocartfunction)
-                removebutton.classList = 'productbutton'
-                removebutton.innerHTML = 'Remove Item'
-                removebutton.id = productdata['name']
-                removebutton.type = 'button'
-                removebutton.addEventListener('click', removeitemfromcartfunction)
-                deletebutton.classList = 'productbutton'
-                deletebutton.innerHTML = 'Delete Item'
-                deletebutton.id = productdata['name']
-                deletebutton.type = 'button'
-                deletebutton.addEventListener('click', deleteitemfromcartfunction)
-                */
+                    /*
+                    quantity.innerHTML = `Quantity: ${value}`
+                    addbutton.classList = 'productbutton'
+                    addbutton.innerHTML = 'Add Item'
+                    addbutton.id = productdata['name']
+                    addbutton.type = 'button'
+                    addbutton.addEventListener('click', additemtocartfunction)
+                    removebutton.classList = 'productbutton'
+                    removebutton.innerHTML = 'Remove Item'
+                    removebutton.id = productdata['name']
+                    removebutton.type = 'button'
+                    removebutton.addEventListener('click', removeitemfromcartfunction)
+                    deletebutton.classList = 'productbutton'
+                    deletebutton.innerHTML = 'Delete Item'
+                    deletebutton.id = productdata['name']
+                    deletebutton.type = 'button'
+                    deletebutton.addEventListener('click', deleteitemfromcartfunction)
+                    */
 
-                div.appendChild(img)
-                div.appendChild(productname)
-                div.appendChild(price)
+                    div.appendChild(img)
+                    div.appendChild(productname)
+                    div.appendChild(price)
 
-                /*
-                div.appendChild(tdremovebutton)
-                tdremovebutton.appendChild(removebutton)
-                div.appendChild(quantity)
-                div.appendChild(tdaddbutton)
-                tdaddbutton.appendChild(addbutton)
-                div.appendChild(tddeletebutton)
-                tddeletebutton.appendChild(deletebutton)
-                */
-                
-                products.appendChild(div)
+                    /*
+                    div.appendChild(tdremovebutton)
+                    tdremovebutton.appendChild(removebutton)
+                    div.appendChild(quantity)
+                    div.appendChild(tdaddbutton)
+                    tdaddbutton.appendChild(addbutton)
+                    div.appendChild(tddeletebutton)
+                    tddeletebutton.appendChild(deletebutton)
+                    */
+                    
+                    products.appendChild(div)
 
-                //Remove Cart Empty Message
-                if (products.hasChildNodes()) {
-                    const cartempty = document.getElementById('cartempty')
-                    cartempty.style.display = 'none';
-                }
+                    //Remove Cart Empty Message
+                    if (products.hasChildNodes()) {
+                        const cartempty = document.getElementById('cartempty')
+                        cartempty.style.display = 'none';
+                    }
 
-                total += productdata['price'] * value
+                    total += productdata['price'] * value
 
-                if (i == localStorage.length-1) {
-                    //Total
-                    const carttotal = document.getElementById('cartitemtotal')
-                    carttotal.innerHTML = `Subtotal: $${total}`
+                    if (i == localStorage.length-1) {
+                        //Total
+                        const carttotal = document.getElementById('cartitemtotal')
+                        carttotal.innerHTML = `Subtotal: $${total}`
+                    }
                 }
             }
         }
