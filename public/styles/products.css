@@ -8,6 +8,41 @@ article {
   width: auto;
 }
 
+#searchbox {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  height: 27px;
+  max-width: 400px;
+}
+#searchbox button {
+  float: left;
+  padding: 2px;
+  width: 15%;
+  height: 25px;
+  box-sizing: content-box;
+  background: rgb(60,180,250);
+  color: white;
+  border: solid 1px gray;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px grey;
+}
+#searchbox button:hover {
+  background: rgb(40,140,220);
+}
+#searchbar {
+  float: left;
+  padding: 2px 5px;
+  width: calc(85% - 17px);
+  height: 25px;
+  border: solid 1px grey;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  background: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
 #products {
   display: flex;
   justify-content: space-evenly;
