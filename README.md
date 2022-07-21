@@ -37,18 +37,5 @@ ___
 ## Notes
 - Minimum Screen Width: 360px
 - Recomended Browsers: Chrome, Microsoft Edge
+- Please have stable internet connection.
 ___
-
-## Test
-
-- List
-
-> Box of text
-> Line 2
-
-`
-Block
-`
-```
-Block Box
-```
