@@ -34,6 +34,11 @@ ___
 | news-post-pages | Gui Cheng |
 ___
 
+## Notes
+- Minimum Screen Width: 360px
+- Recomended Browsers: Chrome, Microsoft Edge
+___
+
 ## Test
 
 - List
