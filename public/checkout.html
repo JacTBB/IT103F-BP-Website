@@ -148,7 +148,6 @@
                 <!-- Checkout Section-->
                   <div class="checkout">
                     <p style="text-align: center;"> Checkout </p>
-                  
                     <div class="formcontrols">
 
                       <div name="customer-contact-info-container">
@@ -207,7 +206,8 @@
 
                 <div name="form-buttons">
                   <script src="scripts/purchase.js" defer></script>
-                  <button type="submit" class="PurchaseButton" onclick="purchase()"><span style="font-family: CheckoutFont;"> Purchase </span></button>
+                  <script src="scripts/checkoutform.js" defer></script>
+                  <button type= "submit" class="PurchaseButton" onclick="formValidate(), purchase();"><span style="font-family: CheckoutFont;"> Purchase </span></button>
                   <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
                 </div>
               </div>
