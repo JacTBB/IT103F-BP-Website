@@ -1,11 +1,11 @@
 /* general */
 @font-face {
-  font-family: CheckoutFont;
+  font-family: Alata;
   src: url(../fonts/Alata-Regular.ttf);
 }
 
 p {
-  font-family: CheckoutFont;
+  font-family: Alata;
   margin-top: 0;
   margin-bottom: 0;
 }

@@ -1,11 +1,8 @@
 /* V0.13 */
-@font-face {
-    font-family: CheckoutFont;
-    src: url(../fonts/Alata-Regular.ttf);
-}
+
 
 td {
-    font-family: CheckoutFont;
+    font-family: Alata;
 }
 
 

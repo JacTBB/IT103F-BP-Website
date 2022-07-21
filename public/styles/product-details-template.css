@@ -1,11 +1,11 @@
 /* general */
 @font-face {
-  font-family: CheckoutFont;
+  font-family: Alata;
   src: url(../fonts/Alata-Regular.ttf);
 }
 
 p, label, th, td {
-  font-family: CheckoutFont;
+  font-family: Alata;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -21,7 +21,7 @@ input:focus {
 }
 
 input::placeholder {
-	font-family: CheckoutFont;
+	font-family: Alata;
 	font-size: 14px;
 }
 
