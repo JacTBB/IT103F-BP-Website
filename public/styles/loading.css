@@ -30,3 +30,13 @@ body {
   width: auto;
   background-color: rgb(240,240,240);
 }
+
+section {
+  background-color: rgb(240,240,240);
+}
+
+article {
+  background-color: rgb(240,240,240);
+  padding: 30px;
+  width: auto;
+}

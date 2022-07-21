@@ -1,15 +1,3 @@
-section {
-  background-color: rgb(240,240,240);
-}
-
-article {
-  background-color: rgb(240,240,240);
-  padding: 30px;
-  width: auto;
-}
-
-
-
 nav {
     background-color: rgb(60,180,250);
     position: fixed;
