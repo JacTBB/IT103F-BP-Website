@@ -11,8 +11,16 @@ body {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+@keyframes GreyToBlueAnim {
+  from {background-color: white;}
+  to {background-color: rgb(60,180,250);}
+}
 
 #navbar {
+  animation-name: GreyToBlueAnim;
+  animation-duration: 0.5s;
+}
+#navbar * {
   animation-name: fadeInAnim;
   animation-duration: 0.5s;
 }
