@@ -1,128 +1,118 @@
-section {
-    background-color: rgb(240,240,240);
-  }
-  
-  article {
-    background-color: rgb(240,240,240);
-    padding: 30px;
-    width: auto;
-  }
-  
+#products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.productcard {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+  margin: 10px;
+  flex: 32%;
+  border-radius: 20px;
+  background-color: rgb(255,255,255);
+}
+
+.productcard img {
+  display: block;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.productcard h4 {
+  width: 100%;
+  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.productcard p {
+  width: 100%;
+  margin: 10px;
+}
+
+.productcard .price {
+  width: 100%;
+  align-self: flex-end;
+  text-align: right;
+  font-weight: bold;
+}
+
+.productbutton {
+  background-color: rgb(180,200,255);
+  border: solid black 1px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px black;
+  font-weight: normal;
+}
+
+.productbutton:hover {
+  font-weight: bold;
+}
+
+@media (max-width: 650px) and (min-width: 450px) {
   #products {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
   .productcard {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 300px;
-    margin: 10px;
-    flex: 32%;
-    border-radius: 20px;
-    background-color: rgb(255,255,255);
+    flex: 49%;
+    max-width: min(calc(49% - 20px), 250px);
   }
-  
-  .productcard img {
-    display: block;
-    width: 100%;
-    border-radius: 20px 20px 0 0;
+}
+
+@media (max-width: 450px) {
+  #products {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .productcard h4 {
-    width: 100%;
-    margin: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+  .productcard {
+    flex: 100%;
+    max-width: 250px;
   }
-  
-  .productcard p {
-    width: 100%;
-    margin: 10px;
-  }
-  
-  .productcard .price {
-    width: 100%;
-    align-self: flex-end;
-    text-align: right;
-    font-weight: bold;
-  }
-  
-  .productbutton {
-    background-color: rgb(180,200,255);
-    border: solid black 1px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px black;
-    font-weight: normal;
-  }
-  
-  .productbutton:hover {
-    font-weight: bold;
-  }
-  
-  @media (max-width: 650px) and (min-width: 450px) {
-    #products {
-      justify-content: center;
-    }
-  
-    .productcard {
-      flex: 49%;
-      max-width: min(calc(49% - 20px), 250px);
-    }
-  }
-  
-  @media (max-width: 450px) {
-    #products {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .productcard {
-      flex: 100%;
-      max-width: 250px;
-    }
-  }
-  
-  #notificationbar {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px;
-    z-index: 1;
-  }
-  
-  .notification {
-    display: none;
-    padding: 10px;
-    margin: 5px;
-    border: solid rgb(100,100,100) 2px;
-    border-radius: 10px;
-    z-index: 1;
-    background-color: white;
-    box-shadow: 1px 1px 5px grey;
-  }
-  
-  @keyframes fadeInAnim {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  @keyframes fadeOutAnim {
-    from {opacity: 1;}
-    to {opacity: 0;}
-  }
-  .notificationinanim {
-    animation-name: fadeInAnim;
-    animation-duration: 0.5s;
-  }
-  .notificationoutanim {
-    animation-name: fadeOutAnim;
-    animation-duration: 0.5s;
-  }
-  
-  .notification p {
-    margin: 0;
-    font-size: 20px;
-  }
+}
+
+#notificationbar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.notification {
+  display: none;
+  padding: 10px;
+  margin: 5px;
+  border: solid rgb(100,100,100) 2px;
+  border-radius: 10px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+@keyframes fadeInAnim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeOutAnim {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+.notificationinanim {
+  animation-name: fadeInAnim;
+  animation-duration: 0.5s;
+}
+.notificationoutanim {
+  animation-name: fadeOutAnim;
+  animation-duration: 0.5s;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 20px;
+}

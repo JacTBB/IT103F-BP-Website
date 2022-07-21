@@ -35,15 +35,21 @@ footer {
   color: black;
   text-align: left;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.footerinfo p a {
+  margin-right: 5px;
+  color: black;
+  font-size: 30px;
 }
 
 .footerlinks {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  flex: 20%;
-  max-width: 20%;
+  flex: 24%;
+  max-width: 24%;
   float: left;
   padding: 10px;
   text-align: center;
@@ -81,7 +87,7 @@ footer {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 720px) {
   .footerinfo {
     flex: 20%;
     max-width: 220px;

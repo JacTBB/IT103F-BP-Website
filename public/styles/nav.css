@@ -8,6 +8,35 @@ nav {
     z-index: 2;
 }
 
+#navbar span a {
+  float: left;
+  padding: 0;
+  height: 60px;
+  color: white;
+  text-decoration-line: none;
+}
+#navbar span a img {
+  padding: 12px;
+  padding-right: 10px;
+}
+#navbar span a h2 {
+  margin: 0;
+  padding: 18px 0;
+  height: 24px;
+  font-size: 24px;
+}
+@media (max-width: 400px) {
+  #navbar span a img {
+    padding: 15px 10px;
+    padding-right: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  #navbar span a h2 {
+    font-size: 22px;
+  }
+}
+
 .navbutton {
   float: right;
   margin: 10px;
@@ -41,34 +70,33 @@ nav {
 .navtoggle {
   display: none;
   float: right;
-  margin: 10px;
+  margin: 7px;
+  margin-left: 0;
   margin-right: 20px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 46px;
 }
 #navbar1, #navbar2, #navbar3 {
   background-color: white;
-  margin: 6px 0;
-  width: 35px;
-  height: 5px;
+  margin: 7px 0;
+  width: 40px;
+  height: 6px;
   transition: 0.1s;
 }
 .change #navbar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 9px);
 }
 .change #navbar2 {
   opacity: 0;
 }
 .change #navbar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-9px, -9px);
 }
 #navdisplay {
   display: none;
   background-color: rgb(60,180,250);
   position: fixed;
-  margin-top: 60px;
+  margin-top: 59.5px;
   padding: 0;
   width: 100%;
   height: 60px;
@@ -96,6 +124,12 @@ nav {
   .navbutton {
     display: none;
   }
+  #cartbutton1 {
+    display: block;
+  }
+  #cartbutton2 {
+    display: none;
+  }
   
   .navdropdown {
     display: none;
@@ -110,11 +144,21 @@ nav {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   #navdisplay {
-    height: 120px;
+    height: 220px;
+  }
+
+  .navdisplaybutton {
+    margin: 15px;
+    margin-left: calc(50% - 50px);
+    margin-right: calc(50% - 50px);
+    width: 100px;
+    text-align: center;
   }
 }
+
+
 
 #cartdisplay {
   display: none;
@@ -199,10 +243,6 @@ nav {
 }
 
 @media (max-width: 760px) {
-  #cartdisplay {
-    margin-top: 125px;
-  }
-
   .cartitem {
     height: 50px;
   }
@@ -225,7 +265,6 @@ nav {
 
 @media (max-width: 450px) {
   #cartdisplay {
-    margin-top: 185px;
     width: calc(100% - 60px);
   }
   .cartitem {
