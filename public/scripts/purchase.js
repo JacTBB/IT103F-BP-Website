@@ -1,6 +1,7 @@
 //Initialise
 var allproductdata = null
 var boughtproducts = []
+var successcounter = 0
 
 //Functions
 async function cart() {
@@ -11,7 +12,8 @@ async function cart() {
         var total = 0
 
         //ProductInfo
-        for (var i=0; i < localStorage.length; i++) {
+        const LocalStorageLength = localStorage.length
+        for (var i=0; i < LocalStorageLength; i++) {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
             if (isNaN(value)) {
@@ -21,11 +23,15 @@ async function cart() {
             }
             else {
                 productdata = allproductdata.find((y) => y['name'] == key)
-                total += productdata['price'] * value
+                
+                setTimeout(() => {
+                    total += productdata['price'] * value
 
-                boughtproducts.push(productdata)
+                    boughtproducts.push(productdata)
 
-                localStorage.removeItem(key)
+                    console.log(key)
+                    localStorage.removeItem(key)
+                }, 1)
             }
         }
 
@@ -37,30 +43,51 @@ async function cart() {
 async function purchase() {
     await cart()
 
-    const name = document.getElementById('CardName').value
-    const email = document.getElementById('PayEmail').value
-    const cardnumber = document.getElementById('CardNo.').value
-    const cardexpiry = document.getElementById('CardEXP').value
-    const cardCVC = document.getElementById('CardSecCode').value
-    console.warn("Purchase attempt:", name, email, cardnumber, cardexpiry, cardCVC)
+    setTimeout(() => {
+        const name = document.getElementById('CardName').value
+        const email = document.getElementById('PayEmail').value
+        const cardnumber = document.getElementById('CardNo.').value
+        const cardexpiry = document.getElementById('CardEXP').value
+        const cardCVC = document.getElementById('CardSecCode').value
+        console.warn("Purchase attempt:", name, email, cardnumber, cardexpiry, cardCVC)
 
 
-    console.log(boughtproducts)
-    for (const product of boughtproducts) {
-        const Headers = {
-            'Content-Type': 'application/json'
-        }
-        const Body = {
-            'name': name,
-            'email': email,
-            'data': [
-                {
-                    'link': product['link'],
-                    'name': product['name']
+        console.log(boughtproducts)
+        for (const product of boughtproducts) {
+            const Headers = {
+                'Content-Type': 'application/json'
+            }
+            const Body = {
+                'name': name,
+                'email': email,
+                'data': [
+                    {
+                        'link': product['link'],
+                        'name': product['name']
+                    }
+                ]
+            }
+            fetch('https://hook.us1.make.com/nm6jbdirz9dxypn4qvet67po8gq1jgm4', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+            .then(() => {
+                successcounter += 1
+                if (successcounter == boughtproducts.length) {
+                    console.log('All Products Bought.')
+                    window.location.href = 'checkout-success.html'
                 }
-            ]
+            })
+            .catch(console.error)
         }
-        fetch('https://hook.us1.make.com/nm6jbdirz9dxypn4qvet67po8gq1jgm4', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
-        .catch(console.error)
-    }
+
+        if (boughtproducts.length == 0) {
+            document.getElementById('purchaseoverlay').style.display = 'none'
+            alert("Your shopping cart is empty!")
+        }
+    }, 1000)
+}
+
+function submitfunction() {
+    document.getElementById('purchaseoverlay').style.display = 'block'
+
+    purchase()
+    return false
 }

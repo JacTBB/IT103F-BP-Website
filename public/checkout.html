@@ -129,7 +129,7 @@
          <!-- Below code are for Cart & Checkout Section -->
         <br>
           <div class="overall-container">
-            <form name="PayReciept" action="checkout-success.html" method="GET">
+            <form name="PayReciept" action="checkout-success.html" method="GET" onsubmit="return submitfunction()">
                 <!-- Shopping Cart Section -->
                 <script src="scripts/checkout.js"></script>
                 <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
@@ -207,9 +207,24 @@
 
                 <div name="form-buttons">
                   <script src="scripts/purchase.js" defer></script>
-                  <button type="submit" class="PurchaseButton" onclick="purchase()"><span style="font-family: CheckoutFont;"> Purchase </span></button>
+                  <button type="submit" class="PurchaseButton"><span style="font-family: CheckoutFont;"> Purchase </span></button>
                   <button type="reset" class="clear-button"> <span style="font-family: CheckoutFont;"> Clear </span> </button>  
                 </div>
+
+                <div id="purchaseoverlay"></div>
+                <style>
+                  #purchaseoverlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    z-index: 10;
+                    background-color: grey;
+                    opacity: 0.6;
+                  }
+                </style>
               </div>
             </form>
           </div>
