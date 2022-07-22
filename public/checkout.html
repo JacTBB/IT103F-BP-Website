@@ -178,10 +178,14 @@
                         <!-- Binds together with flex -->
                             <input type="password" name="creditnumber" class="button-input2" id="CardNo." placeholder="1234-1234-1234-1234" pattern="(?=.*\d)(?=.*-).{2,}" title="Dashes (-) is required!" required="required" minlength="19" maxlength="19">
 
+                            <div class="buttonShowPass">
+                              <input type="checkbox" name="showCCNo." class="showPass" onclick="showHidden();">
+                            </div>
+
                             <div class="card-icon-container"> 
                               <img class="cardicon" src="images/icons/visa-icon.png">
-                               <img class="cardicon" src="images/icons/mastercard-icon.png">
-                                 <img class="cardicon" src="images/icons/american-express-icon.png">
+                              <img class="cardicon" src="images/icons/mastercard-icon.png">
+                              <img class="cardicon" src="images/icons/american-express-icon.png">
                             </div>
                         </div>
                       </div>

@@ -10,6 +10,18 @@ function renderClear(){
 }
 
 //Controller 
+function showHidden(){
+  var hidden = document.getElementById("CardNo.");
+  if (hidden.type === "password") {
+    hidden.type = "text";
+  } 
+  
+  else {
+    hidden.type = "password";
+  }
+}
+
+
 function formValidate(){
   renderClear()
 
