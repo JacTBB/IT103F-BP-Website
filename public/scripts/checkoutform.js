@@ -29,8 +29,12 @@ function formValidate(){
   const creditsecContainer = document.getElementById('CardSecCode');
   const CVCCode = creditsecContainer.value;
 
+//Pattern Recognition
+  var name = /^[0-9_!@#$%&*()-+={}|;:"'<>?`~,.]+$/
+  var expiry = /^[a-zA-Z_]/
+
 //Validation Test 
-if (CCName === '1'){
+if (CCName === ''){
   setTimeout(function (){
   const NameErrorDiv = document.createElement('div')
   NameErrorDiv.id = 'errorType1'
@@ -60,7 +64,7 @@ else if(CCEmail === ""){
   return false 
 }
 
-else if(isNaN(CCNum)){
+else if(CCNum === ''){
   setTimeout(function (){
   const CCNumErrorDiv = document.createElement('div')
   CCNumErrorDiv.id = 'errorType3' 
@@ -75,7 +79,7 @@ else if(isNaN(CCNum)){
 return false
 }
 
-else if(isNaN(CCExpiry) ){
+else if(CCExpiry === ''){
   setTimeout(function (){
   const CCEXPErrorDiv = document.createElement('div')
   CCEXPErrorDiv.id = 'errorType4' 
