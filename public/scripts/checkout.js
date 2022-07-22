@@ -57,7 +57,8 @@ function reloadcheckoutcart() {
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
                 const deletebutton = document.createElement('button')
-            
+                const faremove = document.createElement('i')
+
                 tr.classList = 'productcard'
                 productname.innerHTML = `${productdata['name']}`
                 price.classList = 'price'
@@ -74,20 +75,21 @@ function reloadcheckoutcart() {
                 removebutton.type = 'button'
                 removebutton.addEventListener('click', removeitemfromcartfunction)
                 deletebutton.classList = 'productbutton'
-                deletebutton.innerHTML = 'Delete Item'
+                deletebutton.classList.add('deleteitembutton')
                 deletebutton.id = productdata['name']
                 deletebutton.type = 'button'
                 deletebutton.addEventListener('click', deleteitemfromcartfunction)
                 
+                faremove.classList.add('fa')
+                faremove.classList.add('fa-remove')
+
                 tr.appendChild(productname)
                 tr.appendChild(price)
-                tr.appendChild(tdremovebutton)
-                tdremovebutton.appendChild(removebutton)
                 tr.appendChild(quantity)
-                tr.appendChild(tdaddbutton)
-                tdaddbutton.appendChild(addbutton)
                 tr.appendChild(tddeletebutton)
                 tddeletebutton.appendChild(deletebutton)
+                
+                deletebutton.appendChild(faremove)
                 
                 products.appendChild(tr)
 
