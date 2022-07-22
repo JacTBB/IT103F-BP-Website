@@ -210,32 +210,34 @@ function deleteitemfromcartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
-    localStorage.removeItem(productdata['name'])
-
-    console.log(productdata['name'], "/", '0')
-
-    reloadcheckoutcart()
-
-    var notifmessage = 'You have deleted an item from cart!'
-    const notificationbar = document.getElementById('notificationbar')
-    const notification = document.createElement('div')
-    notification.classList.add('notification')
-    const p = document.createElement('p')
-    p.innerHTML = notifmessage
-    notification.appendChild(p)
-    notificationbar.appendChild(notification)
-
-    notification.style.display = 'block'
-    notification.classList.add('notificationinanim')
     setTimeout(() => {
-        notification.classList.remove('notificationinanim')
-    }, 500)
-    setTimeout(() => {
-        notification.classList.add('notificationoutanim')
-    }, 500+1000)
-    setTimeout(() => {
-        notification.classList.remove('notificationoutanim')
-        notification.style.display = 'none'
-        notification.remove()
-    }, 500+1000+500)
+        localStorage.removeItem(productdata['name'])
+
+        console.log(productdata['name'], "/", '0')
+
+        reloadcheckoutcart()
+
+        var notifmessage = 'You have deleted an item from cart!'
+        const notificationbar = document.getElementById('notificationbar')
+        const notification = document.createElement('div')
+        notification.classList.add('notification')
+        const p = document.createElement('p')
+        p.innerHTML = notifmessage
+        notification.appendChild(p)
+        notificationbar.appendChild(notification)
+
+        notification.style.display = 'block'
+        notification.classList.add('notificationinanim')
+        setTimeout(() => {
+            notification.classList.remove('notificationinanim')
+        }, 500)
+        setTimeout(() => {
+            notification.classList.add('notificationoutanim')
+        }, 500+1000)
+        setTimeout(() => {
+            notification.classList.remove('notificationoutanim')
+            notification.style.display = 'none'
+            notification.remove()
+        }, 500+1000+500)
+    })
 }
