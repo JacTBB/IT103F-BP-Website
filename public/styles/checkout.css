@@ -53,16 +53,36 @@ div.split {
 }
 
 
+.checkoutcartimage {
+    max-width: 100px;
+}
+
+
 /* Contains the entire cart & checkout section. */
 div.overall-container {
 	margin-left: 20%;
     width: 60%;
     min-width: 260px;
 }
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     div.overall-container {
         margin-left: 10%;
         width: 80%;
+    }
+}
+@media (max-width: 550px) {
+    .checkoutcartimage {
+        max-width: 50px;
+    }
+    .productcard {
+        display: flex;
+        flex-flow: wrap;
+    }
+    .productcard td {
+        display: block;
+    }
+    .productcard .price, .productcard .quantity {
+        max-height: 25px;
     }
 }
 
