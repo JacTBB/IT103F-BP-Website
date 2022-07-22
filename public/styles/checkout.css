@@ -104,7 +104,7 @@ div.formcontrols {
 			flex-direction: row;
 			background-color: white;
 			margin-left: -100px;
-			z-index: 2;				
+			z-index: 1;				
 		}
 
 		.cardicon {
