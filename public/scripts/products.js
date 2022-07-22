@@ -19,7 +19,7 @@ fetch('scripts/productdata.json')
         img.src = productdata['image']
         img.id = `URL${productdata['name']}`
         img.addEventListener('click', productpagefunction)
-        desc.innerHTML = productdata['desc']
+        desc.innerHTML = productdata['brief']
         price.classList = 'price'
         price.innerHTML = `$${productdata['price']} `
         button.classList = 'productbutton'
