@@ -71,6 +71,8 @@
       setTimeout(() => {
         currentSlide(1)
       })
+              
+
     </script>
   </head>
 
@@ -229,7 +231,7 @@
               <td>We encourage employees to find a comfortable work-life balance by taking as many days off as they
                   need while still being able to perform their jobs satisfactorily.
                    (We really mean it!)</td>
-              <td>We offer a comprehensive benefits package including healthcare, life insurance, short- and
+              <td style>We offer a comprehensive benefits package including healthcare, life insurance, short- and
                   long-term disability, pension plans in accordance with the market practice in our locations.
                   A complimentary global program that aims to provide family forming and mental wellbeing support
                    to our employees across our offices.</td>
@@ -266,18 +268,68 @@
         Whether you love helping customers, making awesome designs and video edits or<br>
         programming cool things, we have a job for you!</div>
         <br><br><br>
-        <div class="careers">
-         <b>3D CAD Designers</b>
+
+        
+       <button class="accordion">
+         <b>3D CAD DESIGNERS</b>
          <p>CAD designers use technology to help generate designs for complex projects. These designs may be used to create 2D images,
          a process known as surface modeling, or 3D images, or solid modeling. CAD designers must have strong computer skills and extensive
          knowledge of design software. CAD designers must know their industry. In order to be effective, they must have knowledge of machines,
          engineering standards, mathematics, and the materials used to make their plans a reality.</p>
-        </div>
+         </button>
+        <div class="panel">
+          <p<u>Responsibilities</u><br>
+           <li>Use software to create detailed 2D or 3D designs for complex projects.</li>
+           <li>Collaborate with others to establish timelines and budgets, as well as solve problems.</li>
+           <li>Knowledge of industry, engineering, math, and materials.</li>
+            <li>Ability to analyze data and situation and come up with creative solutions.</li>
+           <li>Keep up to date on industry and engineering standards.</li></p>
+
+          <p><u>Requirements</u><br>
+          <li>A degree or equivalent experience.</li>
+          <li>Sit for extended periods of time.</li>
+          <li>Use of hands to operate computers.</li>
+          <li>Extensive knowledge of the company preferred software.</li>
+          <li>Make decisions based on designs.</li>
+          <li>rong communication skills.</li>
+          <li>Ability to collaborate with others to solve problems.</li>
+          <li>Firm grasp of mathematics, engineering, and industry information.</li>
+          <li>Some travel may be required.</li></p>
+          </div><br>
+
+           <button class="accordion">Section 2</button>
+           <div class="panel">
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           </div><br>
+           
+           <button class="accordion">Section 3</button>
+           <div class="panel">
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           </div>
+           
+
+           <script>
+           var acc = document.getElementsByClassName("accordion");
+           var i;
+           
+           for (i = 0; i < acc.length; i++) {
+             acc[i].addEventListener("click", function() {
+               this.classList.toggle("active");
+               var panel = this.nextElementSibling;
+               if (panel.style.display === "block") {
+                 panel.style.display = "none";
+               } else {
+                 panel.style.display = "block";
+               }
+             });
+           }
+           </script>
 
 
 
-
-
+    
+  
 
 
           
