@@ -110,7 +110,10 @@
       <script>
         //Cart Toggle
         var cartopen = false;
-        function cart(x) {
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
           if (cartopen == false) {
             cartopen = true;
             document.getElementById('cartdisplay').style.display = "block";
