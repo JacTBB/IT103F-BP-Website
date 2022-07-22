@@ -100,6 +100,7 @@ border:none;
 color:#333;
 background-color:#333;
 }
+
 .perk
 {
 font-size:20px;
@@ -107,5 +108,19 @@ font-weight:bold;
 text-align:center; 
 color:white;
 }
+
 .white 
-{color:white;}
+{
+color:white;
+}
+
+.careers
+{
+ border:2px solid black;
+ padding:10px;
+  
+}
+
+.careers:hover
+{background-color: rgba(128, 124, 124, 0.8);
+}
