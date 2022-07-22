@@ -114,13 +114,22 @@ color:white;
 color:white;
 }
 
-.careers
+.accordion
 {
  border:2px solid black;
  padding:10px;
  cursor:pointer;
+ text-align:left;
+ font-size:15px;
 }
 
-.careers:hover
-{background-color: rgba(128, 124, 124, 0.8);
+.accordion:hover
+{background-color: rgba(210, 199, 199, 0.8);
 }
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
