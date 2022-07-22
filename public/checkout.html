@@ -40,6 +40,7 @@
       window.onresize = () => { LoadContent() }
     </script>
     <script src="scripts/cart.js" defer></script>
+    <script src="scripts/checkoutform.js" defer></script>
   </head>
 
   <body onload="LoadContent()">
@@ -130,7 +131,7 @@
          <!-- Below code are for Cart & Checkout Section -->
         <br>
           <div class="overall-container">
-            <form name="PayReciept" action="checkout-success.html" method="GET" onsubmit="return submitfunction()">
+            <form name="PayReciept" action="checkout-success.html" method="GET" onsubmit="return formValidate(), submitfunction() ">
                 <!-- Shopping Cart Section -->
                 <script src="scripts/checkout.js"></script>
                 <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
@@ -147,9 +148,9 @@
                 <br>
               
                 <!-- Checkout Section-->
-                  <div class="checkout">
-                    <p style="text-align: center;"> Checkout </p>
-                    <div class="formcontrols">
+              <div class="checkout">
+                  <p style="text-align: center;"> Checkout </p>
+                  <div class="formcontrols">
 
                       <div name="customer-contact-info-container">
 
@@ -204,6 +205,12 @@
                       </div>
 
                   </div>
+                
+                <p id="required"> * - Required to fill in. </p>
+
+                <div id ="errorTypeTxt">
+                  
+                </div>
 
                 <div name="form-buttons">
                   <script src="scripts/purchase.js" defer></script>
