@@ -48,6 +48,8 @@ function reloadcheckoutcart() {
 
                 //Product
                 const tr = document.createElement('tr')
+                const tdimage = document.createElement('td')
+                const image = document.createElement('img')
                 const productname = document.createElement('td')
                 const price = document.createElement('td')
                 const quantity = document.createElement('td')
@@ -60,9 +62,12 @@ function reloadcheckoutcart() {
                 const faremove = document.createElement('i')
 
                 tr.classList = 'productcard'
+                image.classList = 'checkoutcartimage'
+                image.src = productdata['image']
                 productname.innerHTML = `${productdata['name']}`
                 price.classList = 'price'
                 price.innerHTML = `$${productdata['price']}`
+                quantity.classList = 'quantity'
                 quantity.innerHTML = `Quantity: ${value}`
                 addbutton.classList = 'productbutton'
                 addbutton.innerHTML = 'Add Item'
@@ -83,6 +88,8 @@ function reloadcheckoutcart() {
                 faremove.classList.add('fa')
                 faremove.classList.add('fa-remove')
 
+                tr.appendChild(tdimage)
+                tdimage.appendChild(image)
                 tr.appendChild(productname)
                 tr.appendChild(price)
                 tr.appendChild(quantity)
