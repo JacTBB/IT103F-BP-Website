@@ -19,7 +19,7 @@ fetch('scripts/productdata.json')
         img.src = productdata['image']
         img.id = `URL${productdata['name']}`
         img.addEventListener('click', productpagefunction)
-        desc.innerHTML = productdata['desc']
+        desc.innerHTML = productdata['brief']
         price.classList = 'price'
         price.innerHTML = `$${productdata['price']} `
         button.classList = 'productbutton'
@@ -57,20 +57,25 @@ function addtocartfunction(x) {
 
     var quantity = parseFloat(localStorage.getItem(productdata['name']))
     var notifmessage = 'You have added an item to cart!'
-    if (!quantity) {
-        quantity = 1
-    }
-    else {
-        if (productdata['multi'] == true) {
-            quantity += 1
+    if (localStorage.length < 6) {
+        if (!quantity) {
+            quantity = 1
         }
         else {
-            notifmessage = 'You can only add 1 of this item!'
+            if (productdata['multi'] == true) {
+                quantity += 1
+            }
+            else {
+                notifmessage = 'You can only add 1 of this item!'
+            }
         }
-    }
-    localStorage.setItem(productdata['name'], quantity)
+        localStorage.setItem(productdata['name'], quantity)
 
-    console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
+        console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
+    }
+    else {
+        notifmessage = 'Your shopping cart is full!'
+    }
 
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
