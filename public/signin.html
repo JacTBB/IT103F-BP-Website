@@ -9,7 +9,6 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/404.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -161,6 +160,9 @@
             <input type="password" id="password" name="password" required value="123456">
 
             <button type="button" onclick="signin()">Sign In</button>
+
+            <br>
+            <p id="output"></p>
             <script>
                 function signin() {
                     const email = document.getElementById('email').value
@@ -177,7 +179,12 @@
                     fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
                     .then(response => response.json())
                     .then(data => {
+                        if (data == 'Access Denied!') {
+                          return document.getElementById('output').innerText = 'Invalid Email or Password!'
+                        }
+
                         console.log(data[0])
+                        document.getElementById('output').innerText = 'Success!'
                     })
                     .catch(console.error)
                 }
