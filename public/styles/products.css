@@ -76,20 +76,23 @@
 .productcard .price {
   width: 100%;
   align-self: flex-end;
-  text-align: right;
+  text-align: left;
   font-weight: bold;
+  font-size: 19px;
 }
 
 .productbutton {
-  background-color: rgb(180,200,255);
-  border: solid black 1px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px black;
-  font-weight: normal;
+  float: right;
+  height: 100%;
+  background-color: rgb(140,220,255);
+  border: solid rgb(60,120,180) 1px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px grey;
+  font-family: "Alata";
 }
 
 .productbutton:hover {
-  font-weight: bold;
+  background-color: rgb(100,180,220)
 }
 
 @media (max-width: 650px) and (min-width: 450px) {

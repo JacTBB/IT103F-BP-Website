@@ -35,9 +35,13 @@
         if (calculated > 0) {
           footer.style.marginTop = `${calculated}px`
         }
+        else {
+          footer.style.marginTop = '0'
+        }
       }
 
       window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="scripts/cart.js" defer></script>
     <script src="scripts/checkoutform.js" defer></script>
@@ -65,12 +69,14 @@
             if (menuopen == false) {
               menuopen = true;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "block";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
             }
             else {
               menuopen = false;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "none";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
             }
           }
         </script>
@@ -83,8 +89,8 @@
       <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
       <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
     </div>
@@ -187,9 +193,9 @@
                                 <input type="checkbox" class="showPass" name="showCCNo." title="Show Card Number." onclick="showHidden();">
                               </span>
 
-                              <img class="cardicon" src="images/icons/visa-icon.png">
-                              <img class="cardicon" src="images/icons/mastercard-icon.png">
-                              <img class="cardicon" src="images/icons/american-express-icon.png">
+                              <img class="cardicon" src="images/checkout/visa-icon.png">
+                              <img class="cardicon" src="images/checkout/mastercard-icon.png">
+                              <img class="cardicon" src="images/checkout/american-express-icon.png">
                             </div>
                         </div>
                       </div>
@@ -209,7 +215,7 @@
                             <input type="password" name="CVC" class="button-input" id="CardSecCode" placeholder="123" 
                             pattern="(?=.*\d).{1,}" required="required" minlength="3" maxlength="3">
 
-                            <img class="cardicon2" src="images/icons/back-cvc.png" style="margin-left: -40px;">
+                            <img class="cardicon2" src="images/checkout/back-cvc.png" style="margin-left: -40px;">
                           </div>
 
                         </div>

@@ -9,8 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/services.css" rel="stylesheet" type="text/css">
-
+    <link href="styles/jobapplication.css" rel="stylesheet" type="text/css">
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -140,106 +139,46 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <article style="padding: 0">
-          <img src="images/page-banners/IT103F Banner Our Services.png" alt="BP Banner" width="100%">
-        </article>
-        
         <article>
-          <h1>Service Details</h1>
-          <p>
-            Blueprint Studios offers services where you can get a 3D CAD Model of your specifications to be made.<br>
-            We can build models of all types, from realistic vehicles to detailed buildings.<br>
-            <br>
-            Upon submitting a request for our services, we will contact you via email for futher discussion.
-            After confirming the service request, we will send you an invoice and begin work on the models.
-          </p>
+            <div width="100%" style="background-color:lightslategray;border-radius: 25px;">
 
-          <br>
-          <div id="processbanner">
-            <img src="images/services/IT103F BP Website Service Banner.png" alt="Service Process">
-          </div>
-          
-          <br>
-          <hr>
-          <br>
+             <form name="resumesubmission" method="get" id="resumesubmission" action="application-success.html">
+              <table id="formtable">
+               <caption>Send Us Your Resume !</caption>
+                <tr>
+                 <td><label for="name">Name*</label></td>
+                 <td><label for="email">E-Mail*</label></td>
+                </tr>
 
-          <form name="services" action="services-success.html" method="GET">
-            <div class="title">
-                <h1>Request Our Services</h1>
-            </div>
-            
-            <div class="textbox">
-                <span><p>Name*:</p></span><br>
-                <span><input type="text" name="name" required placeholder="E.g. John Nolan"></span><br>
-            </div>
+                <tr>
+                 <td><input id="name" class="textline" type="text" placeholder="Jon" required></td>
+                 <td><input id="email" class="textline" type="email" placeholder="Jon123@gmail.com" required></td>
+                </tr>
 
-            <div class="textbox">
-                <span><p>Company:</p></span><br>
-                <span><input type="text" name="company" placeholder="E.g. Blueprint Studios"></span><br>
-            </div>
+                <tr>
+                <td><label for="position">Positions your applying*</label><br>
+                <select name="positions" class="textline" id="position" style="padding:8px;">
+                 <option value="none"selected>None</option>
+                 <option value="CAD designer">CAD Designer</option>
+                 <option value="Graphic designer">Graphic Designer</option>
+                 <option value="Business Analyst">Business Analyst</option>
+                </select></td></tr>
 
-            <div class="textbox" id="email">
-                <span><p>Email*:</p></span><br>
-                <span><input type="email" name="email" required placeholder="E.g. John@gmail.com"></span><br>
-            </div>
-
-            <div class="radio">
-              <span><p>Service Package*:</p></span>
-              <span>
-                <div class="packageradio">
-                  <input type="radio" name="package" value="basic" id="basic" required>
-                  <label for="basic">
-                    <span>Basic:</span>
-                    1x 3D CAD Model<br>
-                    1x Revisions<br>
-                    Low Quality Model
-                  </label>
-                </div>
-                  
-                <div class="packageradio">
-                  <input type="radio" name="package" value="premium" id="premium" required>
-                  <label for="premium">
-                    <span>Premium:</span>
-                    1x 3D CAD Model<br>
-                    2x Revisions<br>
-                    High Quality Model
-                  </label>
-                </div>
-
-                <div class="packageradio">
-                  <input type="radio" name="package" value="enterprise" id="enterprise" required>
-                  <label for="enterprise">
-                    <span>Enterprise:</span>
-                    1-10 3D CAD Model<br>
-                    3x Revisions<br>
-                    High Quality Model
-                  </label>
-                </div>
-              </span><br>
+                <tr>
+                <td><label for="writetext">What makes you deserve the position*?</label><br>
+                <textarea class="textline" rows="10" id="writetext">enter here...</textarea required></td>
+                
+                <td valign="top"><label for="myFile">Submit your resume here*</label><br><br><br><br>
+                <input type="file" id="myFile" name="filename" class="resume" required></td>
+                </tr>
+            </table>
+            <div class="endbut">
+                <button class="button" type="submit">Submit</button>
+                <button class="button" type="reset">Reset</button>
             </div>
 
-            <div class="textarea">
-                <span><p>Specifications*:</p></span><br>
-                <span><textarea required name="specifications" rows="10" cols="60" placeholder="Please be detailed with your specifications." style="font-family: Arial, Helvetica, sans-serif;"></textarea></span><br>
-                <style>
-                    textarea {
-                        overflow-y: scroll;
-                        height: 60px;
-                        resize: none;
-                    }
-                </style>
-            </div>
-
-            <div class="file">
-              <span><p>Image References:</p></span><br>
-              <span><input type="file" id="fileinput" name="references" multiple></span><br>
-          </div>
-
-            <div class="submit">
-                <span><button type="submit" name="submit"><p> Submit </p></button></span><br>
-                <span><button type="reset" name="reset"><p> Reset </p></button></span><br>
-            </div>
-          </form>
+        </div>
+     </form>
         </article>
         <!--Edit Ending Here-->
       </section>

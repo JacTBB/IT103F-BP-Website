@@ -34,9 +34,13 @@
         if (calculated > 0) {
           footer.style.marginTop = `${calculated}px`
         }
+        else {
+          footer.style.marginTop = '0'
+        }
       }
 
       window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="scripts/cart.js" defer></script>
   </head>
@@ -63,12 +67,14 @@
             if (menuopen == false) {
               menuopen = true;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "block";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
             }
             else {
               menuopen = false;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "none";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
             }
           }
         </script>
@@ -81,8 +87,8 @@
       <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
       <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
     </div>

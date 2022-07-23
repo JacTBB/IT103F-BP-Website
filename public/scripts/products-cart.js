@@ -1,27 +1,30 @@
 //Initialise
 var allproductdata = null
-reloadcheckoutcart()
+reloadcart()
+
+//Temp
+//localStorage.clear()
+
+//Print localStorage
+console.log('localStorage:')
+for (var i=0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    console.log(key, localStorage.getItem(key))
+}
+console.log('\n')
 
 //Functions
-function reloadcheckoutcart() {
-    fetch('scripts/productdata.json')
+function reloadcart() {
+    fetch('../scripts/productdata.json')
     .then(response => response.json())
     .then(data => {
         allproductdata = data['data']
         var total = 0
 
-        const products = document.getElementById('products')
+        const products = document.getElementById('cartitemdisplay')
         while (products.hasChildNodes()) {
             products.removeChild(products.firstChild);
         }
-
-        //Header
-        const trheader = document.createElement('tr')
-        const thheader = document.createElement('th')
-        thheader.innerHTML = 'Your Shopping Cart'
-        thheader.colSpan = 6
-        trheader.appendChild(thheader)
-        products.appendChild(trheader)
 
         //ProductInfo
         for (var i=0; i < localStorage.length; i++) {
@@ -36,11 +39,11 @@ function reloadcheckoutcart() {
                 productdata = allproductdata.find((y) => y['name'] == key)
 
                 //Product
-                const tr = document.createElement('tr')
-                const tdimage = document.createElement('td')
-                const image = document.createElement('img')
-                const productname = document.createElement('td')
-                const price = document.createElement('td')
+                const div = document.createElement('div')
+                const img = document.createElement('img')
+                const productname = document.createElement('p')
+                const price = document.createElement('p')
+
                 const quantity = document.createElement('td')
                 const tdaddbutton = document.createElement('td')
                 const tdremovebutton = document.createElement('td')
@@ -48,15 +51,17 @@ function reloadcheckoutcart() {
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
                 const deletebutton = document.createElement('button')
-                const faremove = document.createElement('i')
-
-                tr.classList = 'productcard'
-                image.classList = 'checkoutcartimage'
-                image.src = productdata['image']
+            
+                div.classList = 'cartitem'
+                img.classList = 'cartitemimg'
+                img.src = `../${productdata['image']}`
+                img.alt = productdata['name']
+                productname.classList = 'cartitemname'
                 productname.innerHTML = `${productdata['name']}`
-                price.classList = 'price'
-                price.innerHTML = `$${productdata['price']}`
-                quantity.classList = 'quantity'
+                price.classList = 'cartitemprice'
+                price.innerHTML = `${value} x $${productdata['price']}`
+
+                /*
                 quantity.innerHTML = `Quantity: ${value}`
                 addbutton.classList = 'productbutton'
                 addbutton.innerHTML = 'Add Item'
@@ -69,39 +74,40 @@ function reloadcheckoutcart() {
                 removebutton.type = 'button'
                 removebutton.addEventListener('click', removeitemfromcartfunction)
                 deletebutton.classList = 'productbutton'
-                deletebutton.classList.add('deleteitembutton')
+                deletebutton.innerHTML = 'Delete Item'
                 deletebutton.id = productdata['name']
                 deletebutton.type = 'button'
                 deletebutton.addEventListener('click', deleteitemfromcartfunction)
-                
-                faremove.classList.add('fa')
-                faremove.classList.add('fa-remove')
-                faremove.id = productdata['name']
+                */
 
-                tr.appendChild(tdimage)
-                tdimage.appendChild(image)
-                tr.appendChild(productname)
-                tr.appendChild(price)
-                tr.appendChild(quantity)
-                tr.appendChild(tddeletebutton)
+                div.appendChild(img)
+                div.appendChild(productname)
+                div.appendChild(price)
+
+                /*
+                div.appendChild(tdremovebutton)
+                tdremovebutton.appendChild(removebutton)
+                div.appendChild(quantity)
+                div.appendChild(tdaddbutton)
+                tdaddbutton.appendChild(addbutton)
+                div.appendChild(tddeletebutton)
                 tddeletebutton.appendChild(deletebutton)
+                */
                 
-                deletebutton.appendChild(faremove)
-                
-                products.appendChild(tr)
+                products.appendChild(div)
+
+                //Remove Cart Empty Message
+                if (products.hasChildNodes()) {
+                    const cartempty = document.getElementById('cartempty')
+                    cartempty.style.display = 'none';
+                }
 
                 total += productdata['price'] * value
 
                 if (i == localStorage.length-1) {
                     //Total
-                    const trtotal = document.createElement('tr')
-                    const tdtotal = document.createElement('td')
-                    tdtotal.innerHTML = `Total Amount: $${total}`
-                    tdtotal.colSpan = 6
-                    tdtotal.style.textAlign = 'right'
-                    tdtotal.style.fontWeight = 'bold'
-                    trtotal.appendChild(tdtotal)
-                    products.appendChild(trtotal)
+                    const carttotal = document.getElementById('cartitemtotal')
+                    carttotal.innerHTML = `Subtotal: $${total}`
                 }
             }
         }
@@ -132,9 +138,6 @@ function additemtocartfunction(x) {
 
     console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
     
-    reloadcheckoutcart()
-    setTimeout(() => { LoadContent() }, 10)
-
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
     notification.classList.add('notification')
@@ -156,6 +159,8 @@ function additemtocartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
+
+    reloadcart()
 }
 
 function removeitemfromcartfunction(x) {
@@ -170,9 +175,6 @@ function removeitemfromcartfunction(x) {
     }
 
     console.log(productdata['name'], "/", quantity)
-
-    reloadcheckoutcart()
-    setTimeout(() => { LoadContent() }, 10)
 
     var notifmessage = 'You have removed an item from cart!'
     const notificationbar = document.getElementById('notificationbar')
@@ -196,41 +198,40 @@ function removeitemfromcartfunction(x) {
         notification.style.display = 'none'
         notification.remove()
     }, 500+1000+500)
+
+    reloadcart()
 }
 
 function deleteitemfromcartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
+    localStorage.removeItem(productdata['name'])
+
+    console.log(productdata['name'], "/", '0')
+
+    var notifmessage = 'You have deleted an item from cart!'
+    const notificationbar = document.getElementById('notificationbar')
+    const notification = document.createElement('div')
+    notification.classList.add('notification')
+    const p = document.createElement('p')
+    p.innerHTML = notifmessage
+    notification.appendChild(p)
+    notificationbar.appendChild(notification)
+
+    notification.style.display = 'block'
+    notification.classList.add('notificationinanim')
     setTimeout(() => {
-        localStorage.removeItem(productdata['name'])
+        notification.classList.remove('notificationinanim')
+    }, 500)
+    setTimeout(() => {
+        notification.classList.add('notificationoutanim')
+    }, 500+1000)
+    setTimeout(() => {
+        notification.classList.remove('notificationoutanim')
+        notification.style.display = 'none'
+        notification.remove()
+    }, 500+1000+500)
 
-        console.log(productdata['name'], "/", '0')
-
-        reloadcheckoutcart()
-        setTimeout(() => { LoadContent() }, 10)
-
-        var notifmessage = 'You have deleted an item from cart!'
-        const notificationbar = document.getElementById('notificationbar')
-        const notification = document.createElement('div')
-        notification.classList.add('notification')
-        const p = document.createElement('p')
-        p.innerHTML = notifmessage
-        notification.appendChild(p)
-        notificationbar.appendChild(notification)
-
-        notification.style.display = 'block'
-        notification.classList.add('notificationinanim')
-        setTimeout(() => {
-            notification.classList.remove('notificationinanim')
-        }, 500)
-        setTimeout(() => {
-            notification.classList.add('notificationoutanim')
-        }, 500+1000)
-        setTimeout(() => {
-            notification.classList.remove('notificationoutanim')
-            notification.style.display = 'none'
-            notification.remove()
-        }, 500+1000+500)
-    })
+    reloadcart()
 }

@@ -17,9 +17,10 @@ fetch('scripts/productdata.json')
         div.id = productdata['name']
         productname.innerHTML = productdata['name']
         img.src = productdata['image']
+        img.alt = productdata['name']
         img.id = `URL${productdata['name']}`
         img.addEventListener('click', productpagefunction)
-        desc.innerHTML = productdata['desc']
+        desc.innerHTML = productdata['brief']
         price.classList = 'price'
         price.innerHTML = `$${productdata['price']} `
         button.classList = 'productbutton'
@@ -101,11 +102,3 @@ function addtocartfunction(x) {
 
     reloadcart()
 }
-
-//Print localStorage
-console.log('localStorage:')
-for (var i=0; i < localStorage.length; i++) {
-    const key = localStorage.key(i)
-    console.log(key, localStorage.getItem(key))
-}
-console.log('\n')
