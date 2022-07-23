@@ -1,0 +1,51 @@
+
+
+#formtable {
+ width: 100%;
+ max-width: 100%;
+ margin: 0;
+ border-radius:10px; 
+ padding:20px;
+ box-align:center;
+
+}
+
+caption {
+font-weight:bold;
+font-size:40px;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+td{
+font-weight:bold;
+font-size:20px;
+padding:8px;
+}
+
+.textline{
+background-color: transparent;
+color: black;
+outline: none;
+outline-style: none;
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: solid black 2px;
+width:50%;
+font-size:20px;
+}
+
+.textline:hover{
+background-color: white;
+}
+
+.endbut
+{
+text-align: center;
+}
+
+.resume{
+border: 1px solid black;
+
+}
+    

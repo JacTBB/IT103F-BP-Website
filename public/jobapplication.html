@@ -9,7 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="styles/jobapplication.css" rel="stylesheet" type="text/css">
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -140,12 +140,45 @@
       <section id="section">
         <!--Edit Starting Here-->
         <article>
-        </article>
-        
-        <article>
-        </article>
-        
-        <article>
+            <div width="100%" style="background-color:rgb(4, 67, 130);border-radius: 25px;">
+
+             <form name="resumesubmission" method="get" id="resumesubmission" action="application-success.html">
+              <table id="formtable">
+               <caption>Send Us Your Resume !</caption>
+                <tr>
+                 <td><label for="name">Name*</label></td>
+                 <td><label for="email">E-Mail*</label></td>
+                </tr>
+
+                <tr>
+                 <td><input id="name" class="textline" type="text" placeholder="Jon" required></td>
+                 <td><input id="email" class="textline" type="email" placeholder="Jon123@gmail.com" required></td>
+                </tr>
+
+                <tr>
+                <td><label for="position">Positions your applying*</label><br>
+                <select name="positions" class="textline" id="position" style="padding:8px;">
+                 <option value="none"selected>None</option>
+                 <option value="CAD designer">CAD Designer</option>
+                 <option value="Graphic designer">Graphic Designer</option>
+                 <option value="Business Analyst">Business Analyst</option>
+                </select></td></tr>
+
+                <tr>
+                <td><label for="writetext">What makes you deserve the position*?</label><br>
+                <textarea class="textline" rows="10" id="writetext">enter here...</textarea required></td>
+                
+                <td valign="top"><label for="myFile">Submit your resume here*</label><br><br><br><br>
+                <input type="file" id="myFile" name="filename" class="resume" required></td>
+                </tr>
+            </table>
+            <div class="endbut">
+                <button class="button" type="submit">Submit</button>
+                <button class="button" type="reset">Reset</button>
+            </div>
+
+        </div>
+     </form>
         </article>
         <!--Edit Ending Here-->
       </section>

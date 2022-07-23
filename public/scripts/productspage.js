@@ -20,7 +20,8 @@ fetch('../scripts/productdata.json')
             div.classList = 'productcard'
             div.id = productdata['name']
             productname.innerHTML = productdata['name']
-            img.src = productdata['image']
+            img.src = `../${productdata['image']}`
+            img.alt = productdata['name']
             desc.innerHTML = productdata['desc']
             price.classList = 'price'
             price.innerHTML = `$${productdata['price']} `
