@@ -3,48 +3,67 @@
 }
 
 .button {
-  align-items: center;
-  background-clip: padding-box;
-  background-color:  rgb(60,180,250);
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  display: flex;
   justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
+  margin-bottom: 15px;
+}
+
+.button span {
+  width: 100px;
+  display: flex;
+  margin-right: 10px;
+  padding: 1px;
+}
+
+.button span button {
+  border: 1px solid #009726;
+  background-color: white;
+  box-shadow: 0 3px #999;
+  color: black;
+  text-align: center;
   text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
+  min-width: 100px;
+  padding: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
-.button:hover, .button:focus {
-  background-color: #fb8332;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+.button span button p {
+  margin: 0;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.button:hover {
-  transform: translateY(-1px);
+.button span button p:after {
+  content: ">>";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10%;
+  transition: 0.5s;
 }
 
-.button:active {
-  background-color: #c85000;
-  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
-  transform: translateY(0);
+.button span button:hover {
+  background-color: #009726;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.button span button:hover p {
+  padding-right: 20px;
+}
+
+.button span button:hover p:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button span button:active {
+  transform: translateY(4px);
+}
+
 .slidecontainer {
   width: 100%;
 }

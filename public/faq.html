@@ -9,7 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/contact-us.css" rel="stylesheet" type="text/css">
+    <link href="styles/faq.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -145,7 +145,44 @@
         </article>
         
         <article>
-          <h1 style="font-size:30px;">Frequently Asked Questions</h1>
+          <button class="accordion">
+            <p><b>What is used to make the 3D CAD models?</b></p>
+            
+            </button>
+           <div class="panel">
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;
+              <p<u>Blender</u><br><br>
+              <li>Blender is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D-printed models and more.</li>
+              </p>
+             </div><br>
+   
+              <button class="accordion">Section 2</button>
+              <div class="panel">
+                <p>ans</p>
+              </div><br>
+              
+              <button class="accordion">Section 3</button>
+              <div class="panel">
+                <p>ans</p>
+              </div>
+              
+   
+              <script>
+              var acc = document.getElementsByClassName("accordion");
+              var i;
+              
+              for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                  } else {
+                    panel.style.display = "block";
+                  }
+                });
+              }
+              </script>
         </article>
         
         <article>
