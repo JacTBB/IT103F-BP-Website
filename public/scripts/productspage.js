@@ -10,6 +10,8 @@ fetch('../scripts/productdata.json')
         if (productdata['name'] == id) {
             const div = document.createElement('div')
             const img = document.createElement('img')
+            const leftspan = document.createElement('span')
+            const rightdiv = document.createElement('div')
             const productname = document.createElement('h4')
             const desc = document.createElement('p')
             const price = document.createElement('p')
@@ -27,11 +29,13 @@ fetch('../scripts/productdata.json')
             button.id = productdata['name']
             button.type = 'button'
             button.addEventListener('click', addtocartfunction)
-        
-            div.appendChild(img)
-            div.appendChild(productname)
-            div.appendChild(desc)
-            div.appendChild(price)
+
+            div.appendChild(leftspan)
+            leftspan.appendChild(img)
+            div.appendChild(rightdiv)
+            rightdiv.appendChild(productname)
+            rightdiv.appendChild(desc)
+            rightdiv.appendChild(price)
             price.appendChild(button)
         
             document.getElementById('products').appendChild(div)
