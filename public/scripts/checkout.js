@@ -2,17 +2,6 @@
 var allproductdata = null
 reloadcheckoutcart()
 
-//Temp
-//localStorage.clear()
-
-//Print localStorage
-console.log('localStorage:')
-for (var i=0; i < localStorage.length; i++) {
-    const key = localStorage.key(i)
-    console.log(key, localStorage.getItem(key))
-}
-console.log('\n')
-
 //Functions
 function reloadcheckoutcart() {
     fetch('scripts/productdata.json')
@@ -48,6 +37,8 @@ function reloadcheckoutcart() {
 
                 //Product
                 const tr = document.createElement('tr')
+                const tdimage = document.createElement('td')
+                const image = document.createElement('img')
                 const productname = document.createElement('td')
                 const price = document.createElement('td')
                 const quantity = document.createElement('td')
@@ -57,11 +48,15 @@ function reloadcheckoutcart() {
                 const addbutton = document.createElement('button')
                 const removebutton = document.createElement('button')
                 const deletebutton = document.createElement('button')
-            
+                const faremove = document.createElement('i')
+
                 tr.classList = 'productcard'
+                image.classList = 'checkoutcartimage'
+                image.src = productdata['image']
                 productname.innerHTML = `${productdata['name']}`
                 price.classList = 'price'
                 price.innerHTML = `$${productdata['price']}`
+                quantity.classList = 'quantity'
                 quantity.innerHTML = `Quantity: ${value}`
                 addbutton.classList = 'productbutton'
                 addbutton.innerHTML = 'Add Item'
@@ -74,20 +69,24 @@ function reloadcheckoutcart() {
                 removebutton.type = 'button'
                 removebutton.addEventListener('click', removeitemfromcartfunction)
                 deletebutton.classList = 'productbutton'
-                deletebutton.innerHTML = 'Delete Item'
+                deletebutton.classList.add('deleteitembutton')
                 deletebutton.id = productdata['name']
                 deletebutton.type = 'button'
                 deletebutton.addEventListener('click', deleteitemfromcartfunction)
                 
+                faremove.classList.add('fa')
+                faremove.classList.add('fa-remove')
+                faremove.id = productdata['name']
+
+                tr.appendChild(tdimage)
+                tdimage.appendChild(image)
                 tr.appendChild(productname)
                 tr.appendChild(price)
-                tr.appendChild(tdremovebutton)
-                tdremovebutton.appendChild(removebutton)
                 tr.appendChild(quantity)
-                tr.appendChild(tdaddbutton)
-                tdaddbutton.appendChild(addbutton)
                 tr.appendChild(tddeletebutton)
                 tddeletebutton.appendChild(deletebutton)
+                
+                deletebutton.appendChild(faremove)
                 
                 products.appendChild(tr)
 
@@ -134,6 +133,7 @@ function additemtocartfunction(x) {
     console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
     
     reloadcheckoutcart()
+    setTimeout(() => { LoadContent() }, 10)
 
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
@@ -172,6 +172,7 @@ function removeitemfromcartfunction(x) {
     console.log(productdata['name'], "/", quantity)
 
     reloadcheckoutcart()
+    setTimeout(() => { LoadContent() }, 10)
 
     var notifmessage = 'You have removed an item from cart!'
     const notificationbar = document.getElementById('notificationbar')
@@ -201,32 +202,35 @@ function deleteitemfromcartfunction(x) {
     if (!x.target) return
     const productdata = allproductdata.find((y) => y['name'] == x.target.id)
 
-    localStorage.removeItem(productdata['name'])
-
-    console.log(productdata['name'], "/", '0')
-
-    reloadcheckoutcart()
-
-    var notifmessage = 'You have deleted an item from cart!'
-    const notificationbar = document.getElementById('notificationbar')
-    const notification = document.createElement('div')
-    notification.classList.add('notification')
-    const p = document.createElement('p')
-    p.innerHTML = notifmessage
-    notification.appendChild(p)
-    notificationbar.appendChild(notification)
-
-    notification.style.display = 'block'
-    notification.classList.add('notificationinanim')
     setTimeout(() => {
-        notification.classList.remove('notificationinanim')
-    }, 500)
-    setTimeout(() => {
-        notification.classList.add('notificationoutanim')
-    }, 500+1000)
-    setTimeout(() => {
-        notification.classList.remove('notificationoutanim')
-        notification.style.display = 'none'
-        notification.remove()
-    }, 500+1000+500)
+        localStorage.removeItem(productdata['name'])
+
+        console.log(productdata['name'], "/", '0')
+
+        reloadcheckoutcart()
+        setTimeout(() => { LoadContent() }, 10)
+
+        var notifmessage = 'You have deleted an item from cart!'
+        const notificationbar = document.getElementById('notificationbar')
+        const notification = document.createElement('div')
+        notification.classList.add('notification')
+        const p = document.createElement('p')
+        p.innerHTML = notifmessage
+        notification.appendChild(p)
+        notificationbar.appendChild(notification)
+
+        notification.style.display = 'block'
+        notification.classList.add('notificationinanim')
+        setTimeout(() => {
+            notification.classList.remove('notificationinanim')
+        }, 500)
+        setTimeout(() => {
+            notification.classList.add('notificationoutanim')
+        }, 500+1000)
+        setTimeout(() => {
+            notification.classList.remove('notificationoutanim')
+            notification.style.display = 'none'
+            notification.remove()
+        }, 500+1000+500)
+    })
 }

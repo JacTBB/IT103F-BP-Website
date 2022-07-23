@@ -82,14 +82,14 @@
   padding: 1px;
   margin: 6px;
   flex: 40%;
-  min-height: 125px;
-  min-width: 160px;
+  min-height: 150px;
+  min-width: 190px;
   max-width: calc(30% - 20px);
   text-align: center;
 }
 
 .productsbox img {
-  width: 140px;
+  width: 150px;
   margin: 1px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
@@ -161,3 +161,19 @@ div.reviews {
   align-items: center;
   flex-grow: 1;
 }
+.testing:link { 
+  color: darkblue;
+}
+
+.testing:visited {
+  color: darkblue;
+}
+
+ .testing:hover {
+  color: blue;
+ }
+
+ .testing:active {
+  color: blue;
+} 
+

@@ -35,9 +35,13 @@
         if (calculated > 0) {
           footer.style.marginTop = `${calculated}px`
         }
+        else {
+          footer.style.marginTop = '0'
+        }
       }
 
       window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="scripts/cart.js" defer></script>
   </head>
@@ -64,26 +68,28 @@
             if (menuopen == false) {
               menuopen = true;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "block";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
             }
             else {
               menuopen = false;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "none";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
             }
           }
         </script>
       </div>
 
-      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="https://cdn.discordapp.com/attachments/985109881516343370/994477917839032320/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
       <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
       <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
       <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
     </nav>
     <div id="navdisplay">
-      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
       <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
       <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
     </div>
@@ -111,7 +117,10 @@
       <script>
         //Cart Toggle
         var cartopen = false;
-        function cart(x) {
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
           if (cartopen == false) {
             cartopen = true;
             document.getElementById('cartdisplay').style.display = "block";

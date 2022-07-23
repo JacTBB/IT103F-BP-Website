@@ -1,3 +1,10 @@
+#return {
+  margin: 0 10px;
+  font-size: 15px;
+  color: black;
+  text-decoration-line: none;
+}
+
 #products {
   display: flex;
   justify-content: space-evenly;
@@ -8,71 +15,81 @@
 .productcard {
   display: flex;
   flex-wrap: wrap;
+  max-width: 800px;
   min-height: 300px;
   margin: 10px;
   flex: 32%;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgb(255,255,255);
 }
 
-.productcard img {
+.productcard span {
+  display: block;
+  width: 60%;
+}
+
+.productcard span img {
+  width: 100%;
+  border-radius: 10px 0 0 0;
+}
+
+.productcard div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: calc(40% - 20px);
+  margin-left: 10px;
+}
+
+.productcard div h4 {
+  margin: 10px 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.productcard div p {
+  width: 100%;
+  margin: 10px 0;
+  flex-grow: 1;
+}
+
+.productcard div .price {
   display: block;
   width: 100%;
-  border-radius: 20px 20px 0 0;
-}
-
-.productcard h4 {
-  width: 100%;
-  margin: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.productcard p {
-  width: 100%;
-  margin: 10px;
-}
-
-.productcard .price {
-  width: 100%;
-  align-self: flex-end;
-  text-align: right;
+  flex-grow: 0;
   font-weight: bold;
+  font-size: 19px;
 }
 
 .productbutton {
-  background-color: rgb(180,200,255);
-  border: solid black 1px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px black;
-  font-weight: normal;
+  float: right;
+  height: 100%;
+  background-color: rgb(140,220,255);
+  border: solid rgb(60,120,180) 1px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px grey;
+  font-family: "Alata";
 }
 
 .productbutton:hover {
-  font-weight: bold;
+  background-color: rgb(100,180,220)
 }
 
-@media (max-width: 650px) and (min-width: 450px) {
-  #products {
-    justify-content: center;
-  }
-
+@media (max-width: 650px) {
   .productcard {
-    flex: 49%;
-    max-width: min(calc(49% - 20px), 250px);
-  }
-}
-
-@media (max-width: 450px) {
-  #products {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
-  .productcard {
-    flex: 100%;
-    max-width: 250px;
+  .productcard span {
+    width: 100%;
+  }
+  .productcard span img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .productcard div {
+    width: calc(100% - 20px);
+    margin: 10px;
   }
 }
 
