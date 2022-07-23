@@ -9,7 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/contact-us.css" rel="stylesheet" type="text/css">
+    <link href="styles/faq.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -44,56 +44,6 @@
       setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="scripts/cart.js" defer></script>
-    <style>
-      section{
-        min-height: 100vh;
-        width: 80%;
-        margin:0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .title{
-        font-size: 3rem;
-        margin: 2rem 0rem;
-      }
-
-      .faq {
-        max-width: 700px;
-        margin-top: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid black;
-        cursor:pointer;
-      }
-
-      .question{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .question h3{
-        font-size:1.8rem;
-        color: red;
-      }
-
-      .answer p{
-        padding-top: 1rem;
-        line-height: 1.6;
-        font-size :1.4rem;
-      }
-
-      .answer{
-        max-height:0;
-        overflow:hidden;
-      }
-
-      .active .answer{
-        max-height:300px;
-      }
-
-    </style>
   </head>
 
   <body onload="LoadContent()">
@@ -186,7 +136,6 @@
         }
       </script>
     </div>
-    
 
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
@@ -196,105 +145,44 @@
         </article>
         
         <article>
-          <h1 style="font-size:30px;text-align: center;">Frequently Asked Questions</h1>
-          <br>
-        <section>
-          <h2 class="title">FAQS</h2>
-
-          <script>
-            const faqs = document.getElementsByClassName("faq");
-
-            for (const faq of faqs) {
-                console.log(faq)
-                faq.addEventListener("click", () => {
-                    faq.classList.toggle("active");
+          <button class="accordion">
+            <p><b>What is used to make the 3D CAD models?</b></p>
+            
+            </button>
+           <div class="panel">
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;
+              <p<u>Blender</u><br><br>
+              <li>Blender is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D-printed models and more.</li>
+              </p>
+             </div><br>
+   
+              <button class="accordion">Section 2</button>
+              <div class="panel">
+                <p>ans</p>
+              </div><br>
+              
+              <button class="accordion">Section 3</button>
+              <div class="panel">
+                <p>ans</p>
+              </div>
+              
+   
+              <script>
+              var acc = document.getElementsByClassName("accordion");
+              var i;
+              
+              for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                  } else {
+                    panel.style.display = "block";
+                  }
                 });
-            }
-          </script>
-
-          <div class="faq">
-            <div class="question">
-              <h3>Q:How do i apply for a job with MacDonalds?</h3>
-
-              <svg width="15" height="10" viewbox="0 0 42 25">
-                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-              </svg>
-
-            </div>
-            <div class="answer">
-              <p>
-                Please visit our Contact us page and view our available positions and  submit an online application to us.
-                 Shortlisted candidates will be notified.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq">
-            <div class="question">
-              <h3>Q:What is the job of a service crew?</h3>
-
-              <svg width="15" height="10" viewbox="0 0 42 25">
-                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-              </svg>
-
-            </div>
-            <div class="answer">
-              <p>
-                A Service Crew may be assigned front counter, lobby or kitchen duties. Front counter duties include taking customers' orders and accepting payment. The Service Crew will also have to interact with customers, clear trays and ensure that the lobby is clean. Lastly, the Service Crew will have to cook and assemble orders (putting together a burger with dressing etc.) in the kitchen.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq">
-            <div class="question">
-              <h3>Q:What are the working hours?</h3>
-
-              <svg width="15" height="10" viewbox="0 0 42 25">
-                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-              </svg>
-
-            </div>
-            <div class="answer">
-              <p>
-                We offer flexible hours for our Service Crew depending on the needs of the restaurant and the availability of our Service Crew. The Restaurant General Manager of each store will be able to provide information regarding the working hours needed by the restaurant.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq">
-            <div class="question">
-              <h3>How do i apply for a job with MacDonalds?</h3>
-
-              <svg width="15" height="10" viewbox="0 0 42 25">
-                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-              </svg>
-
-            </div>
-            <div class="answer">
-              <p>
-                Please visit our Contact us page and view our available positions and  submit an online application to us.
-                 Shortlisted candidates will be notified.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq">
-            <div class="question">
-              <h3>How do i apply for a job with MacDonalds?</h3>
-
-              <svg width="15" height="10" viewbox="0 0 42 25">
-                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
-              </svg>
-
-            </div>
-            <div class="answer">
-              <p>
-                Please visit our Contact us page and view our available positions and  submit an online application to us.
-                 Shortlisted candidates will be notified.
-              </p>
-            </div>
-          </div>
-        </section>
+              }
+              </script>
         </article>
         
         <article>
