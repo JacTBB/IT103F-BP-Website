@@ -68,12 +68,14 @@
             if (menuopen == false) {
               menuopen = true;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "block";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
             }
             else {
               menuopen = false;
               document.getElementById('navtoggle').classList.toggle('change')
-              document.getElementById('navdisplay').style.display = "none";
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
             }
           }
         </script>
