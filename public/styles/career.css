@@ -133,3 +133,18 @@ color:white;
     background-color: white;
     overflow: hidden;
   }
+
+  .applynow
+  {
+    border: 3px solid lightskyblue;
+    padding:10px;
+    cursor:pointer;
+    font-size:25px;
+    width:10%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+   }
+   .applynow:hover
+{background-color: rgba(23, 197, 255, 0.8);
+}
