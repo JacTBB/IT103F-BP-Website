@@ -1,0 +1,18 @@
+.accordion
+{
+ border:2px solid black;
+ padding: 10px;
+ cursor:pointer;
+ text-align:left;
+ font-size:15px;
+}
+
+.accordion:hover
+{background-color: rgba(210, 199, 199, 0.8);
+}
+
+.panel {
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
