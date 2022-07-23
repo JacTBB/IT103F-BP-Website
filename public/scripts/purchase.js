@@ -17,9 +17,11 @@ async function cart() {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
             if (isNaN(value)) {
-                setTimeout(() => {
-                    localStorage.removeItem(key)
-                }, 1000)
+                if (key != 'userdata') {
+                    setTimeout(() => {
+                        localStorage.removeItem(key)
+                    }, 1000)
+                }
             }
             else {
                 productdata = allproductdata.find((y) => y['name'] == key)
