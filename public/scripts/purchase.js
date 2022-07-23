@@ -104,6 +104,12 @@ async function purchase() {
 function submitfunction() {
     document.getElementById('purchaseoverlay').style.display = 'block'
 
-    purchase()
+    if (formValidate()) {
+        purchase()
+    }
+    else {
+        document.getElementById('purchaseoverlay').style.display = 'none'
+        alert("Failed Validation!")
+    }
     return false
 }
