@@ -76,6 +76,7 @@ function reloadcheckoutcart() {
                 
                 faremove.classList.add('fa')
                 faremove.classList.add('fa-remove')
+                faremove.id = productdata['name']
 
                 tr.appendChild(tdimage)
                 tdimage.appendChild(image)
@@ -132,6 +133,7 @@ function additemtocartfunction(x) {
     console.log(productdata['name'], "/", quantity, "/", `Multi: ${productdata['multi']}`)
     
     reloadcheckoutcart()
+    setTimeout(() => { LoadContent() }, 10)
 
     const notificationbar = document.getElementById('notificationbar')
     const notification = document.createElement('div')
@@ -170,6 +172,7 @@ function removeitemfromcartfunction(x) {
     console.log(productdata['name'], "/", quantity)
 
     reloadcheckoutcart()
+    setTimeout(() => { LoadContent() }, 10)
 
     var notifmessage = 'You have removed an item from cart!'
     const notificationbar = document.getElementById('notificationbar')
@@ -205,6 +208,7 @@ function deleteitemfromcartfunction(x) {
         console.log(productdata['name'], "/", '0')
 
         reloadcheckoutcart()
+        setTimeout(() => { LoadContent() }, 10)
 
         var notifmessage = 'You have deleted an item from cart!'
         const notificationbar = document.getElementById('notificationbar')
