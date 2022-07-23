@@ -64,7 +64,7 @@
           var menuopen = false
           function menu() {
             if (cartopen == true) {
-              cart()
+              cartopenfunction()
             }
             if (menuopen == false) {
               menuopen = true;
@@ -82,7 +82,7 @@
         </script>
       </div>
 
-      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cartopenfunction()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
       <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
       <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
       <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
@@ -119,6 +119,9 @@
         //Cart Toggle
         var cartopen = false;
         function cartopenfunction(x) {
+          if (menuopen == true) {
+            menu()
+          }
           if (cartopen == false) {
             cartopen = true;
             document.getElementById('cartdisplay').style.display = "block";

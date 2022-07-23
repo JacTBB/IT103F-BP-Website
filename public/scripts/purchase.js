@@ -56,10 +56,24 @@ async function purchase() {
 
         console.log(boughtproducts)
         for (const product of boughtproducts) {
-            const Headers = {
+            const Headers1 = {
+              'Content-Type': 'application/json'
+            }
+            const Body1 = {
+                'email': email,
+                'product': product['name']
+            }
+            fetch('https://it103f-bp-website-api.up.railway.app/purchase', {method: 'POST', headers: Headers1, body: JSON.stringify(Body1)})
+            .then(response => response.json())
+            .then(data => {
+              console.log(data)
+            })
+            .catch(console.error)
+
+            const Headers2 = {
                 'Content-Type': 'application/json'
             }
-            const Body = {
+            const Body2 = {
                 'name': name,
                 'email': email,
                 'data': [
@@ -69,7 +83,7 @@ async function purchase() {
                     }
                 ]
             }
-            fetch('https://hook.us1.make.com/nm6jbdirz9dxypn4qvet67po8gq1jgm4', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+            fetch('https://hook.us1.make.com/nm6jbdirz9dxypn4qvet67po8gq1jgm4', {method: 'POST', headers: Headers2, body: JSON.stringify(Body2)})
             .then(() => {
                 successcounter += 1
                 if (successcounter == boughtproducts.length) {
