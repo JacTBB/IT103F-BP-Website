@@ -31,6 +31,12 @@ p, label, th, td {
     color: rgb(255, 43, 43);
 }
 
+.success {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(18, 151, 14);
+}
+
 input {
 	border: hsla(0,0%,71%,.05);
 }
@@ -90,6 +96,7 @@ table.ShopCart {
     border: 2px solid rgba(255, 0, 0, 0.5);
     border-radius: 20px;
     width: 100%;
+    transition: all 0.3s;
 }
 
 table.ShopCart:hover {
@@ -149,9 +156,36 @@ div.formcontrols {
 			flex: 1;
 			flex-direction: row;
 			background-color: white;
-			margin-left: -100px;
+			margin-left: -120px;
 			z-index: 1;				
 		}
+
+
+        .showIMGPass {
+            position: relative;
+            width: 40px;
+            height: 28px;
+            border: none;
+            background-position: center;
+            background-size: 30px 28px;
+            background-repeat: no-repeat;
+            margin-left: -20px;
+            transition: all 0.3s;
+        }
+
+        .showIMGPass:hover {
+            opacity: 0.8
+        }
+
+        .showPass {
+            position: absolute;
+            left: 1px;
+            top: 3px;
+            opacity: 0;
+            cursor: pointer;
+            width: 30px;    
+            height: 18px;              
+        }
 
 		.cardicon {
 			width: 30px;

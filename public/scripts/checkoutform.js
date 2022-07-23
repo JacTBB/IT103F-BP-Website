@@ -1,5 +1,5 @@
 //This JS file is only for checkout form validation. 
-//V0.2 
+//V0.3*
 
 //Model 
 
@@ -13,10 +13,14 @@ function renderClear(){
 function showHidden(){
   var hidden = document.getElementById("CardNo.");
   if (hidden.type === "password") {
+    let HiddenTxtIMG = document.getElementById('showIndicator')
+    HiddenTxtIMG.style = "background-image: url('images/checkout/hide-text.png') "
     hidden.type = "text";
   } 
   
   else {
+    let ShowTxtIMG = document.getElementById('showIndicator')
+    ShowTxtIMG.style = "background-image: url('images/checkout/show-text.png') "
     hidden.type = "password";
   }
 }
@@ -26,44 +30,41 @@ function formValidate(){
   renderClear()
 
 //Get form value inputs
-  const NameContainer = document.getElementById('CardName');
-  const CCName = NameContainer.value;
-
-  const emailContainer = document.getElementById('PayEmail');
-  const CCEmail = emailContainer.value;
-
-  const creditNumContainer = document.getElementById('CardNo.');
-  const CCNum = creditNumContainer.value;
-
-  const creditExpiryContainer = document.getElementById('CardEXP');
-  const CCExpiry = creditExpiryContainer.value;
-
-  const creditsecContainer = document.getElementById('CardSecCode');
-  const CVCCode = creditsecContainer.value
+  const CCName = document.getElementById('CardName').value;
+  const CCEmail = document.getElementById('PayEmail').value
+  const CCNum = document.getElementById('CardNo.').value
+  const CCExpiry = document.getElementById('CardEXP').value
+  const CVCCode = document.getElementById('CardSecCode').value
 
 //Pattern Recognition
-  let rangeNum = new Range();
-  
-  var ccfourChar = num + num + num + num
+  //var numRange = /[0-9]/g;
+  var checkForName = new RegExp("[0-9~`!@#$%^&*()_+={}[]|:;'<>?/,.]")
+  var resultCForName = checkForName.test(CCName)
+
+  var checkForCardNo = new RegExp("[a-zA-Z~`!@#$%^&*()_+={}[]|:;'<>?/,.]")
+  var resultCForCardNo = checkForCardNo.test(CCNum)
+
+  var checkForCardEXP = new RegExp("[a-zA-Z~`!@#$%^&*()_+={}[]|:;'<>?,.]")
+  var resultCForCardEXP = checkForCardEXP.test(CCExpiry)
 
 //Validation Test 
-if (CCName !== ''){
-  setTimeout(function (){
+if (resultCForName){
+  setTimeout(() => {
   const NameErrorDiv = document.createElement('div')
   NameErrorDiv.id = 'errorType1'
   document.getElementById('errorTypeTxt').appendChild(NameErrorDiv);
 
   const ErrorTxt1 = document.createElement('p')
   ErrorTxt1.className = 'error'
-  ErrorTxt1.innerHTML = 'Name cannot have numbers! (Error 1)'
+  ErrorTxt1.innerHTML = 'Name must not contain any number or special characters! (Error 1)'
   document.getElementById('errorType1').appendChild(ErrorTxt1);
   console.log('Test 1 Failed!');
   }, 2000);
   return false 
 }
 
-else if(CCEmail === ""){
-  setTimeout(function (){
+else if(CCEmail === ''){
+  setTimeout(() => {
   const EmailErrorDiv = document.createElement('div')
   EmailErrorDiv.id = 'errorType2' 
   document.getElementById('errorTypeTxt').appendChild(EmailErrorDiv);
@@ -77,30 +78,30 @@ else if(CCEmail === ""){
   return false 
 }
 
-else if(CCNum !== ccfourChar + '-' + ccfourChar + '-' + ccfourChar + '-' + ccfourChar ){
-  setTimeout(function (){
+else if(resultCForCardNo){
+  setTimeout(() => {
   const CCNumErrorDiv = document.createElement('div')
   CCNumErrorDiv.id = 'errorType3' 
   document.getElementById('errorTypeTxt').appendChild(CCNumErrorDiv);
   
   const ErrorTxt3 = document.createElement('p')
   ErrorTxt3.className = 'error'
-  ErrorTxt3.innerHTML = 'CC input is invalid! (Error 3)'
+  ErrorTxt3.innerHTML = 'Credit Card Number is invalid! (Error 3)'
   document.getElementById('errorType3').appendChild(ErrorTxt3);
   console.log('Test 3 Failed!');
   }, 2000);
 return false
 }
 
-else if(CCExpiry !== ''){
-  setTimeout(function (){
+else if(resultCForCardEXP){
+  setTimeout(() => {
   const CCEXPErrorDiv = document.createElement('div')
   CCEXPErrorDiv.id = 'errorType4' 
   document.getElementById('errorTypeTxt').appendChild(CCEXPErrorDiv);
   
   const ErrorTxt4 = document.createElement('p')
   ErrorTxt4.className = 'error'
-  ErrorTxt4.innerHTML = 'CCExpiry must only contain Month/Year! (Error 4)'
+  ErrorTxt4.innerHTML = 'Credit Card Expiry Date must only contain Month/Year! (Error 4)'
   document.getElementById('errorType4').appendChild(ErrorTxt4);
   console.log('Test 4 Failed!');
   }, 2000);
@@ -108,7 +109,7 @@ return false
 }
 
 else if(isNaN(CVCCode)){
-  setTimeout(function (){
+  setTimeout(() => {
   const CVCErrorDiv = document.createElement('div')
   CVCErrorDiv.id = 'errorType5' 
   document.getElementById('errorTypeTxt').appendChild(CVCErrorDiv);
@@ -122,8 +123,18 @@ else if(isNaN(CVCCode)){
 return false 
 }
 
+//Auth Passed
 else 
-//Auth passed
+  setTimeout(() => {
+  const ValidateSuccess = document.createElement('div')
+  ValidateSuccess.id = 'Authorized'
+  document.getElementById('errorTypeTxt').appendChild(ValidateSuccess);
+
+  const FormSuccessTxt = document.createElement('p')
+  FormSuccessTxt.className = 'success'
+  FormSuccessTxt.innerHTML = 'Form Validation Test Successful.'
+  document.getElementById('Authorized').appendChild(FormSuccessTxt);
+  }, 2000);
 
 console.log('Test passed')
 return true
