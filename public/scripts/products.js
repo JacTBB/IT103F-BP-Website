@@ -17,6 +17,7 @@ fetch('scripts/productdata.json')
         div.id = productdata['name']
         productname.innerHTML = productdata['name']
         img.src = productdata['image']
+        img.alt = productdata['name']
         img.id = `URL${productdata['name']}`
         img.addEventListener('click', productpagefunction)
         desc.innerHTML = productdata['brief']
