@@ -34,9 +34,13 @@
         if (calculated > 0) {
           footer.style.marginTop = `${calculated}px`
         }
+        else {
+          footer.style.marginTop = '0'
+        }
       }
 
       window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="../../scripts/products_cart.js" defer></script>
   </head>
