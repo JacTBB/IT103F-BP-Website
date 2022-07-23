@@ -155,6 +155,7 @@
         <article id="article">
           <h2>Dashboard</h2>
           <h3 id="welcome">Welcome ${name}</h3>
+          <button onclick="signout()">Sign Out</button>
           <hr>
           <h3>Owned Products:</h3>
           <div id="products">
@@ -171,6 +172,12 @@
             </div>
           </div>
 
+          <script defer>
+            function signout() {
+              localStorage.removeItem('userdata')
+              window.location.href = 'signin.html'
+            }
+          </script>
           <script defer>
             const userdatavalue = localStorage.getItem('userdata')
             const userdata = JSON.parse(userdatavalue)
