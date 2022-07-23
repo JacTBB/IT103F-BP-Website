@@ -190,7 +190,10 @@
                         }
   
                         console.log(data)
-                        document.getElementById('output').innerText = 'Success!'
+                        document.getElementById('output').innerText = 'Success!\nRedirecting to sign in page!'
+                        setTimeout(() => {
+                          window.location.href = 'signin.html'
+                        }, 5000)
                     })
                     .catch(console.error)
                 }
