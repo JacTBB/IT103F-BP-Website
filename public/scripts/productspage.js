@@ -88,11 +88,3 @@ function addtocartfunction(x) {
         notification.remove()
     }, 500+1000+500)
 }
-
-//Print localStorage
-console.log('localStorage:')
-for (var i=0; i < localStorage.length; i++) {
-    const key = localStorage.key(i)
-    console.log(key, localStorage.getItem(key))
-}
-console.log('\n')

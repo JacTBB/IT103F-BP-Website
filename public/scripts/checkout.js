@@ -2,17 +2,6 @@
 var allproductdata = null
 reloadcheckoutcart()
 
-//Temp
-//localStorage.clear()
-
-//Print localStorage
-console.log('localStorage:')
-for (var i=0; i < localStorage.length; i++) {
-    const key = localStorage.key(i)
-    console.log(key, localStorage.getItem(key))
-}
-console.log('\n')
-
 //Functions
 function reloadcheckoutcart() {
     fetch('scripts/productdata.json')
