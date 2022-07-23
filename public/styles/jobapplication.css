@@ -39,6 +39,13 @@ font-size:20px;
 background-color: bisque;
 }
 
-.endbut{
-text-align:center;
+.endbut
+{
+text-align: center;
 }
+
+.resume{
+border: 1px solid black;
+
+}
+    
