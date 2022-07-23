@@ -154,36 +154,42 @@
         </style>
         <article id="article">
           <form>
+            Name:
+            <input type="text" id="name" name="name" required value="Test1">
+            <br>
+            <br>
             Email:
             <input type="text" id="email" name="email" required value="Test1@gmail.com">
             Password:
             <input type="password" id="password" name="password" required value="123456">
-
-            <button type="button" onclick="signin()">Sign In</button>
-
+  
+            <button type="button" onclick="signup()">Sign Up</button>
+  
             <br>
             <p id="output"></p>
             <script>
-                function signin() {
+                function signup() {
+                    const name = document.getElementById('name').value
                     const email = document.getElementById('email').value
                     const password = document.getElementById('password').value
-                    console.log("Signin attempt:", email, password)
-
+                    console.log("Signup attempt:", name, email, password)
+  
                     const Headers = {
                         'Content-Type': 'application/json'
                     }
                     const Body = {
+                        'name': name,
                         'email': email,
                         'password': password
                     }
-                    fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                    fetch('https://it103f-bp-website-api.up.railway.app/signup', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
                     .then(response => response.json())
                     .then(data => {
-                        if (data == 'Access Denied!') {
-                          return document.getElementById('output').innerText = 'Invalid Email or Password!'
+                        if (data == 'Already Exists!') {
+                          return document.getElementById('output').innerText = 'Email already registered!'
                         }
-
-                        console.log(data[0])
+  
+                        console.log(data)
                         document.getElementById('output').innerText = 'Success!'
                     })
                     .catch(console.error)
