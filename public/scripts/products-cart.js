@@ -54,7 +54,8 @@ function reloadcart() {
             
                 div.classList = 'cartitem'
                 img.classList = 'cartitemimg'
-                img.src = productdata['image']
+                img.src = `../${productdata['image']}`
+                img.alt = productdata['name']
                 productname.classList = 'cartitemname'
                 productname.innerHTML = `${productdata['name']}`
                 price.classList = 'cartitemprice'
