@@ -184,7 +184,12 @@
                         }
 
                         console.log(data[0])
-                        document.getElementById('output').innerText = 'Success!'
+                        localStorage.setItem('userdata', JSON.stringify(data[0]))
+
+                        document.getElementById('output').innerText = 'Success!\nRedirecting to dashboard!'
+                        setTimeout(() => {
+                          window.location.href = 'dashboard.html'
+                        }, 5000)
                     })
                     .catch(console.error)
                 }
