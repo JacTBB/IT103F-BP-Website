@@ -8,6 +8,8 @@ img {vertical-align: middle;}
  position:relative;
  margin:auto;
  box-sizing:border-box;
+ display: flex;
+flex-wrap: wrap;
 }
 
 /* caption text to put what i want say */
@@ -143,4 +145,9 @@ color:white;
    }
    .applynow:hover
 {background-color: rgba(23, 197, 255, 0.8);
+}
+
+.benefit-container
+{display: flex;
+ flex-wrap: wrap;
 }
