@@ -9,7 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="styles/jobapplication.css" rel="stylesheet" type="text/css">
+
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -139,48 +139,64 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <article>
-            <div width="100%" style="background-color:rgb(160, 203, 247);border-radius: 25px;">
+        <style>
+          #article {
+            padding-top: 100px;
+            padding-bottom: 100px;
+          }
 
-             <form name="resumesubmission" method="get" id="resumesubmission" action="application-success.html">
-              <table id="formtable">
-               <caption>Send Us Your Resume !</caption>
-                <tr>
-                 <td><label for="name">Name*</label></td>
-                 <td><label for="email">E-Mail*</label></td>
-                </tr>
-
-                <tr>
-                 <td><input id="name" class="textline" type="text" placeholder="Jon" required></td>
-                 <td><input id="email" class="textline" type="email" placeholder="Jon123@gmail.com" required></td>
-                </tr>
-
-                <tr>
-                <td><label for="position">Positions your applying*</label><br>
-                <select name="positions" class="textline" id="position" style="padding:8px;">
-                 <option value="none"selected>None</option>
-                 <option value="CAD designer">CAD Designer</option>
-                 <option value="Graphic designer">Graphic Designer</option>
-                 <option value="Business Analyst">Business Analyst</option>
-                </select></td></tr>
-
-                <tr>
-                <td><label for="writetext">What makes you deserve the position*?</label><br>
-                <textarea class="textline" rows="10" id="writetext">type..</textarea required></td>
-                
-                <td valign="top"><label for="myFile">Submit your resume here*</label><br><br><br><br>
-                <input type="file" id="myFile" name="filename" class="resume" required></td>
-                </tr>
-            </table>
-            <div class="endbut">
-                <button class="button" type="submit">Submit</button>  
-                <button class="button" type="reset">Reset</button>
-            </div>
-
-        </div>
-     </form>
+          @media (max-width: 850px) {
+            #article {
+              padding-top: 50px;
+              padding-bottom: 50px;
+            }
+          }
+        </style>
+        <article id="article">
+          <form>
+            Name:
+            <input type="text" id="name" name="name" required value="Test1">
+            <br>
+            <br>
+            Email:
+            <input type="text" id="email" name="email" required value="Test1@gmail.com">
+            Password:
+            <input type="password" id="password" name="password" required value="123456">
+  
+            <button type="button" onclick="signup()">Sign Up</button>
+  
+            <br>
+            <p id="output"></p>
+            <script>
+                function signup() {
+                    const name = document.getElementById('name').value
+                    const email = document.getElementById('email').value
+                    const password = document.getElementById('password').value
+                    console.log("Signup attempt:", name, email, password)
+  
+                    const Headers = {
+                        'Content-Type': 'application/json'
+                    }
+                    const Body = {
+                        'name': name,
+                        'email': email,
+                        'password': password
+                    }
+                    fetch('https://it103f-bp-website-api.up.railway.app/signup', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data == 'Already Exists!') {
+                          return document.getElementById('output').innerText = 'Email already registered!'
+                        }
+  
+                        console.log(data)
+                        document.getElementById('output').innerText = 'Success!'
+                    })
+                    .catch(console.error)
+                }
+            </script>
+          </form>
         </article>
-        <!--Edit Ending Here-->
       </section>
       
       <footer id="footer">
