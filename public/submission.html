@@ -9,7 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="styles/submission.css" rel="stylesheet" type="text/css">
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -140,6 +140,47 @@
       <section id="section">
         <!--Edit Starting Here-->
         <article>
+            <div width="100%" style="background-color:lemonchiffon;border-radius: 25px;">
+
+             <form name="resumesubmission" method="get" id="resumesubmission">
+              <table id="formtable">
+               <caption>Send Us Your Resume !</caption>
+                <tr>
+                 <td><label for="name">Name*</label></td>
+                 <td><label for="email">E-Mail*</label></td>
+                </tr>
+
+                <tr>
+                 <td><input id="name" class="textline" type="text" placeholder="Jon" required></td>
+                 <td><input id="email" class="textline" type="email" placeholder="Jon123@gmail.com" required></td>
+                </tr>
+
+                <tr>
+                <td><label for="position">Positions your applying*</label><br>
+                <select name="positions" class="textline" id="position" style="padding:8px;">
+                 <option value="none"selected>None</option>
+                 <option value="CAD designer">CAD Designer</option>
+                 <option value="Graphic designer">Graphic Designer</option>
+                 <option value="Business Analyst">Business Analyst</option>
+                </select></td></tr>
+
+                <tr>
+                <td>What makes you deserve the position*?<br>
+                <textarea class="textline" rows="10">enter here...</textarea></td>
+                
+                <td valign="top">Submit your resume here*<br><br><br><br>
+                <input type="file" id="myFile" name="filename"></td>
+                </tr>
+            </table>
+            <div class="endbut">
+                <button class="button" type="submit"><b>Submit</b></button>
+                <button class="button" type="reset"><b>Reset</b></button>
+            </div>  
+                
+
+            
+             
+            </form>
         </article>
         
         <article>
