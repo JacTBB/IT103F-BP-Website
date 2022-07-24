@@ -5,8 +5,9 @@ fetch('../scripts/productdata.json')
 .then(data => {
     allproductdata = data['data']
     
-    for (productdata of allproductdata) {        
-        const id = decodeURI(window.location.pathname.slice(17,-5))
+    for (productdata of allproductdata) {
+        const decodedURI = decodeURI(window.location.pathname).split('/')   
+        const id = decodedURI[decodedURI.length-1].slice(0,-5)
         if (productdata['name'] == id) {
             const div = document.createElement('div')
             const img = document.createElement('img')

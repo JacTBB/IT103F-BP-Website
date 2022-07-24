@@ -184,12 +184,17 @@
                         }
 
                         console.log(data[0])
-                        document.getElementById('output').innerText = 'Success!'
+                        localStorage.setItem('userdata', JSON.stringify(data[0]))
+
+                        document.getElementById('output').innerText = 'Success!\nRedirecting to dashboard!'
+                        setTimeout(() => {
+                          window.location.href = 'dashboard.html'
+                        }, 5000)
                     })
                     .catch(console.error)
                 }
             </script>
-        </form>
+          </form>
         </article>
       </section>
       
@@ -197,7 +202,7 @@
         <div class="footerinfo">
           <img src="images/Blueprint Logo.png" alt="BP">
           <h2><a href="index.html" style="color: black;text-decoration-line: none;">Blueprint Studios</a></h2>
-          <p>Copyright &copy; Blueprint Studios 2020-2022</p>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
           <p>
             <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
             <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
