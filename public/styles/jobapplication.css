@@ -3,7 +3,7 @@ display: flex;
 width: 100%;
 height: 100%;
 margin: 0;
-background-color: rgb(16, 112, 203);
+background-color: rgb(91, 169, 241);
 }
 
 form {
@@ -41,12 +41,12 @@ text-align:center;
 }
 
 .endbutton input {
-background-color:rgb(15, 164, 206);
+background-color:rgb(28, 244, 255);
 border-radius: 10px;
 height:27px;
 width:100px;    
 }
 
 .endbutton input:hover{
-background-color:rgb(179, 172, 151);
+background-color:rgb(117, 176, 240);
 }
