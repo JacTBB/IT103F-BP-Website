@@ -23,6 +23,15 @@ function reloadcheckoutcart() {
         trheader.appendChild(thheader)
         products.appendChild(trheader)
 
+        //Cart Empty
+        const trempty = document.createElement('tr')
+        const tdempty = document.createElement('td')
+        tdempty.innerHTML = 'Your shopping cart is empty!'
+        tdempty.style.textAlign = 'center'
+        tdempty.colSpan = 6
+        trempty.appendChild(tdempty)
+        products.appendChild(trempty)
+
         //ProductInfo
         for (var i=0; i < localStorage.length; i++) {
             const key = localStorage.key(i)
@@ -35,6 +44,9 @@ function reloadcheckoutcart() {
                 }
             }
             else {
+                //Hide Empty Shopping Cart Messsage
+                trempty.style.display = 'none'
+
                 productdata = allproductdata.find((y) => y['name'] == key)
 
                 //Product
