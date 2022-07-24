@@ -140,46 +140,84 @@
       <section id="section">
         <!--Edit Starting Here-->
         <article>
-            <div width="100%" style="background-color:rgb(160, 203, 247);border-radius: 25px;">
+       <form name="jobapplication" method="GET" action="application-success.html">
+        
+         <div class="jobtitle"><u>Job Application Form</u></div>
+         <br><br>
+         <table width="100%">
+          <tr>
+            <td>
+              <label for="fullname">Full Name :</label><br>
+            </td>
+            <td>
+              <label for="email">Email :</label><br>
+            </td>
+          </tr>
 
-             <form name="resumesubmission" method="get" id="resumesubmission" action="application-success.html">
-              <table id="formtable">
-               <caption>Send Us Your Resume !</caption>
-                <tr>
-                 <td><label for="name">Name*</label></td>
-                 <td><label for="email">E-Mail*</label></td>
-                </tr>
+          <tr>
+            <td>         
+              <input type="text" name="firstname" id="fullname" required placeholder="E.g. Jonathan"><br>
+            </td>
+            <td>
+              <input type="email" name="email" id="email" required placeholder="E.g. Jonathan@gmail.com"><br>
+            </td>
+          </tr>
 
-                <tr>
-                 <td><input id="name" class="textline" type="text" placeholder="Jon" required></td>
-                 <td><input id="email" class="textline" type="email" placeholder="Jon123@gmail.com" required></td>
-                </tr>
+          <tr>
+            <td class="spacing">
+              <label for="jobs">Selected Occupation :</label>
+            </td>
+            <td class="spacing">
+              <label for="comments">Tell us why you deserve this position ?</label>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <select name="jobs" id="jobs" required>
+                <option value="job0" selected>None</option>
+                <option value="job1">3D Cad Designer</option>
+                <option value="job2">Graphic Designer</option>
+                <option value="job3">Business Analyst</option>
+               </select>
+            </td>
+            <td>
+              <textarea id="comments" name="comments" rows="2" cols="25" required placeholder="write here.."></textarea>
+            </td>
+          </tr>
 
-                <tr>
-                <td><label for="position">Positions your applying*</label><br>
-                <select name="positions" class="textline" id="position" style="padding:8px;">
-                 <option value="none"selected>None</option>
-                 <option value="CAD designer">CAD Designer</option>
-                 <option value="Graphic designer">Graphic Designer</option>
-                 <option value="Business Analyst">Business Analyst</option>
-                </select></td></tr>
-
-                <tr>
-                <td><label for="writetext">What makes you deserve the position*?</label><br>
-                <textarea class="textline" rows="10" id="writetext" placeholder="Write here" required></textarea ></td>
-                
-                <td valign="top"><label for="myFile">Submit your resume here*</label><br><br><br><br>
-                <input type="file" id="myFile" name="filename" class="resume" required></td>
-                </tr>
-            </table>
-            <div class="endbut">
-                <button class="button" type="submit">Submit</button>  
-                <button class="button" type="reset">Reset</button>
-            </div>
-
+          <tr>
+            <td class="spacing"><label for="myfile">Send your resume here</label></td>
+            <td class="spacing"><label for="opinion">Is there anything else for us to know ?</label></td>
+          </tr>
+          
+          <tr>
+            <td>
+              <input type="file" id="myfile" name="myfile" multiple required>
+            </td>
+            <td>
+            <textarea id="opinion" name="opinion" rows="2" cols="25" required placeholder="write here.."></textarea>
+            </td>
+          </tr> 
+        </table>
+          
+        <div class="endbutton">
+          <input type="submit" name="register">
+          <input type="reset" name="reset"><br>
         </div>
-     </form>
-        </article>
+
+
+
+
+
+
+
+
+
+
+
+       </form>
+      </article>
         <!--Edit Ending Here-->
       </section>
       
