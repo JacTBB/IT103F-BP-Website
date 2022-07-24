@@ -1,42 +1,56 @@
 /* general */
-
-
 p, label, th, td {
     font-family: Alata;
     margin-top: 0;
     margin-bottom: 0;
 }
 
+
+/* Shop Cart CSS */
+.checkoutcartimage {
+    max-width: 100px;
+}
+
 .productbutton {
     font-weight: bold;
     background-color: white;
-    border: 2px solid rgb(0, 89, 255);
+    border: 2px solid rgb(255, 43, 43);
     border-radius: 4px;
     transition: all 0.3s;
 }
 
 .productbutton:hover {
-    background-color: rgb(0, 89, 255);
+    background-color: rgb(255, 43, 43);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.productbutton:active {
+    transform: translateY(2px);
+}
+
+.fa-remove {
+    font-size: 20px;
+    color: rgb(145, 43, 43);
+    transition: all 0.3s;
+}
+
+.fa-remove:hover {
+    color: white;
+}
+
+/* General Checkout Form CSS */
+div.split {
+	display: grid;
+	grid-template-columns: 48% 48%;
+	column-gap: 10px;
+}
 #required {
     color: rgb(255, 43, 43);
 }
 
-.error {
-    margin-top: 5px;
-    font-size: 14px;
-    color: rgb(255, 43, 43);
-}
 
-.success {
-    margin-top: 5px;
-    font-size: 14px;
-    color: rgb(18, 151, 14);
-}
-
+/* Form Controls CSS */
 input {
 	border: hsla(0,0%,71%,.05);
 }
@@ -52,15 +66,17 @@ input::placeholder {
 	font-size: 14px;
 }
 
-div.split {
-	display: grid;
-	grid-template-columns: 48% 48%;
-	column-gap: 10px;
+/* Validation CSS Message */
+.error {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(255, 43, 43);
 }
 
-
-.checkoutcartimage {
-    max-width: 100px;
+.success {
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(18, 151, 14);
 }
 
 
@@ -174,7 +190,7 @@ div.formcontrols {
         }
 
         .showIMGPass:hover {
-            opacity: 0.8
+            opacity: 0.6;
         }
 
         .showPass {
@@ -191,6 +207,31 @@ div.formcontrols {
 			width: 30px;
 			height: 28px;
 		}
+
+        div.cvc-title-box {
+            display: flex;
+            flex: 1;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+
+        .cvc-img {
+            position: absolute;
+            border: none;
+            margin-left: 50px;
+        }
+
+        .cvc-tooltip {
+           position: relative;
+           top: 2.5px;
+           cursor: pointer;
+           height: 16px;     
+           transition: all 0.3s;         
+        }
+
+        .cvc-tooltip:hover {
+            opacity: 0.4;
+        }
 		
 		div.card-icon-container2 {
 			display: flex;
@@ -203,12 +244,6 @@ div.formcontrols {
 			width: 30px;
 			height: 22px;
 		}
-
-    .fa-remove {
-        font-size: 20px;
-        color: red;
-    }
-
 
 /* Form submit & reset buttons */
 .PurchaseButton {

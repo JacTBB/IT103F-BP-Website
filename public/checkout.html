@@ -137,7 +137,7 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-         <!-- *V0.51* -->
+         <!-- *V0.52* -->
          <!-- Below code are for Cart & Checkout Section -->
         <br>
           <div class="overall-container">
@@ -207,7 +207,13 @@
                       
                          <div name="date-cvc-labels" class="split">
                           <label for="CardEXP"> Expiry Date <span id="required"> * </span> </label> 
-                          <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
+
+                          <div class="cvc-title-box">
+                            <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
+                            <span class="cvc-img">
+                              <img class="cvc-tooltip" src="images/checkout/cvc-tooltip.png" title="CVC (Card Verification Code) is the 3 digits at the back of your card.">
+                            </span>
+                          </div>
                         </div>
 
                         <div name="date-&-cvc-inputs" class="split">
