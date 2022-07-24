@@ -108,7 +108,7 @@ nav {
   transform: translateY(259.5px)
 }
 .navdisplaybutton {
-  float: right;
+  float: left;
   margin: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -122,6 +122,9 @@ nav {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgb(20,20,60);
+}
+.navdisplaybutton:nth-child(1) {
+  margin-left: calc(100% - 390px);
 }
 
 @media (max-width: 760px) {
@@ -155,7 +158,7 @@ nav {
 
   .navdisplaybutton {
     margin: 15px;
-    margin-left: calc(50% - 50px);
+    margin-left: calc(50% - 50px) !important;
     margin-right: calc(50% - 50px);
     width: 100px;
     text-align: center;
