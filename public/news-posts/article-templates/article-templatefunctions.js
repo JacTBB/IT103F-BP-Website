@@ -23,10 +23,10 @@ let newsIndex = 3
 
 function renderNewsDefault(){
   const leftCardimg = document.getElementById('newsLeft')
-  leftCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
+  leftCardimg.style = "background-image: url('')"
   document.getElementById('hyperLeft').href = "news-posts/articles/"
   document.getElementById('dateLeft').innerHTML = "1 May"
-  document.getElementById('heading-left').innerHTML = "MAY 2022 PROMOTIONS"
+  document.getElementById('heading-left').innerHTML = "1M"
 
   const midCardimg = document.getElementById('newsMid')
   midCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
@@ -35,11 +35,13 @@ function renderNewsDefault(){
   document.getElementById('heading-mid').innerHTML = "JUNE 2022 PROMOTIONS"
 
   const rightCardimg = document.getElementById('newsRight')
-  rightCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
+  rightCardimg.style = "background-image: url('')"
   document.getElementById('hyperRight').href = "news-posts/articles/"
   document.getElementById('dateRight').innerHTML = "3 July"
-  document.getElementById('heading-right').innerHTML = "JULY 2022 PROMOTIONS"
+  document.getElementById('heading-right').innerHTML = "1J"
 }
+
+renderNewsDefault()
 
 function newsScrollLeft() {
   newsIndex = newsIndex - 1
@@ -48,25 +50,25 @@ function newsScrollLeft() {
     leftCardimg.style = "background-image: url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/b843c4ae15c10f098c70e8d23f623303a593a4f9-1280x720.jpg?w=686&h=386&auto=format&dpr=2')"
     document.getElementById('hyperLeft').href = "news-posts/articles/"
     document.getElementById('dateLeft').innerHTML = "1 April"
-    document.getElementById('heading-left').innerHTML = "APRIL 2022 PROMOTIONS"
+    document.getElementById('heading-left').innerHTML = "APRIL 2022"
 
     const midCardimg = document.getElementById('newsMid')
-    midCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
+    midCardimg.style = "background-image: url('')"
     document.getElementById('hyperMid').href = "news-posts/articles/"
-    document.getElementById('dateMid').innerHTML = "2 June"
-    document.getElementById('heading-mid').innerHTML = "JUNE 2022 PROMOTIONS"
+    document.getElementById('dateMid').innerHTML = "1 May"
+    document.getElementById('heading-mid').innerHTML = "1M"
 
     const rightCardimg = document.getElementById('newsRight')
     rightCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
     document.getElementById('hyperRight').href = "news-posts/articles/"
-    document.getElementById('dateRight').innerHTML = "3 July"
-    document.getElementById('heading-right').innerHTML = "JULY 2022 PROMOTIONS"
+    document.getElementById('dateRight').innerHTML = "2 June"
+    document.getElementById('heading-right').innerHTML = "JUNE 2022 PROMOTIONS"
     return true
    }
 
    else if (newsIndex === 1){
     const leftCardimg = document.getElementById('newsLeft')
-    leftCardimg.style = "background-image: url('../../images/about-us/guicheng.jpeg')"
+    leftCardimg.style = "background-image: url('')"
     document.getElementById('hyperLeft').href = "news-posts/articles/"
     document.getElementById('dateLeft').innerHTML = "31 Feb"
     document.getElementById('heading-left').innerHTML = "TEMPLATE MALD"
@@ -75,13 +77,13 @@ function newsScrollLeft() {
     midCardimg.style = "background-image: url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/b843c4ae15c10f098c70e8d23f623303a593a4f9-1280x720.jpg?w=686&h=386&auto=format&dpr=2')"
     document.getElementById('hyperMid').href = "news-posts/articles/"
     document.getElementById('dateMid').innerHTML = "1 April"
-    document.getElementById('heading-mid').innerHTML = "APRIL 2022 PROMOTIONS"
+    document.getElementById('heading-mid').innerHTML = "APRIL 2022"
 
     const rightCardimg = document.getElementById('newsRight')
-    rightCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
+    rightCardimg.style = "background-image: url('')"
     document.getElementById('hyperRight').href = "news-posts/articles/"
-    document.getElementById('dateRight').innerHTML = "2 June"
-    document.getElementById('heading-right').innerHTML = "JUNE 2022 PROMOTIONS"
+    document.getElementById('dateRight').innerHTML = "1 May"
+    document.getElementById('heading-right').innerHTML = "1M"
     return true
    }
 
@@ -100,13 +102,13 @@ function newsScrollRight(){
     leftCardimg.style = "background-image: url('https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg')"
     document.getElementById('hyperLeft').href = "news-posts/articles/"
     document.getElementById('dateLeft').innerHTML = "2 June"
-    document.getElementById('heading-left').innerHTML = "ANOTHER ANOTHER TEMPLATE"
+    document.getElementById('heading-left').innerHTML = "JUNE 2022 PROMOTIONS"
 
     const midCardimg = document.getElementById('newsMid')
-    midCardimg.style = "background-image: url('../../images/about-us/guicheng.jpeg')"
+    midCardimg.style = "background-image: url('')"
     document.getElementById('hyperMid').href = "news-posts/articles/"
     document.getElementById('dateMid').innerHTML = "3 July"
-    document.getElementById('heading-mid').innerHTML = "ANOTHER TEMPLATE"
+    document.getElementById('heading-mid').innerHTML = "1J"
 
     const rightCardimg = document.getElementById('newsRight')
     rightCardimg.style = "background-image: url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/b843c4ae15c10f098c70e8d23f623303a593a4f9-1280x720.jpg?w=686&h=386&auto=format&dpr=2')"
@@ -120,14 +122,14 @@ function newsScrollRight(){
     const leftCardimg = document.getElementById('newsLeft')
     leftCardimg.style = "background-image: url('')"
     document.getElementById('hyperLeft').href = "news-posts/articles/"
-    document.getElementById('dateLeft').innerHTML = ""
-    document.getElementById('heading-left').innerHTML = ""
+    document.getElementById('dateLeft').innerHTML = "3 July"
+    document.getElementById('heading-left').innerHTML = "1J"
 
     const midCardimg = document.getElementById('newsMid')
-    midCardimg.style = "background-image: url('')"
+    midCardimg.style = "background-image: url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/b843c4ae15c10f098c70e8d23f623303a593a4f9-1280x720.jpg?w=686&h=386&auto=format&dpr=2')"
     document.getElementById('hyperMid').href = "news-posts/articles/"
-    document.getElementById('dateMid').innerHTML = ""
-    document.getElementById('heading-mid').innerHTML = ""
+    document.getElementById('dateMid').innerHTML = "31 Feb"
+    document.getElementById('heading-mid').innerHTML = "TEMPLATE YES"
 
     const rightCardimg = document.getElementById('newsRight')
     rightCardimg.style = "background-image: url('')"
