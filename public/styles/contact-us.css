@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+form table tbody tr td {
+  padding: 0;
+}
+
 .button {
   display: flex;
   justify-content: center;
@@ -97,4 +101,19 @@
 
 .comments {
   width: 100%;
+}
+
+#ratingdetails b {
+  float: left;
+  width: 10%;
+}
+#ratingdetails p {
+  float: left;
+  margin: 0;
+  margin-bottom: 15px;
+  width: 80%;
+}
+#ratingdetails p b {
+  width: 100%;
+  text-align: center;
 }
