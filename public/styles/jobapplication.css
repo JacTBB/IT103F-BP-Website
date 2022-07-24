@@ -3,7 +3,7 @@ display: flex;
 width: 100%;
 height: 100%;
 margin: 0;
-background-color: rgb(8, 71, 131);
+background-color: rgb(16, 112, 203);
 }
 
 form {
@@ -27,7 +27,7 @@ font-size:20px;
 }
 
 .spacing{
- padding-top:20px;
+padding-top:20px;
 }
 
 textarea {
@@ -36,7 +36,17 @@ resize: none;
 }
 
 .endbutton{
+padding:75px;
 text-align:center;
-padding:80px;
 }
 
+.endbutton input {
+background-color:rgb(15, 164, 206);
+border-radius: 10px;
+height:27px;
+width:100px;    
+}
+
+.endbutton input:hover{
+background-color:rgb(179, 172, 151);
+}
