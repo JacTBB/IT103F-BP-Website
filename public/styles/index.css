@@ -88,26 +88,31 @@
   text-align: center;
 }
 
-.productsbox img {
+.productsbox a {
+  color: black;
+  text-decoration: none;
+}
+.productsbox a img {
   padding: 1px;
   width: 150px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
   background-color:rgb(60,180,250);
 }
-.productsbox h2 {
+.productsbox a h2 {
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
   font-size: 20px;
 }
-.productsbox p {
+.productsbox a p {
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
   font-size: 15px;
+  font-family: "Alata";
 }
 
 @media (max-width: 750px) {
@@ -162,19 +167,3 @@ div.reviews {
   align-items: center;
   flex-grow: 1;
 }
-.testing:link { 
-  color: darkblue;
-}
-
-.testing:visited {
-  color: darkblue;
-}
-
- .testing:hover {
-  color: blue;
- }
-
- .testing:active {
-  color: blue;
-} 
-
