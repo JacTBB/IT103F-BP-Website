@@ -2,7 +2,7 @@
 ## IT103F Web Publishing Project
 ___
 
-## Main Webpages Overview
+## Main Webpages Overview (8 pages)
 | Webpage | Creator |
 | ------- | ------- |
 | index.html (Home) | Seng Hong |
@@ -14,28 +14,32 @@ ___
 | checkout.html | Gui Cheng |
 | checkout-success.html | Gui Cheng |
 
-## Prototype Main Webpages
+## Prototype Main Webpages (8 pages)
 | Webpage | Creator |
 | ------- | ------- |
 | careers.html | Zhe Ming |
+| jobapplication.html | Zhe Ming |
+| application-success.html | Zhe Ming |
 | news.html | Gui Cheng |
 | faq.html | Ameer |
 | signin.html | Jackie |
+| signout.html | Jackie |
+| dashboard.html | Jackie |
 
-## Webserver Only Webpages
+## Webserver Only Webpages (1 page)
 | Webpage | Creator |
 | ------- | ------- |
 | 404.html | Jackie |
 
-## Subsidiary Webpage Folders
+## Subsidiary Webpage Folders (27 pages)
 | Webpage Folder | Creator |
 | -------------- | ------- |
-| products | JacTBB |
-| news-post-pages | Gui Cheng |
+| products (24 pages) | JacTBB |
+| news-post-pages (3 pages) | Gui Cheng |
 ___
 
 ## Notes
 - Minimum Screen Width: 360px
 - Recomended Browsers: Chrome, Microsoft Edge
-- Please have stable internet connection.
+- Please have a stable internet connection.
 ___
