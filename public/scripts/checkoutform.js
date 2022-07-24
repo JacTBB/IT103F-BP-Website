@@ -126,6 +126,9 @@ return false
 //Auth Passed
 else 
   setTimeout(() => {
+  const counterSpam = document.getElementById('spam-filter')
+  counterSpam.disabled = "disabled"
+  counterSpam.style = "opacity: 0.2;"
   const ValidateSuccess = document.createElement('div')
   ValidateSuccess.id = 'Authorized'
   document.getElementById('errorTypeTxt').appendChild(ValidateSuccess);
@@ -134,7 +137,7 @@ else
   FormSuccessTxt.className = 'success'
   FormSuccessTxt.innerHTML = 'Form Validation Test Successful.'
   document.getElementById('Authorized').appendChild(FormSuccessTxt);
-  }, 2000);
+  }, 600);
 
 console.log('Test passed')
 return true
