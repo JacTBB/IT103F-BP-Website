@@ -44,6 +44,7 @@
       setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="../../scripts/cart.js" defer></script>
+    <script src="article-templatefunctions.js" defer></script>
   </head>
 
   <body onload="LoadContent()">
@@ -154,10 +155,14 @@
             </div>
                           
             <div class="byauthor">
-              <p style="margin-right: 10px;"> By: Gui Cheng </p>
+              <p style="margin-right: 5px;"> By: Gui Cheng </p>
               <img class="profile-pic" src="profile2.jpg">
             </div>
-                          
+            
+            <div class="dateChanged">
+              <p> Updated &#8226; 10 mins ago </p>
+            </div>
+
             <div class="divider-top">
             </div>
 
@@ -197,9 +202,60 @@
             <div class="divider-bot">
             </div>
             
-            <p> This to indicate end of page. </p>
+            <h1 class="bottom-heading"> Other news related to this topic </h1>
+
+            <div class="er-newscard-container">
+              <a class="prevNews" onclick="newsScrollLeft();"> < </a>
+              <a class="nextNews" onclick="newsScrollRight();"> > </a>
+
+              <div class="er-newscards">
+                <div class="news-card" id="newsLeft" 
+                  style="background-image: url(https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg);">
+                  <a class="redirect" id="hyperLeft" href="news-posts/articles/July2022/july-promotions.html">
+                        <div name="date">
+                          <div class="bg-square">
+                            <p class="datetxt-deco" id="dateLeft"> 1 May </p>
+                          </div>
+                        </div>
+                        <div name="sub-headingtext">
+                          <p class="heading-txt" id="heading-left"> MAY 2022 PROMOTION OF THE MONTH </p>
+                        </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsMid" 
+                  style="background-image: url(https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg);">
+                  <a class="redirect" id="hyperMid" href="news-posts/articles/July2022/july-promotions.html">
+                        <div name="date">
+                          <div class="bg-square">
+                            <p class="datetxt-deco" id="dateMid"> 2 June </p>
+                          </div>
+                        </div>
+                        <div name="sub-headingtext">
+                          <p class="heading-txt" id="heading-mid"> JUNE 2022 PROMOTION OF THE MONTH </p>
+                        </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsRight" 
+                  style="background-image: url(https://free3d.com/imgd/l95485-bugatti-chiron-2017-model-31847.jpg);">
+                  <a class="redirect" id="hyperRight" href="news-posts/articles/July2022/july-promotions.html">
+                        <div name="date">
+                          <div class="bg-square">
+                            <p class="datetxt-deco" id="dateRight"> 3 July </p>
+                          </div>
+                        </div>
+                        <div name="sub-headingtext">
+                          <p class="heading-txt" id="heading-right"> JULY 2022 PROMOTION OF THE MONTH </p>
+                        </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            
           </div>
-          
+
         </div>
 
         <!-- Edit Ending Here-->
