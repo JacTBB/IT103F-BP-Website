@@ -155,20 +155,42 @@
                 }
               </style>
               <td align="center"><b><maillink" href="mailto:support@blueprint-studios.net">E-Mail: support@blueprint-studios.net</a></b></td>
-              <td rowspan="4" align="center"><iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.669492271967!2d103.8548992!3d1.376256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16eb64b0249d%3A0xe5f10ff680eed942!2sNanyang%20Polytechnic!5e0!3m2!1sen!2ssg!4v1657075050457!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+              <td rowspan="4" align="center" id="mapcolumn">
+                <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.198842884528!2d103.85012506146099!3d1.2778405254972038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19118a155513%3A0x8afcef5fb4aa0efc!2sAsia%20Square%20Tower%202!5e0!3m2!1sen!2ssg!4v1658646303767!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </td>
             </tr>
 
             <tr>
-              <td align="center"><b>Operating Hours: 10 A.M - 12 P.M</b></td>         
+              <td align="center"><b>Operating Hours: 9 A.M - 5 P.M</b></td>         
             </tr>
 
             <tr>
-              <td align="center"><b>Telephone: 99999999</b></td> 
+              <td align="center"><b>Telephone: 8500 1234</b></td> 
             </tr>
 
             <tr>
-              <td align="center"><b>Address: 180 Ang Mo Kio Ave 8, Singapore 569830</b></td>  
+              <td align="center"><b>Address: 12 Marina View, Singapore 018961, 35th Floor</b></td>  
             </tr>
+
+            <tr>
+              <td colspan="2" align="center" id="maprow">
+                <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.198842884528!2d103.85012506146099!3d1.2778405254972038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19118a155513%3A0x8afcef5fb4aa0efc!2sAsia%20Square%20Tower%202!5e0!3m2!1sen!2ssg!4v1658646303767!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </td>
+            </tr>
+
+            <style>
+              #maprow {
+                display: none;
+              }
+              @media (max-width: 650px) {
+                #mapcolumn {
+                  display: none;
+                }
+                #maprow {
+                  display: block;
+                }
+              }
+            </style>
           </table>
         </article>
         
@@ -177,20 +199,20 @@
             <form name="FeedbackForm" method="get" id="FeedbackForm">
               <table id="formtable" align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
                 <caption><b><p><h2>Feedback Form</h2></p></b></caption>
-                
+
                 <tr>
-                  <td><b><label for="Customername">Customer Name:</label></b></td>
-                  <td><b><label for="Customeremail">Customer E-Mail:</label></b></td>
+                  <td style="padding-right: 10px;"><b><label for="Customername">Customer Name:</label></b></td>
+                  <td style="padding-left: 10px;"><b><label for="Customeremail">Customer E-Mail:</label></b></td>
                 </tr>
                 <tr>
-                  <td><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
-                  <td><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
+                  <td style="padding-right: 10px;"><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
+                  <td style="padding-left: 10px;"><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
                 </tr>
 
                 <tr>
                   <td colspan="2">
                     <b><label for="productss">Products/Services Bought:</label></b>
-                    <p><input type="text" style="width: 100%;" id="productss" name="products" list="products" autocomplete="off"></p>
+                    <p style="margin: 5px 0;"><input type="text" style="width: 100%;" id="productss" name="products" list="products" autocomplete="off"></p>
                     <datalist id="products">
                       <!-- Added with contact-us.js -->
                     </datalist>
@@ -198,14 +220,17 @@
                 </tr>
 
                 <tr>
-                  <td colspan="2"><b>Overall Rating Slider:</b><p><input type="range" min="0" required max="10" class="slider" id="range"></p></td>
+                  <td colspan="2">
+                    <b>Overall Rating Slider:</b>
+                    <p style="margin: 5px 0;"><input type="range" min="0" required max="10" class="slider" id="range"></p>
+                  </td>
                 </tr>
                 <tr>
-                  <td><b>Poor</b></td>
-                  <td align="right"><b>Good</b></td>
-                </tr>
-                <tr>
-                  <td colspan="3"><p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p></td>
+                  <td colspan="2" id="ratingdetails">
+                    <b>Poor</b>
+                    <p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p>
+                    <b>Good</b>
+                  </td>
                 </tr>
                
                 <script>
