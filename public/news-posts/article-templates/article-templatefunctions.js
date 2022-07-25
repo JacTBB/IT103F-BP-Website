@@ -1,6 +1,7 @@
 // V0.1 (Prototype)
 console.log ("Gui Cheng's Script");
 
+// Model
 let newsSelector = [
   {News_Name: 'News1', 
    Desciption: '1 July',
@@ -13,14 +14,24 @@ let newsSelector = [
   },
 ]
 
+let commentInfo = [
+  {Username: "Johnny Smith",
+   ProfilePicture: "Default Picture URL",
+   DatePost: 1/1/22,
+   Comment: "",
+  }
+]
+
 function sliderBanner(){
 }   
 
 function productsSlider(){
 }
 
-let newsIndex = 3
 
+
+//View
+let newsIndex = 3
 function renderNewsDefault(){
   const leftCardimg = document.getElementById('newsLeft')
   leftCardimg.style = "background-image: url('')"
@@ -43,6 +54,9 @@ function renderNewsDefault(){
 
 renderNewsDefault()
 
+
+
+//Controllers
 function newsScrollLeft() {
   newsIndex = newsIndex - 1
    if (newsIndex === 2){
@@ -147,8 +161,7 @@ function newsScrollRight(){
    }
  }
 
-function starRating(){
-}
+
 
 function alertJS(){
   alert ('JavaScript Enabled.');

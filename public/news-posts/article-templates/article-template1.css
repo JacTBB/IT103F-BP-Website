@@ -140,9 +140,6 @@ div.star-ratingbox {
   justify-content: space-around;
 }
 
-.star-hover:hover {
-  color: orange;
-}
 
 h1.bottom-heading {
   font-size: 20px;
