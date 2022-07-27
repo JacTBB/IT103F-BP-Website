@@ -1,7 +1,7 @@
 /* general */
 
 
-p, label, th, td {
+p, label, th, td, h1, h3 {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
@@ -120,14 +120,34 @@ div.bot-right-col-section {
 }
 
 /* Below content */
+div.star-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: space-between;
+}
+
+h3.star-heading {
+  font-size: 16px;
+}
+
+div.star-ratingbox {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  align-content: center;
+  justify-content: space-around;
+}
+
+
 h1.bottom-heading {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   margin-top: 0;
 }
 
-/* News slider */
 
+/* News slider */
 /* Model */
 .er-newscard-container {
   width: 100%;
