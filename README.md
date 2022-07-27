@@ -34,8 +34,16 @@ ___
 ## Subsidiary Webpage Folders (27 pages)
 | Webpage Folder | Creator |
 | -------------- | ------- |
-| products (24 pages) | JacTBB |
+| products (24 pages) | Jackie |
 | news-post-pages (3 pages) | Gui Cheng |
+
+## Servers
+| Type | Language | Creator |
+| ---- | -------- | ------- |
+| Web Server | Firebase Hosting | Jackie |
+| API Server | Javascript | Jackie |
+| Database | PostgreSQL | Jackie |
+| Email API Server | Make Workflow | Jackie |
 ___
 
 ## Notes

@@ -29,6 +29,8 @@ footer {
   margin: 0;
   padding: 16px 10px;
   font-size: 24px;
+  color: black;
+  text-decoration-line: none;
 }
 .footerinfo p {
   float: left;
