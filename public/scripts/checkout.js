@@ -1,13 +1,10 @@
 //Initialise
-var allproductdata = null
 reloadcheckoutcart()
 
 //Functions
 function reloadcheckoutcart() {
-    fetch('scripts/productdata.json')
-    .then(response => response.json())
-    .then(data => {
-        allproductdata = data['data']
+    getproductdata()
+    .then(() => {
         var total = 0
 
         const products = document.getElementById('products')

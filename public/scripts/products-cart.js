@@ -1,5 +1,4 @@
 //Initialise
-var allproductdata = null
 reloadcart()
 
 //Temp
@@ -15,10 +14,8 @@ console.log('\n')
 
 //Functions
 function reloadcart() {
-    fetch('../scripts/productdata.json')
-    .then(response => response.json())
-    .then(data => {
-        allproductdata = data['data']
+    getproductdata()
+    .then(() => {
         var total = 0
 
         const products = document.getElementById('cartitemdisplay')
