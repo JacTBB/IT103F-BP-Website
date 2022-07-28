@@ -44,10 +44,10 @@ function reloadcheckoutcart() {
                 //Hide Empty Shopping Cart Messsage
                 trempty.style.display = 'none'
 
-                productdata = allproductdata.find((y) => y['name'] == key)
-
-                setTimeout(() => {
-                    //Product
+                makeproductcard(allproductdata.find((y) => y['name'] == key))
+                
+                function makeproductcard(productdata) {
+                    //Product 
                     const tr = document.createElement('tr')
                     const tdimage = document.createElement('td')
                     const image = document.createElement('img')
@@ -115,7 +115,7 @@ function reloadcheckoutcart() {
                         trtotal.appendChild(tdtotal)
                         products.appendChild(trtotal)
                     }
-                })
+                }
             }
         }
 
