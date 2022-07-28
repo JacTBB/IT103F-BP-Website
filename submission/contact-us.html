@@ -191,7 +191,7 @@
         
         <article>
           <div width="100%" style="background-color: #87CEEB;border-radius: 25px;">
-            <form name="FeedbackForm" method="get" id="FeedbackForm">
+            <form name="FeedbackForm" method="get" id="FeedbackForm" onsubmit="myFunction()">
               <table id="formtable" align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
                 <caption><b><p><h2>Feedback Form</h2></p></b></caption>
 
@@ -246,7 +246,7 @@
               </table>
               <br>
               <div style="text-align: center;" class="button">
-                <span><button class="submitbtn" type="submit" class="button" name="submit" onclick="myFunction()"><b><p>Submit</p></b></button></span>
+                <span><button class="submitbtn" type="submit" class="button" name="submit"><b><p>Submit</p></b></button></span>
                 <script>
                 function myFunction() {
                   alert("You have submitted your form.");
