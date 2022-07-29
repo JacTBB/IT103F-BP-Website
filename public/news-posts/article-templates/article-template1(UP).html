@@ -146,55 +146,58 @@
 
           <div class="top-row">
             
-            <div class="topic">
-              <p> PROMOTIONS </p>
-            </div>
+            <p class="topic"> PROMOTIONS </p>
 
-            <div class="title-article">
-              <p> July 2022 Promotions </p>
-            </div>
+            <p class="title-article"> July 2022 Promotions </p>
                           
             <div class="byauthor">
               <p style="margin-right: 5px;"> By: Gui Cheng </p>
               <img class="profile-pic" src="profile2.jpg">
             </div>
             
-            <div class="dateChanged">
-              <p> Updated &#8226; 10 mins ago </p>
-            </div>
+            <p class="dateChanged"> Updated &#8226; 10 mins ago </p>
 
             <div class="divider-top">
             </div>
 
           </div>
 
-          <div class="bot-row-content">
+          <div class="mid-row-content">
             
-            <div class="bot-left-col-section">
+            <div name="left1" id="contentassist">
               
-              <div name="left-content-row1" id="borderassist">
+              <div id="borderassist">
                 <p> I'm in left content row 1! </p>
                 <button onclick="alertJS();"> JS Alert </button>
               </div>
 
-              <div name="left-content-row2" id="borderassist">
-                <p> I'm in left content row 2! </p>
-              </div>
-
             </div>
 
-            <div class="bot-right-col-section" id="borderassist">
+            <div name="right1" id="contentassist">
 
-              <div name="right-content-row1" id="borderassist">
+              <div id="borderassist">
                 <p> I'm in right content row 1! </p>
-              </div>
-
-              <div name="right-content-row2" id="borderassist">
-                <p> I'm in right content row 2! </p>
               </div>
 
             </div>
             
+            <div name="left2" id="contentassist">
+  
+              <div id="borderassist">
+                <p> I'm in left content row 2! </p>
+                <button onclick="alertJS();"> JS Alert </button>
+              </div>
+    
+            </div>
+            
+            <div name="right2" id="contentassist">
+
+              <div id="borderassist">
+                <p> I'm in right content row 2! </p>
+              </div>
+
+            </div>
+
           </div>
 
           <div class="end-row">
@@ -206,11 +209,11 @@
               <h3 class="star-heading"> Do you find this news helpful? </h3>
 
               <div class="star-ratingbox">
-                <span class="fa fa-star star-1"></span>
-                <span class="fa fa-star star-2"></span>
-                <span class="fa fa-star star-3"></span>
-                <span class="fa fa-star star-4"></span>
-                <span class="fa fa-star star-5"></span>
+                <span class="fa fa-star star"></span>
+                <span class="fa fa-star star"></span>
+                <span class="fa fa-star star"></span>
+                <span class="fa fa-star star"></span>
+                <span class="fa fa-star star"></span>
               </div>
 
             </div>
@@ -219,7 +222,6 @@
 
             <div class="er-newscard-container">
               <a class="prevNews" onclick="newsScrollLeft();"> < </a>
-              <a class="nextNews" onclick="newsScrollRight();"> > </a>
 
               <div class="er-newscards">
                 <div class="news-card" id="newsLeft">
@@ -262,8 +264,10 @@
                 </div>
 
               </div>
+              
+              <a class="nextNews" onclick="newsScrollRight();"> > </a>
             </div>
-            
+
           </div>
 
         </div>
