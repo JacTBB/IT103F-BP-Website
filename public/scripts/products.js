@@ -1,10 +1,6 @@
 //Initialise
-var allproductdata = null
-fetch('scripts/productdata.json')
-.then(response => response.json())
-.then(data => {
-    allproductdata = data['data']
-    
+getproductdata()
+.then(() => {
     for (productdata of allproductdata) {
         const div = document.createElement('div')
         const img = document.createElement('img')
@@ -12,7 +8,7 @@ fetch('scripts/productdata.json')
         const desc = document.createElement('p')
         const price = document.createElement('p')
         const button = document.createElement('button')
-    
+
         div.classList = 'productcard'
         div.id = productdata['name']
         productname.innerHTML = productdata['name']
@@ -28,13 +24,13 @@ fetch('scripts/productdata.json')
         button.id = productdata['name']
         button.type = 'button'
         button.addEventListener('click', addtocartfunction)
-    
+
         div.appendChild(img)
         div.appendChild(productname)
         div.appendChild(desc)
         div.appendChild(price)
         price.appendChild(button)
-    
+
         document.getElementById('products').appendChild(div)
     }
     

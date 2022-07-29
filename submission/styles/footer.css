@@ -29,6 +29,11 @@ footer {
   margin: 0;
   padding: 16px 10px;
   font-size: 24px;
+  color: black;
+}
+.footerinfo h2 a {
+  color: black;
+  text-decoration: none;
 }
 .footerinfo p {
   float: left;
