@@ -1,8 +1,84 @@
-// V0.1 (Prototype)
+// V0.2 (Prototype)
 console.log ("Gui Cheng's Script");
 
 
-// Model
+//Comment Model
+let commentInfo;
+const savedComments = JSON.parse(localStorage.getItem('Comments'));
+if (Array.isArray(savedComments)){
+  commentInfo = savedComments
+}
+
+else {
+  commentInfo = [
+    {Username: "Johnny Smith",
+     ProfilePic: "Default Picture URL",
+     DatePost: 1/1/22,
+     Comment: "",
+    }]
+}
+
+//Posts a comment
+function createComment(usertxt, pfpURL, comtxt){
+  const id = '' + new Date().getTime();
+  commentInfo.push({
+    Username: usertxt,
+    ProfilePic: pfpURL,
+    DatePost: date,
+    Comment: comtxt,
+    id: id
+  },);
+
+  saveComments();
+}
+
+//Deletes a Comment
+function removeComment(IDtoDelete){
+  arraystr = arraystr.filter( (comment) => {
+   if (comment.id === IDtoDelete){
+     return false;
+   }
+   else {
+     return true;
+   }
+ }); 
+
+  saveComments();
+ }
+
+ //Saves comment to CommentInfo
+ function saveComments(){
+  localStorage.setItem('Comments', JSON.stringify(commentInfo));
+ }
+
+ //View 
+ function renderComSec(){
+  document.getElementById('').innerHTML = '';
+  commentInfo.forEach( (renderComment) => {
+
+  });
+}
+//Comment Controllers
+function addComment() {
+  const comInputTxt = document.getElementById();
+  const comtxt = comInputTxt.value;
+  
+  const datePicker = document.getElementById();
+  const date = datePicker.value;
+  createTask(comtxt, date);
+  renderComSec();
+}
+function deleteComment(event) {
+  const deleteComButton = event.target;
+  const IDtoDelete = deleteComButton.id;
+  removeComment(IDtoDelete);
+  renderComSec();
+}
+
+
+
+
+// News Model
 let newsSelector = [
   {News_Name: 'News1', 
    IMG: "background-image: url('');",
@@ -18,25 +94,6 @@ let newsSelector = [
    Heading: 'e',
   },
 ]
-
-let commentInfo = [
-  {Username: "Johnny Smith",
-   ProfilePicture: "Default Picture URL",
-   DatePost: 1/1/22,
-   Comment: "",
-  }
-]
-
-function sliderBanner(){
-}   
-
-function productsSlider(){
-}
-
-
-
-//View
-let newsIndex = 3
 
 //News Containers
 const leftCardimg = document.getElementById('newsLeft')
@@ -55,6 +112,12 @@ const rightCardimg = document.getElementById('newsRight')
   const rightHeading = document.getElementById('heading-right')
 
 renderNewsDefault()
+
+
+
+
+//View
+let newsIndex = 3
 
 function renderNewsDefault(){
   
@@ -75,7 +138,6 @@ function renderNewsDefault(){
   rightDate.innerHTML = "3 July"
   rightHeading.innerHTML = "1J"
 }
-
 
 
 function renderNewsTemp(leftCardimg, midCardimg, rightCardimg){
@@ -181,4 +243,10 @@ function newsScrollRight(){
 
 function alertJS(){
   alert ('JavaScript Enabled.');
+}
+
+function sliderBanner(){
+}   
+
+function productsSlider(){
 }
