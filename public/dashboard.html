@@ -9,7 +9,8 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -135,19 +136,6 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <style>
-          #article {
-            padding-top: 100px;
-            padding-bottom: 100px;
-          }
-
-          @media (max-width: 850px) {
-            #article {
-              padding-top: 50px;
-              padding-bottom: 50px;
-            }
-          }
-        </style>
         <article id="article">
           <script>
             if (!localStorage.getItem('userdata')) {
@@ -157,7 +145,7 @@
 
           <h2>Dashboard</h2>
           <h3 id="welcome">Welcome ${name}</h3>
-          <button onclick="signout()">Sign Out</button>
+          <button onclick="signout()" id="signout">Sign Out</button>
           <hr>
           <h3>Owned Products:</h3>
           <div id="products">
@@ -214,11 +202,12 @@
                     const productname = document.createElement('p')
                     const download = document.createElement('a')
 
-                    div.classList = 'cartitem'
-                    img.classList = 'cartitemimg'
+                    div.classList = 'productitem'
+                    img.classList = 'productitemimg'
                     img.src = productdata['image']
-                    productname.classList = 'cartitemname'
+                    productname.classList = 'productitemname'
                     productname.innerHTML = `${productdata['name']}`
+                    download.classList = 'productitemprice'
                     download.href = productdata['link']
                     download.innerHTML = 'Download'
 
