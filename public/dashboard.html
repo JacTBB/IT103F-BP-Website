@@ -9,7 +9,8 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="styles/dashboard.css" rel="stylesheet" type="text/css">
+    
     <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="keywords" content="Blueprint, Studios">
@@ -135,23 +136,16 @@
     <div class="content" id="maindiv" style="display: none;">
       <section id="section">
         <!--Edit Starting Here-->
-        <style>
-          #article {
-            padding-top: 100px;
-            padding-bottom: 100px;
-          }
-
-          @media (max-width: 850px) {
-            #article {
-              padding-top: 50px;
-              padding-bottom: 50px;
-            }
-          }
-        </style>
         <article id="article">
+          <script>
+            if (!localStorage.getItem('userdata')) {
+              window.location.href = 'signin.html'
+            }
+          </script>
+
           <h2>Dashboard</h2>
           <h3 id="welcome">Welcome ${name}</h3>
-          <button onclick="signout()">Sign Out</button>
+          <button onclick="signout()" id="signout">Sign Out</button>
           <hr>
           <h3>Owned Products:</h3>
           <div id="products">
@@ -191,46 +185,40 @@
             fetch('https://it103f-bp-website-api.up.railway.app/purchases', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
             .then(response => response.json())
             .then(data => {
-                if (data == 'Not Found!') {
-                  return alert('You do not have any purchases!')
+              if (data == 'Not Found!') {
+                return alert('You do not have any purchases!')
+              }
+
+              console.log(data)
+
+              //ProductInfo
+              for (var i=0; i < data.length; i++) {
+                productdata = allproductdata.find((y) => y['name'] == data[i]['product'])
+
+                if (productdata) {
+                    //Product
+                    const div = document.createElement('div')
+                    const img = document.createElement('img')
+                    const productname = document.createElement('p')
+                    const download = document.createElement('a')
+
+                    div.classList = 'productitem'
+                    img.classList = 'productitemimg'
+                    img.src = productdata['image']
+                    productname.classList = 'productitemname'
+                    productname.innerHTML = `${productdata['name']}`
+                    download.classList = 'productitemprice'
+                    download.href = productdata['link']
+                    download.innerHTML = 'Download'
+
+                    div.appendChild(img)
+                    div.appendChild(productname)
+                    div.appendChild(download)
+                    
+                    products.appendChild(div)
                 }
-
-                console.log(data)
-
-                fetch('scripts/productdata.json')
-                .then(response => response.json())
-                .then(productsdata => {
-                  allproductdata = productsdata['data']
-
-                  //ProductInfo
-                  for (var i=0; i < data.length; i++) {
-                    productdata = allproductdata.find((y) => y['name'] == data[i]['product'])
-
-                    if (productdata) {
-                        //Product
-                        const div = document.createElement('div')
-                        const img = document.createElement('img')
-                        const productname = document.createElement('p')
-                        const download = document.createElement('a')
-
-                        div.classList = 'cartitem'
-                        img.classList = 'cartitemimg'
-                        img.src = productdata['image']
-                        productname.classList = 'cartitemname'
-                        productname.innerHTML = `${productdata['name']}`
-                        download.href = productdata['link']
-                        download.innerHTML = 'Download'
-
-                        div.appendChild(img)
-                        div.appendChild(productname)
-                        div.appendChild(download)
-                        
-                        products.appendChild(div)
-                    }
-                  }
-                  document.getElementById('productcardplaceholder').remove()
-                })
-                .catch(console.error)
+              }
+              document.getElementById('productcardplaceholder').remove()
             })
             .catch(console.error)
           </script>
@@ -250,7 +238,7 @@
 
         <div class="footerlinks">
           <h3>Quick Links</h3>
-          <a class="footertext" href="index.html">Home</a>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
           <a class="footertext" href="products.html">Products</a>
           <a class="footertext" href="services.html">Services</a>
           <a class="footertext" href="checkout.html">Checkout</a>
