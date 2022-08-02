@@ -191,46 +191,39 @@
             fetch('https://it103f-bp-website-api.up.railway.app/purchases', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
             .then(response => response.json())
             .then(data => {
-                if (data == 'Not Found!') {
-                  return alert('You do not have any purchases!')
+              if (data == 'Not Found!') {
+                return alert('You do not have any purchases!')
+              }
+
+              console.log(data)
+
+              //ProductInfo
+              for (var i=0; i < data.length; i++) {
+                productdata = allproductdata.find((y) => y['name'] == data[i]['product'])
+
+                if (productdata) {
+                    //Product
+                    const div = document.createElement('div')
+                    const img = document.createElement('img')
+                    const productname = document.createElement('p')
+                    const download = document.createElement('a')
+
+                    div.classList = 'cartitem'
+                    img.classList = 'cartitemimg'
+                    img.src = productdata['image']
+                    productname.classList = 'cartitemname'
+                    productname.innerHTML = `${productdata['name']}`
+                    download.href = productdata['link']
+                    download.innerHTML = 'Download'
+
+                    div.appendChild(img)
+                    div.appendChild(productname)
+                    div.appendChild(download)
+                    
+                    products.appendChild(div)
                 }
-
-                console.log(data)
-
-                fetch('scripts/productdata.json')
-                .then(response => response.json())
-                .then(productsdata => {
-                  allproductdata = productsdata['data']
-
-                  //ProductInfo
-                  for (var i=0; i < data.length; i++) {
-                    productdata = allproductdata.find((y) => y['name'] == data[i]['product'])
-
-                    if (productdata) {
-                        //Product
-                        const div = document.createElement('div')
-                        const img = document.createElement('img')
-                        const productname = document.createElement('p')
-                        const download = document.createElement('a')
-
-                        div.classList = 'cartitem'
-                        img.classList = 'cartitemimg'
-                        img.src = productdata['image']
-                        productname.classList = 'cartitemname'
-                        productname.innerHTML = `${productdata['name']}`
-                        download.href = productdata['link']
-                        download.innerHTML = 'Download'
-
-                        div.appendChild(img)
-                        div.appendChild(productname)
-                        div.appendChild(download)
-                        
-                        products.appendChild(div)
-                    }
-                  }
-                  document.getElementById('productcardplaceholder').remove()
-                })
-                .catch(console.error)
+              }
+              document.getElementById('productcardplaceholder').remove()
             })
             .catch(console.error)
           </script>
