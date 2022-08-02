@@ -149,6 +149,12 @@
           }
         </style>
         <article id="article">
+          <script>
+            if (!localStorage.getItem('userdata')) {
+              window.location.href = 'signin.html'
+            }
+          </script>
+
           <h2>Dashboard</h2>
           <h3 id="welcome">Welcome ${name}</h3>
           <button onclick="signout()">Sign Out</button>
@@ -243,7 +249,7 @@
 
         <div class="footerlinks">
           <h3>Quick Links</h3>
-          <a class="footertext" href="index.html">Home</a>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
           <a class="footertext" href="products.html">Products</a>
           <a class="footertext" href="services.html">Services</a>
           <a class="footertext" href="checkout.html">Checkout</a>
