@@ -9,6 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/signin.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -149,21 +150,41 @@
           }
         </style>
         <article id="article">
+          <script>
+            const userdata = localStorage.getItem('userdata')
+            if (userdata) {
+              window.location.href = 'dashboard.html'
+            }
+          </script>
+
           <form>
-            Name:
-            <input type="text" id="name" name="name" required value="Test1">
-            <br>
-            <br>
-            Email:
-            <input type="text" id="email" name="email" required value="Test1@gmail.com">
-            Password:
-            <input type="password" id="password" name="password" required value="123456">
-  
-            <button type="button" onclick="signup()">Sign Up</button>
-  
-            <br>
-            <p id="output"></p>
-            <script>
+            <div class="title">
+              <h1>Sign Up</h1>
+            </div>
+
+            <div class="textbox">
+              <span><p>Name*:</p></span><br>
+              <span><input type="text" id="name" name="name" required placeholder="E.g. John Doe"></span><br>
+            </div>
+            
+            <div class="textbox">
+              <span><p>Email*:</p></span><br>
+              <span><input type="text" id="email" name="email" required placeholder="E.g. JohnDoe@gmail.com"></span><br>
+            </div>
+
+            <div class="textbox">
+              <span><p>Password*:</p></span><br>
+              <span><input type="password" id="password" name="password" required placeholder="E.g. 123456"></span><br>
+            </div>
+
+            <div class="submit-controls">
+              <span class="submit"><button type="button" onclick="signup()"><p> Sign Up </p></button></span><br>
+            </div>
+
+            <p id="output" style="padding-top: 5px;"></p>
+            <hr>
+            <p>Already have an account? Sign in <a href="signin.html">here</a></p>
+            <script defer>
                 function signup() {
                     const name = document.getElementById('name').value
                     const email = document.getElementById('email').value
