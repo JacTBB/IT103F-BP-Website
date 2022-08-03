@@ -212,3 +212,31 @@ div.star-ratings {
   align-items: center;
   flex-grow: 1;
 }
+.tableheader{
+  display:grid;
+  grid-template-rows: 300px 100px; 
+  align-items:center;
+  justify-items: center;
+  
+}
+.zheming-too-big{
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+
+
+}
+.pickholder{
+
+}
+
+
+
+
+
+
+
+
+
+
+
