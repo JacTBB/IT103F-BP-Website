@@ -1,11 +1,7 @@
 //Initialise
-var allproductdata = null
-fetch('../scripts/productdata.json')
-.then(response => response.json())
-.then(data => {
-    allproductdata = data['data']
-    
-    for (productdata of allproductdata) {        
+getproductdata()
+.then(() => {
+    for (productdata of allproductdata) {
         const decodedURI = decodeURI(window.location.pathname).split('/')   
         const id = decodedURI[decodedURI.length-1].slice(0,-5)
         if (productdata['name'] == id) {

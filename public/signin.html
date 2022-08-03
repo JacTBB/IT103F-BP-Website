@@ -9,6 +9,7 @@
     <link href="styles/nav.css" rel="stylesheet" type="text/css">
     <link href="styles/footer.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/signin.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -42,6 +43,7 @@
       window.onresize = () => { LoadContent() }
       setTimeout(() => { LoadContent() }, 500)
     </script>
+    <script src="scripts/productdata.js"></script>
     <script src="scripts/cart.js" defer></script>
   </head>
 
@@ -102,11 +104,6 @@
           <p class="cartitemname">Audi R8 Spyder 3D Model</p>
           <p class="cartitemprice">$10.00</p>
         </div>
-        <div class="cartitem">
-          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
-          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
-          <p class="cartitemprice">$10.00</p>
-        </div>
         <!-- End -->
       </span>
       <div class="carttotal">
@@ -153,46 +150,65 @@
           }
         </style>
         <article id="article">
+          <script>
+            const userdata = localStorage.getItem('userdata')
+            if (userdata) {
+              window.location.href = 'dashboard.html'
+            }
+          </script>
+
           <form>
-            Email:
-            <input type="text" id="email" name="email" required value="Test1@gmail.com">
-            Password:
-            <input type="password" id="password" name="password" required value="123456">
+            <div class="title">
+              <h1>Sign In</h1>
+            </div>
+            
+            <div class="textbox">
+              <span><p>Email*:</p></span><br>
+              <span><input type="text" id="email" name="email" required placeholder="E.g. JohnDoe@gmail.com"></span><br>
+            </div>
 
-            <button type="button" onclick="signin()">Sign In</button>
+            <div class="textbox">
+              <span><p>Password*:</p></span><br>
+              <span><input type="password" id="password" name="password" required placeholder="E.g. 123456"></span><br>
+            </div>
 
-            <br>
-            <p id="output"></p>
-            <script>
-                function signin() {
-                    const email = document.getElementById('email').value
-                    const password = document.getElementById('password').value
-                    console.log("Signin attempt:", email, password)
+            <div class="submit-controls">
+              <span class="submit"><button type="button" onclick="signin()"><p> Sign In </p></button></span><br>
+            </div>
 
-                    const Headers = {
-                        'Content-Type': 'application/json'
-                    }
-                    const Body = {
-                        'email': email,
-                        'password': password
-                    }
-                    fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data == 'Access Denied!') {
-                          return document.getElementById('output').innerText = 'Invalid Email or Password!'
-                        }
+            <p id="output" style="padding-top: 5px;"></p>
+            <hr>
+            <p>New user? Sign up <a href="signup.html">here</a></p>
+            <script defer>
+              function signin() {
+                const email = document.getElementById('email').value
+                const password = document.getElementById('password').value
+                console.log("Signin attempt:", email, password)
 
-                        console.log(data[0])
-                        localStorage.setItem('userdata', JSON.stringify(data[0]))
-
-                        document.getElementById('output').innerText = 'Success!\nRedirecting to dashboard!'
-                        setTimeout(() => {
-                          window.location.href = 'dashboard.html'
-                        }, 5000)
-                    })
-                    .catch(console.error)
+                const Headers = {
+                    'Content-Type': 'application/json'
                 }
+                const Body = {
+                    'email': email,
+                    'password': password
+                }
+                fetch('https://it103f-bp-website-api.up.railway.app/signin', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                .then(response => response.json())
+                .then(data => {
+                    if (data == 'Access Denied!') {
+                      return document.getElementById('output').innerText = 'Invalid Email or Password!'
+                    }
+
+                    console.log(data[0])
+                    localStorage.setItem('userdata', JSON.stringify(data[0]))
+
+                    document.getElementById('output').innerText = 'Success!\nRedirecting to dashboard!'
+                    setTimeout(() => {
+                      window.location.href = 'dashboard.html'
+                    }, 5000)
+                })
+                .catch(console.error)
+              }
             </script>
           </form>
         </article>
@@ -201,7 +217,7 @@
       <footer id="footer">
         <div class="footerinfo">
           <img src="images/Blueprint Logo.png" alt="BP">
-          <h2><a href="index.html" style="color: black;text-decoration-line: none;">Blueprint Studios</a></h2>
+          <h2><a href="index.html">Blueprint Studios</a></h2>
           <p>Copyright &copy; Blueprint Studios 2018-2022</p>
           <p>
             <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
@@ -211,7 +227,7 @@
 
         <div class="footerlinks">
           <h3>Quick Links</h3>
-          <a class="footertext" href="index.html">Home</a>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
           <a class="footertext" href="products.html">Products</a>
           <a class="footertext" href="services.html">Services</a>
           <a class="footertext" href="checkout.html">Checkout</a>

@@ -1,14 +1,11 @@
 //Initialise
-var allproductdata = null
 var boughtproducts = []
 var successcounter = 0
 
 //Functions
 async function cart() {
-    await fetch('scripts/productdata.json')
-    .then(response => response.json())
-    .then(data => {
-        allproductdata = data['data']
+    await getproductdata()
+    .then(() => {
         var total = 0
 
         //ProductInfo

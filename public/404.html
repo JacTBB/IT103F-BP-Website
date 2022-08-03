@@ -42,6 +42,7 @@
       window.onresize = () => { LoadContent() }
       setTimeout(() => { LoadContent() }, 500)
     </script>
+    <script src="scripts/productdata.js"></script>
     <script src="scripts/cart.js" defer></script>
   </head>
 
@@ -97,11 +98,6 @@
       <p id="cartempty">You do not have any products in your shopping cart.</p>
       <span id="cartitemdisplay">
         <!-- Placeholder For Dev -->
-        <div class="cartitem">
-          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
-          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
-          <p class="cartitemprice">$10.00</p>
-        </div>
         <div class="cartitem">
           <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
           <p class="cartitemname">Audi R8 Spyder 3D Model</p>
@@ -167,7 +163,7 @@
       <footer id="footer">
         <div class="footerinfo">
           <img src="images/Blueprint Logo.png" alt="BP">
-          <h2><a href="index.html" style="color: black;text-decoration-line: none;">Blueprint Studios</a></h2>
+          <h2><a href="index.html">Blueprint Studios</a></h2>
           <p>Copyright &copy; Blueprint Studios 2018-2022</p>
           <p>
             <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
@@ -177,7 +173,7 @@
 
         <div class="footerlinks">
           <h3>Quick Links</h3>
-          <a class="footertext" href="index.html">Home</a>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
           <a class="footertext" href="products.html">Products</a>
           <a class="footertext" href="services.html">Services</a>
           <a class="footertext" href="checkout.html">Checkout</a>
