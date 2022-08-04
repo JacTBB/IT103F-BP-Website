@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>IT103F Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: #222;
+      }
+
+      h1, h3, p {
+        color: white;
+        font-family: Lato, sans-serif;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        background: white;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration-line: none;
+      }
+      button:hover {
+        text-shadow: 1px 1px 10px rgb(100,100,100);
+        box-shadow: 5px 5px 5px rgb(100,100,100);
+      }
+
+      @keyframes FadeAnim {
+        from {opacity: 1;}
+        to {opacity: 0;}
+      }
+      .fade {
+        opacity: 0;
+        animation-name: FadeAnim;
+        animation-duration: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>IT103F Company Website Project</h1>
+      <h3>Group 1 Members: Zhe Ming, Jackie, Ameer, Seng Hong, Gui Cheng</h3>
+      <br>
+      <p>
+        <button onclick="next()">Next ></button>
+        <script>
+          function next() {
+            document.getElementById("main").classList.add("fade")
+            setTimeout(() => {
+              window.location.href = "index2.html"
+            }, 500)
+          }
+        </script>
+      </p>
+    </div>
+  </body>
+</html>
