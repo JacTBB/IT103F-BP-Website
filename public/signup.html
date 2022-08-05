@@ -157,7 +157,7 @@
             }
           </script>
 
-          <form>
+          <form onsubmit="return signup()">
             <div class="title">
               <h1>Sign Up</h1>
             </div>
@@ -178,42 +178,43 @@
             </div>
 
             <div class="submit-controls">
-              <span class="submit"><button type="button" onclick="signup()"><p> Sign Up </p></button></span><br>
+              <span class="submit"><button type="submit"><p> Sign Up </p></button></span><br>
             </div>
 
             <p id="output" style="padding-top: 5px;"></p>
             <hr>
             <p>Already have an account? Sign in <a href="signin.html">here</a></p>
             <script defer>
-                function signup() {
-                    const name = document.getElementById('name').value
-                    const email = document.getElementById('email').value
-                    const password = document.getElementById('password').value
-                    console.log("Signup attempt:", name, email, password)
-  
-                    const Headers = {
-                        'Content-Type': 'application/json'
-                    }
-                    const Body = {
-                        'name': name,
-                        'email': email,
-                        'password': password
-                    }
-                    fetch('https://it103f-bp-website-api.up.railway.app/signup', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data == 'Already Exists!') {
-                          return document.getElementById('output').innerText = 'Email already registered!'
-                        }
-  
-                        console.log(data)
-                        document.getElementById('output').innerText = 'Success!\nRedirecting to sign in page!'
-                        setTimeout(() => {
-                          window.location.href = 'signin.html'
-                        }, 5000)
-                    })
-                    .catch(console.error)
+              function signup() {
+                const name = document.getElementById('name').value
+                const email = document.getElementById('email').value
+                const password = document.getElementById('password').value
+                console.log("Signup attempt:", name, email, password)
+
+                const Headers = {
+                    'Content-Type': 'application/json'
                 }
+                const Body = {
+                    'name': name,
+                    'email': email,
+                    'password': password
+                }
+                fetch('https://it103f-bp-website-api.up.railway.app/signup', {method: 'POST', headers: Headers, body: JSON.stringify(Body)})
+                .then(response => response.json())
+                .then(data => {
+                    if (data == 'Already Exists!') {
+                      return document.getElementById('output').innerText = 'Email already registered!'
+                    }
+
+                    console.log(data)
+                    document.getElementById('output').innerText = 'Success!\nRedirecting to sign in page!'
+                    setTimeout(() => {
+                      window.location.href = 'signin.html'
+                    }, 3000)
+                })
+                .catch(console.error)
+                return false
+              }
             </script>
           </form>
         </article>

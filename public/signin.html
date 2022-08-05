@@ -157,7 +157,7 @@
             }
           </script>
 
-          <form>
+          <form onsubmit="return signin()">
             <div class="title">
               <h1>Sign In</h1>
             </div>
@@ -173,7 +173,7 @@
             </div>
 
             <div class="submit-controls">
-              <span class="submit"><button type="button" onclick="signin()"><p> Sign In </p></button></span><br>
+              <span class="submit"><button type="submit"><p> Sign In </p></button></span><br>
             </div>
 
             <p id="output" style="padding-top: 5px;"></p>
@@ -205,9 +205,10 @@
                     document.getElementById('output').innerText = 'Success!\nRedirecting to dashboard!'
                     setTimeout(() => {
                       window.location.href = 'dashboard.html'
-                    }, 5000)
+                    }, 3000)
                 })
                 .catch(console.error)
+                return false
               }
             </script>
           </form>
