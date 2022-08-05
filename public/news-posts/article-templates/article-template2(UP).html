@@ -8,7 +8,7 @@
     <link href="../../styles/loading.css" rel="stylesheet" type="text/css">
     <link href="../../styles/nav.css" rel="stylesheet" type="text/css">
     <link href="../../styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="article-template2.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
@@ -44,7 +44,9 @@
       setTimeout(() => { LoadContent() }, 500)
     </script>
     <script src="../../scripts/cart.js" defer></script>
-    <script src="article-templatefunctions.js" defer></script>
+    <script src="news-niche.js" defer></script>
+    <script src="news-general.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
 
   <body onload="LoadContent()">
@@ -142,6 +144,7 @@
           <div class="top-row">
             
             <p class="topic"> PROMOTIONS </p>
+
             <p class="title-article"> July 2022 Promotions </p>
                           
             <div class="byauthor">
@@ -150,6 +153,7 @@
             </div>
             
             <p class="dateChanged"> Updated &#8226; 10 mins ago </p>
+
             <div class="divider-top">
 
             </div>
@@ -213,70 +217,128 @@
             <div class="divider-bot">
             </div>
             
-            <div class="star-container">
-              <h3 class="star-heading"> Do you find this news helpful? </h3>
-              <div class="star-ratingbox">
-                <span class="fa fa-star star"></span>
-                <span class="fa fa-star star"></span>
-                <span class="fa fa-star star"></span>
-                <span class="fa fa-star star"></span>
-                <span class="fa fa-star star"></span>
-              </div>
-            </div>
 
             <h1 class="bottom-heading"> Other news related to this topic </h1>
 
             <div class="er-newscard-container">
               <a class="prevNews" onclick="newsScrollLeft();"> < </a>
-
               <div class="er-newscards">
 
                 <div class="news-card" id="newsLeft">
                   <a class="redirect" id="hyperLeft">
-                        <div name="date">
-                          <div class="bg-square">
-                            <p class="datetxt-deco" id="dateLeft"> 1 May </p>
-                          </div>
-                        </div>
-                        <div name="sub-headingtext">
-                          <p class="heading-txt" id="heading-left"> MAY 2022 PROMOTION OF THE MONTH </p>
-                        </div>
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateLeft"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-left"></p>
+                    </div>
                   </a>
                 </div>
 
                 <div class="news-card" id="newsMid">
                   <a class="redirect" id="hyperMid">
-                        <div name="date">
-                          <div class="bg-square">
-                            <p class="datetxt-deco" id="dateMid"> 2 June </p>
-                          </div>
-                        </div>
-                        <div name="sub-headingtext">
-                          <p class="heading-txt" id="heading-mid"> JUNE 2022 PROMOTION OF THE MONTH </p>
-                        </div>
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateMid"> DATE </p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-mid"> TEMPLATE </p>
+                    </div>
                   </a>
                 </div>
 
-                <div class="news-card" id="newsRight"> 
+                <div class="news-card" id="newsRight">
                   <a class="redirect" id="hyperRight">
-                        <div name="date">
-                          <div class="bg-square">
-                            <p class="datetxt-deco" id="dateRight"> 3 July </p>
-                          </div>
-                        </div>
-                        <div name="sub-headingtext">
-                          <p class="heading-txt" id="heading-right"> JULY 2022 PROMOTION OF THE MONTH </p>
-                        </div>
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateRight"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-right"></p>
+                    </div>
                   </a>
                 </div>
-                
-                <a class="nextNews" onclick="newsScrollRight();"> > </a>
+
               </div>
+              
+              <a class="nextNews" onclick="newsScrollRight();"> > </a>
             </div>
 
-          </div>
+              <div class="star-container">
+                <h3 class="star-heading"> Do you find this news helpful? </h3>
+  
+                <div class="stars">
+                  <span>
+                    <h4 class="rateguide"> Not Helpful </h4>
+                    <p class="star"></p>
+                    <p class="star"></p>
+                    <p class="star"></p>
+                    <p class="star"></p>
+                    <p class="star"></p>
+                    <h4 class="rateguide"> Very Helpful </h4>
+                  </span>
+                </div>  
+                
+              </div>
+  
+            </div>
+  
+            <div class="discussion-container">
 
-        </div>
+              <div class="user-box">
+                <div class="main-commentbox">
+                  <img class="PPuser" src="profile2.jpg">
+                  <textarea id="ComInput" class="user-input" placeholder="What are your thoughts?" minlength="1"></textarea>
+                </div>
+  
+                <div class="user-controls">
+                  <input id="clearBtn" class="clear-btn" type="reset" value="Clear">
+                  <input id="commentBtn" class="comBtnInactive" type="submit" value="Comment" onclick="addComment();" disabled="true">
+                </div>
+              </div>
+  
+              <div class="divider-com">
+              </div>
+  
+              <div id="topic-discussion" class="comment-section">
+  
+                <div class="AUD-opinion">
+                  <img class="PPAUD" src="profile2.jpg">
+  
+                  <div class="AUD-details">
+                    <div class="AUDName">
+                      <p class="usernameStyle"> IndiaTechSupport </p>
+                      <p class="datepostStyle"> &#9679; 1 day ago </p>
+                    </div>
+
+                    <p class="commentStyle"> Hello, this is microsoft tech support how may i help you? </p>
+  
+                    <div class="AUDReplyControls">
+                      <button id="1" class="LikeBtnStyle"> <img class="ThumbsIcon1" src="../images/like-icon.png"> </button>
+                      <p class="likenumStyle"> 11 </p>
+                      <button id="2" class="DislikeBtnStyle"> <img class="ThumbsIcon2" src="../images/dislike-icon.png"> </button>
+                      <button class="ReplyBtnStyle"> Reply </button>
+                    </div>
+
+                  </div>
+                  
+                </div>
+                
+            </div>
+  
+          </div>
+  
+          <div id="notificationbar">
+            <div class="notification">
+              <!-- Placeholder For Dev -->
+              <p>You have added an item to cart!</p>
+              <!-- End -->
+            </div>
+          </div>             
 
         <!-- Edit Ending Here-->
       </section>
