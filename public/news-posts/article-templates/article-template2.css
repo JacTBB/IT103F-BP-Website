@@ -1,7 +1,7 @@
 /* general */
 
 
-p, label, th, td, h1, h3 {
+label, th, td, h1, h3, input {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
@@ -61,6 +61,13 @@ p, label, th, td, h1, h3 {
   margin: 1em 0 1em;
 }
 
+.divider-com {
+  height: 3px;
+  background-color: rgba(0,0,0,.1);
+  width: 100%;
+  margin: 1em 0 1em;
+}
+
 #borderassist {
   border: 1px solid red;
 }
@@ -106,31 +113,7 @@ div.end-row {
 
 /* Content Details */
 
-/* Below content */
-div.star-container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-items: space-between;
-}
 
-h3.star-heading {
-  font-size: 16px;
-}
-
-div.star-ratingbox {
-  display: flex;
-  flex: 1;
-  flex-flow: row wrap;
-  margin-top: 7px;
-  align-content: center;
-  justify-content: space-around;
-}
-
-
-h1.bottom-heading {
-  font-size: 20px;
-  margin-top: 0;
-}
 
 /* News slider */
 /* Model */
@@ -177,8 +160,9 @@ div.news-card:hover{
   color: black;
 }
 
-/* General Deco */
-p {
+
+/* General Deco for News card */
+p, h4 {
   font-family: Alata;
   margin-top: 0;
   margin-bottom: 0;
@@ -240,3 +224,343 @@ div.bg-square {
     border-radius: 3px 0 0 3px;
 }
 
+
+/* Star section */
+h3.star-heading {
+  font-size: 16px;
+}
+
+h4.rateguide {
+  font-weight: 200;
+  font-size: 10px;
+  text-align: center;
+}
+
+div.star-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 4px;
+  justify-items: center;
+}
+
+div.stars span{
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 4px;
+  align-items: center;
+  margin-left: -5px;
+}
+
+.stars p {
+    padding-right: 4px;
+    text-decoration: none;
+}
+
+.stars p:after {
+    font-size: 18px;
+    font-family: 'FontAwesome', serif;
+    content: "\f005";
+    color: #9e9e9e;
+}
+
+span:hover p:after{
+  color:orange !important;
+}
+
+.stars p:hover ~ p:after{
+  color: #9e9e9e !important;
+}
+
+span.active p.active ~ p:after{
+  color: #9e9e9e;
+}
+
+span.active p:after,
+.stars p.active:after{
+  color:orange;
+}
+
+h1.bottom-heading {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+
+
+
+
+
+/*Comment Section*/
+
+div.discussion-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 15%;
+  padding-right: 15%;
+  border: 3px solid rgb(200,200,200);
+}
+
+div.user-box {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 3px;
+}
+
+div.user-box:focus-within{
+  border: 1px solid black;
+}
+
+div.main-commentbox {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  background-color: white;
+}
+
+img.PPuser {
+  width: 36px;
+  height: 36px;
+  border-radius: 17px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+textarea.user-input {
+  width: 96%;
+  height: 100px;
+  border: 0;
+  padding: 2% 2% 2% 2%;
+  margin: 0;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+textarea:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+div.user-controls {
+  display: flex;
+  flex-flow: row nowrap;  
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 5px;
+  width: 100%;
+  height: 30px;
+  margin-top: -1px;
+  background-color: #D9D9D9;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+
+/*User comment form controls*/
+
+input {
+  font-weight: bold;
+  color: white;
+  padding: 4px 14px 4px 14px;
+  border: 0px;
+  border-radius: 10px;
+  transition: all 0.1s;
+}
+
+.comBtnActive:hover, .clear-btn:hover{
+  opacity: 0.8;
+}
+
+.comBtnActive:active, .clear-btn:active{
+  transform: translateY(1px);
+}
+
+.clear-btn {
+  background-color: #d30000;
+}
+
+.comBtnActive{
+  cursor: pointer;
+  margin-right: 3px;
+  background-color: #0079D3;
+  opacity: 1;
+}
+
+.comBtnInactive{
+  cursor: not-allowed;
+  margin-right: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: grey;
+  opacity: 0.5;
+}
+
+
+
+/*Comment section*/
+div.comment-section {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+div.comment-section p {
+  font-family: "Arial";
+}
+
+div.AUD-opinion {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+img.PPAUD {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+div.AUD-details {
+  display: grid;
+  grid-template-rows: 19px 1fr 26px;
+  row-gap: 6px;
+  width: 100%;
+  padding: 10px 8px 4px 8px;
+}
+
+div.AUDName {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+  width: 100%;
+}
+
+/* #aaa */
+p.usernameStyle{
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1px;
+}
+
+p.datepostStyle{
+  font-size: 11px;
+  text-align: center;
+  color: rgb(112, 112, 112);
+  margin-top: 2px;
+}
+
+p.commentStyle{
+  font-size: 14px;
+}
+
+div.AUDReplyControls{
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+  width: 100%;
+}
+
+div.AUDReplyControls button{
+  outline: none;
+  background: transparent;
+  border: none;
+  transition: all 0.5s;
+}
+
+div.AUDReplyControls button:active{
+  border: 1px solid black;
+  background-color: rgb(214, 214, 214);
+}
+
+button.LikeBtnStyle, button.DislikeBtnStyle{
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 13px;
+}
+
+button.DislikeBtnStyle{
+  margin-left: 4px;
+}
+
+img.ThumbsIcon1, img.ThumbsIcon2{
+  width: 13px;
+  height: 13px;
+}
+
+img.ThumbsIcon2{
+  padding-top: 2px;
+}
+
+p.likenumStyle{
+  font-size: 12px;
+  padding-top: 4px;
+  margin-left: -2px;
+}
+
+button.ReplyBtnStyle {
+  width: 60px;
+  height: 26px;
+  margin-left: 2px;
+  padding-bottom: 6px;
+  font-weight: bold;
+}
+
+
+
+
+/* Notification Section */
+#notificationbar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.notification {
+  display: none;
+  padding: 10px;
+  margin: 5px;
+  border: solid rgb(100,100,100) 2px;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+
+
+/* Loading & Website animation */
+@keyframes fadeInAnim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeOutAnim {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+.notificationinanim {
+  animation-name: fadeInAnim;
+  animation-duration: 0.5s;
+}
+.notificationoutanim {
+  animation-name: fadeOutAnim;
+  animation-duration: 0.5s;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 20px;
+}
