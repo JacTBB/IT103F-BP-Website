@@ -105,3 +105,4 @@ Password: D3V@blueprint
 https://railway.app/project/f01b612d-f660-4702-b548-1203dd511a10/
 
 Email: developer@blueprint-studios.net
+Note: You may have to open the verification link in Zoho Mail.
