@@ -5,7 +5,7 @@ console.log ("Gui Cheng's Script");
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('Comments'));
+const savedComments = JSON.parse(localStorage.getItem('comments'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
@@ -49,7 +49,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('Comments', JSON.stringify(commentInfo));
+  localStorage.setItem('comments', JSON.stringify(commentInfo));
  }
 
  //View 
