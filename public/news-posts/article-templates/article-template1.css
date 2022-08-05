@@ -80,8 +80,8 @@ label, th, td, h1, h3, input {
 div.blog-content-wrapper {
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
-  min-width: 380px;
-  padding: 40px 40px 40px 40px;
+  min-width: 360px;
+  padding: 2% 2% 2% 2%;
 }
 
 div.top-row {
@@ -244,7 +244,6 @@ div.star-container {
 div.stars span{
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 4px;
   align-items: center;
   margin-left: -5px;
 }
@@ -292,19 +291,16 @@ h1.bottom-heading {
 
 div.discussion-container {
   display: grid;
-  grid-template-rows: 1fr;
   row-gap: 20px;
   padding-top: 30px;
   padding-bottom: 50px;
   padding-left: 15%;
   padding-right: 15%;
-  border: 3px solid rgb(200,200,200);
 }
 
 div.user-box {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   border: 1px solid rgb(138, 138, 138);
   border-radius: 3px;
 }
@@ -315,8 +311,6 @@ div.user-box:focus-within{
 
 div.main-commentbox {
   display: flex;
-  width: 100%;
-  flex-flow: row nowrap;
   background-color: white;
 }
 
@@ -326,11 +320,11 @@ img.PPuser {
   border-radius: 17px;
   margin-top: 6px;
   margin-left: 6px;
+  object-fit: cover;
 }
 
 textarea.user-input {
   width: 96%;
-  height: 100px;
   border: 0;
   padding: 2% 2% 2% 2%;
   margin: 0;
@@ -346,30 +340,68 @@ textarea:focus {
 }
 
 div.user-controls {
-  display: flex;
-  flex-flow: row nowrap;  
-  align-items: center;
-  justify-content: flex-end;
-  column-gap: 5px;
-  width: 100%;
-  height: 30px;
   margin-top: -1px;
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 10px;
   background-color: #D9D9D9;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
 
+/*First row*/
+div.formbtn-flexcon{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+div.expbtn-flexcon{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+div.expFT1{
+  display: none;
+  align-items: center;
+  justify-content: left;
+}
+
+div.btn-flexcon, div.expFT2{
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: right;
+}
+
+div.expFT2{
+  display: none;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: left;
+}
+
 
 /*User comment form controls*/
 
 input {
   font-weight: bold;
-  color: white;
   padding: 4px 14px 4px 14px;
   border: 0px;
   border-radius: 10px;
   transition: all 0.1s;
+}
+
+p.resizeEXP {
+  font-size: 14px;
+}
+
+p.resizeEXPSub {
+  font-size: 12px;
 }
 
 .comBtnActive:hover, .clear-btn:hover{
@@ -381,12 +413,14 @@ input {
 }
 
 .clear-btn {
+  color: white;
   background-color: #d30000;
 }
 
 .comBtnActive{
   cursor: pointer;
   margin-right: 3px;
+  color: white;
   background-color: #0079D3;
   opacity: 1;
 }
@@ -399,7 +433,20 @@ input {
   opacity: 0.5;
 }
 
+.ExpInput{
+  width: 65%;
+  font-size: 12px;
+  padding: 2px 4px 2px 4px;
+  margin-left: 10px;
+  color: black;
+  border: 1px solid rgb(35, 106, 148);
+  background-color: white;
+}
 
+.ExpInput:focus{
+  outline: none;
+  box-shadow: none;
+}
 
 /*Comment section*/
 div.comment-section {
@@ -426,6 +473,7 @@ img.PPAUD {
   border-radius: 18px;
   margin-top: 6px;
   margin-left: 6px;
+  object-fit: cover;
 }
 
 div.AUD-details {

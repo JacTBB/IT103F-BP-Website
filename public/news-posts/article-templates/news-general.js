@@ -45,6 +45,38 @@ function enableComBtn(){
 }
 
 
+//Detech Profile Picture URL input 
+const detectProfilePic = document.getElementById('expFTPP')
+detectProfilePic.addEventListener("focus", PPIMGCheckTimer)
+detectProfilePic.addEventListener("focusout", PPIMGClearTimer)
+let checkforURL;
+
+function PPIMGCheckTimer(){
+  checkforURL = setInterval(changeProfilePic, 200)
+}
+
+function PPIMGClearTimer() {
+  clearInterval(checkforURL)
+}
+
+function changeProfilePic(){
+  const UserPP = document.getElementById('PFPUser')
+  UserPP.src = detectProfilePic.value;
+}
+
+//Show Experiment features
+
+function showHiddenFeatures(){
+  const EXPButton = document.getElementById('experimentBtn')
+  if (EXPButton.checked === true){
+    document.getElementById('expFT1').style = "display: flex;"
+    document.getElementById('expFT2').style = "display: flex;"
+  }
+  else {
+    document.getElementById('expFT1').style = "display: none;"
+    document.getElementById('expFT2').style = "display: none;"
+  }
+}
 
  //Star rating
  $('.stars p').on('click', function(){
