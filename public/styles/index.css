@@ -219,19 +219,23 @@ div.star-ratings {
 
 .about-us-card {
   display:grid;
-  grid-template-rows: 400px 160px;
+  grid-template-rows: 400px 1fr;
   border: 1px solid grey;
   border-radius: 25px;
   align-items:center;
+  flex-grow:0.5;
+  flex-flow: column nowrap;
+  display:flex;
+
 }
 
 .zheming-too-big{
   object-fit: cover;
-  border-top-left-radius: 25px;
+  border-top-left-radius: 35px;
   border-top-right-radius: 25px;
   width: 100%;
   height: 100%;
-
+  
 
 }
 .pickholder{
