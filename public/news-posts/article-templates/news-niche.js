@@ -13,7 +13,7 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "Johnny Smith",
-     ProfilePic: "profile2.jpg",
+     ProfilePic: "profile3.jpg",
      DatePost: `&#9679; 1 day ago`,
      Comment: "Sampletxt",
     }]
@@ -24,7 +24,7 @@ function createComment(username, date, comtxt){
   const id = '' + new Date().getTime();
   commentInfo.push({
     Username: username,
-    ProfilePic: "profile2.jpg",
+    ProfilePic: "profile3.jpg",
     DatePost: date,
     Comment: comtxt,
     id: id
@@ -64,7 +64,7 @@ function removeComment(IDtoDelete){
     //Profile Picture
     const profilePAUD = document.createElement('img')
     profilePAUD.className = "PPAUD"
-    profilePAUD.src = "profile2.jpg"
+    profilePAUD.src = "profile3.jpg"
     AUDOpinion.appendChild(profilePAUD)
 
 
