@@ -3,6 +3,8 @@
 
 
 
+
+
 //Detect comment input 
 
 const detectComInput = document.getElementById('ComInput')
@@ -10,9 +12,12 @@ detectComInput.addEventListener("focus", TxtCheckTimer);
 detectComInput.addEventListener("focusout", TxtClearTimer);
 
 document.getElementById("clearBtn").onclick = () => {
+  detectComInput.value = ''
   commentBtn.disabled = true;
   commentBtn.className = "comBtnInactive";
+  console.log('Input cleared.')
 }
+
 
 const commentBtn = document.getElementById('commentBtn')
 let checkforStr;
