@@ -47,7 +47,7 @@ ___
 ___
 
 ## Notes
-- Minimum Screen Width: 360px
+- Minimum Screen Width: 365px
 - Recomended Browsers: Chrome, Microsoft Edge
 - Please have a stable internet connection.
 ___
