@@ -139,6 +139,7 @@ color:white;
     cursor:pointer;
     font-size:25px;
     width:10%;
+    min-width: 80px;
     margin-left:auto;
     margin-right:auto;
     text-align:center;
@@ -146,4 +147,7 @@ color:white;
    .applynow:hover
 {background-color: rgba(23, 197, 255, 0.8);
 }
-
+.applynow a {
+  color: black;
+  text-decoration-line: none;
+}
