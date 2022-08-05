@@ -20,11 +20,11 @@ else {
 }
 
 //Posts a comment
-function createComment(username, date, comtxt){
+function createComment(name, profilepic, date, comtxt){
   const id = '' + new Date().getTime();
   commentInfo.push({
-    Username: username,
-    ProfilePic: "profile3.jpg",
+    Username: name,
+    ProfilePic: profilepic,
     DatePost: date,
     Comment: comtxt,
     id: id
@@ -64,7 +64,7 @@ function removeComment(IDtoDelete){
     //Profile Picture
     const profilePAUD = document.createElement('img')
     profilePAUD.className = "PPAUD"
-    profilePAUD.src = "profile3.jpg"
+    profilePAUD.src = renderComment.ProfilePic
     AUDOpinion.appendChild(profilePAUD)
 
 
@@ -80,7 +80,7 @@ function removeComment(IDtoDelete){
 
     const userName = document.createElement('p')
     userName.className = "usernameStyle"
-    userName.textContent = "Annoymous"
+    userName.innerHTML = renderComment.Username
     AUDName.appendChild(userName)
 
     const datePost = document.createElement('p')
@@ -112,7 +112,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeCount = document.createElement('p')
     AUDLikeCount.className = "likenumStyle"
-    AUDLikeCount.textContent = 69
+    AUDLikeCount.textContent = 0
     AUDControls.appendChild(AUDLikeCount)
 
     const AUDDislikeBtn = document.createElement('button')
@@ -140,7 +140,25 @@ function removeComment(IDtoDelete){
   });
 }
 
-function DisplayDate(){
+renderComSec();
+
+//Comment Controllers
+
+function addComment() {
+  
+//Username 
+const usernameEXP = document.getElementById('expFTName');
+let UNInput = usernameEXP.value
+  switch (true){
+    case UNInput === '':
+      UNInput = "Anonymous User"
+    break;
+  }
+ 
+//Profile Picture URL
+const ppEXP = document.getElementById('expFTPP')
+
+//Date Posted
   let date1 = new Date();
   let dayofMonth = date1.getDate();
   let month = date1.getMonth() + 1
@@ -150,69 +168,51 @@ function DisplayDate(){
     case month === 1:
        month = "January"
     break;
-
     case month === 2:
       month = "February"
     break;
-
     case month === 3:
       month = "March"
     break;
-
     case month === 4:
       month = "April"
     break;
-
     case month === 5:
       month = "May"
     break;
-
     case month === 6:
       month = "June"
     break;
-
     case month === 7:
       month = "July"
     break;
-
     case month === 8:
       month = "August"
     break;
-
     case month === 9:
       month = "September"
     break;
-
     case month === 10:
       month = "October"
     break;
-
     case month === 11:
       month = "November"
     break;
-
     case month === 12:
       month = "December"
     break;
   }
-  
-const TimePosted = 
-`${dayofMonth} ${month} ${year}`
-}
 
-renderComSec();
+//Comment Input GET from textarea
+const comInputTxt = document.getElementById('ComInput');
 
-//Comment Controllers
-function addComment() {
-  const comInputTxt = document.getElementById('ComInput');
+
+  const date = `&#9679; ${dayofMonth} ${month} ${year}`
+  const name = UNInput
+  const profilepic = ppEXP.value; 
   const comtxt = comInputTxt.value;
 
-  const name = "Annoymous"
-  const username = name
-
-  const newDate = new Date().getFullYear
-  const date = newDate
-  createComment(username, date, comtxt);
+  createComment(name, profilepic, date, comtxt);
   renderComSec();
 }
 
