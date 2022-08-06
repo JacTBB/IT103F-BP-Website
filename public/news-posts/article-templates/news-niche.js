@@ -128,6 +128,7 @@ function removeComment(IDtoDelete){
     AUDControls.appendChild(AUDLikeCount)
     
     //Dislike Button
+
     const AUDDislikeBtn = document.createElement('button')
     AUDDislikeBtn.className = "DislikeBtnStyle"
     AUDDislikeBtn.onclick = LikeUnavailable;
@@ -138,13 +139,15 @@ function removeComment(IDtoDelete){
     AUDDislikeimg.src = "../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
+    if (renderComment.Username !== "Johnny Smith"){
     const AUDDeleteBtn = document.createElement('button')
     AUDDeleteBtn.className = "deleteCommentStyle"
     AUDDeleteBtn.textContent = "Remove"
     AUDDeleteBtn.id = renderComment.id;
     AUDDeleteBtn.onclick = deleteComment;
-    AUDControls.appendChild(AUDDeleteBtn)
+    AUDControls.appendChild(AUDDeleteBtn)}
 
+    else {}
     document.getElementById('topic-discussion').appendChild(AUDOpinion)
   });
 }
@@ -373,9 +376,6 @@ function newsScrollRight(){
     return false 
    }
  }
-
-
-
 
  renderComSec();
  renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
