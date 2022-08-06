@@ -35,7 +35,7 @@
 }
 
 .reasonsbox img {
-  height: 100px;
+  height: 150px;
   margin: 10px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
@@ -98,7 +98,7 @@
 }
 .productsbox a img {
   padding: 1px;
-  width: 150px;
+  width: 200px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
   background-color:rgb(60,180,250);
@@ -115,7 +115,7 @@
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Alata";
 }
 
