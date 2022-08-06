@@ -34,6 +34,8 @@ th, td, h1, h3, input {
   width: 20px;
   height: 20px;
   border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .dateChanged {
@@ -128,6 +130,8 @@ div.news-card {
   border: 1px solid rgb(138, 138, 138);
   border-radius: 10px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
   transition: all 0.3s;
 }
 
@@ -143,6 +147,7 @@ div.news-card:hover{
   text-decoration: none;
   color: black;
 }
+
 
 /* General Deco for News card */
 label, p, h4 {

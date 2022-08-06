@@ -156,6 +156,11 @@ function removeComment(IDtoDelete){
 //Comment Controllers
 
 function addComment() {
+const commentBtn = document.getElementById('commentBtn')
+commentBtn.disabled = true;
+commentBtn.className = "comBtnInactive"
+
+
 const usernameEXP = document.getElementById('expFTName');
 let UNInput = usernameEXP.value
   switch (true){
@@ -208,7 +213,14 @@ let UNInput = usernameEXP.value
     break;
   }
 
-  const ppEXP = document.getElementById('expFTPP')
+  let ppEXP = document.getElementById('expFTPP')
+  if (ppEXP.value === ''){
+    ppEXP.value = "../images/anonymous-sus.png"
+  }
+  else (
+    console.log("PP Passed")
+  )
+  
   const comInputTxt = document.getElementById('ComInput');
 
 
@@ -219,6 +231,13 @@ let UNInput = usernameEXP.value
 
   createComment(name, profilepic, date, comtxt);
   renderComSec();
+
+  //Timeout Post Comment button
+  setTimeout(() => {
+    commentBtn.disabled = false;
+    commentBtn.className = "comBtnActive"
+  }
+  , 2000)
 }
 
 function deleteComment(event) {
@@ -257,39 +276,46 @@ function LikeUnavailable(){
 
 // News Model
 let newsSelector = [
-  {News_Name: 'June 2022 Promotion', 
-   IMG: "background-image: url('../../images/products/Bugatti Chiron 2017 Sports Car 3D Model.jpg');",
+  {News_Name: '', 
+   IMG: "background-image: url('');",
    Link: "news-posts/articles/",
-   Date: "2 June",
-   Heading: "JUNE 2022 PROMOTIONS",
+   Date: "",
+   Heading: "",
   },
 
-  {News_Name: 'SampleNews2',
-   IMG: "background-image: url('https://cdn.realsport101.com/images/ncavvykf/gfinityesports/b843c4ae15c10f098c70e8d23f623303a593a4f9-1280x720.jpg?w=686&h=386&auto=format&dpr=2')",
+  {News_Name: '',
+   IMG: "background-image: url('')",
    Link: "news-posts/articles/",
-   Date: '1 April',
-   Heading: 'APRIL 2022 SAMPLE',
+   Date: '',
+   Heading: '',
   },
 
-  {News_Name: 'SampleNews3',
+  {News_Name: '',
   IMG: "background-image: url('../../images/products/Sofa 3D Model.png')",
   Link: "news-posts/articles/",
-  Date: '2 April',
-  Heading: 'GET PRANKED',
+  Date: 'M1',
+  Heading: 'H3',
   },
 
-  {News_Name: 'SampleNews4',
+  {News_Name: '',
   IMG: "background-image: url('../../images/products/P250 3D Model.png')",
   Link: "news-posts/articles/",
-  Date: '3 April',
-  Heading: 'AMOGUS',
+  Date: 'M2',
+  Heading: 'H4',
   },
 
-  {News_Name: 'SampleNews5',
+  {News_Name: '',
   IMG: "background-image: url('../../images/products/4 Axle Box Truck 3D Model.png')",
   Link: "news-posts/articles/",
-  Date: '69 April',
-  Heading: 'XUE HUA PIAO PUAO',
+  Date: 'M3',
+  Heading: 'H5',
+  },
+
+  {News_Name: '',
+  IMG: "background-image: url('../../images/products/Bugatti Chiron 2017 Sports Car 3D Model.jpg')",
+  Link: "news-posts/articles/",
+  Date: '',
+  Heading: '',
   },
 
   {News_Name: '',
@@ -343,16 +369,16 @@ function newsScrollLeft() {
   newsIndex -= 1
    switch(true){
     case newsIndex === 2: 
-      renderNews(newsSelector[3], newsSelector[0], newsSelector[1]);                
+      renderNews(newsSelector[1], newsSelector[2], newsSelector[3]);                
     return true
 
     case newsIndex === 1:
-      renderNews(newsSelector[4], newsSelector[3], newsSelector[0]);
+      renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
     return true
 
     default:
       newsIndex = 3
-        renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
+        renderNews(newsSelector[2], newsSelector[3], newsSelector[4]);
       console.log('End of Left News')
     return false
    }
@@ -362,23 +388,23 @@ function newsScrollRight(){
   newsIndex += 1
    switch(true){
     case newsIndex === 4: 
-      renderNews(newsSelector[1], newsSelector[2], newsSelector[3]);             
+      renderNews(newsSelector[3], newsSelector[4], newsSelector[5]);             
     return true
 
     case newsIndex === 5:        
-     renderNews(newsSelector[2], newsSelector[3], newsSelector[4]);             
+     renderNews(newsSelector[4], newsSelector[5], newsSelector[6]);             
     return true 
 
     default: 
       newsIndex = 3
-       renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
+       renderNews(newsSelector[2], newsSelector[3], newsSelector[4]);
       console.log('End of Right news')
     return false 
    }
  }
 
  renderComSec();
- renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
+ renderNews(newsSelector[2], newsSelector[3], newsSelector[4]);
 
 
 

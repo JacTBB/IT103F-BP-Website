@@ -45,6 +45,7 @@ function enableComBtn(){
 }
 
 
+
 //Detech Profile Picture URL input 
 const detectProfilePic = document.getElementById('expFTPP')
 detectProfilePic.addEventListener("focus", PPIMGCheckTimer)
@@ -52,7 +53,7 @@ detectProfilePic.addEventListener("focusout", PPIMGClearTimer)
 let checkforURL;
 
 function PPIMGCheckTimer(){
-  checkforURL = setInterval(changeProfilePic, 200)
+  checkforURL = setInterval(changeProfilePic, 400)
 }
 
 function PPIMGClearTimer() {
@@ -61,7 +62,12 @@ function PPIMGClearTimer() {
 
 function changeProfilePic(){
   const UserPP = document.getElementById('PFPUser')
-  UserPP.src = detectProfilePic.value;
+  if (detectProfilePic.value === ''){
+    UserPP.src = "../images/anonymous-sus.png"
+  }
+  else{
+    UserPP.src = detectProfilePic.value;
+  }
 }
 
 //Show Experiment features

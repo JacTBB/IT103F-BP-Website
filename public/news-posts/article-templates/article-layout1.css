@@ -1,4 +1,10 @@
 /*Individual CSS template 1*/
+div.mid-row-content p {
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 div.mid-row-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
