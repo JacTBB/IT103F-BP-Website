@@ -1,0 +1,9 @@
+/*Individual CSS template 1*/
+div.mid-row-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+  background-color: rgb(0, 180, 30);
+}

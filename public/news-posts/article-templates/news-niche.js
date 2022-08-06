@@ -18,13 +18,15 @@ else {
 }
 
 //Posts a comment
-function createComment(name, profilepic, date, comtxt){
+function createComment(name, profilepic, date, comtxt, onoff, likenum){
   const id = '' + new Date().getTime();
   commentInfo.push({
     Username: name,
     ProfilePic: profilepic,
     DatePost: date,
     Comment: comtxt,
+    LikeActive: onoff,
+    LikeNumber: likenum,
     id: id
   },);
 
@@ -101,6 +103,8 @@ function removeComment(IDtoDelete){
     //Buttons
     const AUDLikeBtn = document.createElement('button')
     AUDLikeBtn.className = "LikeBtnStyle"
+    AUDLikeBtn.id = renderComment.id + 1
+    AUDLikeBtn.onclick = LikeUnavailable;
     AUDControls.appendChild(AUDLikeBtn)
 
     const AUDLikeimg = document.createElement('img')
@@ -108,24 +112,31 @@ function removeComment(IDtoDelete){
     AUDLikeimg.src = "../images/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
+    //Like Number
     const AUDLikeCount = document.createElement('p')
     AUDLikeCount.className = "likenumStyle"
-    AUDLikeCount.textContent = 0
-    AUDControls.appendChild(AUDLikeCount)
+    AUDLikeCount.id = renderComment.id + 2
 
+    if (renderComment.LikeNumber === undefined){
+      renderComment.LikeNumber = 0
+      AUDLikeCount.innerHTML = renderComment.LikeNumber
+    }
+
+    else{
+      AUDLikeCount.innerHTML = renderComment.LikeNumber
+    }
+    AUDControls.appendChild(AUDLikeCount)
+    
+    //Dislike Button
     const AUDDislikeBtn = document.createElement('button')
     AUDDislikeBtn.className = "DislikeBtnStyle"
+    AUDDislikeBtn.onclick = LikeUnavailable;
     AUDControls.appendChild(AUDDislikeBtn)
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
     AUDDislikeimg.src = "../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
-
-    const AUDReplyBtn = document.createElement('button')
-    AUDReplyBtn.className = "ReplyBtnStyle"
-    AUDReplyBtn.textContent = "Reply"
-    AUDControls.appendChild(AUDReplyBtn)
 
     const AUDDeleteBtn = document.createElement('button')
     AUDDeleteBtn.className = "deleteCommentStyle"
@@ -216,9 +227,30 @@ function deleteComment(event) {
 
 
 
-//Like Button 
+//Like Button
+function LikeUnavailable(){
 
-
+  const notificationbar = document.getElementById('notificationbar')
+  const notification = document.createElement('div')
+  notification.classList.add('notification')
+  const p = document.createElement('p')
+  p.innerHTML = "You must sign in first before you like/dislike!"
+  notification.appendChild(p)
+  notificationbar.appendChild(notification)
+  notification.style.display = 'block'
+  notification.classList.add('notificationinanim')
+  setTimeout(() => {
+    notification.classList.remove('notificationinanim')
+  }, 500)
+  setTimeout(() => {
+      notification.classList.add('notificationoutanim')
+  }, 500+1000)
+  setTimeout(() => {
+      notification.classList.remove('notificationoutanim')
+      notification.style.display = 'none'
+      notification.remove()
+  }, 500+1000+500)
+}
 
 // News Model
 let newsSelector = [

@@ -1,5 +1,4 @@
-/* general */
-
+/* Global CSS for ALL ARTICLE/NEWS/POSTS pages*/
 
 label, th, td, h1, h3, input {
   font-family: Arial, Helvetica, sans-serif;
@@ -92,27 +91,13 @@ div.top-row {
   margin-bottom: 50px;
 }
 
-div.mid-row-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  column-gap: 5px;
-  row-gap: 5px;
-  background-color: rgb(0, 180, 30);
-}
-
 div.end-row {
   display: grid;
-  grid-template-columns: 1fr;
   row-gap: 20px;
-  align-items: center;
   justify-items: center;
   font-size: 14px;
   margin-top: 24px;
 }
-
-/* Content Details */
-
 
 
 /* News slider */
@@ -128,7 +113,6 @@ div.end-row {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
 }
 
 .hiddenNews {
@@ -159,7 +143,6 @@ div.news-card:hover{
   text-decoration: none;
   color: black;
 }
-
 
 /* General Deco for News card */
 p, h4 {
@@ -225,18 +208,18 @@ div.bg-square {
 }
 
 
+
 /* Star section */
-h3.star-heading {
+h3.starC-Heading {
   font-size: 16px;
 }
 
 h4.rateguide {
   font-weight: 200;
   font-size: 10px;
-  text-align: center;
 }
 
-div.star-container {
+div.starC-Container {
   display: grid;
   grid-template-rows: 1fr 1fr;
   row-gap: 4px;
@@ -311,7 +294,7 @@ div.user-box:focus-within{
   border: 1px solid black;
 }
 
-div.main-commentbox {
+div.ub-comTxtbox {
   display: flex;
   background-color: white;
 }
@@ -327,7 +310,6 @@ img.PPuser {
 
 textarea.user-input {
   width: 96%;
-  height: 100px;
   border: 0;
   padding: 2% 2% 2% 2%;
   margin: 0;
@@ -353,15 +335,16 @@ div.user-controls {
   border-bottom-right-radius: 6px;
 }
 
+
 /*First row*/
-div.formbtn-flexcon{
+div.ucflex-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 10px;
   column-gap: 10px;
 }
 
-div.expbtn-flexcon{
+div.ucflex-expbtn{
   display: flex;
   align-items: center;
   justify-content: left;
@@ -373,7 +356,7 @@ div.expFT1{
   justify-content: left;
 }
 
-div.btn-flexcon, div.expFT2{
+div.ucflex-submitbtn, div.expFT2{
   display: flex;
   column-gap: 6px;
   align-items: center;
@@ -387,11 +370,11 @@ div.expFT2{
   justify-content: left;
 }
 
+
 /*User comment form controls*/
 
 input {
   font-weight: bold;
-  color: white;
   padding: 4px 14px 4px 14px;
   border: 0px;
   border-radius: 10px;
@@ -523,12 +506,7 @@ div.AUDReplyControls button{
   outline: none;
   background: transparent;
   border: none;
-  transition: all 0.5s;
-}
-
-div.AUDReplyControls button:active{
-  border: 1px solid black;
-  background-color: rgb(214, 214, 214);
+  transition: all 0.3s;
 }
 
 button.LikeBtnStyle, button.DislikeBtnStyle{
@@ -557,12 +535,18 @@ p.likenumStyle{
   margin-left: -2px;
 }
 
-button.ReplyBtnStyle {
+button.deleteCommentStyle {
+  cursor: pointer;
   width: 60px;
   height: 26px;
   margin-left: 2px;
-  padding-bottom: 6px;
   font-weight: bold;
+  border-radius: 7px;
+}
+
+button.deleteCommentStyle:hover{
+  background: red;
+  color: white;
 }
 
 

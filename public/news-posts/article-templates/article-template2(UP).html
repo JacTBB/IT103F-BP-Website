@@ -9,7 +9,8 @@
     <link href="../../styles/nav.css" rel="stylesheet" type="text/css">
     <link href="../../styles/footer.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="article-template2.css" rel="stylesheet" type="text/css">
+    <link href="article-framework.css" rel="stylesheet" type="text/css">
+    <link href="article-layout2.css" rel="stylesheet" type="text/css">
 
     <!-- Metadata -->
     <meta charset="UTF-8">
@@ -268,8 +269,8 @@
               <a class="nextNews" onclick="newsScrollRight();"> > </a>
             </div>
 
-              <div class="star-container">
-                <h3 class="star-heading"> Do you find this news helpful? </h3>
+            <div class="starC-Container">
+              <h3 class="starC-Heading"> Do you find this news helpful? </h3>
   
                 <div class="stars">
                   <span>
@@ -290,21 +291,21 @@
             <div class="discussion-container">
 
               <div class="user-box">
-                <div class="main-commentbox">
+                <div class="ub-comTxtbox">
                   <img id="PFPUser" class="PPuser" src="profile3.jpg">
                   <textarea id="ComInput" class="user-input" placeholder="What are your thoughts?" minlength="1"></textarea>
                 </div>
   
                 <div class="user-controls">
 
-                  <div class="formbtn-flexcon">
+                  <div class="ucflex-container">
   
-                    <div class="expbtn-flexcon">
+                    <div class="ucflex-expbtn">
                       <input id="experimentBtn" type="checkbox" title="Experiment features" onclick="showHiddenFeatures();" checked="false">
                       <p class="resizeEXP"> EXP Features </p>
                     </div>
   
-                    <div class="btn-flexcon">
+                    <div class="ucflex-submitbtn">
                       <input id="clearBtn" class="clear-btn" type="reset" value="Clear">
                       <input id="commentBtn" class="comBtnInactive" type="submit" value="Comment" onclick="addComment();" disabled="true">
                     </div>
@@ -343,7 +344,7 @@
                       <button id="1" class="LikeBtnStyle"> <img class="ThumbsIcon1" src="../images/like-icon.png"> </button>
                       <p class="likenumStyle"> 0 </p>
                       <button id="2" class="DislikeBtnStyle"> <img class="ThumbsIcon2" src="../images/dislike-icon.png"> </button>
-                      <button class="ReplyBtnStyle"> Reply </button>
+                      <button class="deleteCommentStyle"> Remove </button>
                     </div>
 
                   </div>
