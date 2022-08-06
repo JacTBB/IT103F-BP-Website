@@ -85,7 +85,7 @@ function formValidate(){
 
           const ErrorTxt3 = document.createElement('p')
           ErrorTxt3.className = 'error'
-          ErrorTxt3.textContentL = 'Credit Card Number is invalid! (Error 3)'
+          ErrorTxt3.textContent = 'Credit Card Number is invalid! (Error 3)'
           document.getElementById('errorType3').appendChild(ErrorTxt3);
           console.log('Test 3 Failed!');
           }, 2000);

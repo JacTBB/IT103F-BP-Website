@@ -1,4 +1,4 @@
-//General Javascript Functions for all news posts/articles.
+//Global Javascript Functions that affect all news posts/articles.
 
 
 

@@ -1,7 +1,5 @@
 // Niche Javascript functions catering to a specific post page.
 
-console.log ("Gui Cheng's Script");
-
 
 //Comment Model
 let commentInfo;
@@ -140,13 +138,10 @@ function removeComment(IDtoDelete){
   });
 }
 
-renderComSec();
 
 //Comment Controllers
 
 function addComment() {
-  
-//Username 
 const usernameEXP = document.getElementById('expFTName');
 let UNInput = usernameEXP.value
   switch (true){
@@ -155,10 +150,6 @@ let UNInput = usernameEXP.value
     break;
   }
  
-//Profile Picture URL
-const ppEXP = document.getElementById('expFTPP')
-
-//Date Posted
   let date1 = new Date();
   let dayofMonth = date1.getDate();
   let month = date1.getMonth() + 1
@@ -203,8 +194,8 @@ const ppEXP = document.getElementById('expFTPP')
     break;
   }
 
-//Comment Input GET from textarea
-const comInputTxt = document.getElementById('ComInput');
+  const ppEXP = document.getElementById('expFTPP')
+  const comInputTxt = document.getElementById('ComInput');
 
 
   const date = `&#9679; ${dayofMonth} ${month} ${year}`
@@ -217,8 +208,8 @@ const comInputTxt = document.getElementById('ComInput');
 }
 
 function deleteComment(event) {
-  const deleteComButton = event.target;
-  const IDtoDelete = deleteComButton.id;
+  const delCommentBtn = event.target;
+  const IDtoDelete = delCommentBtn.id;
   removeComment(IDtoDelete);
   renderComSec();
 }
@@ -290,9 +281,6 @@ const rightCardimg = document.getElementById('newsRight')
   const rightDate = document.getElementById('dateRight')
   const rightHeading = document.getElementById('heading-right')
 
-//Default news
-renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
-
 
 //View
 let newsIndex = 3
@@ -354,6 +342,11 @@ function newsScrollRight(){
    }
  }
 
+
+
+
+ renderComSec();
+ renderNews(newsSelector[0], newsSelector[1], newsSelector[2]);
 
 
 
