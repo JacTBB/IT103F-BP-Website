@@ -3,18 +3,56 @@
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comments'));
+const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comment'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
 
 else {
   commentInfo = [
-    {Username: "",
-     ProfilePic: "../../images/profile-pictures/profile3.jpg",
-     DatePost: `&#9679; 1 day ago`,
-     Comment: "Sampletxt",
-    }]
+    {Username: "CattoMX",
+     ProfilePic: "../../images/profile-pictures/profile1.jpg",
+     DatePost: `&#9679; 21 hours ago`,
+     Comment: "Gib me gun now!!~~",
+     LikeNumber: 5,
+    },
+
+    {Username: "wWalterWhite.com",
+     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+     DatePost: `&#9679; 12 hours ago`,
+     Comment: "*Faints*",
+     LikeNumber: 24,
+    },
+
+    {Username: "JaSYnX",
+     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     DatePost: `&#9679; 3 hours ago`,
+     Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
+     LikeNumber: 59,
+    },
+
+    {Username: "MONKE",
+     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+     DatePost: `&#9679; 2 hours ago`,
+     Comment: "APE STRONG TOGETHER",
+    LikeNumber: 79,
+    },
+
+    {Username: "GENERALGORILLA",
+     ProfilePic: "../../images/profile-pictures/profile14.jpg",
+     DatePost: `&#9679; 2 hours ago`,
+     Comment: "APE. APE. TOGETHER. STRONG!",
+     LikeNumber: 112,
+   },
+
+   {Username: "Commander Orangutan",
+    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+    DatePost: `&#9679; 1 hour ago`,
+    Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
+    LikeNumber: 169,
+  }
+]
+
 }
 
 //Posts a comment
@@ -49,7 +87,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('JulyPromotion2022Comments', JSON.stringify(commentInfo));
+  localStorage.setItem('JulyPromotion2022Comment', JSON.stringify(commentInfo));
  }
 
  //View 
@@ -139,17 +177,30 @@ function removeComment(IDtoDelete){
     AUDDislikeimg.src = "../../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
-    if (renderComment.Username !== "Johnny Smith"){
-    const AUDDeleteBtn = document.createElement('button')
-    AUDDeleteBtn.className = "deleteCommentStyle"
-    AUDDeleteBtn.textContent = "Remove"
-    AUDDeleteBtn.id = renderComment.id;
-    AUDDeleteBtn.onclick = deleteComment;
-    AUDDeleteBtn.title = "Delete this comment"
-    AUDControls.appendChild(AUDDeleteBtn)}
-
-    else {}
-    document.getElementById('topic-discussion').appendChild(AUDOpinion)
+    switch(true){
+      case renderComment.Username === "CattoMX":
+        break;
+      case renderComment.Username === "wWalterWhite.com":
+        break;
+      case renderComment.Username === "JaSYnX":
+        break;
+      case renderComment.Username === "MONKE":
+        break;
+      case renderComment.Username === "GENERALGORILLA":
+        break;
+      case renderComment.Username === "Commander Orangutan":
+        break;
+      default:
+        const AUDDeleteBtn = document.createElement('button')
+        AUDDeleteBtn.className = "deleteCommentStyle"
+        AUDDeleteBtn.textContent = "Remove"
+        AUDDeleteBtn.id = renderComment.id;
+        AUDDeleteBtn.onclick = deleteComment;
+        AUDDeleteBtn.title = "Delete this comment"
+        AUDControls.appendChild(AUDDeleteBtn)
+      break;}
+    
+    document.getElementById('topic-discussion').prepend(AUDOpinion)
   });
 }
 

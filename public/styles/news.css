@@ -24,12 +24,17 @@ p {
   color: #fff;
   text-align: center;
   text-shadow: 0px 0px 8px black;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 240px;
   height: 50px;
   font-size: 1.1em;
 }
 
 /* Main content */
+div.content-wrapper {
+  display: grid;
+}
+
 #newscard-flex-section {
   display: flex; 
   flex-flow: row wrap;
@@ -37,7 +42,7 @@ p {
   align-content: space-evenly;
   overflow: scroll;
   min-width: 300px;
-  padding: 20px 40px 20px 40px;
+  padding: 2% 4% 2% 4%;
 }
 
 div.news-card {
@@ -47,6 +52,8 @@ div.news-card {
   border-radius: 10px;
   margin-bottom: 20px;
   transition: all 0.3s;
+  background-repeat: no-repeat;
+  background-position: 26% 50%;
 }
 
 div.news-card:hover{

@@ -3,18 +3,70 @@
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comments'));
+const savedComments = JSON.parse(localStorage.getItem('MayPromotion2022Comments'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
 
 else {
   commentInfo = [
-    {Username: "",
+    {Username: "Harry",
+     ProfilePic: "../../images/profile-pictures/profile9.jpg",
+     DatePost: `&#9679; 2 months ago`,
+     Comment: "Hey, that Low Polygon tree looks pretty good.",
+     LikeNumber: 134,
+    },
+
+    {Username: "Alviyn9",
+     ProfilePic: "../../images/profile-pictures/profile6.jpg",
+     DatePost: `&#9679; 2 months ago`,
+     Comment: "Got my hands on the Logitech Keyboard model, can't wait to redesign it!",
+     LikeNumber: 103,
+    },
+
+    {Username: "GigachaDD",
      ProfilePic: "../../images/profile-pictures/profile3.jpg",
-     DatePost: `&#9679; 1 day ago`,
-     Comment: "Sampletxt",
-    }]
+     DatePost: `&#9679; 1 month ago`, 
+     Comment: "Nice monitor bro. Wanna hit the gym tomorrow?",
+     LikeNumber: 124,
+    },
+
+    {Username: "Beluga",
+     ProfilePic: "../../images/profile-pictures/profile5.jpg",
+     DatePost: `&#9679; 1 month ago`, 
+     Comment: "That donut just look so delish...",
+     LikeNumber: 63,
+    },
+
+    {Username: "MalderMK9",
+     ProfilePic: "../../images/profile-pictures/profile6.jpg",
+     DatePost: `&#9679; 1 month ago`, 
+     Comment: "I think i would rather buy a real sofa myself.",
+     LikeNumber: 18,
+    },
+
+    {Username: "JaSYnX",
+     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     DatePost: `&#9679; 3 weeks ago`, 
+     Comment: "I remember the good old days where blueprint studios barely got its website running.",
+     LikeNumber: 172,
+    },
+
+    {Username: "SussyMan",
+     ProfilePic: "../../images/profile-pictures/profile12.jpg",
+     DatePost: `&#9679; 2 weeks ago`, 
+     Comment: "When the imposter is SUS in AMOGUS",
+     LikeNumber: 54,
+    },
+
+    {Username: "Gui Cheng",
+    ProfilePic: "../../images/profile-pictures/profilegui.jpg",
+    DatePost: `&#9679; 1 week ago`, 
+    Comment: "This news is currently outdated. Please refer to the latest promotions if you are interested.",
+    LikeNumber: 210,
+    },
+    
+  ]
 }
 
 //Posts a comment
@@ -49,7 +101,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('JulyPromotion2022Comments', JSON.stringify(commentInfo));
+  localStorage.setItem('MayPromotion2022Comments', JSON.stringify(commentInfo));
  }
 
  //View 
@@ -139,17 +191,33 @@ function removeComment(IDtoDelete){
     AUDDislikeimg.src = "../../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
-    if (renderComment.Username !== "Johnny Smith"){
-    const AUDDeleteBtn = document.createElement('button')
-    AUDDeleteBtn.className = "deleteCommentStyle"
-    AUDDeleteBtn.textContent = "Remove"
-    AUDDeleteBtn.id = renderComment.id;
-    AUDDeleteBtn.onclick = deleteComment;
-    AUDDeleteBtn.title = "Delete this comment"
-    AUDControls.appendChild(AUDDeleteBtn)}
+    switch(true){
+      case renderComment.Username !== "Harry":
+        break;
+      case renderComment.Username !== "Alviyn9":
+        break;
+      case renderComment.Username !== "GigachaDD":
+        break;
+      case renderComment.Username !== "Beluga":
+        break;
+      case renderComment.Username !== "MalderMK9":
+        break;
+      case renderComment.Username !== "JaSYnX":
+        break;
+      case renderComment.Username !== "SussyMan":
+        break;
+      case renderComment.Username !== "Gui Cheng":
+        break;
+      default:
+      const AUDDeleteBtn = document.createElement('button')
+      AUDDeleteBtn.className = "deleteCommentStyle"
+      AUDDeleteBtn.textContent = "Remove"
+      AUDDeleteBtn.id = renderComment.id;
+      AUDDeleteBtn.onclick = deleteComment;
+      AUDDeleteBtn.title = "Delete this comment"
+      AUDControls.appendChild(AUDDeleteBtn)}
 
-    else {}
-    document.getElementById('topic-discussion').appendChild(AUDOpinion)
+    document.getElementById('topic-discussion').prepend(AUDOpinion)
   });
 }
 

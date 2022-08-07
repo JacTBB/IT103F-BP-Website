@@ -3,18 +3,49 @@
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comments'));
+const savedComments = JSON.parse(localStorage.getItem('JunePromotion2022Comments'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
 
 else {
   commentInfo = [
-    {Username: "",
+  {Username: "Qtria",
+     ProfilePic: "../../images/profile-pictures/profile10.jpg",
+     DatePost: `&#9679; 1 month ago`,
+     Comment: "That sofa looks so comfy to sleep on.",
+     LikeNumber: 12,
+    },
+
+    {Username: "meoweRBB",
+     ProfilePic: "../../images/profile-pictures/profile4.jpg",
+     DatePost: `&#9679; 3 weeks ago`,
+     Comment: "MEOWWWW!!!!!",
+     LikeNumber: 7,
+    },
+
+    {Username: "wwWalterWhite.com",
+    ProfilePic: "../../images/profile-pictures/profile8.jpg",
+    DatePost: `&#9679; 2 weeks ago`,
+    Comment: "Really needed that iPhone 12 model. Thanks",
+    LikeNumber: 23,
+    },
+
+    {Username: "JaSYnX",
+     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     DatePost: `&#9679; 1 week ago`,
+     Comment: "Been using the LearJet in my games now. So far, it's doing me good",
+     LikeNumber: 69,
+    },
+
+    {Username: "GigaChaDD",
      ProfilePic: "../../images/profile-pictures/profile3.jpg",
-     DatePost: `&#9679; 1 day ago`,
-     Comment: "Sampletxt",
-    }]
+     DatePost: `&#9679; 1 week ago`,
+     Comment: "Thanks for the MI Smart TV bro. Anyway, did you skip leg day today?",
+     LikeNumber: 102,
+    }
+ 
+  ]
 }
 
 //Posts a comment
@@ -49,7 +80,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('JulyPromotion2022Comments', JSON.stringify(commentInfo));
+  localStorage.setItem('JunePromotion2022Comments', JSON.stringify(commentInfo));
  }
 
  //View 
@@ -139,17 +170,27 @@ function removeComment(IDtoDelete){
     AUDDislikeimg.src = "../../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
-    if (renderComment.Username !== "Johnny Smith"){
-    const AUDDeleteBtn = document.createElement('button')
-    AUDDeleteBtn.className = "deleteCommentStyle"
-    AUDDeleteBtn.textContent = "Remove"
-    AUDDeleteBtn.id = renderComment.id;
-    AUDDeleteBtn.onclick = deleteComment;
-    AUDDeleteBtn.title = "Delete this comment"
-    AUDControls.appendChild(AUDDeleteBtn)}
+    switch(true){
+      case renderComment.Username === "Qtria":
+        break;
+      case renderComment.Username === "meoweRBB":
+        break;
+      case renderComment.Username === "wwWalterWhite.com":
+        break;
+      case renderComment.Username === "JaSYnX":
+         break;
+      case renderComment.Username === "GigaChaDD":
+         break;
+      default:
+      const AUDDeleteBtn = document.createElement('button')
+      AUDDeleteBtn.className = "deleteCommentStyle"
+      AUDDeleteBtn.textContent = "Remove"
+      AUDDeleteBtn.id = renderComment.id;
+      AUDDeleteBtn.onclick = deleteComment;
+      AUDDeleteBtn.title = "Delete this comment"
+      AUDControls.appendChild(AUDDeleteBtn)}
 
-    else {}
-    document.getElementById('topic-discussion').appendChild(AUDOpinion)
+    document.getElementById('topic-discussion').prepend(AUDOpinion)
   });
 }
 

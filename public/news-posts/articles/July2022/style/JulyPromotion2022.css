@@ -20,6 +20,8 @@
   --border-content-radius-img: 10px 10px 0px 0px;
   --border-content-radius-text: 0px 0px 10px 10px;
 
+  --enable-shadow-hover: none;
+
   --margin-top-content-text: -6px;
   --margin-top-spacing: 10px;
  
@@ -53,6 +55,8 @@
     --border-react-radii: 10px;
     --border-content-radius-img: none;
     --border-content-radius-text: none;
+
+    --enable-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.3);
 
     --margin-top-content-text: none;
     --margin-top-spacing: none;
@@ -104,16 +108,20 @@ p.description {
 
 
 /*Row Containers*/
-.productShowcase:hover, .R1BorderReact:hover, .L2BorderReact:hover{
+.productShowcase:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.R1BorderReact:hover, .L2BorderReact:hover, .R3BorderReact:hover, .L4BorderReact:hover, .R5BorderReact:hover{
+  box-shadow: var(--enable-shadow-hover);
+}
+
 /*Responsive CSS*/
-.productShowcase, .R1BorderReact, .L2BorderReact {
+.productShowcase, .R1BorderReact, .L2BorderReact, .R3BorderReact:hover, .L4BorderReact, .R5BorderReact:hover{
   transition: all 0.3s;
 }
 
-.left1, .left2, .right1, .right2{
+.left1, .left2, .left3, .left4, .left5, .right1, .right2, .right3, .right4, .right5{
   padding: var(--padding-inner-div);
 }
 
@@ -124,30 +132,30 @@ div.left1, div.right1{
 }
 
 /*Border Design*/
-.left1, .left2{
+.left1, .left2, .left3, .left4, .left5{
   border: var(--border-content);
   border-bottom-width: 0;
   border-radius: var(--border-content-radius-img);
 }
 
-.right1, .right2{
+.right1, .right2, .right3, .right4, .right5{
   border: var(--border-content);
   border-radius: var(--border-content-radius-text);
   border-top-width: 0;
 }
 
 /*Responsive Spacing (Width < 680px)*/
-.right1{
+.right1, .right3, .right5{
   margin-top: var(--margin-top-content-text)
 }
 
-.left2{
+.left2, .left3, .left4, .left5{
   margin-top: var(--margin-top-spacing);
 }
 
 /*Reactive borders (Width > 680px)*/
 
-.R1BorderReact, .L2BorderReact{
+.R1BorderReact, .L2BorderReact, .R3BorderReact, .L4BorderReact, .R5BorderReact{
   border: var(--border-react);
   border-radius: var(--border-react-radii);
 }
