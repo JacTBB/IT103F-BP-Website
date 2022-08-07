@@ -95,7 +95,7 @@ div.top-row {
 
 div.end-row {
   display: grid;
-  row-gap: 20px;
+  row-gap: 30px;
   justify-items: center;
   font-size: 14px;
   margin-top: 24px;
@@ -268,7 +268,7 @@ span.active p:after,
 }
 
 h1.bottom-heading {
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 0;
 }
 

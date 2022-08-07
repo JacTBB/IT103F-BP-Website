@@ -3,7 +3,7 @@
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('comments'));
+const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comments'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
@@ -11,7 +11,7 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "",
-     ProfilePic: "profile3.jpg",
+     ProfilePic: "../../images/profile-pictures/profile3.jpg",
      DatePost: `&#9679; 1 day ago`,
      Comment: "Sampletxt",
     }]
@@ -49,7 +49,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('comments', JSON.stringify(commentInfo));
+  localStorage.setItem('JulyPromotion2022Comments', JSON.stringify(commentInfo));
  }
 
  //View 
@@ -109,7 +109,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../images/like-icon.png"
+    AUDLikeimg.src = "../../images/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -136,7 +136,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../images/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     if (renderComment.Username !== "Johnny Smith"){
@@ -292,28 +292,28 @@ let newsSelector = [
   },
 
   {News_Name: '',
-  IMG: "background-image: url('../../images/products/Sofa 3D Model.png')",
+  IMG: "background-image: url('../../../images/products/Sofa 3D Model.png')",
   Link: "news-posts/articles/",
   Date: 'M1',
   Heading: 'H3',
   },
 
   {News_Name: '',
-  IMG: "background-image: url('../../images/products/P250 3D Model.png')",
+  IMG: "background-image: url('../../../images/products/P250 3D Model.png')",
   Link: "news-posts/articles/",
   Date: 'M2',
   Heading: 'H4',
   },
 
   {News_Name: '',
-  IMG: "background-image: url('../../images/products/4 Axle Box Truck 3D Model.png')",
+  IMG: "background-image: url('../../../images/products/4 Axle Box Truck 3D Model.png')",
   Link: "news-posts/articles/",
   Date: 'M3',
   Heading: 'H5',
   },
 
   {News_Name: '',
-  IMG: "background-image: url('../../images/products/Bugatti Chiron 2017 Sports Car 3D Model.jpg')",
+  IMG: "background-image: url('../../../images/products/Bugatti Chiron 2017 Sports Car 3D Model.jpg')",
   Link: "news-posts/articles/",
   Date: '',
   Heading: '',
