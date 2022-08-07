@@ -3,7 +3,7 @@
 
 //Comment Model
 let commentInfo;
-const savedComments = JSON.parse(localStorage.getItem('JulyPromotion2022Comments'));
+const savedComments = JSON.parse(localStorage.getItem('JulySocialEvent2022Comments'));
 if (Array.isArray(savedComments)){
   commentInfo = savedComments
 }
@@ -49,7 +49,7 @@ function removeComment(IDtoDelete){
 
  //Saves comment to CommentInfo
  function saveComments(){
-  localStorage.setItem('JulyPromotion2022Comments', JSON.stringify(commentInfo));
+  localStorage.setItem('JulySocialEvent2022Comments', JSON.stringify(commentInfo));
  }
 
  //View 
@@ -276,6 +276,7 @@ function LikeUnavailable(){
 }
 
  renderComSec();
+
 
 
 
