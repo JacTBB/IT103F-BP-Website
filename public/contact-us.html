@@ -195,10 +195,12 @@
             <form name="FeedbackForm" method="get" id="FeedbackForm" onsubmit="myFunction()">
               <table id="formtable" align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
                 <caption><b><p><h2>Feedback Form</h2></p></b></caption>
-
                 <tr>
-                  <td style="padding-right: 10px;"><b><label for="Customername">Customer Name:</label></b></td>
-                  <td style="padding-left: 10px;"><b><label for="Customeremail">Customer E-Mail:</label></b></td>
+                  <td colspan="2" align="center"><i style="color: red;">All fields are required</i></td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 10px;"><b><label for="Customername">Customer Name: <i style="color: red;">*</i></label></b></td>
+                  <td style="padding-left: 10px;"><b><label for="Customeremail">Customer E-Mail: <i style="color: red">*</i></label></b></td>
                 </tr>
                 <tr>
                   <td style="padding-right: 10px;"><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
@@ -207,17 +209,16 @@
 
                 <tr>
                   <td colspan="2">
-                    <b><label for="productss">Products/Services Bought:</label></b>
+                    <b><label for="productss">Products/Services Bought: <i style="color: red">*</i></label></b>
                     <p style="margin: 5px 0;"><input type="text" style="width: 100%;" id="productss" name="products" list="products" autocomplete="off"></p>
                     <datalist id="products">
                       <!-- Added with contact-us.js -->
                     </datalist>
                   </td>
                 </tr>
-
                 <tr>
                   <td colspan="2">
-                    <b>Overall Rating Slider:</b>
+                    <b>Overall Rating Slider: <i style="color: red">*</i></b>
                     <p style="margin: 5px 0;"><input type="range" min="0" required max="10" class="slider" id="range"></p>
                   </td>
                 </tr>
@@ -239,7 +240,7 @@
                   }
                   </script>
                 <tr>
-                  <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here:</label></b></td>
+                  <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here: <i style="color: red">*</i></label></b></td>
                 </tr>
                 <tr>
                   <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" class="comments" placeholder="Please enter feedback here." required></textarea></td>

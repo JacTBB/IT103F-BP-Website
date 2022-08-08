@@ -28,14 +28,14 @@
   padding: 1px;
   margin: 6px;
   flex: 40%;
-  min-height: 125px;
-  min-width: 50px;
+  min-height: 150px;
+  min-width: 100px;
   max-width: calc(50% - 20px);
   text-align: center;
 }
 
 .reasonsbox img {
-  height: 100px;
+  height: 150px;
   margin: 10px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
@@ -87,7 +87,7 @@
   margin: 6px;
   flex: 40%;
   min-height: 150px;
-  min-width: 180px;
+  min-width: 200px;
   max-width: calc(30% - 10px);
   text-align: center;
 }
@@ -98,7 +98,7 @@
 }
 .productsbox a img {
   padding: 1px;
-  width: 150px;
+  width: 200px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
   background-color:rgb(60,180,250);
