@@ -1,4 +1,14 @@
 /* Global CSS for ALL ARTICLE/NEWS/POSTS pages*/
+:root {
+  --fs-news-title: clamp(0.3rem, 1.4vw + 0.8rem, 1.8rem);
+  --blog-padding-width: 2% 6% 2% 6%;
+}
+
+@media (min-width: 900px){
+  :root {
+    --blog-padding-width: 1% 6% 1% 6%;
+  }
+}
 
 th, td, h1, h3, input {
   font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +25,7 @@ th, td, h1, h3, input {
 }
 
 .title-article {
-  font-size: 28px;
+  font-size: var(--fs-news-title);
   font-weight: 550;
   color: #161616;
   margin-bottom: 0.2em;
@@ -83,7 +93,7 @@ div.blog-content-wrapper {
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
   min-width: 360px;
-  padding: 2% 6% 2% 6%;
+  padding: var(--blog-padding-width);
 }
 
 div.top-row {
