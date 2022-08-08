@@ -103,6 +103,14 @@ div.social-event-section {
     padding: 5px 5px 5px 20px;
 }
 
+div.special-section {
+  display: flex; 
+  flex-flow: row wrap;
+  column-gap: var(--section-column-gap);
+  min-width: 300px;
+  padding: 5px 5px 5px 20px;
+}
+
 div.news-card {
   position: relative;
   width: var(--card-width);
@@ -112,7 +120,7 @@ div.news-card {
   border-radius: 10px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 35% 50%;
+  background-position: 50% 50%;
   transition: all 0.3s;
 }
 

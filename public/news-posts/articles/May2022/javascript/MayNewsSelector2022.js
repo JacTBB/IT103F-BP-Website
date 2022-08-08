@@ -42,11 +42,11 @@ let newsSelector = [
   Heading: 'JULY 2022 LIVESTREAM ANNOUNCEMENT',
   },
 
-  {News_Name: '',
-  IMG: "background-image: url('')",
-  Link: "news-posts/articles/",
-  Date: '',
-  Heading: '',
+  {News_Name: 'August 2022 4th Anniversary Announcement',
+  IMG: "background-image: url('../July2022/card-thumbnail/august-anniversary.jpg')",
+  Link: "../../articles/July2022/AugustAnniversary2022.html",
+  Date: '1 Aug',
+  Heading: '4TH ANNIVERSARY ANNOUNCEMENT',
   },
 ]
 
