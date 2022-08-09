@@ -22,12 +22,7 @@ ___
 | signout.html | Jackie |
 | dashboard.html | Jackie |
 
-## Webserver Only Webpages (1 page)
-| Webpage | Creator |
-| ------- | ------- |
-| 404.html | Jackie |
-
-## Subsidiary Webpage Folders (27 pages)
+## Subsidiary Webpage Folders (31 pages)
 | Webpage Folder | Creator |
 | -------------- | ------- |
 | products (24 pages) | Jackie |
