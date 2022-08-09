@@ -336,15 +336,3 @@ function LikeUnavailable(){
 }
 
  renderComSec();
-
-
-
-function alertJS(){
-  alert ('JavaScript Enabled.');
-}
-
-function sliderBanner(){
-}   
-
-function productsSlider(){
-}

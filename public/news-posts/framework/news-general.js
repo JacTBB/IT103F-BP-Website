@@ -1,10 +1,5 @@
 //Global Javascript Functions that affect all news posts/articles.
 
-
-
-
-
-
 //Detect comment input 
 
 const detectComInput = document.getElementById('ComInput')

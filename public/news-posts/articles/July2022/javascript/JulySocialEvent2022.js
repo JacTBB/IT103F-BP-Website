@@ -189,6 +189,8 @@ function removeComment(IDtoDelete){
         break;
       case renderComment.Username === "wWalterWhite.com":
         break;
+      case renderComment.Username === "V1PeR":
+        break;
       case renderComment.Username === "F4ust@":
         break;
       case renderComment.Username === "The Wok":
@@ -334,15 +336,3 @@ function LikeUnavailable(){
 }
 
  renderComSec();
-
-
-
-function alertJS(){
-  alert ('JavaScript Enabled.');
-}
-
-function sliderBanner(){
-}   
-
-function productsSlider(){
-}

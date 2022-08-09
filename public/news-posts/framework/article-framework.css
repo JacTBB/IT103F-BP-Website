@@ -2,8 +2,54 @@
 :root {
   --fs-news-title: clamp(0.3rem, 1.4vw + 0.8rem, 1.8rem);
   --blog-padding-width: 2% 6% 2% 6%;
+  --fs-username: clamp(0.5rem, 1vw + 0.5rem, 0.9rem);
+  --fs-comment-date: clamp(0.4rem, 1vw + 0.4rem, 0.75rem);
+  --fs-comment-txt: clamp(0.3rem, 1.8vw + 0.3rem , 0.9rem);
+  --fs-liketext: clamp(0.36rem, 1.6vw + 0.36rem, 0.8rem);
+
+  --date-txt-size: clamp(0.7rem, 1.5vw + 0.2rem , 1rem);
+  --date-bg-width: clamp(60px, 2vw + 50px  , 80px);
+  --date-bg-height: clamp(30px, 2vw + 20px  , 40px);
+
+  --card-width: 140px;
+  --card-height: 140px; 
+  --card-spacing-bottom: 5px;
+
+  --header-position-top: 100px;
+  --header-position-left: 4px;
+  --header-box-width: 95%;
+  --header-font-size: 0.7rem;
+
+  --RWD-profile-length: clamp(18px, 3vw + 18px, 36px);
+  --RWD-border-radius: clamp(9px, 2vw + 9px, 18px);
+  --RWD-comment-button: clamp(0.45rem, 1vw + 0.45rem, 0.85rem);
 }
 
+@media (min-width: 670px){
+  :root{
+    --card-width: 180px;
+    --card-height: 180px; 
+    
+    --header-position-top: 125px;
+    --header-position-left: 5px;
+    --header-font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 900px){
+  :root{
+
+   --card-width: 250px;
+   --card-height: 250px; 
+   --card-spacing-bottom: 0;
+
+   --header-position-top: 180px;
+   --header-position-left: 10px;
+   --header-box-width: 230px;
+   --header-font-size: 1rem;
+  }
+
+}
 @media (min-width: 900px){
   :root {
     --blog-padding-width: 1% 6% 1% 6%;
@@ -79,14 +125,7 @@ th, td, h1, h3, input {
   margin: 1em 0 1em;
 }
 
-#borderassist {
-  border: 1px solid red;
-}
 
-/*#contentassist{
-  border: 2px solid #c1c1c1;
-  border-radius: 20px;
-}*/
 
 /* Main Containers */
 div.blog-content-wrapper {
@@ -135,8 +174,9 @@ div.end-row {
 /* Model */
 div.news-card {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin-bottom: var(--card-spacing-bottom);
   border: 1px solid rgb(138, 138, 138);
   border-radius: 10px;
   background-size: cover;
@@ -153,9 +193,9 @@ div.news-card:hover{
 .redirect {
   display: grid;
   position: relative;
-  grid-template-rows: 100px 100px;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
-  color: black;
 }
 
 
@@ -168,30 +208,29 @@ label, p, h4 {
 
 .datetxt-deco {
   color: white;
-  font-size: 16px;
-  padding: 8px 8px 8px 8px;
+  font-size: var(--date-txt-size);
+  padding: 8px 5px 8px 6px;
   text-align: center;
 }
 
 .heading-txt {
   position: absolute;
-  bottom: 5px;
-  left: 25px;
+  top: var(--header-position-top);
+  left: var(--header-position-left);
   color: #fff;
   text-align: center;
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 160px;
-  height: 38px;
-  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: var(--header-box-width);
+  font-size: var(--header-font-size);
 }
 
 div.bg-square {
   position: absolute;
   top: 20px;
   left: -1px;
-  width: 80px;
-  height: 40px;
+  width: var(--date-bg-width);
+  height: var(--date-bg-height);
   background-color: rgb(49, 120, 202);
   border-top-right-radius: 60px;
   border-bottom-right-radius: 60px;
@@ -467,9 +506,9 @@ div.AUD-opinion {
 }
 
 img.PPAUD {
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
+  width: var(--RWD-profile-length);
+  height: var(--RWD-profile-length);
+  border-radius: var(--RWD-border-radius);
   margin-top: 6px;
   margin-left: 6px;
   object-fit: cover;
@@ -492,27 +531,27 @@ div.AUDName {
 
 /* #aaa */
 p.usernameStyle{
-  font-size: 13px;
+  font-size: var(--fs-username);
   font-weight: bold;
   text-align: center;
   margin-top: 1px;
 }
 
 p.datepostStyle{
-  font-size: 11px;
+  font-size: var(--fs-comment-date);
   text-align: center;
   color: rgb(112, 112, 112);
   margin-top: 2px;
 }
 
 p.commentStyle{
-  font-size: 14px;
+  font-size: var(--fs-comment-txt);
 }
 
 div.AUDReplyControls{
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 8px;
+  column-gap: 12px;
   width: 100%;
 }
 
@@ -524,7 +563,7 @@ div.AUDReplyControls button{
 }
 
 button.LikeBtnStyle, button.DislikeBtnStyle{
-  width: 26px;
+  width: var(--RWD-comment-button);
   height: 26px;
   padding: 0;
   border-radius: 13px;
@@ -535,8 +574,8 @@ button.DislikeBtnStyle{
 }
 
 img.ThumbsIcon1, img.ThumbsIcon2{
-  width: 13px;
-  height: 13px;
+  width: var(--RWD-comment-button);
+  height: var(--RWD-comment-button);
 }
 
 img.ThumbsIcon2{
@@ -544,9 +583,10 @@ img.ThumbsIcon2{
 }
 
 p.likenumStyle{
-  font-size: 12px;
+  font-size: var(--fs-liketext);
   padding-top: 4px;
   margin-left: -2px;
+  text-align: center;
 }
 
 button.deleteCommentStyle {
