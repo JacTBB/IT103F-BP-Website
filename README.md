@@ -2,7 +2,7 @@
 ## IT103F Web Publishing Project
 ___
 
-## Main Webpages Overview (14 pages)
+## Main Webpages Overview (16 pages)
 | Webpage | Creator |
 | ------- | ------- |
 | index.html (Home) | Seng Hong |
@@ -11,20 +11,16 @@ ___
 | services-success.html | Jackie |
 | about-us.html | Zhe Ming |
 | contact-us.html | Ameer |
+| faq.html | Ameer |
 | careers.html | Zhe Ming |
 | jobapplication.html | Zhe Ming |
 | application-success.html | Zhe Ming |
 | checkout.html | Gui Cheng |
 | checkout-success.html | Gui Cheng |
+| news.html | Gui Cheng |
 | signin.html | Jackie |
 | signout.html | Jackie |
 | dashboard.html | Jackie |
-
-## Prototype Main Webpages (2 pages)
-| Webpage | Creator |
-| ------- | ------- |
-| news.html | Gui Cheng |
-| faq.html | Ameer |
 
 ## Webserver Only Webpages (1 page)
 | Webpage | Creator |
