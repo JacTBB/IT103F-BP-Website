@@ -14,7 +14,7 @@ async function cart() {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
             if (isNaN(value)) {
-                if (key != 'userdata') {
+                if (key != 'userdata' && key !='comments') {
                     setTimeout(() => {
                         localStorage.removeItem(key)
                     }, 1000)
@@ -98,10 +98,12 @@ async function purchase() {
     }, 1000)
 }
 
+var purchased = false
 function submitfunction() {
     document.getElementById('purchaseoverlay').style.display = 'block'
 
-    if (formValidate()) {
+    if (formValidate() && purchased == false) {
+        purchased = true
         purchase()
     }
     else {
