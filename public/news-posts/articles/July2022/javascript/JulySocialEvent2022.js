@@ -11,49 +11,49 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "SussyMan",
-     ProfilePic: "../../images/profile-pictures/profile12.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile12.jpg",
      DatePost: `&#9679; 21 hours ago`,
      Comment: "Sometimes, you gotta stop venting.",
      LikeNumber: 79,
     },
 
     {Username: "wWalterWhite.com",
-     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile8.jpg",
      DatePost: `&#9679; 12 hours ago`,
      Comment: "*Opens eyes*",
      LikeNumber: 45,
     },
 
     {Username: "V1PeR",
-    ProfilePic: "../../images/profile-pictures/profile23.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile23.jpg",
     DatePost: `&#9679; 10 hours ago`,
     Comment: "Oh, Mr Kolarov is a guest for this stream? Didnt know about that, welp looking forward to it",
     LikeNumber: 129,
     },
 
     {Username: "F4ust@",
-     ProfilePic: "../../images/profile-pictures/profile20.png",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile20.png",
      DatePost: `&#9679; 6 hours ago`,
      Comment: "I never seen an ocean in my life.",
      LikeNumber: 34,
     },
 
     {Username: "The Wok",
-     ProfilePic: "../../images/profile-pictures/profile17.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile17.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "Did you just say ocean? *raises eyebrows* ",
     LikeNumber: 150,
     },
 
     {Username: "Jeffrey Dansek",
-     ProfilePic: "../../images/profile-pictures/profile16.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile16.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "Noice.",
      LikeNumber: 120,
    },
 
    {Username: "Commander Nick",
-    ProfilePic: "../../images/profile-pictures/profile24.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile24.jpg",
     DatePost: `&#9679; 1 hour ago`,
     Comment: `There ain't no water model for my yard!`,
     LikeNumber: 38,
@@ -154,7 +154,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -181,7 +181,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -274,7 +274,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

@@ -11,77 +11,77 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "Iron Man",
-    ProfilePic: "../../images/profile-pictures/profile26.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile26.jpg",
     DatePost: `&#9679; 2 days ago`,
     Comment: "'Sometimes, it takes balls of steel to announce all your projects at once in a single stream.'",
     LikeNumber: 41,
     },
 
     {Username: "MayaSays",
-    ProfilePic: "../../images/profile-pictures/profile29.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile29.jpg",
     DatePost: `&#9679; 1 day ago`,
     Comment: "Anyone know where to sign up as an employee in Blueprint Studios? seems like a fun place to work at.",
     LikeNumber: 38,
     },
 
     {Username: "hoT_Wheels",
-     ProfilePic: "../../images/profile-pictures/profile34.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile34.jpg",
      DatePost: `&#9679; 23 hours ago`,
      Comment: "OMG Koenigsegg will be here for this anniversary? Cant wait for the new AXT 3890 Corvette model to be released!",
      LikeNumber: 178,
     },
 
     {Username: "R6bandit#",
-     ProfilePic: "../../images/profile-pictures/profile22.png",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile22.png",
      DatePost: `&#9679; 21 hours ago`,
      Comment: "It's that time again.",
      LikeNumber: 138,
     },
 
     {Username: "Turtle",
-     ProfilePic: "../../images/profile-pictures/profile32.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile32.jpg",
      DatePost: `&#9679; 16 hours ago`,
      Comment: "*Gives seal of approval*",
      LikeNumber: 102,
     },
 
     {Username: "mon.Tima",
-     ProfilePic: "../../images/profile-pictures/profile18.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile18.jpg",
      DatePost: `&#9679; 12 hours ago`,
      Comment: "Is there free food as prizes?",
      LikeNumber: 48,
     },
 
     {Username: "mimiY",
-     ProfilePic: "../../images/profile-pictures/profile31.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile31.jpg",
      DatePost: `&#9679; 5 hours ago`,
      Comment: "*Stares with anticipation*",
      LikeNumber: 67,
     },
 
     {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 3 hours ago`,
      Comment: "Ooo, I heard initial leaks abt the side projects, but didnt know it is tru.",
      LikeNumber: 89,
     },
 
     {Username: "phant0m",
-     ProfilePic: "../../images/profile-pictures/profile19.png",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile19.png",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "UTAE, UTAE, UTAE!",
     LikeNumber: 148,
     },
 
     {Username: "VoyagerX1",
-     ProfilePic: "../../images/profile-pictures/profile21.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile21.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "Realllllyyy needed those gun models for my games, can't survive without em.",
      LikeNumber: 128,
    },
 
    {Username: "V1PeR",
-    ProfilePic: "../../images/profile-pictures/profile23.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile23.jpg",
     DatePost: `&#9679; 1 hour ago`,
     Comment: `Looking forward to see what Koenigsegg has in store for us.`,
     LikeNumber: 210,
@@ -182,7 +182,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -209,7 +209,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -312,7 +312,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

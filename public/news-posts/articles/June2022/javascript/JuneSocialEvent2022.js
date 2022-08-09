@@ -11,42 +11,42 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "Geo.Lockx",
-     ProfilePic: "../../images/profile-pictures/profile28.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile28.jpg",
      DatePost: `&#9679; 21 hours ago`,
      Comment: "'Go my golem kins, for we shall watch this coming live stream.'",
      LikeNumber: 261,
     },
 
     {Username: "wWalterWhite.com",
-     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile8.jpg",
      DatePost: `&#9679; 12 hours ago`,
      Comment: "Youngsters deez days, always looking at latests tech.",
      LikeNumber: 59,
     },
 
     {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 7 hours ago`,
      Comment: "RayTrix booster boots on giveaway? Seems like BP studios has been really generous lately, not that I mind abt it",
      LikeNumber: 107,
     },
 
     {Username: "s0Fa_likz",
-     ProfilePic: "../../images/profile-pictures/profile25.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile25.jpg",
      DatePost: `&#9679; 3 hours ago`,
      Comment: "Alright, it's about time!",
     LikeNumber: 102,
     },
 
     {Username: "TheFakeChen",
-     ProfilePic: "../../images/profile-pictures/profile27.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile27.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "Thanks for the heads up.",
      LikeNumber: 83,
    },
 
    {Username: "Doggo",
-    ProfilePic: "../../images/profile-pictures/profile30.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile30.jpg",
     DatePost: `&#9679; 1 hour ago`,
     Comment: `Woof! woof! *Snarls`,
     LikeNumber: 38,
@@ -147,7 +147,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -174,7 +174,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -267,7 +267,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

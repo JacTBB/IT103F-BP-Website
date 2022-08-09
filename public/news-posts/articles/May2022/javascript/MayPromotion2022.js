@@ -11,56 +11,56 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "Harry",
-     ProfilePic: "../../images/profile-pictures/profile9.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile9.jpg",
      DatePost: `&#9679; 2 months ago`,
      Comment: "Hey, that Low Polygon tree looks pretty good.",
      LikeNumber: 134,
     },
 
     {Username: "Alviyn9",
-     ProfilePic: "../../images/profile-pictures/profile6.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile6.jpg",
      DatePost: `&#9679; 2 months ago`,
      Comment: "Got my hands on the Logitech Keyboard model, can't wait to redesign it!",
      LikeNumber: 103,
     },
 
     {Username: "GigachaDD",
-     ProfilePic: "../../images/profile-pictures/profile3.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile3.jpg",
      DatePost: `&#9679; 1 month ago`, 
      Comment: "Nice monitor bro. Wanna hit the gym tomorrow?",
      LikeNumber: 124,
     },
 
     {Username: "Beluga",
-     ProfilePic: "../../images/profile-pictures/profile5.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile5.jpg",
      DatePost: `&#9679; 1 month ago`, 
      Comment: "That donut just look so delish...",
      LikeNumber: 63,
     },
 
     {Username: "MalderMK9",
-     ProfilePic: "../../images/profile-pictures/profile6.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile6.jpg",
      DatePost: `&#9679; 1 month ago`, 
      Comment: "I think i would rather buy a real sofa myself.",
      LikeNumber: 18,
     },
 
     {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 3 weeks ago`, 
      Comment: "I remember the good old days where blueprint studios barely got its website running.",
      LikeNumber: 172,
     },
 
     {Username: "SussyMan",
-     ProfilePic: "../../images/profile-pictures/profile12.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile12.jpg",
      DatePost: `&#9679; 2 weeks ago`, 
      Comment: "When the imposter is SUS in AMOGUS",
      LikeNumber: 54,
     },
 
     {Username: "Gui Cheng",
-    ProfilePic: "../../images/profile-pictures/profilegui.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profilegui.jpg",
     DatePost: `&#9679; 1 week ago`, 
     Comment: "This news is currently outdated. Please refer to the latest promotions if you are interested.",
     LikeNumber: 210,
@@ -161,7 +161,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -188,7 +188,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -284,7 +284,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

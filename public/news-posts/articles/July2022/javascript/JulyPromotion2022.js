@@ -11,42 +11,42 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "CattoMX",
-     ProfilePic: "../../images/profile-pictures/profile1.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile1.jpg",
      DatePost: `&#9679; 21 hours ago`,
      Comment: "Gib me gun now!!~~",
      LikeNumber: 5,
     },
 
     {Username: "wWalterWhite.com",
-     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile8.jpg",
      DatePost: `&#9679; 12 hours ago`,
      Comment: "*Faints*",
      LikeNumber: 24,
     },
 
     {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 3 hours ago`,
      Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
      LikeNumber: 59,
     },
 
     {Username: "MONKE",
-     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile13.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "APE STRONG TOGETHER",
     LikeNumber: 79,
     },
 
     {Username: "GENERALGORILLA",
-     ProfilePic: "../../images/profile-pictures/profile14.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile14.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "APE. APE. TOGETHER. STRONG!",
      LikeNumber: 112,
    },
 
    {Username: "Commander Orangutan",
-    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile15.jpg",
     DatePost: `&#9679; 1 hour ago`,
     Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
     LikeNumber: 169,
@@ -147,7 +147,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -174,7 +174,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -267,7 +267,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

@@ -11,49 +11,49 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
     {Username: "Xiao",
-     ProfilePic: "../../images/profile-pictures/profile39.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile39.jpg",
      DatePost: `&#9679; 21 hours ago`,
      Comment: "Interesting.",
      LikeNumber: 140,
     },
 
     {Username: "T3sla",
-     ProfilePic: "../../images/profile-pictures/profile33.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile33.jpg",
      DatePost: `&#9679; 12 hours ago`,
      Comment: "Where are the car models at? I need em in my gam now!!",
      LikeNumber: 92,
     },
 
     {Username: "ManInBat",
-     ProfilePic: "../../images/profile-pictures/profile35.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile35.jpg",
      DatePost: `&#9679; 8 hours ago`,
      Comment: "It seems like joker isn't here, I'll have to look somewhere else",
      LikeNumber: 73,
     },
 
     {Username: "TheProfoundTrickster",
-     ProfilePic: "../../images/profile-pictures/profile38.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile38.jpg",
      DatePost: `&#9679; 8 hours ago`,
      Comment: "Spellbook, tomes, incantations. Gimme all of em nowwww",
      LikeNumber: 102,
     },
 
     {Username: "CRUSAD1023",
-     ProfilePic: "../../images/profile-pictures/profile37.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile37.jpg",
      DatePost: `&#9679; 3 hours ago`,
      Comment: "WE SHALL RECLAIM MOTHERLAND!!",
     LikeNumber: 93,
     },
 
     {Username: "SPARTA36",
-     ProfilePic: "../../images/profile-pictures/profile36.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile36.jpg",
      DatePost: `&#9679; 2 hours ago`,
      Comment: "DEUS VULT! DEUS VULT!",
      LikeNumber: 87,
    },
 
    {Username: "Anonymous Archon",
-    ProfilePic: "../../images/profile-pictures/profile40.png",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile40.png",
     DatePost: `&#9679; 1 hour ago`,
     Comment: `Osmanthus wine tastes the same as always, but where is those who share the memory?`,
     LikeNumber: 189,
@@ -154,7 +154,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -181,7 +181,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -276,7 +276,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")

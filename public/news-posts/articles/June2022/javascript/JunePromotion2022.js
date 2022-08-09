@@ -11,35 +11,35 @@ if (Array.isArray(savedComments)){
 else {
   commentInfo = [
   {Username: "Qtria",
-     ProfilePic: "../../images/profile-pictures/profile10.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile10.jpg",
      DatePost: `&#9679; 1 month ago`,
      Comment: "That sofa looks so comfy to sleep on.",
      LikeNumber: 12,
     },
 
     {Username: "meoweRBB",
-     ProfilePic: "../../images/profile-pictures/profile4.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile4.jpg",
      DatePost: `&#9679; 3 weeks ago`,
      Comment: "MEOWWWW!!!!!",
      LikeNumber: 7,
     },
 
     {Username: "wwWalterWhite.com",
-    ProfilePic: "../../images/profile-pictures/profile8.jpg",
+    ProfilePic: "../../../images/news-article/profile-pictures/profile8.jpg",
     DatePost: `&#9679; 2 weeks ago`,
     Comment: "Really needed that iPhone 12 model. Thanks",
     LikeNumber: 23,
     },
 
     {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 1 week ago`,
      Comment: "Been using the LearJet in my games now. So far, it's doing me good",
      LikeNumber: 69,
     },
 
     {Username: "GigaChaDD",
-     ProfilePic: "../../images/profile-pictures/profile3.jpg",
+     ProfilePic: "../../../images/news-article/profile-pictures/profile3.jpg",
      DatePost: `&#9679; 1 week ago`,
      Comment: "Thanks for the MI Smart TV bro. Anyway, did you skip leg day today?",
      LikeNumber: 102,
@@ -140,7 +140,7 @@ function removeComment(IDtoDelete){
 
     const AUDLikeimg = document.createElement('img')
     AUDLikeimg.className = "ThumbsIcon1"
-    AUDLikeimg.src = "../../images/like-icon.png"
+    AUDLikeimg.src = "../../../images/news-article/like-icon.png"
     AUDLikeBtn.appendChild(AUDLikeimg)
 
     //Like Number
@@ -167,7 +167,7 @@ function removeComment(IDtoDelete){
 
     const AUDDislikeimg = document.createElement('img')
     AUDDislikeimg.className = "ThumbsIcon2"
-    AUDDislikeimg.src = "../../images/dislike-icon.png"
+    AUDDislikeimg.src = "../../../images/news-article/dislike-icon.png"
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
@@ -257,7 +257,7 @@ let UNInput = usernameEXP.value
 
   let ppEXP = document.getElementById('expFTPP')
   if (ppEXP.value === ''){
-    ppEXP.value = "../images/anonymous-sus.png"
+    ppEXP.value = "../../../images/news-article/anonymous-sus.png"
   }
   else (
     console.log("PP Passed")
