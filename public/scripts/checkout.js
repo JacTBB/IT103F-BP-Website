@@ -34,7 +34,7 @@ function reloadcheckoutcart() {
             const key = localStorage.key(i)
             const value = localStorage.getItem(key)
             if (isNaN(value)) {
-                if (key != 'userdata') {
+                if (key != 'userdata' && key !='comments' && value.length < 10) {
                     setTimeout(() => {
                         localStorage.removeItem(key)
                     }, 1000)
