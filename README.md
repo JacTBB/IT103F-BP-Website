@@ -31,7 +31,7 @@ ___
 | Webpage Folder | Creator |
 | -------------- | ------- |
 | products (24 pages) | Jackie |
-| news-post-pages (3 pages) | Gui Cheng |
+| news-post-pages (7 pages) | Gui Cheng |
 
 ## Servers
 | Type | Language | Creator |
