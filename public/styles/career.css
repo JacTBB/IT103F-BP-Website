@@ -192,3 +192,28 @@ article div table tbody tr td {
   color: black;
   text-decoration-line: none;
 }
+
+h1{
+font-size:30px;
+}
+
+center{
+  font-size:40px;
+  color:rgb(32, 32, 222);
+  font-weight:bold;
+}
+
+.jobdesc{
+  text-align:center;
+  font-size:25px;
+}
+
+table{
+  width:100%;
+}
+
+.applyjob{
+  text-align:center;
+  font-size:40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
