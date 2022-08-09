@@ -19,7 +19,7 @@ ___
 | checkout-success.html | Gui Cheng |
 | news.html | Gui Cheng |
 | signin.html | Jackie |
-| signout.html | Jackie |
+| signup.html | Jackie |
 | dashboard.html | Jackie |
 
 ## Subsidiary Webpage Folders (31 pages)
