@@ -28,14 +28,15 @@
   padding: 1px;
   margin: 6px;
   flex: 40%;
-  min-height: 150px;
+  min-height: 290px;
   min-width: 100px;
   max-width: calc(50% - 20px);
   text-align: center;
 }
 
 .reasonsbox img {
-  height: 150px;
+  max-height: 150px;
+  max-width: calc(100% - 20px);
   margin: 10px;
   border: 2px solid rgb(60, 180, 250);
   border-radius: 10px;
@@ -55,15 +56,18 @@
   font-size: 15px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   .reasonscontainer {
     width: 95%;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .reasonscontainer {
     flex-direction: column;
+  }
+  .reasonsbox {
+    min-height: 250px;
   }
 }
 
@@ -144,6 +148,11 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 100px;
+}
+@media (max-width: 550px) {
+  .reviewcontainer {
+    flex-wrap: wrap;
+  }
 }
 
 img.customer-pp {
