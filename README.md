@@ -10,11 +10,11 @@ ___
 | services.html | Jackie |
 | services-success.html | Jackie |
 | about-us.html | Zhe Ming |
-| contact-us.html | Ameer |
-| faq.html | Ameer |
 | careers.html | Zhe Ming |
 | jobapplication.html | Zhe Ming |
 | application-success.html | Zhe Ming |
+| contact-us.html | Ameer |
+| faq.html | Ameer |
 | checkout.html | Gui Cheng |
 | checkout-success.html | Gui Cheng |
 | news.html | Gui Cheng |
