@@ -10,46 +10,53 @@ if (Array.isArray(savedComments)){
 
 else {
   commentInfo = [
-    {Username: "CattoMX",
-     ProfilePic: "../../images/profile-pictures/profile1.jpg",
+    {Username: "SussyMan",
+     ProfilePic: "../../images/profile-pictures/profile12.jpg",
      DatePost: `&#9679; 21 hours ago`,
-     Comment: "Gib me gun now!!~~",
-     LikeNumber: 5,
+     Comment: "Sometimes, you gotta stop venting.",
+     LikeNumber: 79,
     },
 
     {Username: "wWalterWhite.com",
      ProfilePic: "../../images/profile-pictures/profile8.jpg",
      DatePost: `&#9679; 12 hours ago`,
-     Comment: "*Faints*",
-     LikeNumber: 24,
+     Comment: "*Opens eyes*",
+     LikeNumber: 45,
     },
 
-    {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
-     DatePost: `&#9679; 3 hours ago`,
-     Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
-     LikeNumber: 59,
+    {Username: "V1PeR",
+    ProfilePic: "../../images/profile-pictures/profile23.jpg",
+    DatePost: `&#9679; 10 hours ago`,
+    Comment: "Oh, Mr Kolarov is a guest for this stream? Didnt know about that, welp looking forward to it",
+    LikeNumber: 129,
     },
 
-    {Username: "MONKE",
-     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+    {Username: "F4ust@",
+     ProfilePic: "../../images/profile-pictures/profile20.png",
+     DatePost: `&#9679; 6 hours ago`,
+     Comment: "I never seen an ocean in my life.",
+     LikeNumber: 34,
+    },
+
+    {Username: "The Wok",
+     ProfilePic: "../../images/profile-pictures/profile17.jpg",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE STRONG TOGETHER",
-    LikeNumber: 79,
+     Comment: "Did you just say ocean? *raises eyebrows* ",
+    LikeNumber: 150,
     },
 
-    {Username: "GENERALGORILLA",
-     ProfilePic: "../../images/profile-pictures/profile14.jpg",
+    {Username: "Jeffrey Dansek",
+     ProfilePic: "../../images/profile-pictures/profile16.jpg",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE. APE. TOGETHER. STRONG!",
-     LikeNumber: 112,
+     Comment: "Noice.",
+     LikeNumber: 120,
    },
 
-   {Username: "Commander Orangutan",
-    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+   {Username: "Commander Nick",
+    ProfilePic: "../../images/profile-pictures/profile24.jpg",
     DatePost: `&#9679; 1 hour ago`,
-    Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
-    LikeNumber: 169,
+    Comment: `There ain't no water model for my yard!`,
+    LikeNumber: 38,
   }
 ]
 
@@ -178,17 +185,17 @@ function removeComment(IDtoDelete){
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
-      case renderComment.Username === "CattoMX":
+      case renderComment.Username === "SussyMan":
         break;
       case renderComment.Username === "wWalterWhite.com":
         break;
-      case renderComment.Username === "JaSYnX":
+      case renderComment.Username === "F4ust@":
         break;
-      case renderComment.Username === "MONKE":
+      case renderComment.Username === "The Wok":
         break;
-      case renderComment.Username === "GENERALGORILLA":
+      case renderComment.Username === "Jeffrey Dansek":
         break;
-      case renderComment.Username === "Commander Orangutan":
+      case renderComment.Username === "Commander Nick":
         break;
       default:
         const AUDDeleteBtn = document.createElement('button')

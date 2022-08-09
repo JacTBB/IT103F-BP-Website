@@ -10,46 +10,81 @@ if (Array.isArray(savedComments)){
 
 else {
   commentInfo = [
-    {Username: "CattoMX",
-     ProfilePic: "../../images/profile-pictures/profile1.jpg",
-     DatePost: `&#9679; 21 hours ago`,
-     Comment: "Gib me gun now!!~~",
-     LikeNumber: 5,
+    {Username: "Iron Man",
+    ProfilePic: "../../images/profile-pictures/profile26.jpg",
+    DatePost: `&#9679; 2 days ago`,
+    Comment: "'Sometimes, it takes balls of steel to announce all your projects at once in a single stream.'",
+    LikeNumber: 41,
     },
 
-    {Username: "wWalterWhite.com",
-     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+    {Username: "MayaSays",
+    ProfilePic: "../../images/profile-pictures/profile29.jpg",
+    DatePost: `&#9679; 1 day ago`,
+    Comment: "Anyone know where to sign up as an employee in Blueprint Studios? seems like a fun place to work at.",
+    LikeNumber: 38,
+    },
+
+    {Username: "hoT_Wheels",
+     ProfilePic: "../../images/profile-pictures/profile34.jpg",
+     DatePost: `&#9679; 23 hours ago`,
+     Comment: "OMG Koenigsegg will be here for this anniversary? Cant wait for the new AXT 3890 Corvette model to be released!",
+     LikeNumber: 178,
+    },
+
+    {Username: "R6bandit#",
+     ProfilePic: "../../images/profile-pictures/profile22.png",
+     DatePost: `&#9679; 21 hours ago`,
+     Comment: "It's that time again.",
+     LikeNumber: 138,
+    },
+
+    {Username: "Turtle",
+     ProfilePic: "../../images/profile-pictures/profile32.jpg",
+     DatePost: `&#9679; 16 hours ago`,
+     Comment: "*Gives seal of approval*",
+     LikeNumber: 102,
+    },
+
+    {Username: "mon.Tima",
+     ProfilePic: "../../images/profile-pictures/profile18.jpg",
      DatePost: `&#9679; 12 hours ago`,
-     Comment: "*Faints*",
-     LikeNumber: 24,
+     Comment: "Is there free food as prizes?",
+     LikeNumber: 48,
+    },
+
+    {Username: "mimiY",
+     ProfilePic: "../../images/profile-pictures/profile31.jpg",
+     DatePost: `&#9679; 5 hours ago`,
+     Comment: "*Stares with anticipation*",
+     LikeNumber: 67,
     },
 
     {Username: "JaSYnX",
      ProfilePic: "../../images/profile-pictures/profile7.jpg",
      DatePost: `&#9679; 3 hours ago`,
-     Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
-     LikeNumber: 59,
+     Comment: "Ooo, I heard initial leaks abt the side projects, but didnt know it is tru.",
+     LikeNumber: 89,
     },
 
-    {Username: "MONKE",
-     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+    {Username: "phant0m",
+     ProfilePic: "../../images/profile-pictures/profile19.png",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE STRONG TOGETHER",
-    LikeNumber: 79,
+     Comment: "UTAE, UTAE, UTAE!",
+    LikeNumber: 148,
     },
 
-    {Username: "GENERALGORILLA",
-     ProfilePic: "../../images/profile-pictures/profile14.jpg",
+    {Username: "VoyagerX1",
+     ProfilePic: "../../images/profile-pictures/profile21.jpg",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE. APE. TOGETHER. STRONG!",
-     LikeNumber: 112,
+     Comment: "Realllllyyy needed those gun models for my games, can't survive without em.",
+     LikeNumber: 128,
    },
 
-   {Username: "Commander Orangutan",
-    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+   {Username: "V1PeR",
+    ProfilePic: "../../images/profile-pictures/profile23.jpg",
     DatePost: `&#9679; 1 hour ago`,
-    Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
-    LikeNumber: 169,
+    Comment: `Looking forward to see what Koenigsegg has in store for us.`,
+    LikeNumber: 210,
   }
 ]
 
@@ -178,17 +213,27 @@ function removeComment(IDtoDelete){
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
-      case renderComment.Username === "CattoMX":
+      case renderComment.Username === "Iron Man":
         break;
-      case renderComment.Username === "wWalterWhite.com":
+      case renderComment.Username === "MayaSays":
+        break;
+      case renderComment.Username === "hoT_Wheels":
+        break;
+      case renderComment.Username === "R6bandit#":
+        break;
+      case renderComment.Username === "Turtle":
+        break;
+      case renderComment.Username === "mon.Tima":
+        break;
+      case renderComment.Username === "mimiY":
         break;
       case renderComment.Username === "JaSYnX":
         break;
-      case renderComment.Username === "MONKE":
+      case renderComment.Username === "phant0m":
         break;
-      case renderComment.Username === "GENERALGORILLA":
+      case renderComment.Username === "VoyagerX1":
         break;
-      case renderComment.Username === "Commander Orangutan":
+      case renderComment.Username === "V1PeR":
         break;
       default:
         const AUDDeleteBtn = document.createElement('button')

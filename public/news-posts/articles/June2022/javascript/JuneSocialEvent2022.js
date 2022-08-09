@@ -10,46 +10,46 @@ if (Array.isArray(savedComments)){
 
 else {
   commentInfo = [
-    {Username: "CattoMX",
-     ProfilePic: "../../images/profile-pictures/profile1.jpg",
+    {Username: "Geo.Lockx",
+     ProfilePic: "../../images/profile-pictures/profile28.jpg",
      DatePost: `&#9679; 21 hours ago`,
-     Comment: "Gib me gun now!!~~",
-     LikeNumber: 5,
+     Comment: "'Go my golem kins, for we shall watch this coming live stream.'",
+     LikeNumber: 261,
     },
 
     {Username: "wWalterWhite.com",
      ProfilePic: "../../images/profile-pictures/profile8.jpg",
      DatePost: `&#9679; 12 hours ago`,
-     Comment: "*Faints*",
-     LikeNumber: 24,
+     Comment: "Youngsters deez days, always looking at latests tech.",
+     LikeNumber: 59,
     },
 
     {Username: "JaSYnX",
      ProfilePic: "../../images/profile-pictures/profile7.jpg",
+     DatePost: `&#9679; 7 hours ago`,
+     Comment: "RayTrix booster boots on giveaway? Seems like BP studios has been really generous lately, not that I mind abt it",
+     LikeNumber: 107,
+    },
+
+    {Username: "s0Fa_likz",
+     ProfilePic: "../../images/profile-pictures/profile25.jpg",
      DatePost: `&#9679; 3 hours ago`,
-     Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
-     LikeNumber: 59,
+     Comment: "Alright, it's about time!",
+    LikeNumber: 102,
     },
 
-    {Username: "MONKE",
-     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+    {Username: "TheFakeChen",
+     ProfilePic: "../../images/profile-pictures/profile27.jpg",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE STRONG TOGETHER",
-    LikeNumber: 79,
-    },
-
-    {Username: "GENERALGORILLA",
-     ProfilePic: "../../images/profile-pictures/profile14.jpg",
-     DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE. APE. TOGETHER. STRONG!",
-     LikeNumber: 112,
+     Comment: "Thanks for the heads up.",
+     LikeNumber: 83,
    },
 
-   {Username: "Commander Orangutan",
-    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+   {Username: "Doggo",
+    ProfilePic: "../../images/profile-pictures/profile30.jpg",
     DatePost: `&#9679; 1 hour ago`,
-    Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
-    LikeNumber: 169,
+    Comment: `Woof! woof! *Snarls`,
+    LikeNumber: 38,
   }
 ]
 
@@ -178,17 +178,17 @@ function removeComment(IDtoDelete){
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
-      case renderComment.Username === "CattoMX":
+      case renderComment.Username === "Geo.Lockx":
         break;
       case renderComment.Username === "wWalterWhite.com":
         break;
       case renderComment.Username === "JaSYnX":
         break;
-      case renderComment.Username === "MONKE":
+      case renderComment.Username === "s0Fa_likz":
         break;
-      case renderComment.Username === "GENERALGORILLA":
+      case renderComment.Username === "TheFakeChen":
         break;
-      case renderComment.Username === "Commander Orangutan":
+      case renderComment.Username === "Doggo":
         break;
       default:
         const AUDDeleteBtn = document.createElement('button')

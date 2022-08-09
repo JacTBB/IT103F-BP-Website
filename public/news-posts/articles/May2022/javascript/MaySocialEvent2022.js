@@ -10,46 +10,53 @@ if (Array.isArray(savedComments)){
 
 else {
   commentInfo = [
-    {Username: "CattoMX",
-     ProfilePic: "../../images/profile-pictures/profile1.jpg",
+    {Username: "Xiao",
+     ProfilePic: "../../images/profile-pictures/profile39.jpg",
      DatePost: `&#9679; 21 hours ago`,
-     Comment: "Gib me gun now!!~~",
-     LikeNumber: 5,
+     Comment: "Interesting.",
+     LikeNumber: 140,
     },
 
-    {Username: "wWalterWhite.com",
-     ProfilePic: "../../images/profile-pictures/profile8.jpg",
+    {Username: "T3sla",
+     ProfilePic: "../../images/profile-pictures/profile33.jpg",
      DatePost: `&#9679; 12 hours ago`,
-     Comment: "*Faints*",
-     LikeNumber: 24,
+     Comment: "Where are the car models at? I need em in my gam now!!",
+     LikeNumber: 92,
     },
 
-    {Username: "JaSYnX",
-     ProfilePic: "../../images/profile-pictures/profile7.jpg",
+    {Username: "ManInBat",
+     ProfilePic: "../../images/profile-pictures/profile35.jpg",
+     DatePost: `&#9679; 8 hours ago`,
+     Comment: "It seems like joker isn't here, I'll have to look somewhere else",
+     LikeNumber: 73,
+    },
+
+    {Username: "TheProfoundTrickster",
+     ProfilePic: "../../images/profile-pictures/profile38.jpg",
+     DatePost: `&#9679; 8 hours ago`,
+     Comment: "Spellbook, tomes, incantations. Gimme all of em nowwww",
+     LikeNumber: 102,
+    },
+
+    {Username: "CRUSAD1023",
+     ProfilePic: "../../images/profile-pictures/profile37.jpg",
      DatePost: `&#9679; 3 hours ago`,
-     Comment: "Bought the P250 3D Model, I'll say its pretty nifty ngl",
-     LikeNumber: 59,
+     Comment: "WE SHALL RECLAIM MOTHERLAND!!",
+    LikeNumber: 93,
     },
 
-    {Username: "MONKE",
-     ProfilePic: "../../images/profile-pictures/profile13.jpg",
+    {Username: "SPARTA36",
+     ProfilePic: "../../images/profile-pictures/profile36.jpg",
      DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE STRONG TOGETHER",
-    LikeNumber: 79,
-    },
-
-    {Username: "GENERALGORILLA",
-     ProfilePic: "../../images/profile-pictures/profile14.jpg",
-     DatePost: `&#9679; 2 hours ago`,
-     Comment: "APE. APE. TOGETHER. STRONG!",
-     LikeNumber: 112,
+     Comment: "DEUS VULT! DEUS VULT!",
+     LikeNumber: 87,
    },
 
-   {Username: "Commander Orangutan",
-    ProfilePic: "../../images/profile-pictures/profile15.jpg",
+   {Username: "Anonymous Archon",
+    ProfilePic: "../../images/profile-pictures/profile40.png",
     DatePost: `&#9679; 1 hour ago`,
-    Comment: `"To defeat the enemy, you must first become your enemy." - Sun Tzu, Art of War`,
-    LikeNumber: 169,
+    Comment: `Osmanthus wine tastes the same as always, but where is those who share the memory?`,
+    LikeNumber: 189,
   }
 ]
 
@@ -178,17 +185,19 @@ function removeComment(IDtoDelete){
     AUDDislikeBtn.appendChild(AUDDislikeimg)
 
     switch(true){
-      case renderComment.Username === "CattoMX":
+      case renderComment.Username === "Xiao":
         break;
-      case renderComment.Username === "wWalterWhite.com":
+      case renderComment.Username === "T3sla":
         break;
-      case renderComment.Username === "JaSYnX":
+      case renderComment.Username === "ManInBat":
         break;
-      case renderComment.Username === "MONKE":
+      case renderComment.Username === "TheProfoundTrickster":
         break;
-      case renderComment.Username === "GENERALGORILLA":
+      case renderComment.Username === "CRUSAD1023":
         break;
-      case renderComment.Username === "Commander Orangutan":
+      case renderComment.Username === "SPARTA36":
+        break;
+      case renderComment.Username === "Anonymous Archon":
         break;
       default:
         const AUDDeleteBtn = document.createElement('button')
