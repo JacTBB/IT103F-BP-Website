@@ -217,3 +217,24 @@ table{
   font-size:40px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.header1{
+  font-size:20px; 
+  font-weight:bold;
+}
+
+.headerdesc{
+font-size:16px;
+}
+
+.tdwidth{
+  width:32%;
+}
+
+.tdwidthy{
+  width:34%;
+}
+
+.tdwid{
+  width:50%;
+}
