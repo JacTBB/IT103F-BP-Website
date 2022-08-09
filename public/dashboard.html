@@ -220,7 +220,10 @@
               }
               document.getElementById('productcardplaceholder').remove()
             })
-            .catch(console.error)
+            .catch(error => {
+              console.error(error)
+              window.location.reload()
+            })
           </script>
         </article>
       </section>
