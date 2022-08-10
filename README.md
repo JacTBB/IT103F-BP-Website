@@ -51,7 +51,9 @@ This works by sending a HTTP POST request to our back-end email server for each 
 The back-end email server is hosted on make. https://www.make.com/
 We use their scenario workflows feature.
 The workflow has a webhook listener, and upon getting a HTTP POST, it uses the Zoho Mail API to send an email to the user along with the details.
+
 ![Scenario Workflow Image](https://i.gyazo.com/2ac2421fff0d9888cf4b424fc01cf019.png)
+
 We use Zoho Mail as our emailing service. With the domain being @blueprint-studios.net
 Users should expect the email from noreply@blueprint-studios.net within 10 minutes of purchase.
 ___
@@ -76,12 +78,14 @@ userdata table, it has 4 columns.
 - name - Username
 - email - Email used
 - password - Password needed to sign in
+
 ![userdata Image](https://i.gyazo.com/6328d217ea665b649d296433545a18e5.png)
 
 purchases table, it has 3 columns.
 - id - To make each data entry unique
 - email - Email used
 - product - The product they purchased
+
 ![purchases Image](https://i.gyazo.com/e4c16097673edfc5af8bfe72e649914b.png)
 ___
 
