@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="../images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="../styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="../styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="../styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/productspage.css" rel="stylesheet" type="text/css">
+    
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="../scripts/productdata.js"></script>
+    <script src="../scripts/products-cart.js" defer></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="../index.html"><img src="../images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="../index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="../images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="../contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="../products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="../products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="../contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+        <article style="padding: 0">
+          <img src="../images/page-banners/IT103F Banner Our Products.png" alt="BP Banner" width="100%">
+        </article>
+        
+        <article>
+          <a href="../products.html" id="return">< Return To Products</a>
+
+          <div id="products">
+            <div class="productcard" id="productcardplaceholder" style="display: none;">
+              <!-- Placeholder For Dev -->
+              <img src="https://cdn.discordapp.com/attachments/913619592067293206/959037469007941712/Overhead_V1_300x200.png" alt="Image" width="100%">
+              <h4>Overhead V1</h4>
+              <p>A popular style of overhead in the modern military community! Keep up with some of the latest trends with this overhead today!</p>
+              <p class="price">
+                $6.00
+                <button class="productbutton" type="button">Add To Cart</button>
+              </p>
+              <!-- End -->
+            </div>
+          </div>
+          <div id="notificationbar">
+            <div class="notification">
+              <!-- Placeholder For Dev -->
+              <p>You have added an item to cart!</p>
+              <!-- End -->
+            </div>
+          </div>
+        </article>
+
+        <!-- JS -->
+        <script src="../scripts/productspage.js" defer></script>
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="../images/Blueprint Logo.png" alt="BP">
+          <h2><a href="../index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="../dashboard.html">Dashboard</a>
+          <a class="footertext" href="../products.html">Products</a>
+          <a class="footertext" href="../services.html">Services</a>
+          <a class="footertext" href="../faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="../about-us.html">About Us</a>
+          <a class="footertext" href="../contact-us.html">Contact Us</a>
+          <a class="footertext" href="../careers.html">Careers</a>
+          <a class="footertext" href="../news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

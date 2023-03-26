@@ -1,0 +1,148 @@
+.banner {
+  width: 100%;
+}
+
+form table tbody tr td {
+  padding: 0;
+}
+
+
+/* General Submit Form Controls CSS */
+.button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.button span {
+  width: 100px;
+  display: flex;
+  margin-right: 10px;
+  padding: 1px;
+}
+
+.button span button p {
+  margin: 0;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span button p:after {
+  content: ">>";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10%;
+  transition: 0.5s;
+}
+
+.button span button:hover p {
+  padding-right: 25px;
+}
+
+.button span button:hover p:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button span button:active {
+  transform: translateY(2px);
+}
+
+/* Submit button */
+.button span .submitbtn {
+  border: 1px solid #009726;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 3px #999;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  min-width: 100px;
+  padding: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+
+.button span .submitbtn:hover {
+  background-color: #009726;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Clear button */
+.button span .clearbtn {
+  border: 1px solid #970a00;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 3px #999;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  min-width: 100px;
+  padding: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+
+.button span .clearbtn:hover {
+  background-color: #970a00;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Slider CSS */
+.slidecontainer {
+  width: 100%;
+}
+.slider {
+  width: 100%;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.input {
+  padding:7px 1px;
+  font-size: 1rem;
+  border-width:calc(var(--border-width) * 1px);
+  border-style:solid;
+  border-color:var(--accent);
+  border-radius:calc(var(--border-radius) * 1px);
+  text-align:center;
+  outline: transparent;
+  width: 100%;
+  transition: border-color calc(var(--transition, 0.2) * 1s) ease;
+}
+
+#formtable {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin: 0;
+}
+
+.comments {
+  width: 100%;
+}
+
+#ratingdetails b {
+  float: left;
+  width: 10%;
+}
+#ratingdetails p {
+  float: left;
+  margin: 0;
+  margin-bottom: 15px;
+  width: 80%;
+}
+#ratingdetails p b {
+  width: 100%;
+  text-align: center;
+}

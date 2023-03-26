@@ -1,0 +1,85 @@
+/* general */
+
+p, label, th, td {
+  font-family: Alata;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input {
+	border: hsla(0,0%,71%,.05);
+}
+
+input:focus {
+	outline: none;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 4px 0px;
+	border: none;
+}
+
+input::placeholder {
+	font-family: Alata;
+	font-size: 14px;
+}
+
+/* Contains individual product page */
+div.individual-productcontainer {
+  margin-left: 30%;
+  width: 40%;
+  min-width: 400px;
+  background-color: black;
+}
+
+/* Checkout Form */
+div.individual-productcard {
+  display: grid;
+  grid-template-rows: 30px 230px 100px 200px;
+  background-color:gray;
+  border: 2px solid rgb(0, 119, 255);
+  border-radius: 20px;
+  padding: 20px 20px 20px 20px;
+  transition: all 0.5s; 
+}
+
+/* Notification Section */
+#notificationbar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.notification {
+  display: none;
+  padding: 10px;
+  margin: 5px;
+  border: solid rgb(100,100,100) 2px;
+  border-radius: 10px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+
+/* Loading & Website animation */
+@keyframes fadeInAnim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeOutAnim {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+.notificationinanim {
+  animation-name: fadeInAnim;
+  animation-duration: 0.5s;
+}
+.notificationoutanim {
+  animation-name: fadeOutAnim;
+  animation-duration: 0.5s;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 20px;
+}

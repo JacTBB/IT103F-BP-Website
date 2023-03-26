@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/contact-us.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="scripts/productdata.js"></script>
+    <script src="scripts/cart.js" defer></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="index.html"><img src="images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+        <article style="padding: 0">
+          <img src="images/page-banners/IT103F Banner Contact Us.png" alt="BP Banner" width="100%">
+        </article>
+        
+        <article>
+          <table border="1" width="100%" cellpadding="6" cellspacing="0">
+            <caption><p><b><h2>Contact Us Details</h2></p></b></caption>
+            <tr>
+              <style>
+                #maillink {
+                  color: black;
+                  text-decoration: none;
+                }
+              </style>
+              <td align="center"><b><a style="text-decoration: none; color: black;" href="mailto:support@blueprint-studios.net">E-Mail: support@blueprint-studios.net</a></b></td>
+              <td rowspan="4" align="center" id="mapcolumn">
+                <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.198842884528!2d103.85012506146099!3d1.2778405254972038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19118a155513%3A0x8afcef5fb4aa0efc!2sAsia%20Square%20Tower%202!5e0!3m2!1sen!2ssg!4v1658646303767!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center"><b>Operating Hours: 9 A.M - 5 P.M</b></td>         
+            </tr>
+
+            <tr>
+              <td align="center"><b>Telephone: 8500 1234</b></td> 
+            </tr>
+
+            <tr>
+              <td align="center"><b>Address: 12 Marina View, Singapore 018961, 35th Floor</b></td>  
+            </tr>
+
+            <tr>
+              <td colspan="2" align="center" id="maprow">
+                <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.198842884528!2d103.85012506146099!3d1.2778405254972038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19118a155513%3A0x8afcef5fb4aa0efc!2sAsia%20Square%20Tower%202!5e0!3m2!1sen!2ssg!4v1658646303767!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </td>
+            </tr>
+
+            <style>
+              #maprow {
+                display: none;
+              }
+              @media (max-width: 650px) {
+                #mapcolumn {
+                  display: none;
+                }
+                #maprow {
+                  display: block;
+                }
+              }
+            </style>
+          </table>
+        </article>
+        
+        <article>
+          <div width="100%" style="background-color: #87CEEB;border-radius: 25px;">
+            <form name="FeedbackForm" method="get" id="FeedbackForm" onsubmit="myFunction()">
+              <table id="formtable" align="center" border="0" style="border-radius:25px;" cellpadding="6" cellspacing="14">
+                <caption><b><p><h2>Feedback Form</h2></p></b></caption>
+                <tr>
+                  <td colspan="2" align="center"><i style="color: red;">All fields are required</i></td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 10px;"><b><label for="Customername">Customer Name: <i style="color: red;">*</i></label></b></td>
+                  <td style="padding-left: 10px;"><b><label for="Customeremail">Customer E-Mail: <i style="color: red">*</i></label></b></td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 10px;"><input id="Customername" class="input" type="text" placeholder="e.g. Jonathon" required></td>
+                  <td style="padding-left: 10px;"><input id="Customeremail" class="input" type="email" placeholder="e.g. jon123@gmail.com" required></td>
+                </tr>
+
+                <tr>
+                  <td colspan="2">
+                    <b><label for="productss">Products/Services Bought: <i style="color: red">*</i></label></b>
+                    <p style="margin: 5px 0;"><input type="text" style="width: 100%;" id="productss" name="products" list="products" autocomplete="off"></p>
+                    <datalist id="products">
+                      <!-- Added with contact-us.js -->
+                    </datalist>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <b>Overall Rating Slider: <i style="color: red">*</i></b>
+                    <p style="margin: 5px 0;"><input type="range" min="0" required max="10" class="slider" id="range"></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" id="ratingdetails">
+                    <b>Poor</b>
+                    <p style="text-align:center;"><b>Rating: <span id="demo"></span></b></p>
+                    <b align="right">Good</b>
+                  </td>
+                </tr>
+               
+                <script>
+                  var slider = document.getElementById("range");
+                  var output = document.getElementById("demo");
+                  output.innerHTML = slider.value;
+                  
+                  slider.oninput = function() {
+                    output.innerHTML = this.value;
+                  }
+                  </script>
+                <tr>
+                  <td valign="center" colspan="2"><b><label for="CommentsArea">Please enter your comments here: <i style="color: red">*</i></label></b></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><textarea rows="15" id="CommentsArea" cols="90" class="comments" placeholder="Please enter feedback here." required></textarea></td>
+                </tr>
+              </table>
+              <br>
+              <div style="text-align: center;" class="button">
+                <span><button class="submitbtn" type="submit" class="button" name="submit"><b><p>Submit</p></b></button></span>
+                <script>
+                function myFunction() {
+                  alert("You have submitted your feedback form.");
+                }
+                </script>
+                <span><button class="clearbtn" name="reset" type="reset"><b><p>Reset</p></b></button></span>
+              <br>
+              <br>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <!-- JS -->
+        <script src="scripts/contact-us.js"></script>
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="images/Blueprint Logo.png" alt="BP">
+          <h2><a href="index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

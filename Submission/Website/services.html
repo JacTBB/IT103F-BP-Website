@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/services.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="scripts/productdata.js"></script>
+    <script src="scripts/cart.js" defer></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="index.html"><img src="images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+        <article style="padding: 0">
+          <img src="images/page-banners/IT103F Banner Our Services.png" alt="BP Banner" width="100%">
+        </article>
+        
+        <article>
+          <h1>Service Details</h1>
+          <p>
+            Blueprint Studios offers services where you can get a 3D CAD Model of your specifications to be made.<br>
+            We can build models of all types, from realistic vehicles to detailed buildings.<br>
+            <br>
+            Upon submitting a request for our services, we will contact you via email for futher discussion.
+            After confirming the service request, we will send you an invoice and begin work on the models.
+          </p>
+
+          <br>
+          <div id="processbanner">
+            <img src="images/services/IT103F BP Website Service Banner.png" alt="Service Process">
+          </div>
+          
+          <br>
+          <hr>
+          <br>
+
+          <form name="services" action="services-success.html" method="GET">
+            <div class="title">
+                <h1>Request Our Services</h1>
+            </div>
+            
+            <div class="textbox">
+                <span><p>Name*:</p></span><br>
+                <span><input type="text" name="name" required placeholder="E.g. John Nolan"></span><br>
+            </div>
+
+            <div class="textbox">
+                <span><p>Company:</p></span><br>
+                <span><input type="text" name="company" placeholder="E.g. Blueprint Studios"></span><br>
+            </div>
+
+            <div class="textbox" id="email">
+                <span><p>Email*:</p></span><br>
+                <span><input type="email" name="email" required placeholder="E.g. John@gmail.com"></span><br>
+            </div>
+
+            <div class="radio">
+              <span><p>Service Package*:</p></span>
+              <span>
+                <div class="packageradio">
+                  <input type="radio" name="package" value="basic" id="basic" required>
+                  <label for="basic">
+                    <span>Basic:</span>
+                    1x 3D CAD Model<br>
+                    1x Revisions<br>
+                    Low Quality Model
+                  </label>
+                </div>
+                  
+                <div class="packageradio">
+                  <input type="radio" name="package" value="premium" id="premium" required>
+                  <label for="premium">
+                    <span>Premium:</span>
+                    1x 3D CAD Model<br>
+                    2x Revisions<br>
+                    High Quality Model
+                  </label>
+                </div>
+
+                <div class="packageradio">
+                  <input type="radio" name="package" value="enterprise" id="enterprise" required>
+                  <label for="enterprise">
+                    <span>Enterprise:</span>
+                    1-10 3D CAD Model<br>
+                    3x Revisions<br>
+                    High Quality Model
+                  </label>
+                </div>
+              </span><br>
+            </div>
+
+            <div class="textarea">
+                <span><p>Specifications*:</p></span><br>
+                <span><textarea required name="specifications" rows="10" cols="60" placeholder="Please be detailed with your specifications." style="font-family: Arial, Helvetica, sans-serif;"></textarea></span><br>
+                <style>
+                    textarea {
+                        overflow-y: scroll;
+                        height: 60px;
+                        resize: none;
+                    }
+                </style>
+            </div>
+
+            <div class="file">
+              <span><p>Image References:</p></span><br>
+              <span><input type="file" id="fileinput" name="references" multiple></span><br>
+          </div>
+
+            <div class="submit-controls">
+                <span class="submit"><button type="submit" name="submit"><p> Submit </p></button></span><br>
+                <span class="clear"><button type="reset" name="reset"><p> Reset </p></button></span><br>
+            </div>
+          </form>
+        </article>
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="images/Blueprint Logo.png" alt="BP">
+          <h2><a href="index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(200,200,200);
+  padding: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  height: 150px;
+  width: auto;
+  color: white;
+  text-align: center;
+}
+
+.footerinfo {
+  flex: 25%;
+  max-width: 400px;
+  float: left;
+  padding: 10px;
+  margin-right: auto;
+}
+.footerinfo img {
+  width: 36px;
+  height: 36px;
+  float: left;
+  padding: 10px 0;
+}
+.footerinfo h2 {
+  float: left;
+  margin: 0;
+  padding: 16px 10px;
+  font-size: 24px;
+  color: black;
+}
+.footerinfo h2 a {
+  color: black;
+  text-decoration: none;
+}
+.footerinfo p {
+  float: left;
+  color: black;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.footerinfo p a {
+  margin-right: 5px;
+  color: black;
+  font-size: 30px;
+}
+
+.footerlinks {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 24%;
+  max-width: 24%;
+  float: left;
+  padding: 10px;
+  text-align: center;
+}
+.footerlinks h3 {
+  flex: 100%;
+  margin: 10px;
+  color: black;
+  max-height: 30px;
+}
+.footertext {
+  flex: 40%;
+  float: left;
+  padding: 5px;
+  color: black;
+  text-decoration-line: none;
+  font-size: 15px;
+  max-height: 20px;
+}
+
+@media (max-width: 1000px) {
+  footer {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  #footer {
+    height: 200px;
+  }
+
+  .footerlinks a {
+    flex: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .footerinfo {
+    flex: 20%;
+    max-width: 220px;
+  }
+  .footerinfo h2 {
+    padding: 0;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  .footerlinks {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  #footer {
+    flex-direction: none;
+    height: 340px;
+  }
+
+  .footerinfo {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .footerinfo h2 {
+    float: left;
+    margin: 0;
+    padding: 16px 10px;
+    font-size: 24px;
+  }
+  .footerinfo p {
+    width: 100%;
+  }
+
+  .footerlinks {
+    flex: 50%;
+    min-width: calc(50% - 20px);
+    flex-direction: row;
+  }
+  .footerlinks h3 {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  #footer {
+    height: 460px;
+  }
+
+  .footerinfo h2 {
+    width: 90%;
+    padding: 0;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+}

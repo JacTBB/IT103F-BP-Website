@@ -1,0 +1,284 @@
+.banner {
+  width: 100%;
+}
+
+#headerbluecolor {
+  color:rgb(60, 180, 250);
+}
+#headerblackcolor {
+  color: black;
+}
+
+
+
+/* Reason Section */
+.reasonscontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reasonsbox {
+  display: block;
+  padding: 1px;
+  margin: 6px;
+  flex: 40%;
+  min-height: 290px;
+  min-width: 100px;
+  max-width: calc(50% - 20px);
+  text-align: center;
+}
+
+.reasonsbox img {
+  max-height: 150px;
+  max-width: calc(100% - 20px);
+  margin: 10px;
+  border: 2px solid rgb(60, 180, 250);
+  border-radius: 10px;
+}
+.reasonsbox h2 {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 20px;
+}
+.reasonsbox p {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 15px;
+}
+
+@media (max-width: 800px) {
+  .reasonscontainer {
+    width: 95%;
+  }
+}
+
+@media (max-width: 650px) {
+  .reasonscontainer {
+    flex-direction: column;
+  }
+  .reasonsbox {
+    min-height: 250px;
+  }
+}
+
+
+
+/* Featured Products Section */
+.productscontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.productsbox {
+  display: block;
+  padding: 1px;
+  margin: 6px;
+  flex: 40%;
+  min-height: 150px;
+  min-width: 200px;
+  max-width: calc(30% - 10px);
+  text-align: center;
+}
+
+.productsbox a {
+  color: black;
+  text-decoration: none;
+}
+.productsbox a img {
+  padding: 1px;
+  width: 200px;
+  border: 2px solid rgb(60, 180, 250);
+  border-radius: 10px;
+  background-color:rgb(60,180,250);
+}
+.productsbox a h2 {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 20px;
+}
+.productsbox a p {
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-size: 15px;
+  font-family: "Alata";
+}
+
+@media (max-width: 750px) {
+  .productscontainer {
+    width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+  .productscontainer {
+    flex-direction: column;
+  }
+}
+
+
+
+/* Review Section */
+
+/* General CSS */
+.reviewcontainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: top;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 100px;
+}
+@media (max-width: 550px) {
+  .reviewcontainer {
+    flex-wrap: wrap;
+  }
+}
+
+img.customer-pp {
+  height: 130px;
+  border-radius: 65px;
+  margin-bottom: 20px;
+}
+
+div.content-review {
+  display: flex;
+  flex: 1;
+  flex-flow: column wrap;
+  justify-items: center;
+  align-items: center;
+}
+
+b.spacing-bot {
+  margin-bottom: 8px;
+}
+
+p.nomargin-top {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+.colorproducts{
+  color: red;
+  font-size: 20px;
+  font-weight:bold; 
+}
+
+
+
+/* Star CSS */
+div.star-ratings {
+  height: 22px;
+}
+
+.star-checked {
+  color: orange;
+  width: 22px;
+  height: 22px;
+}
+
+
+
+/* Individual Review Boxes */
+.left-reviewbox {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.middle-reviewbox {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+}
+
+.right-reviewbox {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  flex-grow: 1;
+}
+.tableheader{
+  padding-left: 18%;
+  padding-right: 18%; 
+}
+
+.about-us-card {
+  display:grid;
+  grid-template-rows: 400px 1fr;
+  border: 1px solid grey;
+  border-radius: 25px;
+  align-items:center;
+  flex-grow:0.5;
+  flex-flow: column nowrap;
+  display:flex;
+}
+
+.zheming-too-big{
+  object-fit: cover;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100%;
+  height: 100%;
+}
+.pickholder{
+  display: grid;
+  grid-template-rows: 40px 1fr 50px;
+  height: 100%;
+}
+
+.pickholder p, h1 {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.linkAbtus {
+  margin-top: 10px;
+  width: 90px;
+  height: 25px;
+  border-radius: 10px;
+  margin-left:10px;
+}
+
+.linkAbtus:hover {
+ background-color: rgb(60,180,250);
+ color: white;
+}
+.buttonstuff{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+

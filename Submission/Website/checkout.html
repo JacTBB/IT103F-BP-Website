@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/checkout.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="scripts/productdata.js"></script>
+    <script src="scripts/cart.js" defer></script>
+    <script src="scripts/checkoutform.js" defer></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="index.html"><img src="images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cartopenfunction()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cartopenfunction()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cartopenfunction(x) {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+         <!-- *V0.52* -->
+         <!-- Below code are for Cart & Checkout Section -->
+        <br>
+          <div class="overall-container">
+            <form name="PayReciept" action="checkout-success.html" method="GET" onsubmit="return submitfunction()">
+                <!-- Shopping Cart Section -->
+                <script src="scripts/checkout.js" defer></script>
+                <table class="ShopCart" id="products" cellpadding="10" cellspacing="0">
+                  <!-- From Javascript -->
+                </table>
+                <div id="notificationbar">
+                  <div class="notification">
+                    <!-- Placeholder For Dev -->
+                    <p>You have added an item to cart!</p>
+                    <!-- End -->
+                  </div>
+                </div>
+              
+                <br>
+              
+                <!-- Checkout Section-->
+              <div class="checkout">
+                  <p style="text-align: center;"> Checkout </p>
+                  <div class="formcontrols">
+
+                      <div name="customer-contact-info-container">
+
+                        <div name="contact-labels" class="split">
+                          <label for="CardName"> Name <span id="required"> * </span> </label>
+                          <label for="PayEmail"> Email <span id="required"> * </span> </label>
+                        </div> 
+                      
+                        <div name="contacts-input" class="split">
+                          <input type="text" name="customername" class="button-input" id="CardName" placeholder="Eg. John Smith " 
+                          pattern="(?=.*[a-z])(?=.*[A-Z]).{2,}" title="Capitalization Required!" required="required">
+                          
+                          <input type="email" name="customeremail" class="button-input" id="PayEmail" placeholder="Eg. JohnSmith1211@gmail.com" required="required"> 
+                        </div>
+                      
+                      </div>
+                    
+                      <div class="sub-form-heading">
+                        <p> Pay with credit/debit card </p>
+                      </div>
+                    
+                      <div class="card-numberbox">
+                        <label for="CardNo."> Card number <span id="required"> * </span> </label> 
+                      
+                        <div class="cc-numtext-input"> 
+                        <!-- Binds together with flex -->
+                            <input type="password" name="creditnumber" class="button-input2" id="CardNo." placeholder="1234-1234-1234-1234" 
+                            pattern="(?=.*\d)(?=.*-).{2,}" title="Dashes (-) is required!" required="required" minlength="19" maxlength="19">
+
+                            <div class="card-icon-container"> 
+
+                              <span id="showIndicator" class="showIMGPass" style="background-image: url('images/checkout/show-text.png');">
+                                <input type="checkbox" class="showPass" name="showCCNo." title="Show Card Number." onclick="showHidden();">
+                              </span>
+
+                              <img class="cardicon" src="images/checkout/visa-icon.png">
+                              <img class="cardicon" src="images/checkout/mastercard-icon.png">
+                              <img class="cardicon" src="images/checkout/american-express-icon.png">
+                            </div>
+                        </div>
+                      </div>
+                    
+                      <div name="card-date-&-cvc-details">
+                      
+                         <div name="date-cvc-labels" class="split">
+                          <label for="CardEXP"> Expiry Date <span id="required"> * </span> </label> 
+
+                          <div class="cvc-title-box">
+                            <label for="CardSecCode"> CVC <span id="required"> * </span> </label> 
+                            <span class="cvc-img">
+                              <img class="cvc-tooltip" src="images/checkout/cvc-tooltip.png" title="CVC (Card Verification Code) is the 3 digits at the back of your card.">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div name="date-&-cvc-inputs" class="split">
+                          <input type="text" name="expiry_date" class="button-input"  id="CardEXP" placeholder="MM/YY"
+                           pattern="(?=.*\d)(?=.*/).{2,}" title="Number and / is required!" required="required" minlength="5" maxlength="5">  
+
+                          <div class="card-icon-container2">
+                            <input type="password" name="CVC" class="button-input" id="CardSecCode" placeholder="123" 
+                            pattern="(?=.*\d).{1,}" required="required" minlength="3" maxlength="3">
+
+                            <img class="cardicon2" src="images/checkout/back-cvc.png" style="margin-left: -40px;">
+                          </div>
+
+                        </div>
+                      
+                      </div>
+
+                  </div>
+                
+                <p id="required"> * - Required to fill in. </p>
+
+                <div id ="errorTypeTxt">
+                  
+                </div>
+
+                <div name="form-buttons">
+                  <script src="scripts/purchase.js" defer></script>
+                  <button type="submit" class="PurchaseButton" id="spam-filter"><span style="font-family: Alata;"> Purchase </span></button>
+                  <button type="reset" class="clear-button"> <span style="font-family: Alata;"> Clear </span> </button>  
+                </div>
+
+                <div id="purchaseoverlay"></div>
+                <style>
+                  #purchaseoverlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    z-index: 10;
+                    background-color: grey;
+                    opacity: 0.6;
+                  }
+                </style>
+              </div>
+            </form>
+          </div>
+        <br>
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="images/Blueprint Logo.png" alt="BP">
+          <h2><a href="index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

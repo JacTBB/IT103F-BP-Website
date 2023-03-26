@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="../../../images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="../../../styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="../../../styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="../../../styles/footer.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../framework/article-framework.css" rel="stylesheet" type="text/css">
+    <link href="style/JulySocialEvent2022.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="../../../scripts/productdata.js"></script>
+    <script src="../../../scripts/newspagecart.js" defer></script>
+    <script src="javascript/JulySocialEvent2022.js" defer></script>
+    <script src="javascript/JulyNewsSelector2022.js" defer></script>
+    <script src="../../framework/news-general.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="../../../index.html"><img src="../../../images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="../../../index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="../../../images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="../../../contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="../../../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="../../../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="../../../products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="../../../products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="../../../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="../../../contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="../../../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="../../../checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = '../../../checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+
+        <div class="blog-content-wrapper">
+
+          <div class="top-row">
+            
+            <p class="topic"> SOCIAL EVENT </p>
+            <p class="title-article"> July 2022 New Product Livestream </p>
+                          
+            <div class="byauthor">
+              <p style="margin-right: 5px;"> By: Gui Cheng </p>
+              <img class="profile-pic" src="../../../images/news-article/profile-pictures/profilegui.jpg">
+            </div>
+            
+            <p class="dateChanged"> Updated &#8226; 4 hours ago </p>
+            <div class="divider-top">
+            </div>
+
+          </div>
+
+          <div class="mid-row-content">
+            
+            <div class="left1" >  
+              <div class="TN-Flex" >
+                <h4 class="subHeader"> Related Topics: </h4>
+                <a class="referOtherNews" href="../../articles/July2022/AugustAnniversary2022.html"> <span class="highlight"> 4th Anniversary August 2022  </span> </a>
+                <a class="referOtherNews" href="../../articles/June2022/JuneSocialEvent2022.html"> <span class="highlight"> June 2022 Livestream </span> </a>
+              </div>
+            </div>
+
+            <div class="mid1" >
+              <div >
+                <h3 class="postHeading"> Oceania Distoria: Product Showcase Livestream scheduled on 28 July </h3>
+              </div>
+            </div>
+
+            <div class="right1" >
+              <div class="SM-Flex" >
+                <h4 class="subHeader"> BP Social Media: </h4>
+                <div class="SM-Flex-Items">
+                  <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ" title="Subscribe to our youtube channel!">
+                    <img class="SM-Icon" src="../../../images/news-article/youtube-icon.jpg">
+                  </a>
+                  <a href="https://twitter.com/blueprintRBLX" title="Follow our twitter account!">
+                    <img class="SM-Icon" src="../../../images/news-article/twitter-svg.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="left2" > 
+            </div>
+
+            <div class="mid2" >
+              <div class="postFlex" >
+                <img class="livestreamPreview" src="../July2022/card-thumbnail/LS-event-thumbnail.jpg" title="Oceania Distoria Live Stream Preview">
+                <p class="postSubHeading"> 
+                  Blueprint Studios announces "Oceania Distoria" theme for new products showcase. <br>
+                  Livestream timings are as follows: 15:00 (GMT+8) to 17:00 (GMT+8). <br>  
+                </p>
+              </div>
+            </div>
+
+            <div class="right2" >
+            </div>
+
+            <div class="left3" >  
+            </div>
+
+            <div class="mid3" >
+              <div class="indention">
+                <p class="description">
+                  With summer on the rise this season, we are proud to announce to you: "Oceania Distoria", as the current theme
+                  for the new product showcase stream! The live stream will feature several exquisite models that you may
+                  find fascinating or jaw-dropping! It will mainly adhered to the scorching hot summer theme, so expect there be 
+                  objects or models related to it. In the live stream, Mr Kolarov, the CEO of Newton Studio, will also
+                  be here as a guest!  
+                </p>
+
+                <p class="description">
+                  Before you click off this page, we'll also be holding a giveaway at the end of the livestream!
+                  The giveaway includes car models, skyscraper models, furniture models and many more!
+                  Be sure to tune into the livestream to not miss the giveaway!
+                </p>
+
+                <p class="description">
+                  As the anniversary for Blueprint Studios inches ever closer towards us, we will be announcing the details of the anniversary stream
+                  soon. Do check the news here regularly to stay up-to-date with regards to the anniversary stream.
+                </p>
+
+              </div>
+            </div>
+
+            <div class="right3" >
+            </div>            
+
+          </div>
+
+          <div class="end-row">
+
+            <div class="divider-bot">
+            </div>
+            <h1 class="bottom-heading"> Other news related to this topic </h1>
+
+            <div class="er-newscard-container">
+              <a class="prevNews" onclick="newsScrollLeft();"> < </a>
+              <div class="er-newscards">
+
+                <div class="news-card" id="newsLeft">
+                  <a class="redirect" id="hyperLeft">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateLeft"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-left"></p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsMid">
+                  <a class="redirect" id="hyperMid">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateMid"> DATE </p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-mid"> TEMPLATE </p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsRight">
+                  <a class="redirect" id="hyperRight">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateRight"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-right"></p>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+              
+              <a class="nextNews" onclick="newsScrollRight();"> > </a>
+            </div>
+            
+            <div class="starC-Container">
+              <h3 class="starC-Heading"> Do you find this news helpful? </h3>
+
+              <div class="stars">
+                <span>
+                  <h4 class="rateguide" style="padding-right: 5px;"> Not Helpful </h4>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <h4 class="rateguide" style="padding-left: 5px;"> Very Helpful </h4>
+                </span>
+              </div>  
+              
+            </div>
+
+            <h1 class="bottom-heading"> Comments </h1>
+          </div>
+
+          <div class="discussion-container">
+
+            <div class="user-box">
+              <div class="ub-comTxtbox">
+                <img id="PFPUser" class="PPuser" src="../../../images/news-article/anonymous-sus.png">
+                <textarea id="ComInput" class="user-input" placeholder="What are your thoughts?" minlength="1"></textarea>
+              </div>
+
+              <div class="user-controls">
+
+                <div class="ucflex-container">
+
+                  <div class="ucflex-expbtn">
+                    <input id="experimentBtn" type="checkbox" autocomplete="off" title="Enable Experiment features" onclick="showHiddenFeatures();" >
+                    <label for="experimentBtn" title="Experiment features" class="resizeEXP"> Experiment features </label>
+                  </div>
+
+                  <div class="ucflex-submitbtn">
+                    <input id="clearBtn" class="clear-btn" type="reset" value="Clear">
+                    <input id="commentBtn" class="comBtnInactive" type="submit" value="Comment" onclick="addComment();" disabled="true">
+                  </div>
+
+                  <div id="expFT1" class="expFT1">
+                    <label for="expFTName" class="resizeEXPSub"> Username: </label>
+                    <input id="expFTName" type="text" class="ExpInput" placeholder="Insert username here"/>
+                  </div>
+
+                  <div id="expFT2" class="expFT2">
+                    <label for="expFTPP" class="resizeEXPSub"> ProfilePic: </label>
+                    <input id="expFTPP" class="ExpInput" type="url" placeholder="Insert Picture Link here">
+                  </div>
+                </div>
+ 
+              </div>
+            </div>
+
+            <div class="divider-com">
+            </div>
+
+            <div id="topic-discussion" class="comment-section">
+              <!-- Placeholder for Comment -->
+              <div class="AUD-opinion">
+                <img class="PPAUD" src="../../../images/news-article/profile-pictures/profile2.jpg">
+
+                <div class="AUD-details">
+                  <div class="AUDName">
+                    <p class="usernameStyle"> Name </p>
+                    <p class="datepostStyle"> Date </p>
+                  </div>
+                  <p class="commentStyle"> Comment </p>
+
+                  <div class="AUDReplyControls">
+                    <button id="1" class="LikeBtnStyle"> <img class="ThumbsIcon1" src="../../../images/news-article/like-icon.png"> </button>
+                    <p class="likenumStyle"> 0 </p>
+                    <button id="2" class="DislikeBtnStyle"> <img class="ThumbsIcon2" src="../../../images/news-article/dislike-icon.png"> </button>
+                    <button class="deleteCommentStyle"> Remove </button>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+
+        </div>
+
+        <div id="notificationbar">
+          <div class="notification">
+            <!-- Placeholder For Dev -->
+            <p>You have added an item to cart!</p>
+            <!-- End -->
+          </div>
+        </div>
+
+        <!-- Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="../../../images/Blueprint Logo.png" alt="BP">
+          <h2><a href="../../../index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="../../../dashboard.html">Dashboard</a>
+          <a class="footertext" href="../../../products.html">Products</a>
+          <a class="footertext" href="../../../services.html">Services</a>
+          <a class="footertext" href="../../../faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="../../../about-us.html">About Us</a>
+          <a class="footertext" href="../../../contact-us.html">Contact Us</a>
+          <a class="footertext" href="../../../careers.html">Careers</a>
+          <a class="footertext" href="../../../news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

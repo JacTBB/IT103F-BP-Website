@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="scripts/productdata.js"></script>
+    <script src="scripts/cart.js" defer></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="index.html"><img src="images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+        <article>
+          <video style="aspect-ratio:900/506; width:100%; max-height:80vh;" autoplay muted disablePictureInPicture>
+            <source src="videos/BLUEPRINT STUDIOS INTRO.mp4" type="video/mp4">
+          </video>
+
+          <br><br><br><br><br><br>
+
+          <div style="text-align:center;">
+            <h3 style="font-size: 35px;">                     
+              <span id="headerbluecolor">
+                Our
+              </span>
+              <span id="headerblackcolor">
+                goals
+              </span>
+            </h3>
+          </div>
+          <div class="tableheader">
+            <div class="about-us-card" style="display: grid;">
+              <img class="zheming-too-big" src="images/about-us/zm.jpg">
+
+              <div class="pickholder">
+                <h1 name="header">
+                  From our CEO
+                </h1>
+                <p name="paragraph">
+                  Our products are designed to suit our customer's needs and wants.<br>
+                  Our products are consistent in every aspect of detail and we take pride in all the products we sell.
+                </p>    
+                <button class="linkAbtus">
+                  <a class="buttonstuff" href=about-us.html>
+                    Learn more!
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+           
+          <br><br><br><br><br><br>
+
+          <div style="text-align: center;">
+            <h3 style="font-size: 35px;">                     
+              <span id="headerblackcolor">
+                Why should you choose
+              </span>
+              <span id="headerbluecolor">
+                Blueprint Studios?
+              </span>
+            </h3>
+          </div>
+
+          <div class="reasonscontainer">
+            <div class="reasonsbox">
+              <img src="images/index/MoneyHand.png">
+              <h2>Fair Pricing</h2>
+              <p>
+                We offer one of the lowest prices in<br>
+                the market for the products we offer.
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/index/AroundClock.png">
+              <h2>Around the clock support</h2>
+              <p>
+                Having problems with our products?<br>
+                Just reach out to us and we'll get<br>
+                in touch to work it out.
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/index/PeopleWave.jpg">
+              <h2>Made for everyone</h2>
+              <p>
+                Whether your company is big<br>
+                or small, our products will suit your needs. 
+              </p>
+            </div>
+
+            <div class="reasonsbox">
+              <img src="images/index/easy-icon-png-4.jpg">
+              <h2>Ease of use</h2>
+              <p>
+                Our products are simple to<br>
+                implement in your projects. 
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <hr>
+        <br>
+        <br>
+        <center>
+          <div style="text-align: center;">
+            <h1 style="font-size: 25px;">                     
+              <span id="headerblackcolor">
+                <h1>Featured
+              </span>
+              <span id="headerbluecolor">
+                products
+              </span>
+            </h1>
+          </div>
+          <div class="productscontainer">
+            <div class="productsbox">
+              <a class="testing" href="products.html#Bugatti Chiron 2017 Sports Car 3D Model">
+                <h2 class="colorproducts">BEST SELLERS!</h2>
+                <img src="images/products/Bugatti Chiron 2017 Sports Car 3D Model.jpg">
+                <p>
+                  Bugatti Chiron 2017<br>
+                </p>
+              </a>
+            </div>
+
+            <div class="productsbox">
+              <a class="testing" href="products.html#Koenigsegg Agera 3D Model">
+                <h2 class="colorproducts">BEST SELLERS!</h2>
+                <img src="images/products/Koenigsegg Agera 3D Model.jpg">
+                <p>
+                  Koenigsegg Agera<br>
+                </p>
+              </a>
+            </div>
+
+            <div class="productsbox">
+              <a class="testing" href="products.html#Audi R8 Spyder 3D Model">
+                <h2 class="colorproducts">BEST SELLERS!</h2>
+                <img src="images/products/Audi R8 Spyder 3D Model.png">
+                <p>
+                  Audi R8 Spyder<br>
+                </p>
+              </a>
+            </div>
+
+            <div class="productsbox">
+              <a class="testing" href="products.html#4 Axle Box Truck 3D Model">
+               <h2 class="colorproducts">BEST SELLERS!</h2>
+                <img src="images/products/4 Axle Box Truck 3D Model.png">
+                <p>
+                  4 Axle Box Truck<br>
+                </p>
+              </a>
+            </div>
+
+            <div class="productsbox">
+              <a class="testing" href="products.html#P250 3D Model">
+                <h2 class="colorproducts">BEST SELLERS!</h2>
+                <img src="images/products/P250 3D Model.png">
+                <p>
+                  P250 pistol<br>
+                </p>
+              </a>
+            </div>
+        </center><br><br><br><hr><br><br><br>
+        
+      
+          <div style="text-align: center;">
+            <h1 style="font-size: 20px;">                     
+              <span id="headerblackcolor">
+                <h1>What others are 
+              </span>
+              <span id="headerbluecolor">
+                saying
+              </span>
+            </h1>
+          </div>
+
+          <br>
+
+          <div class="reviewcontainer">
+
+            <div class="left-reviewbox" style="text-align:center;">
+              <img class="customer-pp" src="images/index/manchad.jpg">
+                <div class="content-review">
+                  <b class="spacing-bot">Inspired me!</b>
+
+                  <div class="star-ratings">
+                    <span class="fa fa-star star-checked"></span>
+                    <span class="fa fa-star star-checked"></span>
+                    <span class="fa fa-star star-checked"></span>
+                    <span class="fa fa-star star-checked"></span>
+                    <span class="fa fa-star star-checked"></span>
+                  </div>
+
+                  <p class="nomargin-top">
+                    "Before I found Blueprint Studios I <br>
+                    was struggling to improve my <br>
+                    game. Now when I use Blueprint Studios<br>
+                    products, my game has drastically improved."
+                  </p>
+                  <p style="font-weight: bold;">- Hadje Chad</p>
+                </div>
+            </div>
+
+            <div class="middle-reviewbox" style="text-align: center;">
+              <img class="customer-pp" src="images/index/girlchad.jpg">
+              <div class="content-review">
+                <b class="spacing-bot">Excellent pricing!</b>
+
+                <div class="star-ratings">
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                </div>
+
+                <p class="nomargin-top">
+                  "Blueprint Studios offers<br>
+                  one of the lowest prices for a model.<br>
+                  After being in the CAD model industry<br>
+                  for over 5 years, Blueprint Studios'<br>
+                  price and quality makes it a<br>
+                  great company to buy from."
+                </p>
+                <p style="font-weight: bold;">- Victoria Elisabet</p>
+              </div>
+            </div>
+
+            <div class="right-reviewbox" style="text-align: center;">
+              <img class="customer-pp" src="images/index/chad.jpg">
+              <div class="content-review">
+                <b class="spacing-bot">Quality Services!</b>
+
+                <div class="star-ratings">
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                  <span class="fa fa-star star-checked"></span>
+                </div>
+
+                <p class="nomargin-top">                             
+                  "When i faced problems in setting<br>
+                  up the products, Blueprint studios'<br>
+                  support was fast and reliable. <br>
+                  I would highly recommend Blueprint<br>
+                  Studios to anyone needing CAD models."
+                </p>
+                <p style="font-weight: bold;">- Luke Miriam</p>
+              </div>
+            </div>
+        <br>
+
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="images/Blueprint Logo.png" alt="BP">
+          <h2><a href="index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+/*Individual CSS template 1*/
+:root {
+  --fs-pHead: 1.3rem;
+  --fs-psHead: 1.1rem;
+  --fs-pssHead: 0.85rem;
+  --fs-para: 0.8rem;
+
+  --div-main-row-gap: 0px;
+  --grid-main-col: 1fr 1fr;
+  --grid-main-row: 1fr 1fr 1fr;
+  --grid-row1: 1fr;
+
+  --text-stat-color: #828282;
+  --text-bestseller-color: red;
+
+  --padding-inner-div: none;
+  --padding-product-txt: 10px;
+
+  --border-content: 2px solid rgb(60,180,250);
+  --border-content-radius-img: 10px 10px 0px 0px;
+  --border-content-radius-text: 0px 0px 10px 10px;
+
+  --enable-shadow-hover: none;
+
+  --margin-top-content-text: -6px;
+  --margin-top-spacing: 10px;
+ 
+ 
+}
+
+@media (max-width: 680px){
+  :root{
+
+  --grid-main-col: none;
+  --grid-main-row: 1fr;
+  --grid-row1: none;
+  
+  }
+}
+
+@media (min-width: 680px){
+  :root{
+    --fs-pHead: clamp(0.5rem, 1.1vw + 1rem, 3rem);
+    --fs-psHead: clamp(0.4rem, 1.5vw + 0.2rem, 2.5rem);
+    --fs-pssHead: clamp(0.35rem, 1.3vw + 0.1rem, 1.6rem);
+    --fs-para: clamp(0.3rem, 1.5vw + 0.1rem, 1.2rem);
+    --fs-para-line-height: clamp(0.1rem, 2vw + 0.2rem, 2rem);
+
+    --div-main-row-gap: 16px;
+    --padding-inner-div: 4px 6px 4px 6px;
+    --padding-top-product-txt: none;
+
+    --border-content: none;
+    --border-react: 2px solid rgb(60,180,250);
+    --border-react-radii: 10px;
+    --border-content-radius-img: none;
+    --border-content-radius-text: none;
+
+    --enable-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    --margin-top-content-text: none;
+    --margin-top-spacing: none;
+
+  }
+
+}
+
+div.mid-row-content p, .mid-row-content h2, .mid-row-content h4, .mid-row-content h5{
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.mid-row-content {
+  display: grid;
+  grid-template-columns: var(--grid-main-col);
+  grid-template-rows: var(--grid-main-row);
+  column-gap: 10px;
+  row-gap: var(--div-main-row-gap);
+  /*border: 2px solid #c1c1c1;*/
+}
+
+/* Typography Format*/
+h2.productHeader {
+  text-align: center;
+  font-size: var(--fs-pHead);
+}
+
+h4.productsubHeader{
+  font-size: var(--fs-psHead);
+  color: var(--text-bestseller-color);
+  text-align: center;
+}
+
+h5.productsubtitle{
+  font-size: var(--fs-pssHead);
+  color: var(--text-stat-color);
+  text-align: center;
+}
+
+p.description {
+  font-size: var(--fs-para);
+  line-height: var(--fs-para-line-height);
+  text-align: center;
+}
+
+
+
+
+/*Row Containers*/
+.productShowcase:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.R1BorderReact:hover, .L2BorderReact:hover, .R3BorderReact:hover, .L4BorderReact:hover, .R5BorderReact:hover{
+  box-shadow: var(--enable-shadow-hover);
+}
+
+/*Responsive CSS*/
+.productShowcase, .R1BorderReact, .L2BorderReact, .R3BorderReact:hover, .L4BorderReact, .R5BorderReact:hover{
+  transition: all 0.3s;
+}
+
+.left1, .left2, .left3, .left4, .left5, .right1, .right2, .right3, .right4, .right5{
+  padding: var(--padding-inner-div);
+}
+
+div.left1, div.right1{
+  display: grid;
+  grid-template-rows: var(--grid-row1);
+  row-gap: 10px;
+}
+
+/*Border Design*/
+.left1, .left2, .left3, .left4, .left5{
+  border: var(--border-content);
+  border-bottom-width: 0;
+  border-radius: var(--border-content-radius-img);
+}
+
+.right1, .right2, .right3, .right4, .right5{
+  border: var(--border-content);
+  border-radius: var(--border-content-radius-text);
+  border-top-width: 0;
+}
+
+/*Responsive Spacing (Width < 680px)*/
+.right1, .right3, .right5{
+  margin-top: var(--margin-top-content-text)
+}
+
+.left2, .left3, .left4, .left5{
+  margin-top: var(--margin-top-spacing);
+}
+
+/*Reactive borders (Width > 680px)*/
+
+.R1BorderReact, .L2BorderReact, .R3BorderReact, .L4BorderReact, .R5BorderReact{
+  border: var(--border-react);
+  border-radius: var(--border-react-radii);
+}
+
+/*Content*/
+div.product1Featured{
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  row-gap: 5px;
+  padding-top: var(--padding-product-txt);
+  padding-bottom: var(--padding-product-txt);
+}
+
+
+img.productShowcase {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}

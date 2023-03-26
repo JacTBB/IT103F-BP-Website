@@ -1,0 +1,126 @@
+/*Individual CSS Template 2*/
+:root{
+  --fs-h3-title: clamp(0.4rem, 1.4vw + 0.8rem, 2rem);
+  --fs-left-right-subheader: 1rem;
+  --fs-caption: clamp(0.2rem, 1vw + 0.6rem, 1rem);
+  --fs-para: clamp(0.4rem, 1vw + 0.6rem, 1.1rem);
+  --fs-line-height: clamp(1rem, 1.4vw + 1rem, 1.8rem);
+  --spacing-mid: 2%;
+
+  --RWD-display: none;
+  --content-grid-row: none; 
+}
+
+@media (min-width: 880px){
+  :root {
+    --RWD-display: block;
+    --content-grid-row: 1fr 4fr 1fr;
+    --fs-link-text: clamp(0.1rem, 1vw + 0.2rem, 1rem);
+  }
+}
+
+/* Text Typography*/
+
+h3.postHeading {
+  font-size: var(--fs-h3-title);
+  text-align: center;
+}
+
+h4.subHeader {
+  font-size: var(--fs-left-right-subheader);
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p.postSubHeading{
+  font-size: var(--fs-caption);
+  color: #333;
+  text-align: center;
+}
+
+p.description {
+  font-size: var(--fs-para);
+  text-align: left;
+  font-weight: 501;
+  line-height: var(--fs-line-height);
+}
+
+/*Container*/
+div.mid-row-content p {
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.mid-row-content {
+  display: grid;
+  grid-template-columns: var(--content-grid-row);
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+div.mid1, div.mid2, div.mid3 {
+  padding-left: var(--spacing-mid);
+  padding-right: var(--spacing-mid);
+}
+
+.left1, .right1, .left2, .right2, .left3, .right3 {
+  display: var(--RWD-display);
+  width: 100%;
+}
+
+div.postFlex {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 14px;
+}
+
+div.TN-Flex, div.SM-Flex {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 5px;
+}
+
+div.SM-Flex-Items {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 5px;
+}
+
+/*Content*/
+
+div.indention {
+  display: grid;
+  row-gap: 50px;
+}
+img.SM-Icon {
+  width: 40px;
+  height: 30px;
+}
+
+a.referOtherNews {
+  text-decoration: none;
+  color: black;
+  padding: 2px 2px 2px 2px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.highlight {
+  font-size: var(--fs-link-text);
+}
+
+.highlight:hover {
+  color: red;
+}
+
+img.livestreamPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}

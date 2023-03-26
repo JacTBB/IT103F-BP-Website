@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="../../../images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="../../../styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="../../../styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="../../../styles/footer.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../framework/article-framework.css" rel="stylesheet" type="text/css">
+    <link href="style/MayPromotion2022.css" rel="stylesheet" type="text/css">
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="../../../scripts/productdata.js"></script>
+    <script src="../../../scripts/newspagecart.js" defer></script>
+    <script src="javascript/MayPromotion2022.js" defer></script>
+    <script src="javascript/MayNewsSelector2022.js" defer></script>
+    <script src="../../framework/news-general.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="../../../index.html"><img src="../../../images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="../../../index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="../../../images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="../../../contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="../../../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="../../../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="../../../products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="../../../products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="../../../services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="../../../contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="../../../about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="../../../checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = '../../../checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+
+        <div class="blog-content-wrapper">
+
+          <div class="top-row">
+            
+            <p class="topic"> PROMOTIONS </p>
+            <p class="title-article"> May 2022 Promotions </p>
+                          
+            <div class="byauthor">
+              <p style="margin-right: 5px;"> By: Gui Cheng </p>
+              <img class="profile-pic" src="../../../images/news-article/profile-pictures/profilegui.jpg">
+            </div>
+            
+            <p class="dateChanged"> Updated &#8226; 2 months ago </p>
+            <div class="divider-top">
+            </div>
+
+          </div>
+
+          <div class="mid-row-content">
+            
+            <div class="left1" >
+              <a href="../../../products/Keyboard Logitech 3D Model.html" title="Click here to find out more about product!">
+                <img class="productShowcase" src="../../../images/products/Keyboard Logitech 3D Model.png"> 
+              </a>
+            </div>
+
+            <div class="R1BorderReact">
+
+              <div class="right1" >
+                <div class="product1Featured">
+                  <h2 class="productHeader"> Keyboard Logitech 3D Model </h2>
+                  <h4 class="productsubHeader"> Product of the Month </h4>
+                  <h5 class="productsubtitle"> Sold over 18,298 copies! </h5>
+                  <p class="description"> 
+                    The Keyboard Logitech 3D Model is the featured product of the month!
+                    Logitech is a major producer in keyboards and mouses, and this time it has gamers in mind.
+                    With its alluring dome, scissor switches, and linear keystrokes, it is an all-rounded keyboard
+                    for general usage. Now $10.00, you can also stand a chance to win a limited time Extrsia's Warhammer 3D Model
+                    upon purchase during this promotion!
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="L2BorderReact">
+
+              <div class="left2" >
+                <div class="product1Featured">
+                  <h2 class="productHeader"> Realistic Modern Sofa 3D Model </h2>
+                  <h4 class="productsubHeader"> Best Rated Product of the Month </h4>
+                  <h5 class="productsubtitle"> Sold over 13,830 copies! </h5>
+                  <p class="description">
+                    The Realistic Modern Sofa 3D Model is our best rated product of the month!
+                    Ever wanted to flex to your friends about how tidy and neat your home is?
+                    Then the Realistic Modern Sofa 3D Model is the right fit for you! With the new
+                    MX cusion installed, sleeping on it will recharge you to full energy! Now $10.00, 
+                    you can also stand a chance to win a $5 google play giftcard upon purchase during this period!                    
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="right2" >
+              <a href="../../../products/Realistic Modern Sofa 3D Model.html" title="Click here to find out more about product!">              
+                <img class="productShowcase" src="../../../images/products/Realistic Modern Sofa 3D Model.png"> 
+              </a>
+            </div>
+
+            <div class="left3" >
+              <a href="../../../products/Monitor 3D Model.html" title="Click here to find out more about product!">
+                <img class="productShowcase" src="../../../images/products/Monitor 3D Model.png"> 
+              </a>
+            </div>
+
+            <div class="R3BorderReact">
+
+              <div class="right3" >
+                <div class="product1Featured">
+                  <h2 class="productHeader"> Monitor 3D Model </h2>
+                  <h4 class="productsubHeader"> Best value for your buck </h4>
+                  <h5 class="productsubtitle"> Sold over 12,380 copies!  </h5>
+                  <p class="description"> 
+                    The Monitor 3D Model is the best price to product ratio we have in this month. 
+                    Tired of the traditional 1920x1080 resolution and having an issue with screen size?
+                    Well, the Monitor 3D Model solves the problem for you! The specifications include
+                    a 60Hz, an aspect ratio of 16:9 and 14 inches. Now $10.00, you can also stand a chance
+                    to win a one-time limited access to next month's new products lineup in advance upon purchase
+                    during this promotion!  
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="L4BorderReact">
+              <div class="left4" >
+                <div class="product1Featured">
+                  <h2 class="productHeader"> Donut 3D Model </h2>
+                  <h4 class="productsubHeader"> Honorable mention </h4>
+                  <h5 class="productsubtitle"> Sold over 9,840 copies! </h5>
+                  <p class="description"> 
+                    The Donut 3D Model is one of the best selling products of the month. 
+                    This tasty treat is a nice snack for anyone feeling down after a long day. 
+                    Kneaded using fresh yeasts from Moldidon, and sprinkled with caramel, it sure 
+                    has attracted the eyes of childen from all over the world.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="right4" >
+              <a href="../../../products/Donut 3D Model.html" title="Click here to find out more about product!">              
+                <img class="productShowcase" src="../../../images/products/Donut 3D Model.png"> 
+              </a>
+            </div>
+
+            <div class="left5" >
+              <a href="../../../products/Low Poly Tree 3D Model.html" title="Click here to find out more about product!">
+                <img class="productShowcase" src="../../../images/products/Low Poly Tree 3D Model.jpg"> 
+              </a>
+            </div>
+
+            <div class="R5BorderReact">
+
+              <div class="right5" >
+                <div class="product1Featured">
+                  <h2 class="productHeader"> Low Poly Tree 3D Model </h2>
+                  <h4 class="productsubHeader"> Honorable mention </h4>
+                  <h5 class="productsubtitle"> Sold over 7,980 copies! </h5>
+                  <p class="description"> 
+                    The Low Poly Tree 3D Model is a also a best selling product of the month.
+                    The tree uses minimal polycons to allow games to run smoothly, even on a budget personal computer
+                    with basic specifications. It reduces latency and screen tear when moving from one area on a map to another,
+                    without compromising for its aesthically pleasing minimalistic look.
+                    Used in the development of Roblox: Booga Booga Island, it is highly recommended for aspiring game developers
+                    to give this model a try.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="end-row">
+
+            <div class="divider-bot">
+            </div>
+            <h1 class="bottom-heading"> Other news related to this topic </h1>
+
+            <div class="er-newscard-container">
+              <a class="prevNews" onclick="newsScrollLeft();"> < </a>
+              <div class="er-newscards">
+
+                <div class="news-card" id="newsLeft">
+                  <a class="redirect" id="hyperLeft">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateLeft"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-left"></p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsMid">
+                  <a class="redirect" id="hyperMid">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateMid"> DATE </p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-mid"> TEMPLATE </p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="news-card" id="newsRight">
+                  <a class="redirect" id="hyperRight">
+                    <div name="date">
+                      <div class="bg-square">
+                        <p class="datetxt-deco" id="dateRight"></p>
+                      </div>
+                    </div>
+                    <div name="sub-headingtext">
+                      <p class="heading-txt" id="heading-right"></p>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+              
+              <a class="nextNews" onclick="newsScrollRight();"> > </a>
+            </div>
+            
+            <div class="starC-Container">
+              <h3 class="starC-Heading"> Do you find this news helpful? </h3>
+
+              <div class="stars">
+                <span>
+                  <h4 class="rateguide" style="padding-right: 5px;"> Not Helpful </h4>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <p class="star"></p>
+                  <h4 class="rateguide" style="padding-left: 5px;"> Very Helpful </h4>
+                </span>
+              </div>  
+              
+            </div>
+
+            <h1 class="bottom-heading"> Comments </h1>
+          </div>
+
+          <div class="discussion-container">
+
+            <div class="user-box">
+              <div class="ub-comTxtbox">
+                <img id="PFPUser" class="PPuser" src="../../../images/news-article/anonymous-sus.png">
+                <textarea id="ComInput" class="user-input" placeholder="What are your thoughts?" minlength="1"></textarea>
+              </div>
+
+              <div class="user-controls">
+
+                <div class="ucflex-container">
+
+                  <div class="ucflex-expbtn">
+                    <input id="experimentBtn" type="checkbox" autocomplete="off" title="Enable Experiment features" onclick="showHiddenFeatures();" >
+                    <label for="experimentBtn" title="Experiment features" class="resizeEXP"> Experiment features </label>
+                  </div>
+
+                  <div class="ucflex-submitbtn">
+                    <input id="clearBtn" class="clear-btn" type="reset" value="Clear">
+                    <input id="commentBtn" class="comBtnInactive" type="submit" value="Comment" onclick="addComment();" disabled="true">
+                  </div>
+
+                  <div id="expFT1" class="expFT1">
+                    <label for="expFTName" class="resizeEXPSub"> Username: </label>
+                    <input id="expFTName" type="text" class="ExpInput" placeholder="Insert username here"/>
+                  </div>
+
+                  <div id="expFT2" class="expFT2">
+                    <label for="expFTPP" class="resizeEXPSub"> ProfilePic: </label>
+                    <input id="expFTPP" class="ExpInput" type="url" placeholder="Insert Picture Link here">
+                  </div>
+                </div>
+ 
+              </div>
+            </div>
+
+            <div class="divider-com">
+            </div>
+
+            <div id="topic-discussion" class="comment-section">
+              <!-- Placeholder for Comment -->
+              <div class="AUD-opinion">
+                <img class="PPAUD" src="../../../images/news-article/profile-pictures/profile2.jpg">
+
+                <div class="AUD-details">
+                  <div class="AUDName">
+                    <p class="usernameStyle"> Name </p>
+                    <p class="datepostStyle"> Date </p>
+                  </div>
+                  <p class="commentStyle"> Comment </p>
+
+                  <div class="AUDReplyControls">
+                    <button id="1" class="LikeBtnStyle"> <img class="ThumbsIcon1" src="../../../images/news-article/like-icon.png"> </button>
+                    <p class="likenumStyle"> 0 </p>
+                    <button id="2" class="DislikeBtnStyle"> <img class="ThumbsIcon2" src="../../../images/news-article/dislike-icon.png"> </button>
+                    <button class="deleteCommentStyle"> Remove </button>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+
+        </div>
+
+        <div id="notificationbar">
+          <div class="notification">
+            <!-- Placeholder For Dev -->
+            <p>You have added an item to cart!</p>
+            <!-- End -->
+          </div>
+        </div>
+
+        <!-- Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="../../../images/Blueprint Logo.png" alt="BP">
+          <h2><a href="../../../index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="../../../dashboard.html">Dashboard</a>
+          <a class="footertext" href="../../../products.html">Products</a>
+          <a class="footertext" href="../../../services.html">Services</a>
+          <a class="footertext" href="../../../faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="../../../about-us.html">About Us</a>
+          <a class="footertext" href="../../../contact-us.html">Contact Us</a>
+          <a class="footertext" href="../../../careers.html">Careers</a>
+          <a class="footertext" href="../../../news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blueprint Studios</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link href="styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="styles/footer.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/career.css" rel="stylesheet" type="text/css">
+    
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Blueprint, Studios">
+    <meta name="description" content="Blueprint Studios' Website">
+    <meta name="author" content="NYP, IT103F, Group 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- JS -->
+    <noscript>Please enable Javascript.</noscript>
+    <script>
+      function LoadContent() {
+        document.getElementById('navbar').style.display = "block"
+        document.getElementById('maindiv').style.display = "block"
+
+        const section = document.getElementById('section')
+        const footer = document.getElementById('footer')
+        var footerheight = 190
+        if (window.innerWidth < 800) footerheight = 240
+        if (window.innerWidth < 550) footerheight = 380
+        if (window.innerWidth < 380) footerheight = 500
+        const calculated = window.innerHeight-section.offsetHeight-footerheight-60
+        if (calculated > 0) {
+          footer.style.marginTop = `${calculated}px`
+        }
+        else {
+          footer.style.marginTop = '0'
+        }
+      }
+
+      window.onresize = () => { LoadContent() }
+      setTimeout(() => { LoadContent() }, 500)
+    </script>
+    <script src="scripts/productdata.js"></script>
+    <script src="scripts/cart.js" defer></script>
+
+    <script defer>
+      let slideIndex = 1;
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+
+      setTimeout(() => {
+        currentSlide(1)
+      }, 10)
+    </script>
+  </head>
+
+  <body onload="LoadContent()">
+    <nav id="navbar" style="display: none;">
+      <span>
+        <a href="index.html"><img src="images/Blueprint Logo.png" alt="BP" width="36px" height="36px"></a>
+        <a href="index.html"><h2>Blueprint Studios</h2></a>
+      </span>
+      
+      <div class="navtoggle" id="navtoggle" onclick="menu()">
+        <div id="navbar1"></div>
+        <div id="navbar2"></div>
+        <div id="navbar3"></div>
+      
+        <script>
+          //Display menu
+          var menuopen = false
+          function menu() {
+            if (cartopen == true) {
+              cart()
+            }
+            if (menuopen == false) {
+              menuopen = true;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "visible";
+            }
+            else {
+              menuopen = false;
+              document.getElementById('navtoggle').classList.toggle('change')
+              document.getElementById('navdisplay').classList.toggle('displaychange')
+              document.getElementById('navdisplay').style.visibility = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <a class="navbutton cartbutton" id="cartbutton1" onclick="cart()" style="margin-right: 30px;"><img src="images/GamepassStoreV1ShopIcon.png" width="40px" alt="Cart"></a>
+      <a class="navbutton" href="contact-us.html"><h5 style="margin: 0;">Contact Us</h5></a>
+      <a class="navbutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+      <a class="navbutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navbutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+    </nav>
+    <div id="navdisplay">
+      <a class="navdisplaybutton" href="products.html"><h5 style="margin: 0;">Products</h5></a>
+      <a class="navdisplaybutton" href="services.html"><h5 style="margin: 0;">Services</h5></a>
+      <a class="navdisplaybutton" href="contact-us.html"><h5 style="margin: 0">Contact Us</h5></a>
+      <a class="navdisplaybutton" href="about-us.html"><h5 style="margin: 0;">About Us</h5></a>
+    </div>
+    <div id="cartdisplay">
+      <h3>Shopping Cart</h3>
+      <p id="cartempty">You do not have any products in your shopping cart.</p>
+      <span id="cartitemdisplay">
+        <!-- Placeholder For Dev -->
+        <div class="cartitem">
+          <img class="cartitemimg" src="https://free3d.com/imgd/l69126-audi-r8-spyder-22646.png">
+          <p class="cartitemname">Audi R8 Spyder 3D Model</p>
+          <p class="cartitemprice">$10.00</p>
+        </div>
+        <!-- End -->
+      </span>
+      <div class="carttotal">
+        <p id="cartitemtotal"></p>
+      </div>
+      <button type="button" onclick="gocheckoutpage()" id="cartcheckout"><a href="checkout.html">Checkout</a></button>
+      <script>
+        //Cart Toggle
+        var cartopen = false;
+        function cart() {
+          if (menuopen == true) {
+            menu()
+          }
+          if (cartopen == false) {
+            cartopen = true;
+            document.getElementById('cartdisplay').style.display = "block";
+          }
+          else {
+            cartopen = false;
+            document.getElementById('cartdisplay').style.display = "none";
+          }
+        }
+        //Go to checkout page
+        function gocheckoutpage() {
+          window.location.href = 'checkout.html'
+        }
+      </script>
+    </div>
+
+    <div class="content" id="maindiv" style="display: none;">
+      <section id="section">
+        <!--Edit Starting Here-->
+        <article style="padding: 0">
+          <img src="images/page-banners/IT103F Banner Careers.png" alt="BP Banner" width="100%">
+        </article>
+
+        <article>
+          <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">1 / 4</div>
+              <img src="images/careers/kevin.jfif">
+              <div class="text">Hello everyone ! Im kevin and am working as a CAD designer at Blueprint Studios.
+               One thing i like about the company is that everyone is quite chill and we get along
+               easily.
+              </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">2 / 4</div>
+              <img src="images/careers/monkey.jfif">
+              <div class="text">Hello everyone ! Im ameer and am working as a CAD designer at Blueprint Studios.
+                One thing i like about the company is that everyone is quite chill and we get along
+                easily.
+              </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">3 / 4</div>
+              <img src="images/careers/senghong.jfif">
+              <div class="text">My name is Senghong, working as a Full Stack Developer at Blueprint studio. My job is to develop both a client
+                and server software for the company.
+            </div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="whereiputmynumber">4 / 4</div>
+              <img src="images/careers/pig.jfif">
+              <div class="text">Im ashley!!, working as a Full Stack Developer at Blueprint studio. My job is to develop both a client
+                and server software for the company.
+                </div>
+            </div>
+            </div>
+            <br>
+
+            <div id="dotsdiv" style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div><hr>
+        </article>
+
+        <article>
+        
+          <div>
+            <u><p class="header1">Benefits and Perks at Blueprint Studio</p></u>
+            <p class="headerdesc">We want to <strong>empower</strong> and <strong>inspire</strong> our team members to do their best work every
+            day - making sure they feel happy, healthy and fulfilled both inside and <br> outside of the workplace.</p>
+          </div><br>
+       
+          <div>
+          <table border="1">
+            <tr class="perks">
+              <td class="tdwidth">Competitive Pay</td>
+              <td class="tdwidthy">Take-what-you-need paid vacation policy</td>
+              <td class="tdwidth">Employee Benefits</td>
+            </tr>
+            <tr>
+              <td>We offer a competitive total rewards package, where every employee is an owner of our stock.</td>
+              <td>We encourage employees to find a comfortable work-life balance by taking as many days off as they
+                  need while still being able to perform their jobs satisfactorily.
+                   (We really mean it!)</td>
+              <td>We offer a comprehensive benefits package including healthcare, life insurance, short- and
+                  long-term disability, pension plans in accordance with the market practice in our locations.
+                  A complimentary global program that aims to provide family forming and mental wellbeing support
+                   to our employees across our offices.</td>
+            </tr>
+           </table>
+           <br>
+           <table border="1">
+            <tr class="perks">
+              <td class="tdwid">Paid maternity and paternity leave</td>
+              <td class="tdwid">Commuter program</td>
+            </tr>
+            <tr>
+              <td>Our global parental leave policy allows up to sixteen paid weeks of bonding leave time for all 
+                qualifying new parents.</td>
+              <td>We are flexible about where we work and value connecting at the office. Our commuter benefits program
+                  is in place to support team members' commute to work via public transportation without the extra cost burden.</td>
+            </tr>
+
+          </table>
+        </div><br><hr>
+        
+          <div>
+          <h1>Our Hiring Process</h1><br>
+          <img src="images/careers/interview.png" width="100%">
+          <br>
+          <p>At Blueprint Studio, we are committed to hiring the best people to join our teams. We designed <br> our interview process* 
+             to help us understand how you think, what you are passionate about,<br> and which skills and creative problem-solving 
+             abilities you bring to the table. And we want you<br> to get to know us, too.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          <p> Curious about our culture? Connect with your recruiter to visit one of our All-Hands meetings,<br> where we share what we
+              are working on each week.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          <p>*The hiring process outlined above may differ by department and role.</p>
+        </div><hr>
+        </article>
+        <article>
+        <center>Start Your Journey<span style="color:lightskyblue;"> With Us !</span></center>
+        <div class="jobdesc">
+        Whether you love helping customers, making awesome designs and video edits or<br>
+        programming cool things, we have a job for you!</div>
+        <br><br><br>
+
+        
+       <button class="accordion">
+         <b>3D CAD Designers</b>
+         <p>CAD designers use technology to help generate designs for complex projects. These designs may be used to create 2D images,
+         a process known as surface modeling, or 3D images, or solid modeling. CAD designers must have strong computer skills and extensive
+         knowledge of design software. CAD designers must know their industry. In order to be effective, they must have knowledge of machines,
+         engineering standards, mathematics, and the materials used to make their plans a reality.</p>
+         </button>
+        <div class="panel">
+          <p><u>Responsibilities</u><br>
+           <li>Use software to create detailed 2D or 3D designs for complex projects.</li>
+           <li>Collaborate with others to establish timelines and budgets, as well as solve problems.</li>
+           <li>Knowledge of industry, engineering, math, and materials.</li>
+            <li>Ability to analyze data and situation and come up with creative solutions.</li>
+           <li>Keep up to date on industry and engineering standards.</li></p>
+          <p><u>Requirements</u><br>
+           <li>A degree or equivalent experience.</li>
+           <li>Sit for extended periods of time.</li>
+           <li>Use of hands to operate computers.</li>
+           <li>Extensive knowledge of the company preferred software.</li>
+           <li>Make decisions based on designs.</li>
+           <li>rong communication skills.</li>
+           <li>Ability to collaborate with others to solve problems.</li>
+           <li>Firm grasp of mathematics, engineering, and industry information.</li>
+           <li>Some travel may be required.</li></p>
+        </div><br><br>
+
+        <button class="accordion">
+          <b>Graphic Designers</b>
+          <p>We are seeking a new graphic designer to join our team. You will be designing a wide variety of things across digital and
+             offline media. To be successful in this position, you will be a self-starter, capable of delivering brilliant creative ideas,
+             and show amazing attention to detail.</p>
+        </button>
+           <div class="panel">
+          <p><u>Responsibilities</u><br>
+            <li>Planning concepts by studying relevant information and materials.</li>
+            <li>Illustrating concepts by designing examples of art arrangement, size, type size and style and submitting them for approval.</li>
+            <li>Preparing finished art by operating necessary equipment and software.</li>
+            <li>Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary.</li>
+            <li>Contributing to team efforts by accomplishing tasks as needed.</li>
+            <li>Communicating with clients about layout and design.</li>
+            <li>Creating a wide range of graphics and layouts for product illustrations, company logos, and websites with software such as photoshop.</li>
+            <li>Reviewing final layouts and suggesting improvements when necessary.</li></p>
+            <p><u>Requirements</u><br>
+              <li>Bachelor degree in graphic design or related field.</li>
+              <li>Experience as a graphic designer or in related field.</li>
+              <li>Demonstrable graphic design skills with a strong portfolio.</li>
+              <li>Proficiency with required desktop publishing tools, including Photoshop, InDesign Quark, and Illustrator.</li>
+              <li>A strong eye for visual composition.</li>
+              <li>Effective time management skills and the ability to meet deadlines.</li>
+              <li>Able to give and receive constructive criticism.</li>
+              <li>Understanding of marketing, production, website design, corporate identity, product packaging, advertisements, and multimedia design.</li>
+              <li>Experience with computer-aided design.</li></p>
+           </div><br><br>
+           
+           <button class="accordion">
+            <b>Business Analysts</b>
+            <p>We are searching for an e-commerce business analyst to improve and maintain our e-commerce presence, processes, and sales. In this role, 
+              you will be tasked with analyzing key metrics about our business and its performance which you will use to generate insights and reports
+              for marketing, UX, payment, and overall strategy. To ensure success as an e-commerce business analyst you should be adept at data mining,
+              business intelligence, report writing, and process optimization. A top-notch e-commerce business analyst will be knowledgeable on a broad 
+              range of e-commerce activities, such as SEO, website design, sales funneling, conversions, and digital marketing.</p>
+           </button>
+           <div class="panel">
+            <p><u>Responsibilities</u><br>
+            <li>Determining the company's e-commerce goals and KPIs.</li>
+            <li>Identifying key areas for improvements, such as audience, acquisition, behavior, and conversions.</li>
+            <li>Monitoring and analyzing e-commerce metrics and figures.</li>
+            <li>Transforming e-commerce data into operational insights.</li>
+            <li>Researching competitors, alternative markets, and opportunities in the e-commerce space.</li>
+            <li>Brainstorming ideas to enhance and transform the company's e-commerce approach.</li>
+            <li>Developing e-commerce solutions in conjunction with marketing and IT personnel.</li>
+            <li>Implementing broad e-commerce strategies to assist our business development goals.</li></p>
+            <p><u>Requirements</u><br>
+            <li>A bachelor's degree in business management, marketing, or data science.</li>
+            <li>A minimum of 4 years experience in digital economies and e-commerce</li>
+            <li>In-depth understanding of web-analytic tools, such as Google Analytics, Heap, Oracle, and OWOX BI.</li>
+            <li>Knowledge of important e-commerce terminology and measures.</li>
+            <li>Proficient in various data analysis techniques and procedures.</li>
+            <li>Able to orient data analytics insights with the end-user in mind.</li>
+            <li>A team player with great communication skills.</li>
+            </p>
+           </div>
+           
+           <script>
+           var acc = document.getElementsByClassName("accordion");
+           var i;
+           
+           for (i = 0; i < acc.length; i++) {
+             acc[i].addEventListener("click", function() {
+               this.classList.toggle("active");
+               var panel = this.nextElementSibling;
+               if (panel.style.display === "block") {
+                 panel.style.display = "none";
+               } else {
+                 panel.style.display = "block";
+               }
+             });
+           }
+           </script>
+          <br><br><br>
+
+         <div class="applyjob">
+          IF YOU HAVE WHAT IT TAKES, JOIN US NOW !!<br>
+        </div>
+        <br><br>
+        <div class="applynow"><a href="jobapplication.html">Apply Now !</a></div>
+        </article>
+        <!--Edit Ending Here-->
+      </section>
+      
+      <footer id="footer">
+        <div class="footerinfo">
+          <img src="images/Blueprint Logo.png" alt="BP">
+          <h2><a href="index.html">Blueprint Studios</a></h2>
+          <p>Copyright &copy; Blueprint Studios 2018-2022</p>
+          <p>
+            <a href="https://www.youtube.com/channel/UCDJkyRtPWEqqeDPlchhCNQQ"><span class="fa fa-youtube-play"></span></a>
+            <a href="https://twitter.com/blueprintRBLX"><span class="fa fa-twitter"></span></a>
+          </p>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Quick Links</h3>
+          <a class="footertext" href="dashboard.html">Dashboard</a>
+          <a class="footertext" href="products.html">Products</a>
+          <a class="footertext" href="services.html">Services</a>
+          <a class="footertext" href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footerlinks">
+          <h3>Company</h3>
+          <a class="footertext" href="about-us.html">About Us</a>
+          <a class="footertext" href="contact-us.html">Contact Us</a>
+          <a class="footertext" href="careers.html">Careers</a>
+          <a class="footertext" href="news.html">News</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

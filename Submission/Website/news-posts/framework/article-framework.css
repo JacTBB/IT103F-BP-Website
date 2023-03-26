@@ -1,0 +1,651 @@
+/* Global CSS for ALL ARTICLE/NEWS/POSTS pages*/
+:root {
+  --fs-news-title: clamp(0.3rem, 1.4vw + 0.8rem, 1.8rem);
+  --blog-padding-width: 2% 6% 2% 6%;
+  --fs-username: clamp(0.5rem, 1vw + 0.5rem, 0.9rem);
+  --fs-comment-date: clamp(0.4rem, 1vw + 0.4rem, 0.75rem);
+  --fs-comment-txt: clamp(0.3rem, 1.8vw + 0.3rem , 0.9rem);
+  --fs-liketext: clamp(0.36rem, 1.6vw + 0.36rem, 0.8rem);
+
+  --date-txt-size: clamp(0.7rem, 1.5vw + 0.2rem , 1rem);
+  --date-bg-width: clamp(60px, 2vw + 50px  , 80px);
+  --date-bg-height: clamp(30px, 2vw + 20px  , 40px);
+
+  --card-width: 140px;
+  --card-height: 140px; 
+  --card-spacing-bottom: 5px;
+
+  --header-position-top: 100px;
+  --header-position-left: 4px;
+  --header-box-width: 95%;
+  --header-font-size: 0.7rem;
+
+  --RWD-profile-length: clamp(18px, 3vw + 18px, 36px);
+  --RWD-border-radius: clamp(9px, 2vw + 9px, 18px);
+  --RWD-comment-button: clamp(0.45rem, 1vw + 0.45rem, 0.85rem);
+}
+
+@media (min-width: 670px){
+  :root{
+    --card-width: 180px;
+    --card-height: 180px; 
+    
+    --header-position-top: 125px;
+    --header-position-left: 5px;
+    --header-font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 900px){
+  :root{
+
+   --card-width: 250px;
+   --card-height: 250px; 
+   --card-spacing-bottom: 0;
+
+   --header-position-top: 180px;
+   --header-position-left: 10px;
+   --header-box-width: 230px;
+   --header-font-size: 1rem;
+  }
+
+}
+@media (min-width: 900px){
+  :root {
+    --blog-padding-width: 1% 6% 1% 6%;
+  }
+}
+
+th, td, h1, h3, input {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.topic {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #334862;
+  margin-bottom: 0.2em;
+}
+
+.title-article {
+  font-size: var(--fs-news-title);
+  font-weight: 550;
+  color: #161616;
+  margin-bottom: 0.2em;
+}
+
+.byauthor {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 12px;
+  color: #334862;
+  margin-bottom: 0.1em;
+}
+
+.profile-pic {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dateChanged {
+  font-size: 10px;
+  color: #334862;
+  margin-bottom: 0.1em;
+}
+
+.divider-top {
+  height: 3px;
+  background-color: rgba(0,0,0,.1);
+  width: 100%;
+  max-width: 30px;
+  margin: 1em 0 1em;
+  margin-bottom: 0.5em;
+}
+
+.divider-bot {
+  height: 3px;
+  background-color: rgba(0,0,0,.1);
+  width: 100%;
+  min-width: 160px;
+  max-width: 300px;
+  margin: 1em 0 1em;
+}
+
+.divider-com {
+  height: 3px;
+  background-color: rgba(0,0,0,.1);
+  width: 100%;
+  margin: 1em 0 1em;
+}
+
+
+
+/* Main Containers */
+div.blog-content-wrapper {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  min-width: 360px;
+  padding: var(--blog-padding-width);
+}
+
+div.top-row {
+  display: grid;
+  grid-template-rows: 20px 45px 20px 10px 30px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+div.end-row {
+  display: grid;
+  row-gap: 30px;
+  justify-items: center;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+/* News slider */
+/* Model */
+.er-newscard-container {
+  position: relative;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.er-newscards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.hiddenNews {
+  display: none;
+}
+
+/* Individual Newscard */
+/* Model */
+div.news-card {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin-bottom: var(--card-spacing-bottom);
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: all 0.3s;
+}
+
+div.news-card:hover{
+  transform: scale(1.03, 1.03);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.redirect {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+
+/* General Deco for News card */
+label, p, h4 {
+  font-family: Alata;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.datetxt-deco {
+  color: white;
+  font-size: var(--date-txt-size);
+  padding: 8px 5px 8px 6px;
+  text-align: center;
+}
+
+.heading-txt {
+  position: absolute;
+  top: var(--header-position-top);
+  left: var(--header-position-left);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.4);
+  width: var(--header-box-width);
+  font-size: var(--header-font-size);
+}
+
+div.bg-square {
+  position: absolute;
+  top: 20px;
+  left: -1px;
+  width: var(--date-bg-width);
+  height: var(--date-bg-height);
+  background-color: rgb(49, 120, 202);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+
+/* Controller for news card slider */
+.prevNews, .nextNews {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  padding: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 2;
+}
+
+.prevNews:hover, .nextNews:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.nextNews {
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+
+/* Star section */
+h3.starC-Heading {
+  font-size: 16px;
+}
+
+h4.rateguide {
+  font-weight: 200;
+  font-size: 10px;
+}
+
+div.starC-Container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 4px;
+  justify-items: center;
+}
+
+div.stars span{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: -5px;
+}
+
+.stars p {
+    padding-right: 4px;
+    text-decoration: none;
+}
+
+.stars p:after {
+    font-size: 18px;
+    font-family: 'FontAwesome', serif;
+    content: "\f005";
+    color: #9e9e9e;
+}
+
+span:hover p:after{
+  color:orange !important;
+}
+
+.stars p:hover ~ p:after{
+  color: #9e9e9e !important;
+}
+
+span.active p.active ~ p:after{
+  color: #9e9e9e;
+}
+
+span.active p:after,
+.stars p.active:after{
+  color:orange;
+}
+
+h1.bottom-heading {
+  font-size: 22px;
+  margin-top: 0;
+}
+
+
+
+
+/*Comment Section*/
+
+div.discussion-container {
+  display: grid;
+  row-gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+div.user-box {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 3px;
+}
+
+div.user-box:focus-within{
+  border: 1px solid black;
+}
+
+div.ub-comTxtbox {
+  display: flex;
+  background-color: white;
+}
+
+img.PPuser {
+  width: 36px;
+  height: 36px;
+  border-radius: 17px;
+  margin-top: 6px;
+  margin-left: 6px;
+  object-fit: cover;
+}
+
+textarea.user-input {
+  width: 96%;
+  border: 0;
+  padding: 2% 2% 2% 2%;
+  margin: 0;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+textarea:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+div.user-controls {
+  margin-top: -1px;
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 10px;
+  background-color: #D9D9D9;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+/*First row*/
+div.ucflex-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+div.ucflex-expbtn{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+div.expFT1{
+  display: none;
+  align-items: center;
+  justify-content: left;
+}
+
+div.ucflex-submitbtn, div.expFT2{
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: right;
+}
+
+div.expFT2{
+  display: none;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: left;
+}
+
+
+/*User comment form controls*/
+
+input {
+  font-weight: bold;
+  padding: 4px 14px 4px 14px;
+  border: 0px;
+  border-radius: 10px;
+  transition: all 0.1s;
+}
+
+label.resizeEXP {
+  font-size: 14px;
+}
+
+label.resizeEXPSub {
+  font-size: 12px;
+}
+
+.comBtnActive:hover, .clear-btn:hover{
+  opacity: 0.8;
+}
+
+.comBtnActive:active, .clear-btn:active{
+  transform: translateY(1px);
+}
+
+.clear-btn {
+  color: white;
+  background-color: #d30000;
+}
+
+.comBtnActive{
+  cursor: pointer;
+  margin-right: 3px;
+  color: white;
+  background-color: #0079D3;
+  opacity: 1;
+}
+
+.comBtnInactive{
+  cursor: not-allowed;
+  margin-right: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: grey;
+  opacity: 0.5;
+}
+
+.ExpInput{
+  width: 65%;
+  font-size: 12px;
+  padding: 2px 4px 2px 4px;
+  margin-left: 10px;
+  color: black;
+  border: 1px solid rgb(35, 106, 148);
+  background-color: white;
+}
+
+.ExpInput:focus{
+  outline: none;
+  box-shadow: none;
+  border-width: 2px;
+}
+
+/*Comment section*/
+div.comment-section {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+div.comment-section p {
+  font-family: "Arial";
+}
+
+div.AUD-opinion {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+img.PPAUD {
+  width: var(--RWD-profile-length);
+  height: var(--RWD-profile-length);
+  border-radius: var(--RWD-border-radius);
+  margin-top: 6px;
+  margin-left: 6px;
+  object-fit: cover;
+}
+
+div.AUD-details {
+  display: grid;
+  grid-template-rows: 19px 1fr 26px;
+  row-gap: 6px;
+  width: 100%;
+  padding: 10px 8px 4px 8px;
+}
+
+div.AUDName {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+  width: 100%;
+}
+
+/* #aaa */
+p.usernameStyle{
+  font-size: var(--fs-username);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1px;
+}
+
+p.datepostStyle{
+  font-size: var(--fs-comment-date);
+  text-align: center;
+  color: rgb(112, 112, 112);
+  margin-top: 2px;
+}
+
+p.commentStyle{
+  font-size: var(--fs-comment-txt);
+}
+
+div.AUDReplyControls{
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 12px;
+  width: 100%;
+}
+
+div.AUDReplyControls button{
+  outline: none;
+  background: transparent;
+  border: none;
+  transition: all 0.3s;
+}
+
+button.LikeBtnStyle, button.DislikeBtnStyle{
+  width: var(--RWD-comment-button);
+  height: 26px;
+  padding: 0;
+  border-radius: 13px;
+}
+
+button.DislikeBtnStyle{
+  margin-left: 4px;
+}
+
+img.ThumbsIcon1, img.ThumbsIcon2{
+  width: var(--RWD-comment-button);
+  height: var(--RWD-comment-button);
+}
+
+img.ThumbsIcon2{
+  padding-top: 2px;
+}
+
+p.likenumStyle{
+  font-size: var(--fs-liketext);
+  padding-top: 4px;
+  margin-left: -2px;
+  text-align: center;
+}
+
+button.deleteCommentStyle {
+  cursor: pointer;
+  width: 60px;
+  height: 26px;
+  margin-left: 2px;
+  font-weight: bold;
+  border-radius: 7px;
+}
+
+button.deleteCommentStyle:hover{
+  background: red;
+  color: white;
+}
+
+
+
+/* Notification Section */
+#notificationbar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.notification {
+  display: none;
+  padding: 10px;
+  margin: 5px;
+  border: solid rgb(100,100,100) 2px;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+
+
+/* Loading & Website animation */
+@keyframes fadeInAnim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeOutAnim {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+.notificationinanim {
+  animation-name: fadeInAnim;
+  animation-duration: 0.5s;
+}
+.notificationoutanim {
+  animation-name: fadeOutAnim;
+  animation-duration: 0.5s;
+}
+
+.notification p {
+  margin: 0;
+  font-size: 20px;
+}
